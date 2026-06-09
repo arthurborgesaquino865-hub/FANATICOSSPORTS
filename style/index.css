@@ -1,0 +1,96 @@
+
+/*COLOCANDO COR DE FUNDO NO CABEÇALHO */
+header {
+    background-color:#2d4132; /*COR DE FUNDO DO CABEÇALHO */
+    font-family: poppins, sans-serif; /*FONTE DO CABEÇALHO */
+    color:#FFFFFF; /*COR DO TEXTO DO CABEÇALHO*/
+}
+nav a{
+    color: #FFFFFF; /*COR DO TEXTO DO MENU DE NAVEGAÇAO */
+    text-decoration: none; /*REMOVE O SUBLINHADO DOS LINKS /*
+    margin: 0 10px; /*ESPACAMENTO ENMTRE OS LINKS */
+    text-align: CENTER; /*ALINHAMENTO DO TEXTO DOS LINKS */
+}
+nav{
+    text-align: center; /*ALINHAMENTO DO TEXTO DOS LINKS */
+    border-color: #FFFFFF; /* cor da bordado menu de navegaçao */
+    border-width: lpx; /*LARGURA DA BORDA DO MENU DE NAVEGAÇAO */
+    border-style: solid; /*ESTILO DA BORDA DO MENU DE NAVEGAÇAO */
+    padding: 10px; /*DISTANCIA ENTRE AS BORDAS DO MENU DE NAVEGAÇAO */
+}
+.logo img{
+    height: 130px; /*ALTURA DA LOGO*/
+    width: 90PX; /*LARGURA DA IMAGEM*/
+}
+
+/*CONFIGURANDO A CAIXA DE PESQUISA*/
+.caixa-de-pesquisa input{
+    padding: 10px; /*DISTANCIA ENTRE AS BORDAS DO CAMPO DE PESQUISA*/
+    border: 1px solid #ccc; /*BORDA DO CAMPO DE PESQUISA*/
+    border-radius: 20px; /*ARRENDAMENTO DAS BORDAS DO CAMPO DE PESQUISA*/
+    font-family: poppins, sans-serif; /*FONTE DO CAMPO DE PESQUISA*/
+width: 300px; /*LARGURA DO CAMPO*/
+height: AUTO; /*ALTURA DO CAMPO DE PESQUISA*/
+padding-left: 50px;
+}
+
+/*CONFIGURANDO A DIV DA PESQUISA*/
+.caixa-de-pesquisa{
+    display: flex; /*EXIBE OS ELEMENTOS EM LINHA*/
+    justify-content: center; /*ALINHAMENTO HORIZONTAL DOS ELEMENTOS*/
+    margin-top: 10PX; /*MARGEM SUPERIOR DA CAIXA DE PESQUISA */
+    margin-bottom: 10PX; /*MARGEM INFERIOR DA CAIXA DE PESQUISA*/
+    position: relative; /*POSIÇAO RELATIVA PARA POSICIONAR O ICONE DE PESQUISA*/
+}
+
+/*ALINHAR AS DIVS DO CABEÇALHO*/
+.TOPO {
+    display: flex; /*EXIBE OS ELEMENTOS EM LINHA*/
+    align-items: center; /*ALINHAMENTO VERTICAL DOS ELEMENTOS*/
+    justify-content: space-between;
+    /*DISTRIBUIÇAO DOS ELEMENTOS COM ESPAÇO ENTRE ELES*/
+    padding: 10px; /*DISTANÇIA ENTRE AS BORDAS DO CABEÇALHO*/
+}
+
+
+ .caixa-de-pesquisa img{
+        height: 20px; /*ALTURA DO ICONE DE PESQUISA*/
+        width: 20px; /*LARGURA DO ICONE DE PESQUISA*/
+        position: absolute; /*POSIÇAO ABSOLUTA PARA POSICIONAR O ICONE DE PESQUISA*/
+        left: 10px; /*DISTANCIA DO ICONE DE PESQUISA PARA A ESQUERDA*/
+        top: 50px; /*ALINHAMENTO VERTICAL DO ICONE DE PESQUISA*/
+        transform:translateY(-50%); /*CENTRA O ICONE DE PESQUISA VERTICALMENTE*/
+        }
+        .caixa-de-pesquisa ::placeholder{
+            padding-left: 30px;
+            /*DISTANCIA ENTRE O TEXTO DO PLACEHOLDER E O ICONE DE PESQUISA*/
+        }
+
+        .icones a img{
+            height: 30px; /*ALTURA DOS ICONES DE USUARIO E CARRINHO*/
+            width: 30px; /*LARGURA DOS ICONES DE USUARIO E CARRINHO*/
+            margin-right: 20PX;
+            /*DISTANCIA ENTRE OS ICONES DE USUSARIO E CARRINHO AO LADO DIREITO*/
+        }
+
+        /*CONFIGURANDO OTEXTO DOS ICONES DE USUSARIO E CARRINHO*/
+        .icones a small{
+            front-size: 10px; /*TAMANHO DA FONTE DO TEXTO PEQUENO*/
+            display: block; /*EXIBE O TEXTO EM UMA NOVA LINHA*/
+            COLOR: #FFFFFF; /*COR DO TEXTO PEQUENO*/
+        }
+        .ICONES A p{
+            front-size: 12px; /*TAMANHO DA FONTE DO TEXTO GRANDE*/
+            display: block; /*EXIBE O TEXTO EM UMA NOVA LINHA*/
+            color: #FFFFFF; /*COR DO TEXTO GRANDE*/
+        }
+        .icones a{
+        text-decoration: none; /*REMOVE O SUBLINHADO DOS LINKS*/
+        }
+        /*configurando a div icones*/
+        .icones{
+            display: flex;/*EXIBE OS ELEMENTOS EM LINHA*/
+            align-items: center;/*ALINHAMENTO VERTICAL DOS ELEMENTOS */
+            gap: 30px;/*DISTANCIA ENTRE OS ELEMENTOS*/
+        
+        }
