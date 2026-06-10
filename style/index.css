@@ -24,73 +24,103 @@ nav{
 }
 
 /*CONFIGURANDO A CAIXA DE PESQUISA*/
+/*CONFIGURANDO A CAIXA DE PESQUISA*/
 .caixa-de-pesquisa input{
-    padding: 10px; /*DISTANCIA ENTRE AS BORDAS DO CAMPO DE PESQUISA*/
-    border: 1px solid #ccc; /*BORDA DO CAMPO DE PESQUISA*/
-    border-radius: 20px; /*ARRENDAMENTO DAS BORDAS DO CAMPO DE PESQUISA*/
-    font-family: poppins, sans-serif; /*FONTE DO CAMPO DE PESQUISA*/
-width: 300px; /*LARGURA DO CAMPO*/
-height: AUTO; /*ALTURA DO CAMPO DE PESQUISA*/
-padding-left: 50px;
+    padding: 10px; /*DISTANCIA ENTRE AS BORDAS DO CAMPO DE PESQUISA */
+    border: 1px solid #ccc; /*BORDA DO CAMPO DE PESQUISA */
+    border-radius: 10px; /*ARRENDAMENTO DAS BORDAS DO CAMPO DE PESQUISA */
+    font-family: poppins, sans-serif; /*FONTE DO CAMPO DE PESQUISA */
+    width: 300px; /*LARGURA DO CAMPO DE PESQUISA */
+    height: auto; /*ALTURA DO CAMPO DE PESQUISA */
+    padding-left: 50px;
 }
-
 /*CONFIGURANDO A DIV DA PESQUISA*/
 .caixa-de-pesquisa{
-    display: flex; /*EXIBE OS ELEMENTOS EM LINHA*/
-    justify-content: center; /*ALINHAMENTO HORIZONTAL DOS ELEMENTOS*/
-    margin-top: 10PX; /*MARGEM SUPERIOR DA CAIXA DE PESQUISA */
-    margin-bottom: 10PX; /*MARGEM INFERIOR DA CAIXA DE PESQUISA*/
-    position: relative; /*POSIÇAO RELATIVA PARA POSICIONAR O ICONE DE PESQUISA*/
+    display: flex; /*EXIBE OS ELEMENTOS EM LINHA */
+    justify-content: center; /*ALINHAMENTO HORIZONTAL DOS ELEMENTOS */
+    margin-top: 10px; /*MARGEM SUPERIOR DA CAIXA DE PESQUISA */
+    margin-bottom: 10px; /*MARGEM INFERIOR DA CAIXA DE PESQUISA */
+    position: relative; /*POSIÇÃO RELATIVA PARA POSICIONAR O ICONE DE PESQUISA */
 }
 
 /*ALINHAR AS DIVS DO CABEÇALHO*/
 .TOPO {
-    display: flex; /*EXIBE OS ELEMENTOS EM LINHA*/
-    align-items: center; /*ALINHAMENTO VERTICAL DOS ELEMENTOS*/
-    justify-content: space-between;
-    /*DISTRIBUIÇAO DOS ELEMENTOS COM ESPAÇO ENTRE ELES*/
-    padding: 10px; /*DISTANÇIA ENTRE AS BORDAS DO CABEÇALHO*/
+    display: flex; /*EXIBE OS ELEMENTOS EM LINHA */
+    align-items: center; /*ALINHAMENTO VERTICAL DOS ELEMENTOS */
+    justify-content: space-between; 
+    /*DISTRIBUIÇÃO DOS ELEMENTOS COM ESPAÇO ENTRE ELES */
+   
 }
 
+/*CONFIGURANDO OS ICONES*/
+.caixa-de-pesquisa img{
+    height: 20px; /*ALTURA DO ICONE DE PESQUISA */
+    width: 20px; /*LARGURA DO ICONE DE PESQUISA */
+    position: absolute; /*POSIÇÃO ABSOLUTA PARA POSICIONAR O ICONE DE PESQUISA */
+    left: 10px; /*DISTANCIA DO ICONE DE PESQUISA DA BORDA ESQUERDA DO CAMPO DE PESQUISA */
+    top: 50%; /*ALINHAMENTO VERTICAL DO ICONE DE PESQUISA */
+    transform: translateY(-50%); /*CENTRA O ICONE DE PESQUISA VERTICALMENTE */
+}
+.caixa-de-pesquisa placeholder{
+    padding-left: 30px; 
+    /*DISTANCIA ENTRE O TEXTO DO PLACEHOLDER E O ICONE DE PESQUISA */
+}
 
- .caixa-de-pesquisa img{
-        height: 20px; /*ALTURA DO ICONE DE PESQUISA*/
-        width: 20px; /*LARGURA DO ICONE DE PESQUISA*/
-        position: absolute; /*POSIÇAO ABSOLUTA PARA POSICIONAR O ICONE DE PESQUISA*/
-        left: 10px; /*DISTANCIA DO ICONE DE PESQUISA PARA A ESQUERDA*/
-        top: 50px; /*ALINHAMENTO VERTICAL DO ICONE DE PESQUISA*/
-        transform:translateY(-50%); /*CENTRA O ICONE DE PESQUISA VERTICALMENTE*/
-        }
-        .caixa-de-pesquisa ::placeholder{
-            padding-left: 30px;
-            /*DISTANCIA ENTRE O TEXTO DO PLACEHOLDER E O ICONE DE PESQUISA*/
-        }
+.icones a img{
+    height: 30px; /*ALTURA DOS ICONES DE USUÁRIO E CARRINHO */
+    width: 30px; /*LARGURA DOS ICONES DE USUÁRIO E CARRINHO */
+    margin-right: 20px; 
+    /*DISTANCIA ENTRE OS ICONES DE USUÁRIO E CARRINHO AO LADO DIREITO */
+  grid-row: 1/3;
+  margin: 0;
+}
 
-        .icones a img{
-            height: 30px; /*ALTURA DOS ICONES DE USUARIO E CARRINHO*/
-            width: 30px; /*LARGURA DOS ICONES DE USUARIO E CARRINHO*/
-            margin-right: 20PX;
-            /*DISTANCIA ENTRE OS ICONES DE USUSARIO E CARRINHO AO LADO DIREITO*/
-        }
+/*CONFIGURANDO O TEXTO DOS ICONES DE USUÁRIO E CARRINHO*/
+.icones a small{
+    font-size: 10px; /*TAMANHO DA FONTE DO TEXTO PEQUENO */
+    display: block; /*EXIBE O TEXTO EM UMA NOVA LINHA */
+    color: #FFFFFF; /*COR DO TEXTO PEQUENO */ 
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+}
+.icones a p{
+    font-size: 12px; /*TAMANHO DA FONTE DO TEXTO GRANDE */
+    display: block; /*EXIBE O TEXTO EM UMA NOVA LINHA */
+    color: #FFFFFF; /*COR DO TEXTO GRANDE */  
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+}
+.icones a{
+    text-decoration: none; /*REMOVE O SUBLINHADO DOS LINKS */
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-template-rows: auto auto;
+    margin: 0;
+    color: #ffffff;
+    margin-right: 20px; /*DISTANCIA ENTRE OS ICONES DE USUSARIO E CARRINHO AO LADO*/ 
+    
+   
+}
+/*configurando a div icones*/
+.icones{
+    display: flex;/*EXIBE OS ELEMENTOS EM LINHA */
+    align-items: center;/*ALINHAMENTO VERTICAL DOS ELEMENTOS */
+    gap: 30px;/*DISTANCIA ENTRE OS ELEMENTOS */
+ padding-right: 10px;
+}
 
-        /*CONFIGURANDO OTEXTO DOS ICONES DE USUSARIO E CARRINHO*/
-        .icones a small{
-            front-size: 10px; /*TAMANHO DA FONTE DO TEXTO PEQUENO*/
-            display: block; /*EXIBE O TEXTO EM UMA NOVA LINHA*/
-            COLOR: #FFFFFF; /*COR DO TEXTO PEQUENO*/
-        }
-        .ICONES A p{
-            front-size: 12px; /*TAMANHO DA FONTE DO TEXTO GRANDE*/
-            display: block; /*EXIBE O TEXTO EM UMA NOVA LINHA*/
-            color: #FFFFFF; /*COR DO TEXTO GRANDE*/
-        }
-        .icones a{
-        text-decoration: none; /*REMOVE O SUBLINHADO DOS LINKS*/
-        }
-        /*configurando a div icones*/
-        .icones{
-            display: flex;/*EXIBE OS ELEMENTOS EM LINHA*/
-            align-items: center;/*ALINHAMENTO VERTICAL DOS ELEMENTOS */
-            gap: 30px;/*DISTANCIA ENTRE OS ELEMENTOS*/
-        
-        }
+/*CONFIGURANDO A AREA DO BANNER*/
+.imagens-banner img {
+    max-width: 50%; /*LARGURA MAXIMA DO BANNER*/
+}
+    
+
+.banner{
+    display: flex; /*EXIBE OS ELEMENTOS EM LINHA*/
+    justify-content: space-between;
+    /*DISTRIBUIÇAO DOS ELEMENTOS COM ESPAÇO ENTRE ELES*/
+    align-items: center; /*ALINHAMENTO VERTICAL DOS ELEMENTOS*/
+
+}
