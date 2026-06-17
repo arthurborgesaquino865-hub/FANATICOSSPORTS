@@ -334,3 +334,69 @@ favorito do card do produto*/
     right: 10px;
     padding: 10px;
 }
+/*configurando o nome do produto*/
+.card-produtos h3{
+    font-size: 18px;/*define o tamanho do texto*/
+    font-family: poppins, sans-serif;/*alterar fonte do texto*/
+    color: #2e3f4f;/*adiciona cor do texto*/
+    font-style: bold;/*deixa o texto em negrito*/
+}
+/*configurando o preço do produto*/
+.card-produtos p{
+    font-size: 14px;/*define o tamanho do texto*/
+    font-family: poppins, sans-serif;/*alterar fonte do texto*/
+    color: #A21D54;/*adiciona cor do texto*/
+}
+/*configurando o botao de adicionar ao carrinho*/
+.btn-adicionar{
+    border-radius: 50%;/*arrendoda o botrao*/
+    background-color: #A21D54;/*cor de fundo do card*/
+    border: none;
+    margin-left: 80%;
+    /*definir que o botao ficara no lado direito do card
+    width: 100px;/*largura do botao*/
+    width: 100px;/*define largura do botao*/
+    height: 50px;/*definir altura do botao*/
+}
+.btn-adicionar img{
+    width: 24px;/*alterando o tamanho do icone do carrinho*/
+    padding-top: 5px;/*distanciar a imagem do topo do botao*/
+}
+
+.precos{
+    display: grid;/*permite*/
+    grid-template-columns: 2;/*duas linhas*/
+    grid-template-rows: 1;/*1 uma linha*/
+    align-items: center;
+}
+.p-antigo{
+    grid-column: 1;
+    grid-row: 1;
+    text-decoration: line-through;
+    font-size: 12px;
+    color: #aba7a7;
+}
+.p-promocional{
+grid-column: 2;
+grid-row: 1;
+font-weight: bold;
+font-size: 18px;
+color: #A21D54;
+text-align: left;
+}
+
+
+/*area de avaliaçao em estrela*/
+
+.btn-card{
+    display: flex;/*modelo flexivel*/
+    align-items: center;
+    gap: 10px;/*espacamento entre os elementos*/
+}
+.btn-card img{
+ width: 24px;
+}
+.btn-card h5{
+ font-size: 14px;
+}
+
