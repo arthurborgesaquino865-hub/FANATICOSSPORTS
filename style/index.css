@@ -400,3 +400,70 @@ text-align: left;
  font-size: 14px;
 }
 
+/*configurando o rodape*/
+
+footer{
+    background-color: #2d4132;/*cor de fundo*/
+    color: #FFFFFF;/*todos os textos na cor branca*/
+    font-family: poppins, sans-serif;
+    padding: 10px;/*espaçamentos dentro rodape*/
+}
+
+.superior{
+    display: flex;/*permite flexibilidade entre as colunas*/
+    gap: 10px;/*espaçamento entre as divs*/
+    justify-content: space-between;
+    /*defini um tamanho igual entre as divs*/
+    flex-wrap: wrap;
+    /*joga os textos para outra linha caso nao possa
+    caber na div*/
+}
+
+.inferior{
+    display: flex;/*permite flexibilidade entre as colunas*/
+    gap: 10px;/*espaçamento entre as divs*/
+    justify-content: space-between;
+    /*defini um tamanho igual entre as divs*/
+    flex-wrap: wrap;
+    /*joga os textos para outra linha caso nao possa
+    caber na div*/
+    align-items: center;
+    /*alinha os paragrafos no centro*/
+}
+.coluna1.coluna2.coluna3.coluna4{
+    flex: 1;/*que cada coluna ocupa 1 espaço na pagina*/
+    color: #FFFFFF;
+}
+
+.superior h2{
+    font-size: 18px;/*tamanho dos titulos*/
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.superior a{
+    color: #FFFFFF;
+    font-size: 10;/*tamanho dos paragrafos*/
+    text-decoration: none;/*remove o sublinhado*/
+}
+
+.superior ul {
+    text-decoration: none;
+    /*retira decoraçao do texto*/
+    list-style: none;
+    /*retirar a decoraçao da lista*/
+    padding: 0px;
+    /*retirar os espaçamentos*/
+}
+
+.superior img{
+    width: 24px;/*definir tamanho dos icones*/
+}
+
+.coluna3 a img{
+    padding-right: 10px;
+}
+.coluna3 a{
+    display: flex;/*deixar a img e o endereço lado a lado*/
+    align-items: center;
+}
