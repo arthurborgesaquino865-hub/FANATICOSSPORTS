@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto</title>
+    <!--conexao com o CSS -->
+    <link rel="stylesheet" href="/style/produto.css">
+    <!--logo da empresa para o navegador-->
+    <link rel ="icon" type="image/png" 
+    href="/assets/Logo.png">
+</head>
+<body>
+
+    <header>
+
+
+    <DIV class="TOPO">
+      <div class="logo">
+        <img src="/assets/Logo.png" alt="Logo da Fanaticos sports">
+
+      </div>
+      <!-- caixa de pesquisa -->
+      <div class="caixa-de-pesquisa">
+        <input type="text" placeholder="o que voce esta procurando?">
+        <img src="/assets/Lupa.png">
+      </div>
+      <!--ICONES-->
+      <div class="icones">
+        <a href="">
+          <img src="/assets/ususario.png" alt="login">
+          <small> Ola visitante</small>
+          <p>ENTRAR</p>
+        </a>
+        <a href="">
+          <IMG src="/assets/carrinho.png" alt="carrinho">
+          <small>meu</small>
+          <p>carrinho</p>
+        </a>
+      </div>
+    </DIV>
+
+
+
+    <!-- menu de navegaçao -->
+
+    <nav class="menu">
+      <a href="#">LOGIN</a>
+      <a href="#">CARRINHO</a>
+      <a id="idbone" href="">BONE DO BOSTON</a>
+      <a href="#">CAMISA JACQUARD DO VASCO</a>
+      <a href="#">CHUTEIRA ADIDAS</a>
+      <a href="#">CAMISA DO CRUZEIRO</a>
+    </nav>
+
+  </header>
+
+
+   
+   
+   <!--area dos dados do produto-->
+    <div class="area-detalhes">
+      <div class="area-imagens">
+        <div class="img-lateral" id="img-lateral">
+            
+        </div>
+        <div class="img-principal" id="img-principal">
+          <img id="imagem-maior">
+        
+        </div>
+      </div>
+    <div class="area-textos">
+      <!--nome do produto-->
+      <h1 id="nome-produto"></h1>
+      <!--area das avaliaçoes do produto-->
+      <div class="avaliaçoes-produto">
+        <img id="estrela-avaliaçao">
+        <span id="valor-avaliaçao"></span>
+  </div>
+  <p id="preco-antigo"></p>
+    <!--area do preco promocional-->
+    <div class="preco-promocional">
+      <p id="preco-promocional"></p>
+      <span id="desconto"></span>
+    </div>
+    <div id="tamanhos"></div>
+    <div id="cores"></div>
+    <div class="quantidade"></div>
+        <button id="diminuir"></button>
+        <span id="numero-quantidade"></span>
+        <button id="aumentar"></button>
+   </div>
+   <div class="btn-add-carrinho">
+        <button id="btn-ad-carrinho"></button>
+   </div>
+   <div class="btn-comprar">
+    <button id="btn-comprar"></button>
+   </div>
+   <div class="area-frete">
+        <p>calular o frete</p>
+        <input id="frete">
+        <button id="btn-calcular-frete"></button>
+   </div>
+
+  </div>
+
+
+   <script src="/js/produto.js"></script>
+</body>
+</html>

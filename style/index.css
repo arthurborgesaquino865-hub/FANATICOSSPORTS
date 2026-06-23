@@ -430,7 +430,7 @@ footer{
     align-items: center;
     /*alinha os paragrafos no centro*/
 }
-.coluna1.coluna2.coluna3.coluna4{
+.coluna1,.coluna2,.coluna3,.coluna4{
     flex: 1;/*que cada coluna ocupa 1 espaço na pagina*/
     color: #FFFFFF;
 }
@@ -461,9 +461,30 @@ footer{
 }
 
 .coluna3 a img{
-    padding-right: 10px;
+    padding-right: 5px;
 }
 .coluna3 a{
     display: flex;/*deixar a img e o endereço lado a lado*/
     align-items: center;
+
+}
+
+.pagamentos{
+    display: flex;
+}
+
+
+/*configurar para que os elementos da pagina preecham toda a tela*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*definir que a pagina nao precisa de barra horizontal*/
+
+body{
+    overflow-x: hidden;/*remove a barra de rolagem*/
+    width: 100%;/*preecher sempre 100% da tela*/
 }
