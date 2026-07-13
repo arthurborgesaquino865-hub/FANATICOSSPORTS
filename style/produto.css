@@ -168,8 +168,8 @@ nav {
 /*galeria*/
 
 .area-detalhes{
-    max-width: 120px;/*tamanho maximo*/
-    margin: 50px auto;
+    max-width: 1200px;/*tamanho maximo*/
+    margin: 10px auto;
     padding: 20px;
 
     display: flex;

@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produto</title>
-    <!--conexao com o CSS -->
-    <link rel="stylesheet" href="/style/produto.css">
-    <!--logo da empresa para o navegador-->
-    <link rel ="icon" type="image/png" 
-    href="/assets/Logo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produto</title>
+  <!--conexao com o CSS -->
+  <link rel="stylesheet" href="/style/produto.css">
+  <!--logo da empresa para o navegador-->
+  <link rel="icon" type="image/png" href="/assets/Logo.png">
 </head>
+
 <body>
 
-    <header>
+  <header>
 
 
     <DIV class="TOPO">
@@ -56,19 +57,19 @@
   </header>
 
 
-   
-   
-   <!--area dos dados do produto-->
-    <div class="area-detalhes">
-      <div class="area-imagens">
-        <div class="img-lateral" id="img-lateral">
-            
-        </div>
-        <div class="img-principal" id="img-principal">
-          <img id="imagem-maior">
-        
-        </div>
+
+
+  <!--area dos dados do produto-->
+  <div class="area-detalhes">
+    <div class="area-imagens">
+      <div class="img-lateral" id="img-lateral">
+
       </div>
+      <div class="img-principal" id="img-principal">
+        <img id="imagem-maior">
+
+      </div>
+    </div>
     <div class="area-textos">
       <!--nome do produto-->
       <h1 id="nome-produto"></h1>
@@ -76,35 +77,39 @@
       <div class="avaliaçoes-produto">
         <img id="estrela-avaliaçao">
         <span id="valor-avaliaçao"></span>
-  </div>
-  <p id="preco-antigo"></p>
-    <!--area do preco promocional-->
-    <div class="preco-promocional">
-      <p id="preco-promocional"></p>
-      <span id="desconto"></span>
-    </div>
-    <div id="tamanhos"></div>
-    <div id="cores"></div>
-    <div class="quantidade"></div>
-        <button id="diminuir"></button>
+      </div>
+      <p id="preco-antigo"></p>
+      <!--area do preco promocional-->
+      <div class="preco-promocional">
+        <p id="preco-promocional"></p>
+        <span id="desconto"></span>
+      </div>
+      <div id="tamanhos"></div>
+      <div id="cores"></div>
+      <div class="quantidade">
+
+
+        <button id="diminuir">-</button>
         <span id="numero-quantidade"></span>
-        <button id="aumentar"></button>
-   </div>
-   <div class="btn-add-carrinho">
+        <button id="aumentar">+</button>
+
+      </div>
+      <div class="btn-add-carrinho">
         <button id="btn-ad-carrinho"></button>
-   </div>
-   <div class="btn-comprar">
-    <button id="btn-comprar"></button>
-   </div>
-   <div class="area-frete">
+      </div>
+      <div class="btn-comprar">
+        <button id="btn-comprar"></button>
+      </div>
+      <div class="area-frete">
         <p>calular o frete</p>
         <input id="frete">
-        <button id="btn-calcular-frete"></button>
-   </div>
+        <button id="btn-calcular-frete">calcular</button>
+      </div>
 
-  </div>
+    </div>
 
 
-   <script src="/js/produto.js"></script>
+    <script src="/js/produto.js"></script>
 </body>
+
 </html>

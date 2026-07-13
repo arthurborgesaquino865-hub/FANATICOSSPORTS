@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Detalhes do Produto</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="/style/Detalhes.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- JavaScript -->
+    <script src="/js/Detalhes.js" defer></script>
+
+</head>
+
+<body>
+
+<div id="app">
+
+<!--======================================================
+HEADER
+=======================================================-->
+
+<header id="header">
+
+    <div class="top-header">
+
+        <!-- Logo -->
+
+        <div class="logo">
+
+            <img
+                id="logoImagem"
+                src=""
+                alt="">
+
+            <h1 id="logoTexto"></h1>
+
+        </div>
+
+        <!-- Pesquisa -->
+
+        <div class="search">
+
+            <input
+                id="txtPesquisar"
+                type="text"
+                placeholder="">
+
+            <button id="btnPesquisar">
+
+                <i class="fas fa-search"></i>
+
+            </button>
+
+        </div>
+
+        <!-- Ícones -->
+
+        <div class="icons">
+
+            <a id="btnFavoritos" href="#">
+
+                <i class="far fa-heart"></i>
+
+            </a>
+
+            <a id="btnCarrinho" href="#">
+
+                <i class="fas fa-shopping-cart"></i>
+
+            </a>
+
+            <a id="btnLogin" href="#">
+
+                <i class="far fa-user"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!--======================================================
+MENU
+=======================================================-->
+
+<nav id="menuPrincipal">
+
+    <ul>
+
+        <li><a id="menu1" href="#"></a></li>
+
+        <li><a id="menu2" href="#"></a></li>
+
+        <li><a id="menu3" href="#"></a></li>
+
+        <li><a id="menu4" href="#"></a></li>
+
+        <li><a id="menu5" href="#"></a></li>
+
+        <li><a id="menu6" href="#"></a></li>
+
+        <li><a id="menu7" href="#"></a></li>
+
+    </ul>
+
+</nav>
+
+<!--======================================================
+MAIN
+=======================================================-->
+
+<main>
+
+<!--======================================================
+BREADCRUMB
+=======================================================-->
+
+<section id="breadcrumb">
+
+    <a id="breadcrumbHome" href="#"></a>
+
+    <span id="breadcrumbSeparador1"></span>
+
+    <a id="breadcrumbProdutos" href="#"></a>
+
+    <span id="breadcrumbSeparador2"></span>
+
+    <span id="breadcrumbAtual"></span>
+
+</section>
+
+<!--======================================================
+PRODUTO
+=======================================================-->
+
+<section id="produtoDetalhes">
+
+    <!--==========================================
+        GALERIA
+    ===========================================-->
+
+    <div class="galeriaProduto">
+
+        <div class="imagemPrincipal">
+
+            <img
+                id="imagemPrincipal"
+                src=""
+                alt="">
+
+        </div>
+
+        <div class="miniaturas">
+
+            <img
+                id="miniatura1"
+                src=""
+                alt="">
+
+            <img
+                id="miniatura2"
+                src=""
+                alt="">
+
+            <img
+                id="miniatura3"
+                src=""
+                alt="">
+
+            <img
+                id="miniatura4"
+                src=""
+                alt="">
+
+        </div>
+
+    </div>
+
+    <!--==========================================
+        INFORMAÇÕES
+    ===========================================-->
+
+    <div class="informacoesProduto">
+
+        <span id="categoriaProduto"></span>
+
+        <h1 id="nomeProduto"></h1>
+
+        <div id="estrelasProduto"></div>
+
+        <span id="codigoProduto"></span>
+
+        <span id="precoAntigo"></span>
+
+        <h2 id="precoAtual"></h2>
+
+        <p id="parcelamento"></p>
+
+        <span id="estoque"></span>
+
+                <!--==========================================
+            TAMANHOS
+        ===========================================-->
+
+        <div class="grupoProduto">
+
+            <h3 id="tituloTamanhos"></h3>
+
+            <div class="tamanhos">
+
+                <button id="tamP"></button>
+
+                <button id="tamM"></button>
+
+                <button id="tamG"></button>
+
+                <button id="tamGG"></button>
+
+                <button id="tamXGG"></button>
+
+            </div>
+
+        </div>
+
+        <!--==========================================
+            QUANTIDADE
+        ===========================================-->
+
+        <div class="grupoProduto">
+
+            <h3 id="tituloQuantidade"></h3>
+
+            <div class="quantidade">
+
+                <button id="btnMenos">
+
+                    <i class="fas fa-minus"></i>
+
+                </button>
+
+                <span id="quantidade"></span>
+
+                <button id="btnMais">
+
+                    <i class="fas fa-plus"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!--==========================================
+            BOTÕES
+        ===========================================-->
+
+        <div class="acoesProduto">
+
+            <button id="btnComprarAgora"></button>
+
+            <button id="btnAdicionarCarrinho"></button>
+
+            <button id="btnFavoritar">
+
+                <i class="far fa-heart"></i>
+
+                <span id="textoFavoritar"></span>
+
+            </button>
+
+        </div>
+
+        <!--==========================================
+            FRETE
+        ===========================================-->
+
+        <div class="frete">
+
+            <h3 id="tituloFrete"></h3>
+
+            <div class="campoFrete">
+
+                <input
+                    id="cep"
+                    type="text"
+                    placeholder="">
+
+                <button id="btnCalcularFrete"></button>
+
+            </div>
+
+            <span id="resultadoFrete"></span>
+
+        </div>
+
+        <!--==========================================
+            INFORMAÇÕES EXTRAS
+        ===========================================-->
+
+        <div class="informacoesExtras">
+
+            <div class="infoItem">
+
+                <i class="fas fa-shield-alt"></i>
+
+                <span id="infoGarantia"></span>
+
+            </div>
+
+            <div class="infoItem">
+
+                <i class="fas fa-truck"></i>
+
+                <span id="infoEntrega"></span>
+
+            </div>
+
+            <div class="infoItem">
+
+                <i class="fas fa-credit-card"></i>
+
+                <span id="infoPagamento"></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--======================================================
+ABAS DO PRODUTO
+=======================================================-->
+
+<section id="abasProduto">
+
+    <div class="menuAbas">
+
+        <button id="abaDescricao"></button>
+
+        <button id="abaEspecificacoes"></button>
+
+        <button id="abaAvaliacoes"></button>
+
+    </div>
+
+    <div class="conteudoAbas">
+
+        <div id="descricaoProduto"></div>
+
+        <div id="especificacoesProduto"></div>
+
+        <div id="avaliacoesProduto"></div>
+
+    </div>
+
+</section>
+
+<!--======================================================
+PRODUTOS RELACIONADOS
+=======================================================-->
+
+<section id="produtosRelacionados">
+
+    <h2 id="tituloRelacionados"></h2>
+
+    <div class="gridRelacionados">
+
+        <!--==========================================
+    PRODUTO RELACIONADO 1
+===========================================-->
+
+<div class="cardRelacionado">
+
+    <img
+        id="relacionadoImg1"
+        src=""
+        alt="">
+
+    <span id="relacionadoCategoria1"></span>
+
+    <h3 id="relacionadoNome1"></h3>
+
+    <div id="relacionadoEstrelas1"></div>
+
+    <span id="relacionadoPrecoAntigo1"></span>
+
+    <h2 id="relacionadoPreco1"></h2>
+
+    <button id="relacionadoComprar1"></button>
+
+</div>
+
+<!--==========================================
+    PRODUTO RELACIONADO 2
+===========================================-->
+
+<div class="cardRelacionado">
+
+    <img
+        id="relacionadoImg2"
+        src=""
+        alt="">
+
+    <span id="relacionadoCategoria2"></span>
+
+    <h3 id="relacionadoNome2"></h3>
+
+    <div id="relacionadoEstrelas2"></div>
+
+    <span id="relacionadoPrecoAntigo2"></span>
+
+    <h2 id="relacionadoPreco2"></h2>
+
+    <button id="relacionadoComprar2"></button>
+
+</div>
+
+<!--==========================================
+    PRODUTO RELACIONADO 3
+===========================================-->
+
+<div class="cardRelacionado">
+
+    <img
+        id="relacionadoImg3"
+        src=""
+        alt="">
+
+    <span id="relacionadoCategoria3"></span>
+
+    <h3 id="relacionadoNome3"></h3>
+
+    <div id="relacionadoEstrelas3"></div>
+
+    <span id="relacionadoPrecoAntigo3"></span>
+
+    <h2 id="relacionadoPreco3"></h2>
+
+    <button id="relacionadoComprar3"></button>
+
+</div>
+
+<!--==========================================
+    PRODUTO RELACIONADO 4
+===========================================-->
+
+<div class="cardRelacionado">
+
+    <img
+        id="relacionadoImg4"
+        src=""
+        alt="">
+
+    <span id="relacionadoCategoria4"></span>
+
+    <h3 id="relacionadoNome4"></h3>
+
+    <div id="relacionadoEstrelas4"></div>
+
+    <span id="relacionadoPrecoAntigo4"></span>
+
+    <h2 id="relacionadoPreco4"></h2>
+
+    <button id="relacionadoComprar4"></button>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<!--======================================================
+FOOTER
+=======================================================-->
+
+<footer id="footer">
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3 id="footerTitulo1"></h3>
+
+            <p id="footerTexto1"></p>
+
+        </div>
+
+        <div>
+
+            <h3 id="footerTitulo2"></h3>
+
+            <a id="footerLink1" href="#"></a>
+
+            <a id="footerLink2" href="#"></a>
+
+            <a id="footerLink3" href="#"></a>
+
+        </div>
+
+        <div>
+
+            <h3 id="footerTitulo3"></h3>
+
+            <a id="footerContato1" href="#"></a>
+
+            <a id="footerContato2" href="#"></a>
+
+            <a id="footerContato3" href="#"></a>
+
+        </div>
+
+        <div>
+
+            <h3 id="footerTitulo4"></h3>
+
+            <a id="facebook" href="#"></a>
+
+            <a id="instagram" href="#"></a>
+
+            <a id="youtube" href="#"></a>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        <p id="copyright"></p>
+
+    </div>
+
+</footer>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Carrinho</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style/carrinho.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- JavaScript -->
+    <script src="../js/carrinho.js" defer></script>
+
+</head>
+
+<body>
+
+<div id="app">
+
+<!--======================================================
+HEADER
+=======================================================-->
+
+<header id="header">
+
+    <div class="top-header">
+
+        <div class="logo">
+
+            <img id="logoImagem"
+                 src=""
+                 alt="">
+
+            <h1 id="logoTexto"></h1>
+
+        </div>
+
+        <div class="search">
+
+            <input
+                id="txtPesquisar"
+                type="text"
+                placeholder="">
+
+            <button id="btnPesquisar">
+
+                <i class="fas fa-search"></i>
+
+            </button>
+
+        </div>
+
+        <div class="icons">
+
+            <a id="btnFavoritos" href="#">
+
+                <i class="far fa-heart"></i>
+
+            </a>
+
+            <a id="btnCarrinho" href="#">
+
+                <i class="fas fa-shopping-cart"></i>
+
+            </a>
+
+            <a id="btnLogin" href="#">
+
+                <i class="far fa-user"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!--======================================================
+MENU
+=======================================================-->
+
+<nav id="menuPrincipal">
+
+    <ul>
+
+        <li><a id="menu1" href="#"></a></li>
+
+        <li><a id="menu2" href="#"></a></li>
+
+        <li><a id="menu3" href="#"></a></li>
+
+        <li><a id="menu4" href="#"></a></li>
+
+        <li><a id="menu5" href="#"></a></li>
+
+        <li><a id="menu6" href="#"></a></li>
+
+        <li><a id="menu7" href="#"></a></li>
+
+    </ul>
+
+</nav>
+
+<!--======================================================
+MAIN
+=======================================================-->
+
+<main>
+
+<!--======================================================
+TÍTULO
+=======================================================-->
+
+<section id="tituloPagina">
+
+    <h2 id="tituloCarrinho"></h2>
+
+    <p id="descricaoCarrinho"></p>
+
+</section>
+
+<!--======================================================
+CONTEÚDO
+=======================================================-->
+
+<section id="conteudoCarrinho">
+
+<!--======================================================
+LISTA DE PRODUTOS
+=======================================================-->
+
+<div id="listaCarrinho">
+
+<!--======================
+PRODUTO 1
+=======================-->
+
+<div class="produtoCarrinho">
+
+    <img id="produtoImagem1"
+         src=""
+         alt="">
+
+    <div class="produtoInfo">
+
+        <span id="produtoCategoria1"></span>
+
+        <h3 id="produtoNome1"></h3>
+
+        <span id="produtoPreco1"></span>
+
+    </div>
+
+    <div class="quantidade">
+
+        <button id="btnMenos1">
+
+            <i class="fas fa-minus"></i>
+
+        </button>
+
+        <input
+            id="quantidade1"
+            type="number"
+            readonly>
+
+        <button id="btnMais1">
+
+            <i class="fas fa-plus"></i>
+
+        </button>
+
+    </div>
+
+    <div class="subtotal">
+
+        <span id="subtotal1"></span>
+
+    </div>
+
+    <button id="btnRemover1">
+
+        <i class="fas fa-trash"></i>
+
+    </button>
+
+</div>
+
+<!--======================
+PRODUTO 2
+=======================-->
+
+<div class="produtoCarrinho">
+
+    <img id="produtoImagem2"
+         src=""
+         alt="">
+
+    <div class="produtoInfo">
+
+        <span id="produtoCategoria2"></span>
+
+        <h3 id="produtoNome2"></h3>
+
+        <span id="produtoPreco2"></span>
+
+    </div>
+
+    <div class="quantidade">
+
+        <button id="btnMenos2">
+
+            <i class="fas fa-minus"></i>
+
+        </button>
+
+        <input
+            id="quantidade2"
+            type="number"
+            readonly>
+
+        <button id="btnMais2">
+
+            <i class="fas fa-plus"></i>
+
+        </button>
+
+    </div>
+
+    <div class="subtotal">
+
+        <span id="subtotal2"></span>
+
+    </div>
+
+    <button id="btnRemover2">
+
+        <i class="fas fa-trash"></i>
+
+    </button>
+
+</div>
+
+</div>
+
+<!--======================================================
+RESUMO DO PEDIDO
+=======================================================-->
+
+<aside id="resumoPedido">
+
+    <h3 id="tituloResumo"></h3>
+
+    <div class="linhaResumo">
+
+        <span id="lblSubtotal"></span>
+
+        <span id="valorSubtotal"></span>
+
+    </div>
+
+    <div class="linhaResumo">
+
+        <span id="lblFrete"></span>
+
+        <span id="valorFrete"></span>
+
+    </div>
+
+    <div class="linhaResumo">
+
+        <span id="lblDesconto"></span>
+
+        <span id="valorDesconto"></span>
+
+    </div>
+
+    <hr>
+
+    <div class="linhaResumo total">
+
+        <span id="lblTotal"></span>
+
+        <span id="valorTotal"></span>
+
+    </div>
+
+    <button id="btnContinuarComprando"></button>
+
+    <button id="btnFinalizarCompra"></button>
+
+</aside>
+
+</section>
+
+</main>
+
+<!--======================================================
+FOOTER
+=======================================================-->
+
+<footer id="footer">
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3 id="footerTitulo1"></h3>
+
+            <p id="footerTexto1"></p>
+
+        </div>
+
+        <div>
+
+            <h3 id="footerTitulo2"></h3>
+
+            <a id="footerLink1" href="#"></a>
+
+            <a id="footerLink2" href="#"></a>
+
+            <a id="footerLink3" href="#"></a>
+
+        </div>
+
+        <div>
+
+            <h3 id="footerTitulo3"></h3>
+
+            <a id="footerContato1" href="#"></a>
+
+            <a id="footerContato2" href="#"></a>
+
+            <a id="footerContato3" href="#"></a>
+
+        </div>
+
+        <div>
+
+            <h3 id="footerTitulo4"></h3>
+
+            <a id="facebook" href="#"></a>
+
+            <a id="instagram" href="#"></a>
+
+            <a id="youtube" href="#"></a>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        <p id="copyright"></p>
+
+    </div>
+
+</footer>
+
+</div>
+
+</body>
+
+</html>

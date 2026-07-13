@@ -1,0 +1,1054 @@
+/*=========================================================
+    FANÁTICOS SPORTS
+    PEDIDO-CONFIRMADO.CSS
+=========================================================*/
+
+/*=========================================================
+    RESET
+=========================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:#F5F5F5;
+
+    color:#222222;
+
+}
+
+/*=========================================================
+    VARIÁVEIS
+=========================================================*/
+
+:root{
+
+    --cor-principal:#1F2538;
+    --cor-secundaria:#009640;
+    --cor-hover:#008437;
+    --cor-amarela:#FFD400;
+    --cor-branca:#FFFFFF;
+    --cor-preta:#222222;
+    --cor-cinza:#777777;
+    --cor-borda:#E5E5E5;
+    --cor-fundo:#F8F8F8;
+
+}
+
+/*=========================================================
+    APP
+=========================================================*/
+
+#app{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+/*=========================================================
+    HEADER
+=========================================================*/
+
+#header{
+
+    background:var(--cor-principal);
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+.top-header{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+/*=========================================================
+    LOGO
+=========================================================*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+#logoImagem{
+
+    width:60px;
+
+    height:60px;
+
+    object-fit:contain;
+
+}
+
+#logoTexto{
+
+    color:#FFF;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+}
+
+/*=========================================================
+    PESQUISA
+=========================================================*/
+
+.search{
+
+    flex:1;
+
+    display:flex;
+
+    position:relative;
+
+}
+
+#txtPesquisar{
+
+    width:100%;
+
+    height:48px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:30px;
+
+    padding:0 55px 0 20px;
+
+    font-size:15px;
+
+}
+
+#btnPesquisar{
+
+    position:absolute;
+
+    top:4px;
+
+    right:5px;
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--cor-secundaria);
+
+    color:#FFF;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#btnPesquisar:hover{
+
+    background:var(--cor-hover);
+
+}
+
+/*=========================================================
+    ÍCONES
+=========================================================*/
+
+.icons{
+
+    display:flex;
+
+    gap:25px;
+
+}
+
+.icons a{
+
+    color:#FFF;
+
+    font-size:22px;
+
+    transition:.3s;
+
+}
+
+.icons a:hover{
+
+    color:var(--cor-amarela);
+
+}
+
+/*=========================================================
+    MENU
+=========================================================*/
+
+#menuPrincipal{
+
+    background:#283149;
+
+}
+
+#menuPrincipal ul{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    list-style:none;
+
+}
+
+#menuPrincipal li{
+
+    padding:18px 22px;
+
+}
+
+#menuPrincipal a{
+
+    color:#FFF;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+#menuPrincipal a:hover{
+
+    color:var(--cor-amarela);
+
+}
+
+/*=========================================================
+    MAIN
+=========================================================*/
+
+main{
+
+    max-width:1200px;
+
+    width:100%;
+
+    margin:auto;
+
+    padding:40px 20px 60px;
+
+}
+
+/*=========================================================
+    BREADCRUMB
+=========================================================*/
+
+#breadcrumb{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:35px;
+
+}
+
+#breadcrumb a{
+
+    color:var(--cor-secundaria);
+
+    text-decoration:none;
+
+}
+
+#breadcrumb a:hover{
+
+    text-decoration:underline;
+
+}
+
+#breadcrumb span{
+
+    color:var(--cor-cinza);
+
+}
+
+/*=========================================================
+    PEDIDO CONFIRMADO
+=========================================================*/
+
+.pedidoContainer{
+
+    background:#FFF;
+
+    border:1px solid var(--cor-borda);
+
+    border-radius:18px;
+
+    padding:45px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+}
+
+/*=========================================================
+    SUCESSO
+=========================================================*/
+
+.sucesso{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+#iconeSucesso{
+
+    width:110px;
+
+    height:110px;
+
+    border-radius:50%;
+
+    background:var(--cor-secundaria);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+#iconeSucesso i{
+
+    color:#FFF;
+
+    font-size:52px;
+
+}
+
+#tituloSucesso{
+
+    font-size:36px;
+
+    color:var(--cor-preta);
+
+    margin-bottom:15px;
+
+}
+
+#mensagemSucesso{
+
+    max-width:650px;
+
+    color:var(--cor-cinza);
+
+    line-height:30px;
+
+    font-size:17px;
+
+}
+
+/*=========================================================
+    PEDIDO
+=========================================================*/
+
+.pedidoNumero{
+
+    text-align:center;
+
+    background:var(--cor-fundo);
+
+    border:1px solid var(--cor-borda);
+
+    border-radius:12px;
+
+    padding:30px;
+
+    margin-bottom:40px;
+
+}
+
+#tituloPedido{
+
+    font-size:22px;
+
+    margin-bottom:15px;
+
+}
+
+#numeroPedido{
+
+    font-size:34px;
+
+    color:var(--cor-secundaria);
+
+    font-weight:bold;
+
+}
+
+/*=========================================================
+    RESUMO DO PEDIDO
+=========================================================*/
+
+.resumoPedido{
+
+    margin-bottom:40px;
+
+    background:var(--cor-fundo);
+
+    border:1px solid var(--cor-borda);
+
+    border-radius:12px;
+
+    padding:30px;
+
+}
+
+#tituloResumo{
+
+    font-size:28px;
+
+    color:var(--cor-preta);
+
+    margin-bottom:25px;
+
+    text-align:center;
+
+}
+
+.linhaResumo{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px 0;
+
+    border-bottom:1px solid var(--cor-borda);
+
+}
+
+.linhaResumo:last-child{
+
+    border-bottom:none;
+
+}
+
+.linhaResumo span{
+
+    color:var(--cor-cinza);
+
+    font-size:16px;
+
+}
+
+.linhaResumo strong{
+
+    color:var(--cor-preta);
+
+    font-size:17px;
+
+    font-weight:bold;
+
+}
+
+/*=========================================================
+    INFORMAÇÕES
+=========================================================*/
+
+.informacoesPedido{
+
+    background:#F8FFF9;
+
+    border:1px solid #CDEFD8;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    margin-bottom:40px;
+
+}
+
+.informacoesPedido p{
+
+    color:var(--cor-preta);
+
+    line-height:30px;
+
+    font-size:16px;
+
+}
+
+.informacoesPedido p:first-child{
+
+    margin-bottom:12px;
+
+}
+
+/*=========================================================
+    STATUS DO PEDIDO
+=========================================================*/
+
+.statusPedido{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    margin-bottom:40px;
+
+}
+
+.statusCard{
+
+    background:#FFFFFF;
+
+    border:1px solid var(--cor-borda);
+
+    border-radius:14px;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.statusCard:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    border-color:var(--cor-secundaria);
+
+}
+
+.statusCard i{
+
+    font-size:42px;
+
+    color:var(--cor-secundaria);
+
+    margin-bottom:20px;
+
+}
+
+.statusCard h3{
+
+    font-size:20px;
+
+    color:var(--cor-preta);
+
+    margin-bottom:12px;
+
+}
+
+.statusCard p{
+
+    color:var(--cor-cinza);
+
+    line-height:26px;
+
+    font-size:15px;
+
+}
+
+/*=========================================================
+    BOTÕES
+=========================================================*/
+
+.acoesPedido{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+#btnAcompanharPedido,
+#btnContinuarComprando{
+
+    min-width:240px;
+
+    height:55px;
+
+    padding:0 30px;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#btnAcompanharPedido{
+
+    background:var(--cor-secundaria);
+
+    color:var(--cor-branca);
+
+}
+
+#btnAcompanharPedido:hover{
+
+    background:var(--cor-hover);
+
+    transform:translateY(-2px);
+
+}
+
+#btnContinuarComprando{
+
+    background:var(--cor-principal);
+
+    color:var(--cor-branca);
+
+}
+
+#btnContinuarComprando:hover{
+
+    background:#2F3A57;
+
+    transform:translateY(-2px);
+
+}
+
+/*=========================================================
+    FOOTER
+=========================================================*/
+
+#footer{
+
+    margin-top:auto;
+
+    background:var(--cor-principal);
+
+    color:var(--cor-branca);
+
+}
+
+.footer-grid{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:50px 20px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:40px;
+
+}
+
+.footer-grid h3{
+
+    margin-bottom:20px;
+
+    font-size:20px;
+
+}
+
+.footer-grid p{
+
+    color:#DDD;
+
+    line-height:28px;
+
+}
+
+.footer-grid a{
+
+    display:block;
+
+    margin-bottom:12px;
+
+    text-decoration:none;
+
+    color:#DDD;
+
+    transition:.3s;
+
+}
+
+.footer-grid a:hover{
+
+    color:var(--cor-amarela);
+
+}
+
+.copyright{
+
+    text-align:center;
+
+    padding:20px;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    color:#DDD;
+
+    font-size:14px;
+
+}
+
+/*=========================================================
+    ANIMAÇÕES
+=========================================================*/
+
+button,
+a{
+
+    transition:.3s ease;
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+.pedidoContainer{
+
+    transition:.35s;
+
+}
+
+.pedidoContainer:hover{
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+#iconeSucesso{
+
+    animation:aparecerSucesso .8s ease;
+
+}
+
+@keyframes aparecerSucesso{
+
+    0%{
+
+        transform:scale(0);
+
+        opacity:0;
+
+    }
+
+    70%{
+
+        transform:scale(1.1);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/*=========================================================
+    RESPONSIVO - TABLET
+=========================================================*/
+
+@media(max-width:992px){
+
+    .statusPedido{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/*=========================================================
+    RESPONSIVO - MOBILE
+=========================================================*/
+
+@media(max-width:768px){
+
+    .top-header{
+
+        flex-wrap:wrap;
+
+    }
+
+    .logo{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .search{
+
+        width:100%;
+
+        order:3;
+
+    }
+
+    .icons{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    #menuPrincipal ul{
+
+        flex-wrap:wrap;
+
+    }
+
+    #menuPrincipal li{
+
+        padding:12px;
+
+    }
+
+    .pedidoContainer{
+
+        padding:25px;
+
+    }
+
+    #tituloSucesso{
+
+        font-size:28px;
+
+    }
+
+    #numeroPedido{
+
+        font-size:26px;
+
+    }
+
+    .linhaResumo{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:8px;
+
+    }
+
+    .acoesPedido{
+
+        flex-direction:column;
+
+    }
+
+    #btnAcompanharPedido,
+    #btnContinuarComprando{
+
+        width:100%;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+}
+
+/*=========================================================
+    MOBILE PEQUENO
+=========================================================*/
+
+@media(max-width:480px){
+
+    #logoImagem{
+
+        width:45px;
+
+        height:45px;
+
+    }
+
+    #logoTexto{
+
+        font-size:22px;
+
+    }
+
+    #iconeSucesso{
+
+        width:90px;
+
+        height:90px;
+
+    }
+
+    #iconeSucesso i{
+
+        font-size:40px;
+
+    }
+
+    #tituloSucesso{
+
+        font-size:24px;
+
+    }
+
+    #mensagemSucesso{
+
+        font-size:15px;
+
+        line-height:26px;
+
+    }
+
+    #numeroPedido{
+
+        font-size:22px;
+
+    }
+
+    #tituloResumo{
+
+        font-size:24px;
+
+    }
+
+    .statusCard{
+
+        padding:25px 15px;
+
+    }
+
+    .statusCard i{
+
+        font-size:34px;
+
+    }
+
+    .statusCard h3{
+
+        font-size:18px;
+
+    }
+
+    .statusCard p{
+
+        font-size:14px;
+
+    }
+
+    #btnAcompanharPedido,
+    #btnContinuarComprando{
+
+        height:50px;
+
+        font-size:15px;
+
+    }
+
+}
+
+/*=========================================================
+    FIM DO ARQUIVO
+=========================================================*/

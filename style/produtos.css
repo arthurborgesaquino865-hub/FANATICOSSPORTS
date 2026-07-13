@@ -1,0 +1,1326 @@
+/*=========================================================
+    FANÁTICOS SPORTS
+    PRODUTOS.CSS
+=========================================================*/
+
+/*=========================================================
+    RESET
+=========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:#f5f5f5;
+
+    color:#222;
+
+}
+
+/*=========================================================
+    VARIÁVEIS
+=========================================================*/
+
+:root{
+
+    --cor-principal:#1f2538;
+    --cor-secundaria:#009640;
+    --cor-hover:#008437;
+    --cor-amarela:#FFD400;
+    --cor-branca:#FFFFFF;
+    --cor-preta:#222222;
+    --cor-cinza:#777777;
+    --cor-borda:#E5E5E5;
+    --cor-fundo:#F8F8F8;
+    --cor-vermelha:#D62828;
+
+}
+
+/*=========================================================
+    APP
+=========================================================*/
+
+#app{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+/*=========================================================
+    HEADER
+=========================================================*/
+
+#header{
+
+    width:100%;
+
+    background:var(--cor-principal);
+
+    box-shadow:0 5px 12px rgba(0,0,0,.15);
+
+}
+
+/*=========================================================
+    TOPO
+=========================================================*/
+
+.top-header{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:25px;
+
+}
+
+/*=========================================================
+    LOGO
+=========================================================*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+#logoImagem{
+
+    width:60px;
+
+    height:60px;
+
+    object-fit:contain;
+
+}
+
+#logoTexto{
+
+    color:#FFF;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+}
+
+/*=========================================================
+    PESQUISA
+=========================================================*/
+
+.search{
+
+    flex:1;
+
+    display:flex;
+
+    position:relative;
+
+}
+
+#txtPesquisar{
+
+    width:100%;
+
+    height:48px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:30px;
+
+    padding:0 55px 0 20px;
+
+    font-size:15px;
+
+}
+
+#btnPesquisar{
+
+    position:absolute;
+
+    top:4px;
+
+    right:5px;
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--cor-secundaria);
+
+    color:#FFF;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#btnPesquisar:hover{
+
+    background:var(--cor-hover);
+
+}
+
+/*=========================================================
+    ÍCONES
+=========================================================*/
+
+.icons{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+.icons a{
+
+    color:#FFF;
+
+    font-size:22px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.icons a:hover{
+
+    color:var(--cor-amarela);
+
+}
+
+/*=========================================================
+    MENU
+=========================================================*/
+
+#menuPrincipal{
+
+    background:#283149;
+
+}
+
+#menuPrincipal ul{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    list-style:none;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+#menuPrincipal li{
+
+    padding:18px 20px;
+
+}
+
+#menuPrincipal a{
+
+    color:#FFF;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+#menuPrincipal a:hover{
+
+    color:var(--cor-amarela);
+
+}
+
+/*=========================================================
+    MAIN
+=========================================================*/
+
+main{
+
+    width:100%;
+
+    flex:1;
+
+    padding:35px 20px 60px;
+
+}
+
+/*=========================================================
+    BANNER
+=========================================================*/
+
+#bannerProdutos{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    background:linear-gradient(135deg,#1f2538,#283149);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    padding:50px;
+
+    display:grid;
+
+    grid-template-columns:1fr 420px;
+
+    align-items:center;
+
+    gap:40px;
+
+    margin-bottom:40px;
+
+}
+
+/*=========================================================
+    TEXTO DO BANNER
+=========================================================*/
+
+.bannerTexto{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+#bannerCategoria{
+
+    color:var(--cor-amarela);
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+}
+
+#bannerTitulo{
+
+    color:#FFF;
+
+    font-size:42px;
+
+    line-height:50px;
+
+}
+
+#bannerDescricao{
+
+    color:#DDD;
+
+    font-size:18px;
+
+    line-height:30px;
+
+    max-width:600px;
+
+}
+
+#bannerBotao{
+
+    width:220px;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:var(--cor-secundaria);
+
+    color:#FFF;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#bannerBotao:hover{
+
+    background:var(--cor-hover);
+
+    transform:translateY(-2px);
+
+}
+
+/*=========================================================
+    IMAGEM DO BANNER
+=========================================================*/
+
+.bannerImagem{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+#bannerImg{
+
+    width:100%;
+
+    max-width:380px;
+
+    object-fit:contain;
+
+}
+
+/*=========================================================
+    FILTROS
+=========================================================*/
+
+#filtros{
+
+    max-width:1300px;
+
+    margin:0 auto 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+/*=========================================================
+    CATEGORIAS
+=========================================================*/
+
+.categorias{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    align-items:center;
+
+}
+
+#tituloCategorias{
+
+    width:100%;
+
+    font-size:24px;
+
+    color:var(--cor-preta);
+
+    margin-bottom:10px;
+
+}
+
+.categorias button{
+
+    padding:12px 22px;
+
+    border:2px solid var(--cor-secundaria);
+
+    background:var(--cor-branca);
+
+    color:var(--cor-secundaria);
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.categorias button:hover{
+
+    background:var(--cor-secundaria);
+
+    color:#FFF;
+
+}
+
+/*=========================================================
+    ORDENAÇÃO
+=========================================================*/
+
+.ordenacao{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+#lblOrdenar{
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    color:var(--cor-preta);
+
+}
+
+#selectOrdenacao{
+
+    width:240px;
+
+    height:46px;
+
+    padding:0 15px;
+
+    border:1px solid var(--cor-borda);
+
+    border-radius:8px;
+
+    outline:none;
+
+    background:#FFF;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+}
+
+/*=========================================================
+    LISTA DE PRODUTOS
+=========================================================*/
+
+#listaProdutos{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    margin-bottom:50px;
+
+}
+
+/*=========================================================
+    CARD
+=========================================================*/
+
+.cardProduto{
+
+    position:relative;
+
+    background:#FFF;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    padding:20px;
+
+    border:1px solid var(--cor-borda);
+
+    transition:.35s;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.cardProduto:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.12);
+
+}
+
+/*=========================================================
+    TAG PROMOÇÃO
+=========================================================*/
+
+.cardProduto span[id^="tagProduto"]{
+
+    position:absolute;
+
+    top:18px;
+
+    left:18px;
+
+    background:var(--cor-vermelha);
+
+    color:#FFF;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+}
+
+/*=========================================================
+    FAVORITO
+=========================================================*/
+
+.cardProduto button[id^="favorito"]{
+
+    position:absolute;
+
+    right:18px;
+
+    top:18px;
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#F4F4F4;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.cardProduto button[id^="favorito"]:hover{
+
+    background:#FFE6E6;
+
+    color:var(--cor-vermelha);
+
+}
+
+/*=========================================================
+    IMAGEM
+=========================================================*/
+
+.cardProduto img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:contain;
+
+    margin:45px auto 20px;
+
+}
+
+/*=========================================================
+    CATEGORIA
+=========================================================*/
+
+.cardProduto span[id^="produtoCategoria"]{
+
+    font-size:13px;
+
+    color:var(--cor-cinza);
+
+    text-transform:uppercase;
+
+    margin-bottom:8px;
+
+}
+
+/*=========================================================
+    NOME
+=========================================================*/
+
+.cardProduto h3{
+
+    font-size:20px;
+
+    color:var(--cor-preta);
+
+    line-height:28px;
+
+    min-height:60px;
+
+}
+
+/*=========================================================
+    ESTRELAS
+=========================================================*/
+
+.cardProduto div[id^="estrelas"]{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:4px;
+
+    margin:15px 0;
+
+    color:var(--cor-amarela);
+
+    font-size:15px;
+
+    min-height:22px;
+
+}
+
+/*=========================================================
+    PREÇO ANTIGO
+=========================================================*/
+
+.cardProduto span[id^="precoAntigo"]{
+
+    font-size:14px;
+
+    color:var(--cor-cinza);
+
+    text-decoration:line-through;
+
+    margin-bottom:5px;
+
+    min-height:20px;
+
+}
+
+/*=========================================================
+    PREÇO ATUAL
+=========================================================*/
+
+.cardProduto h2[id^="preco"]{
+
+    font-size:28px;
+
+    color:var(--cor-secundaria);
+
+    margin-bottom:20px;
+
+    font-weight:bold;
+
+}
+
+/*=========================================================
+    BOTÃO COMPRAR
+=========================================================*/
+
+.cardProduto button[id^="comprar"]{
+
+    width:100%;
+
+    height:48px;
+
+    margin-top:auto;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:var(--cor-secundaria);
+
+    color:#FFF;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.cardProduto button[id^="comprar"]:hover{
+
+    background:var(--cor-hover);
+
+    transform:translateY(-2px);
+
+}
+
+/*=========================================================
+    EFEITO DA IMAGEM
+=========================================================*/
+
+.cardProduto img{
+
+    transition:.35s;
+
+}
+
+.cardProduto:hover img{
+
+    transform:scale(1.06);
+
+}
+
+/*=========================================================
+    SOMBRA DOS CARDS
+=========================================================*/
+
+.cardProduto{
+
+    box-shadow:0 5px 12px rgba(0,0,0,.05);
+
+}
+
+.cardProduto:hover{
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+/*=========================================================
+    TRANSIÇÕES
+=========================================================*/
+
+.cardProduto,
+.cardProduto button,
+.cardProduto img,
+.cardProduto span,
+.cardProduto h2,
+.cardProduto h3{
+
+    transition:.3s ease;
+
+}
+
+/*=========================================================
+    ESTADO DE FOCO
+=========================================================*/
+
+.cardProduto button:focus,
+#selectOrdenacao:focus,
+.categorias button:focus{
+
+    outline:2px solid var(--cor-secundaria);
+
+    outline-offset:2px;
+
+}
+
+/*=========================================================
+    ANIMAÇÃO DE ENTRADA
+=========================================================*/
+
+@keyframes aparecerCard{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.cardProduto{
+
+    animation:aparecerCard .5s ease;
+
+}
+
+/*=========================================================
+    AJUSTES VISUAIS
+=========================================================*/
+
+.cardProduto h3,
+.cardProduto h2,
+.cardProduto span{
+
+    word-break:break-word;
+
+}
+
+.cardProduto button[id^="favorito"] i{
+
+    pointer-events:none;
+
+}
+
+.cardProduto button[id^="comprar"]{
+
+    letter-spacing:.3px;
+
+}
+
+/*=========================================================
+    PAGINAÇÃO
+=========================================================*/
+
+#paginacao{
+
+    max-width:1300px;
+
+    margin:20px auto 60px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+}
+
+#paginacao button{
+
+    width:45px;
+
+    height:45px;
+
+    border:1px solid var(--cor-borda);
+
+    border-radius:8px;
+
+    background:var(--cor-branca);
+
+    color:var(--cor-preta);
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#paginacao button:hover{
+
+    background:var(--cor-secundaria);
+
+    color:var(--cor-branca);
+
+    border-color:var(--cor-secundaria);
+
+}
+
+#pagina1{
+
+    background:var(--cor-secundaria);
+
+    color:var(--cor-branca);
+
+    border-color:var(--cor-secundaria);
+
+}
+
+/*=========================================================
+    FOOTER
+=========================================================*/
+
+#footer{
+
+    margin-top:auto;
+
+    background:var(--cor-principal);
+
+    color:var(--cor-branca);
+
+}
+
+.footer-grid{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:50px 20px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:40px;
+
+}
+
+.footer-grid h3{
+
+    margin-bottom:20px;
+
+    font-size:20px;
+
+}
+
+.footer-grid p{
+
+    color:#DDD;
+
+    line-height:28px;
+
+}
+
+.footer-grid a{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:#DDD;
+
+    margin-bottom:12px;
+
+    transition:.3s;
+
+}
+
+.footer-grid a:hover{
+
+    color:var(--cor-amarela);
+
+}
+
+.copyright{
+
+    border-top:1px solid rgba(255,255,255,.12);
+
+    text-align:center;
+
+    padding:20px;
+
+    font-size:14px;
+
+    color:#DDD;
+
+}
+
+/*=========================================================
+    RESPONSIVO - TABLET
+=========================================================*/
+
+@media(max-width:1100px){
+
+    #bannerProdutos{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .bannerTexto{
+
+        align-items:center;
+
+    }
+
+    #listaProdutos{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    #filtros{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .ordenacao{
+
+        width:100%;
+
+    }
+
+    #selectOrdenacao{
+
+        width:100%;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/*=========================================================
+    RESPONSIVO - MOBILE
+=========================================================*/
+
+@media(max-width:768px){
+
+    .top-header{
+
+        flex-wrap:wrap;
+
+    }
+
+    .logo{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .search{
+
+        width:100%;
+
+        order:3;
+
+    }
+
+    .icons{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    #menuPrincipal ul{
+
+        flex-wrap:wrap;
+
+    }
+
+    #menuPrincipal li{
+
+        padding:12px;
+
+    }
+
+    #bannerProdutos{
+
+        padding:30px;
+
+    }
+
+    #bannerTitulo{
+
+        font-size:32px;
+
+        line-height:40px;
+
+    }
+
+    #bannerDescricao{
+
+        font-size:16px;
+
+    }
+
+    #bannerBotao{
+
+        width:100%;
+
+    }
+
+    #listaProdutos{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .cardProduto{
+
+        max-width:420px;
+
+        margin:auto;
+
+    }
+
+    .categorias{
+
+        justify-content:center;
+
+    }
+
+    #tituloCategorias{
+
+        text-align:center;
+
+    }
+
+    .ordenacao{
+
+        width:100%;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+}
+
+/*=========================================================
+    RESPONSIVO - MOBILE PEQUENO
+=========================================================*/
+
+@media(max-width:480px){
+
+    #logoImagem{
+
+        width:45px;
+
+        height:45px;
+
+    }
+
+    #logoTexto{
+
+        font-size:22px;
+
+    }
+
+    #bannerTitulo{
+
+        font-size:28px;
+
+        line-height:34px;
+
+    }
+
+    #bannerDescricao{
+
+        font-size:15px;
+
+    }
+
+    #bannerBotao{
+
+        height:48px;
+
+        font-size:15px;
+
+    }
+
+    .categorias button{
+
+        width:100%;
+
+    }
+
+    .cardProduto img{
+
+        height:180px;
+
+    }
+
+    .cardProduto h3{
+
+        font-size:18px;
+
+    }
+
+    .cardProduto h2{
+
+        font-size:24px;
+
+    }
+
+    #paginacao button{
+
+        width:40px;
+
+        height:40px;
+
+    }
+
+}
+
+/*=========================================================
+    FIM DO ARQUIVO
+=========================================================*/

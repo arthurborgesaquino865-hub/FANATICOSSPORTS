@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout</title>
+
+    <link rel="stylesheet"
+          href="../style/checkout.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <script src="../js/checkout.js" defer></script>
+
+</head>
+
+<body>
+
+<div id="app">
+
+<!--======================================================
+HEADER
+=======================================================-->
+
+<header id="header">
+
+    <div class="top-header">
+
+        <div class="logo">
+
+            <img
+                id="logoImagem"
+                src=""
+                alt="">
+
+            <h1 id="logoTexto"></h1>
+
+        </div>
+
+        <div class="search">
+
+            <input
+                id="txtPesquisar"
+                type="text"
+                placeholder="">
+
+            <button id="btnPesquisar">
+
+                <i class="fas fa-search"></i>
+
+            </button>
+
+        </div>
+
+        <div class="icons">
+
+            <a id="btnFavoritos" href="#">
+
+                <i class="far fa-heart"></i>
+
+            </a>
+
+            <a id="btnCarrinho" href="#">
+
+                <i class="fas fa-shopping-cart"></i>
+
+            </a>
+
+            <a id="btnLogin" href="#">
+
+                <i class="far fa-user"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!--======================================================
+MENU
+=======================================================-->
+
+<nav id="menuPrincipal">
+
+    <ul>
+
+        <li><a id="menu1" href="#"></a></li>
+
+        <li><a id="menu2" href="#"></a></li>
+
+        <li><a id="menu3" href="#"></a></li>
+
+        <li><a id="menu4" href="#"></a></li>
+
+        <li><a id="menu5" href="#"></a></li>
+
+        <li><a id="menu6" href="#"></a></li>
+
+        <li><a id="menu7" href="#"></a></li>
+
+    </ul>
+
+</nav>
+
+<!--======================================================
+MAIN
+=======================================================-->
+
+<main>
+
+<!--======================================================
+BREADCRUMB
+=======================================================-->
+
+<section id="breadcrumb">
+
+    <a id="breadcrumbHome" href="#"></a>
+
+    <span id="breadcrumbSeparador1"></span>
+
+    <a id="breadcrumbCarrinho" href="#"></a>
+
+    <span id="breadcrumbSeparador2"></span>
+
+    <span id="breadcrumbAtual"></span>
+
+</section>
+
+<!--======================================================
+CHECKOUT
+=======================================================-->
+
+<section id="checkout">
+
+    <div class="checkoutContainer">
+
+        <!--==========================================
+            FORMULÁRIO
+        ==========================================-->
+
+        <div class="checkoutForm">
+
+            <h2 id="tituloDadosCliente"></h2>
+
+            <div class="campo">
+
+                <label id="lblNome"></label>
+
+                <input
+                    id="nome"
+                    type="text"
+                    placeholder="">
+
+            </div>
+
+            <div class="campo">
+
+                <label id="lblCpf"></label>
+
+                <input
+                    id="cpf"
+                    type="text"
+                    placeholder="">
+
+            </div>
+
+            <div class="campo">
+
+                <label id="lblEmail"></label>
+
+                <input
+                    id="email"
+                    type="email"
+                    placeholder="">
+
+            </div>
+
+            <div class="campo">
+
+                <label id="lblTelefone"></label>
+
+                <input
+                    id="telefone"
+                    type="text"
+                    placeholder="">
+
+            </div>
+
+            <!--======================================
+                ENDEREÇO
+            ======================================-->
+
+            <h2 id="tituloEndereco"></h2>
+
+            <div class="campo">
+
+                <label id="lblCep"></label>
+
+                <input
+                    id="cep"
+                    type="text"
+                    placeholder="">
+
+            </div>
+
+            <div class="campo">
+
+                <label id="lblRua"></label>
+
+                <input
+                    id="rua"
+                    type="text"
+                    placeholder="">
+
+            </div>
+
+            <div class="campo">
+
+                <label id="lblNumero"></label>
+
+                <input
+                    id="numero"
+                    type="text"
+                    placeholder="">
+
+            </div>
+
+            <div class="campo">
+
+                <label id="lblComplemento"></label>
+
+                <input
+                    id="complemento"
+                    type="text"
+                    placeholder="">
+
+            </div>
+
+                        <div class="campo">
+
+                <label id="lblBairro"></label>
+
+                <input
+                    id="bairro"
+                    type="text"
+                    placeholder="">
+
+            </div>
+
+            <div class="campo">
+
+                <label id="lblCidade"></label>
+
+                <input
+                    id="cidade"
+                    type="text"
+                    placeholder="">
+
+            </div>
+
+            <div class="campo">
+
+                <label id="lblEstado"></label>
+
+                <select id="estado">
+
+                </select>
+
+            </div>
+
+            <!--======================================
+                ENTREGA
+            ======================================-->
+
+            <h2 id="tituloEntrega"></h2>
+
+            <div class="opcoesEntrega">
+
+                <label class="opcaoEntrega">
+
+                    <input
+                        id="entregaPac"
+                        type="radio"
+                        name="entrega">
+
+                    <span id="lblEntregaPac"></span>
+
+                </label>
+
+                <label class="opcaoEntrega">
+
+                    <input
+                        id="entregaSedex"
+                        type="radio"
+                        name="entrega">
+
+                    <span id="lblEntregaSedex"></span>
+
+                </label>
+
+                <label class="opcaoEntrega">
+
+                    <input
+                        id="entregaLoja"
+                        type="radio"
+                        name="entrega">
+
+                    <span id="lblEntregaLoja"></span>
+
+                </label>
+
+            </div>
+
+            <!--======================================
+                CUPOM
+            ======================================-->
+
+            <h2 id="tituloCupom"></h2>
+
+            <div class="cupom">
+
+                <input
+                    id="cupom"
+                    type="text"
+                    placeholder="">
+
+                <button id="btnAplicarCupom"></button>
+
+            </div>
+
+        </div>
+
+        <!--==========================================
+            RESUMO DO PEDIDO
+        ==========================================-->
+
+        <aside class="resumoPedido">
+
+            <h2 id="tituloResumo"></h2>
+
+            <div class="produtoResumo">
+
+                <img
+                    id="produtoImagem"
+                    src=""
+                    alt="">
+
+                <div class="produtoInfo">
+
+                    <h3 id="produtoNome"></h3>
+
+                    <span id="produtoTamanho"></span>
+
+                    <span id="produtoQuantidade"></span>
+
+                </div>
+
+            </div>
+
+            <div class="linhaResumo">
+
+                <span id="lblSubtotal"></span>
+
+                <strong id="subtotal"></strong>
+
+            </div>
+
+            <div class="linhaResumo">
+
+                <span id="lblFrete"></span>
+
+                <strong id="frete"></strong>
+
+            </div>
+
+            <div class="linhaResumo">
+
+                <span id="lblDesconto"></span>
+
+                <strong id="desconto"></strong>
+
+            </div>
+
+            <div class="linhaResumo total">
+
+                <span id="lblTotal"></span>
+
+                <strong id="total"></strong>
+
+            </div>
+
+            <button id="btnContinuarPagamento"></button>
+
+        </aside>
+
+    </div>
+
+</section>
+
+<!--======================================================
+FOOTER
+=======================================================-->
+
+<footer id="footer">
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3 id="footerTitulo1"></h3>
+
+            <p id="footerTexto1"></p>
+
+        </div>
+
+        <div>
+
+            <h3 id="footerTitulo2"></h3>
+
+            <a id="footerLink1" href="#"></a>
+
+            <a id="footerLink2" href="#"></a>
+
+            <a id="footerLink3" href="#"></a>
+
+        </div>
+
+        <div>
+
+            <h3 id="footerTitulo3"></h3>
+
+            <a id="footerContato1" href="#"></a>
+
+            <a id="footerContato2" href="#"></a>
+
+            <a id="footerContato3" href="#"></a>
+
+        </div>
+
+        <div>
+
+            <h3 id="footerTitulo4"></h3>
+
+            <a id="facebook" href="#"></a>
+
+            <a id="instagram" href="#"></a>
+
+            <a id="youtube" href="#"></a>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        <p id="copyright"></p>
+
+    </div>
+
+</footer>
+
+</div>
+
+</body>
+
+</html>

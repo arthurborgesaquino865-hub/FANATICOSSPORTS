@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Pedido Confirmado</title>
+
+    <link rel="stylesheet"
+          href="../style/pedido-confirmado.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <script src="../js/pedido-confirmado.js" defer></script>
+
+</head>
+
+<body>
+
+<div id="app">
+
+<!--======================================================
+HEADER
+=======================================================-->
+
+<header id="header">
+
+    <div class="top-header">
+
+        <div class="logo">
+
+            <img
+                id="logoImagem"
+                src=""
+                alt="">
+
+            <h1 id="logoTexto"></h1>
+
+        </div>
+
+        <div class="search">
+
+            <input
+                id="txtPesquisar"
+                type="text"
+                placeholder="">
+
+            <button id="btnPesquisar">
+
+                <i class="fas fa-search"></i>
+
+            </button>
+
+        </div>
+
+        <div class="icons">
+
+            <a
+                id="btnFavoritos"
+                href="#">
+
+                <i class="far fa-heart"></i>
+
+            </a>
+
+            <a
+                id="btnCarrinho"
+                href="#">
+
+                <i class="fas fa-shopping-cart"></i>
+
+            </a>
+
+            <a
+                id="btnLogin"
+                href="#">
+
+                <i class="far fa-user"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!--======================================================
+MENU
+=======================================================-->
+
+<nav id="menuPrincipal">
+
+    <ul>
+
+        <li><a id="menu1" href="#"></a></li>
+
+        <li><a id="menu2" href="#"></a></li>
+
+        <li><a id="menu3" href="#"></a></li>
+
+        <li><a id="menu4" href="#"></a></li>
+
+        <li><a id="menu5" href="#"></a></li>
+
+        <li><a id="menu6" href="#"></a></li>
+
+        <li><a id="menu7" href="#"></a></li>
+
+    </ul>
+
+</nav>
+
+<!--======================================================
+MAIN
+=======================================================-->
+
+<main>
+
+<!--======================================================
+BREADCRUMB
+=======================================================-->
+
+<section id="breadcrumb">
+
+    <a
+        id="breadcrumbHome"
+        href="#"></a>
+
+    <span id="breadcrumbSeparador1"></span>
+
+    <a
+        id="breadcrumbPagamento"
+        href="#"></a>
+
+    <span id="breadcrumbSeparador2"></span>
+
+    <span id="breadcrumbAtual"></span>
+
+</section>
+
+<!--======================================================
+PEDIDO CONFIRMADO
+=======================================================-->
+
+<section id="pedidoConfirmado">
+
+    <div class="pedidoContainer">
+
+        <!--==========================================
+            SUCESSO
+        ==========================================-->
+
+        <div class="sucesso">
+
+            <div id="iconeSucesso">
+
+                <i class="fas fa-check"></i>
+
+            </div>
+
+            <h1 id="tituloSucesso"></h1>
+
+            <p id="mensagemSucesso"></p>
+
+        </div>
+
+        <!--==========================================
+            NÚMERO DO PEDIDO
+        ==========================================-->
+
+        <div class="pedidoNumero">
+
+            <h2 id="tituloPedido"></h2>
+
+            <strong id="numeroPedido"></strong>
+
+        </div>
+
+        <!--==========================================
+            RESUMO DO PEDIDO
+        ==========================================-->
+
+        <div class="resumoPedido">
+
+            <h2 id="tituloResumo"></h2>
+
+            <div class="linhaResumo">
+
+                <span id="lblProduto"></span>
+
+                <strong id="produto"></strong>
+
+            </div>
+
+            <div class="linhaResumo">
+
+                <span id="lblQuantidade"></span>
+
+                <strong id="quantidade"></strong>
+
+            </div>
+
+            <div class="linhaResumo">
+
+                <span id="lblPagamento"></span>
+
+                <strong id="formaPagamento"></strong>
+
+            </div>
+
+            <div class="linhaResumo">
+
+                <span id="lblValor"></span>
+
+                <strong id="valorTotal"></strong>
+
+            </div>
+
+            <div class="linhaResumo">
+
+                <span id="lblDataCompra"></span>
+
+                <strong id="dataCompra"></strong>
+
+            </div>
+
+            <div class="linhaResumo">
+
+                <span id="lblEntrega"></span>
+
+                <strong id="previsaoEntrega"></strong>
+
+            </div>
+
+        </div>
+
+                <!--==========================================
+            INFORMAÇÕES
+        ==========================================-->
+
+        <div class="informacoesPedido">
+
+            <p id="textoInformacao1"></p>
+
+            <p id="textoInformacao2"></p>
+
+        </div>
+
+        <!--==========================================
+            ACOMPANHAMENTO
+        ==========================================-->
+
+        <div class="statusPedido">
+
+            <div class="statusCard">
+
+                <i class="fas fa-box"></i>
+
+                <h3 id="statusTitulo1"></h3>
+
+                <p id="statusTexto1"></p>
+
+            </div>
+
+            <div class="statusCard">
+
+                <i class="fas fa-truck"></i>
+
+                <h3 id="statusTitulo2"></h3>
+
+                <p id="statusTexto2"></p>
+
+            </div>
+
+            <div class="statusCard">
+
+                <i class="fas fa-home"></i>
+
+                <h3 id="statusTitulo3"></h3>
+
+                <p id="statusTexto3"></p>
+
+            </div>
+
+        </div>
+
+        <!--==========================================
+            BOTÕES
+        ==========================================-->
+
+        <div class="acoesPedido">
+
+            <button id="btnAcompanharPedido"></button>
+
+            <button id="btnContinuarComprando"></button>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<!--======================================================
+FOOTER
+=======================================================-->
+
+<footer id="footer">
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3 id="footerTitulo1"></h3>
+
+            <p id="footerTexto1"></p>
+
+        </div>
+
+        <div>
+
+            <h3 id="footerTitulo2"></h3>
+
+            <a
+                id="footerLink1"
+                href="#"></a>
+
+            <a
+                id="footerLink2"
+                href="#"></a>
+
+            <a
+                id="footerLink3"
+                href="#"></a>
+
+        </div>
+
+        <div>
+
+            <h3 id="footerTitulo3"></h3>
+
+            <a
+                id="footerContato1"
+                href="#"></a>
+
+            <a
+                id="footerContato2"
+                href="#"></a>
+
+            <a
+                id="footerContato3"
+                href="#"></a>
+
+        </div>
+
+        <div>
+
+            <h3 id="footerTitulo4"></h3>
+
+            <a
+                id="facebook"
+                href="#"></a>
+
+            <a
+                id="instagram"
+                href="#"></a>
+
+            <a
+                id="youtube"
+                href="#"></a>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        <p id="copyright"></p>
+
+    </div>
+
+</footer>
+
+</div>
+
+</body>
+
+</html>

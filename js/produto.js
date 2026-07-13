@@ -16,7 +16,7 @@ let favorito=false;
 //variaveis que sao constantes/ nao alternam de valor
 const nomeProduto="Camisa do ecuador";
 const tamanho=["p","M","G","GG"];
-let cores;
+let cores=["azul"];
 const avaliacoes=4.5;
 const img_miniaturas=
 [
@@ -78,3 +78,69 @@ document.getElementById("valor-avaliaçao").textContent =avaliacoes;
 document.getElementById("preco-antigo").textContent =preco_antigo;
 document.getElementById("preco-promocional").textContent =preco_promocional;
 document.getElementById("desconto").textContent =desconto;
+//--------CORES DO PRODUTO---------------
+// ELE VAI LER QUANTAS CORES O PRODUTO TEM
+// VAI CRIAR BOTOES PARA AS CORES 
+// -------- CORES DO PRODUTO --------
+const listaCores = document.getElementById("cores");
+
+cores.forEach(cor => { // percorrer as cores cadastradas
+    const botao = document.createElement("button");
+
+    // criar um botão para cada cor encontrada
+    botao.textContent = cor;
+
+    listaCores.appendChild(botao);
+});
+
+// -------- TAMANHOS DO PRODUTO --------
+const listaTamanhos = document.getElementById("tamanhos");
+
+tamanho.forEach(tamanho => { // percorrer os tamanhos cadastrados
+    const botao = document.createElement("button");
+
+    // criar um botão para cada tamanho encontrado
+    botao.textContent = tamanho;
+
+    listaTamanhos.appendChild(botao);
+});
+
+//----quantidade de produto------
+/*o limite de quantidade vai ser igual a quantidade de produtos
+que o lojista cadastrou no estoque.
+quando o cliente clicar no botao de + a quantidade comprada
+aumenta de 1 em 1
+quando ele clicar no botao de - a quantidade comprada diminui de 
+1 em 1
+inicialmente o valor da quantidade aparece como 1.*/
+
+let quantidade_inicial = 1;//criar a quantidade inicial.
+// chama os botoes e passar o id do html dentro deles
+btn_add_quantidade = document.getElementById("aumentar");
+btn_remover_quantidade = document.getElementById("diminuir");
+const numero = document.getElementById("numero-quantidade");
+//passando o valor inicial para a tag html
+numero.textContent = quantidade_inicial;
+
+
+//criando o codigo de aumentar a quantidade de 1 em 1
+btn_remover_quantidade.addEventListener("click", () =>{
+
+    if (quantidade_inicial > 0) {
+    quantidade_inicial--;//diminui de 1 em 1
+    numero.textContent = quantidade_inicial;
+    }
+
+
+});
+
+//criando o codigo de 1 em 1
+btn_add_quantidade.addEventListener("click", () =>{
+    //se a quantidade for menor que estoque
+    if (quantidade_inicial < quantidade ) {
+        quantidade_inicial++;//aumentar de 1 em 1
+        numero.textContent = quantidade_inicial;
+    } else{
+        alert("voce atingiu o limite do estoque");
+    }
+})

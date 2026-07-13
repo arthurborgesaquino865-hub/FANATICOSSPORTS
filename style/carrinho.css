@@ -1,0 +1,1070 @@
+/*=========================================================
+    FANÁTICOS SPORTS
+    CARRINHO.CSS
+=========================================================*/
+
+/*=========================================================
+    RESET
+=========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f5f5;
+    color:#222;
+}
+
+/*=========================================================
+    VARIÁVEIS
+=========================================================*/
+
+:root{
+
+    --cor-principal:#1f2538;
+    --cor-secundaria:#009640;
+    --cor-hover:#008437;
+    --cor-amarela:#FFD400;
+    --cor-branca:#FFFFFF;
+    --cor-preta:#222222;
+    --cor-cinza:#777777;
+    --cor-borda:#E4E4E4;
+    --cor-fundo:#F8F8F8;
+    --cor-vermelha:#D62828;
+
+}
+
+/*=========================================================
+    APP
+=========================================================*/
+
+#app{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+/*=========================================================
+    HEADER
+=========================================================*/
+
+#header{
+
+    width:100%;
+
+    background:var(--cor-principal);
+
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
+
+}
+
+/*=========================================================
+    TOPO
+=========================================================*/
+
+.top-header{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:25px;
+
+}
+
+/*=========================================================
+    LOGO
+=========================================================*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+#logoImagem{
+
+    width:60px;
+
+    height:60px;
+
+    object-fit:contain;
+
+}
+
+#logoTexto{
+
+    color:#FFF;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+}
+
+/*=========================================================
+    PESQUISA
+=========================================================*/
+
+.search{
+
+    flex:1;
+
+    display:flex;
+
+    position:relative;
+
+}
+
+#txtPesquisar{
+
+    width:100%;
+
+    height:48px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:30px;
+
+    padding:0 55px 0 20px;
+
+    font-size:15px;
+
+}
+
+#btnPesquisar{
+
+    position:absolute;
+
+    right:5px;
+
+    top:4px;
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--cor-secundaria);
+
+    color:#FFF;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#btnPesquisar:hover{
+
+    background:var(--cor-hover);
+
+}
+
+/*=========================================================
+    ÍCONES
+=========================================================*/
+
+.icons{
+
+    display:flex;
+
+    gap:25px;
+
+    align-items:center;
+
+}
+
+.icons a{
+
+    color:#FFF;
+
+    font-size:22px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.icons a:hover{
+
+    color:var(--cor-amarela);
+
+}
+
+/*=========================================================
+    MENU
+=========================================================*/
+
+#menuPrincipal{
+
+    background:#283149;
+
+}
+
+#menuPrincipal ul{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    list-style:none;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+#menuPrincipal li{
+
+    padding:18px 20px;
+
+}
+
+#menuPrincipal a{
+
+    color:#FFF;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+#menuPrincipal a:hover{
+
+    color:var(--cor-amarela);
+
+}
+
+/*=========================================================
+    MAIN
+=========================================================*/
+
+main{
+
+    width:100%;
+
+    flex:1;
+
+    padding:40px 20px;
+
+}
+
+/*=========================================================
+    TÍTULO DA PÁGINA
+=========================================================*/
+
+#tituloPagina{
+
+    max-width:1300px;
+
+    margin:auto auto 40px;
+
+}
+
+#tituloCarrinho{
+
+    font-size:36px;
+
+    color:var(--cor-preta);
+
+    margin-bottom:10px;
+
+}
+
+#descricaoCarrinho{
+
+    font-size:17px;
+
+    color:var(--cor-cinza);
+
+}
+
+/*=========================================================
+    CONTAINER PRINCIPAL
+=========================================================*/
+
+#conteudoCarrinho{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 380px;
+
+    gap:30px;
+
+}
+
+/*=========================================================
+    LISTA DE PRODUTOS
+=========================================================*/
+
+#listaCarrinho{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+/*=========================================================
+    PRODUTO DO CARRINHO
+=========================================================*/
+
+.produtoCarrinho{
+
+    background:var(--cor-branca);
+
+    border-radius:12px;
+
+    padding:20px;
+
+    display:grid;
+
+    grid-template-columns:140px 1fr 170px 130px 60px;
+
+    align-items:center;
+
+    gap:20px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.produtoCarrinho:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 8px 18px rgba(0,0,0,.12);
+
+}
+
+/*=========================================================
+    IMAGEM
+=========================================================*/
+
+.produtoCarrinho img{
+
+    width:120px;
+
+    height:120px;
+
+    object-fit:contain;
+
+    background:var(--cor-fundo);
+
+    border-radius:10px;
+
+    padding:10px;
+
+}
+
+/*=========================================================
+    INFORMAÇÕES
+=========================================================*/
+
+.produtoInfo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.produtoInfo span[id^="produtoCategoria"]{
+
+    font-size:13px;
+
+    color:var(--cor-cinza);
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+.produtoInfo h3{
+
+    font-size:20px;
+
+    color:var(--cor-preta);
+
+    line-height:28px;
+
+}
+
+.produtoInfo span[id^="produtoPreco"]{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    color:var(--cor-secundaria);
+
+}
+
+/*=========================================================
+    QUANTIDADE
+=========================================================*/
+
+.quantidade{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.quantidade button{
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:var(--cor-principal);
+
+    color:#FFF;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.quantidade button:hover{
+
+    background:var(--cor-secundaria);
+
+}
+
+.quantidade input{
+
+    width:55px;
+
+    height:40px;
+
+    border:1px solid var(--cor-borda);
+
+    border-radius:8px;
+
+    text-align:center;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    background:#FFF;
+
+}
+
+/*=========================================================
+    SUBTOTAL
+=========================================================*/
+
+.subtotal{
+
+    text-align:center;
+
+}
+
+.subtotal span{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    color:var(--cor-principal);
+
+}
+
+/*=========================================================
+    REMOVER
+=========================================================*/
+
+.produtoCarrinho > button{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#FCECEC;
+
+    color:var(--cor-vermelha);
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.produtoCarrinho > button:hover{
+
+    background:var(--cor-vermelha);
+
+    color:#FFF;
+
+}
+
+/*=========================================================
+    RESUMO DO PEDIDO
+=========================================================*/
+
+#resumoPedido{
+
+    background:#FFF;
+
+    border-radius:12px;
+
+    padding:30px;
+
+    height:max-content;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+    position:sticky;
+
+    top:20px;
+
+}
+
+/*=========================================================
+    TÍTULO DO RESUMO
+=========================================================*/
+
+#tituloResumo{
+
+    font-size:26px;
+
+    margin-bottom:25px;
+
+    color:var(--cor-preta);
+
+}
+
+/*=========================================================
+    LINHAS
+=========================================================*/
+
+.linhaResumo{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+    font-size:17px;
+
+}
+
+.total{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    color:var(--cor-principal);
+
+    margin-top:20px;
+
+}
+
+/*=========================================================
+    LINHA
+=========================================================*/
+
+#resumoPedido hr{
+
+    border:none;
+
+    height:1px;
+
+    background:var(--cor-borda);
+
+    margin:20px 0;
+
+}
+
+/*=========================================================
+    BOTÕES
+=========================================================*/
+
+#btnContinuarComprando{
+
+    width:100%;
+
+    height:50px;
+
+    margin-top:25px;
+
+    border:2px solid var(--cor-secundaria);
+
+    background:#FFF;
+
+    color:var(--cor-secundaria);
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+#btnContinuarComprando:hover{
+
+    background:var(--cor-secundaria);
+
+    color:#FFF;
+
+}
+
+#btnFinalizarCompra{
+
+    width:100%;
+
+    height:55px;
+
+    margin-top:15px;
+
+    border:none;
+
+    background:var(--cor-secundaria);
+
+    color:#FFF;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+#btnFinalizarCompra:hover{
+
+    background:var(--cor-hover);
+
+}
+
+/*=========================================================
+    FOOTER
+=========================================================*/
+
+#footer{
+
+    margin-top:60px;
+
+    background:var(--cor-principal);
+
+    color:var(--cor-branca);
+
+}
+
+.footer-grid{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:50px 20px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:40px;
+
+}
+
+.footer-grid h3{
+
+    margin-bottom:20px;
+
+    font-size:20px;
+
+}
+
+.footer-grid p{
+
+    color:#DDD;
+
+    line-height:28px;
+
+}
+
+.footer-grid a{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:#DDD;
+
+    margin-bottom:12px;
+
+    transition:.3s;
+
+}
+
+.footer-grid a:hover{
+
+    color:var(--cor-amarela);
+
+}
+
+.copyright{
+
+    border-top:1px solid rgba(255,255,255,.10);
+
+    text-align:center;
+
+    padding:20px;
+
+    font-size:14px;
+
+    color:#DDD;
+
+}
+
+/*=========================================================
+    TABLET
+=========================================================*/
+
+@media(max-width:1100px){
+
+    #conteudoCarrinho{
+
+        grid-template-columns:1fr;
+
+    }
+
+    #resumoPedido{
+
+        position:static;
+
+    }
+
+    .produtoCarrinho{
+
+        grid-template-columns:120px 1fr;
+
+        gap:20px;
+
+    }
+
+    .quantidade{
+
+        grid-column:2;
+
+        justify-content:flex-start;
+
+        margin-top:15px;
+
+    }
+
+    .subtotal{
+
+        grid-column:2;
+
+        text-align:left;
+
+        margin-top:10px;
+
+    }
+
+    .produtoCarrinho > button{
+
+        grid-column:2;
+
+        justify-self:flex-start;
+
+        margin-top:15px;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/*=========================================================
+    MOBILE
+=========================================================*/
+
+@media(max-width:768px){
+
+    .top-header{
+
+        flex-wrap:wrap;
+
+    }
+
+    .logo{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .search{
+
+        width:100%;
+
+        order:3;
+
+    }
+
+    .icons{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    #menuPrincipal ul{
+
+        flex-wrap:wrap;
+
+    }
+
+    #menuPrincipal li{
+
+        padding:12px;
+
+    }
+
+    #tituloCarrinho{
+
+        font-size:30px;
+
+        text-align:center;
+
+    }
+
+    #descricaoCarrinho{
+
+        text-align:center;
+
+    }
+
+    .produtoCarrinho{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .produtoCarrinho img{
+
+        margin:auto;
+
+        width:180px;
+
+        height:180px;
+
+    }
+
+    .produtoInfo{
+
+        align-items:center;
+
+    }
+
+    .quantidade{
+
+        justify-content:center;
+
+        grid-column:auto;
+
+    }
+
+    .subtotal{
+
+        text-align:center;
+
+        grid-column:auto;
+
+    }
+
+    .produtoCarrinho > button{
+
+        justify-self:center;
+
+        grid-column:auto;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+}
+
+/*=========================================================
+    MOBILE PEQUENO
+=========================================================*/
+
+@media(max-width:480px){
+
+    #logoImagem{
+
+        width:45px;
+
+        height:45px;
+
+    }
+
+    #logoTexto{
+
+        font-size:22px;
+
+    }
+
+    #txtPesquisar{
+
+        font-size:14px;
+
+    }
+
+    #tituloCarrinho{
+
+        font-size:26px;
+
+    }
+
+    .produtoInfo h3{
+
+        font-size:18px;
+
+    }
+
+    .produtoInfo span[id^="produtoPreco"]{
+
+        font-size:20px;
+
+    }
+
+    .quantidade button{
+
+        width:38px;
+
+        height:38px;
+
+    }
+
+    .quantidade input{
+
+        width:50px;
+
+        height:38px;
+
+    }
+
+    #btnContinuarComprando,
+
+    #btnFinalizarCompra{
+
+        font-size:15px;
+
+    }
+
+}
+
+/*=========================================================
+    ANIMAÇÕES
+=========================================================*/
+
+.produtoCarrinho,
+#resumoPedido,
+#btnContinuarComprando,
+#btnFinalizarCompra,
+.icons a,
+#btnPesquisar{
+
+    transition:.3s ease;
+
+}
+
+/*=========================================================
+    FIM DO ARQUIVO
+=========================================================*/

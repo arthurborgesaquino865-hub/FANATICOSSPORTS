@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Pagamento</title>
+
+    <link rel="stylesheet"
+          href="../style/pagamentos.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <script src="../js/pagamentos.js" defer></script>
+
+</head>
+
+<body>
+
+<div id="app">
+
+<!--======================================================
+HEADER
+=======================================================-->
+
+<header id="header">
+
+    <div class="top-header">
+
+        <div class="logo">
+
+            <img
+                id="logoImagem"
+                src=""
+                alt="">
+
+            <h1 id="logoTexto"></h1>
+
+        </div>
+
+        <div class="search">
+
+            <input
+                id="txtPesquisar"
+                type="text"
+                placeholder="">
+
+            <button id="btnPesquisar">
+
+                <i class="fas fa-search"></i>
+
+            </button>
+
+        </div>
+
+        <div class="icons">
+
+            <a
+                id="btnFavoritos"
+                href="#">
+
+                <i class="far fa-heart"></i>
+
+            </a>
+
+            <a
+                id="btnCarrinho"
+                href="#">
+
+                <i class="fas fa-shopping-cart"></i>
+
+            </a>
+
+            <a
+                id="btnLogin"
+                href="#">
+
+                <i class="far fa-user"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!--======================================================
+MENU
+=======================================================-->
+
+<nav id="menuPrincipal">
+
+    <ul>
+
+        <li><a id="menu1" href="#"></a></li>
+
+        <li><a id="menu2" href="#"></a></li>
+
+        <li><a id="menu3" href="#"></a></li>
+
+        <li><a id="menu4" href="#"></a></li>
+
+        <li><a id="menu5" href="#"></a></li>
+
+        <li><a id="menu6" href="#"></a></li>
+
+        <li><a id="menu7" href="#"></a></li>
+
+    </ul>
+
+</nav>
+
+<!--======================================================
+MAIN
+=======================================================-->
+
+<main>
+
+<!--======================================================
+BREADCRUMB
+=======================================================-->
+
+<section id="breadcrumb">
+
+    <a
+        id="breadcrumbHome"
+        href="#"></a>
+
+    <span id="breadcrumbSeparador1"></span>
+
+    <a
+        id="breadcrumbCheckout"
+        href="#"></a>
+
+    <span id="breadcrumbSeparador2"></span>
+
+    <span id="breadcrumbAtual"></span>
+
+</section>
+
+<!--======================================================
+PAGAMENTO
+=======================================================-->
+
+<section id="pagamento">
+
+    <div class="pagamentoContainer">
+
+        <!--==========================================
+            FORMAS DE PAGAMENTO
+        ==========================================-->
+
+        <div class="pagamentoForm">
+
+            <h2 id="tituloPagamento"></h2>
+
+            <div class="formasPagamento">
+
+                <label class="formaPagamento">
+
+                    <input
+                        id="formaCredito"
+                        type="radio"
+                        name="formaPagamento">
+
+                    <span id="lblCredito"></span>
+
+                </label>
+
+                <label class="formaPagamento">
+
+                    <input
+                        id="formaDebito"
+                        type="radio"
+                        name="formaPagamento">
+
+                    <span id="lblDebito"></span>
+
+                </label>
+
+                <label class="formaPagamento">
+
+                    <input
+                        id="formaPix"
+                        type="radio"
+                        name="formaPagamento">
+
+                    <span id="lblPix"></span>
+
+                </label>
+
+                <label class="formaPagamento">
+
+                    <input
+                        id="formaBoleto"
+                        type="radio"
+                        name="formaPagamento">
+
+                    <span id="lblBoleto"></span>
+
+                </label>
+
+            </div>
+
+            <!--======================================
+                DADOS DO CARTÃO
+            ======================================-->
+
+            <div id="secaoCartao">
+
+                <h2 id="tituloCartao"></h2>
+
+                <div class="campo">
+
+                    <label id="lblNomeCartao"></label>
+
+                    <input
+                        id="nomeCartao"
+                        type="text"
+                        placeholder="">
+
+                </div>
+
+                <div class="campo">
+
+                    <label id="lblNumeroCartao"></label>
+
+                    <input
+                        id="numeroCartao"
+                        type="text"
+                        placeholder="">
+
+                </div>
+
+                <div class="campo">
+
+                    <label id="lblValidade"></label>
+
+                    <input
+                        id="validadeCartao"
+                        type="text"
+                        placeholder="">
+
+                </div>
+
+                <div class="campo">
+
+                    <label id="lblCvv"></label>
+
+                    <input
+                        id="cvvCartao"
+                        type="password"
+                        placeholder="">
+
+                </div>
+
+                <div class="campo">
+
+                    <label id="lblParcelas"></label>
+
+                    <select id="parcelas">
+
+                    </select>
+
+                </div>
+
+            </div>
+
+                        <!--======================================
+                PIX
+            ======================================-->
+
+            <div id="secaoPix">
+
+                <h2 id="tituloPix"></h2>
+
+                <div class="pixContainer">
+
+                    <img
+                        id="qrCodePix"
+                        src=""
+                        alt="">
+
+                    <p id="textoPix"></p>
+
+                    <input
+                        id="codigoPix"
+                        type="text"
+                        readonly
+                        value="">
+
+                    <button id="btnCopiarPix"></button>
+
+                    <span id="temporizadorPix"></span>
+
+                </div>
+
+            </div>
+
+            <!--======================================
+                BOLETO
+            ======================================-->
+
+            <div id="secaoBoleto">
+
+                <h2 id="tituloBoleto"></h2>
+
+                <p id="textoBoleto"></p>
+
+                <button id="btnGerarBoleto"></button>
+
+            </div>
+
+            <!--======================================
+                SEGURANÇA
+            ======================================-->
+
+            <div id="segurancaPagamento">
+
+                <h2 id="tituloSeguranca"></h2>
+
+                <ul>
+
+                    <li id="seguranca1"></li>
+
+                    <li id="seguranca2"></li>
+
+                    <li id="seguranca3"></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!--==========================================
+            RESUMO DO PEDIDO
+        ==========================================-->
+
+        <aside class="resumoPedido">
+
+            <h2 id="tituloResumo"></h2>
+
+            <div class="produtoResumo">
+
+                <img
+                    id="produtoImagem"
+                    src=""
+                    alt="">
+
+                <div class="produtoInfo">
+
+                    <h3 id="produtoNome"></h3>
+
+                    <span id="produtoTamanho"></span>
+
+                    <span id="produtoQuantidade"></span>
+
+                </div>
+
+            </div>
+
+            <div class="linhaResumo">
+
+                <span id="lblSubtotal"></span>
+
+                <strong id="subtotal"></strong>
+
+            </div>
+
+            <div class="linhaResumo">
+
+                <span id="lblFrete"></span>
+
+                <strong id="frete"></strong>
+
+            </div>
+
+            <div class="linhaResumo">
+
+                <span id="lblDesconto"></span>
+
+                <strong id="desconto"></strong>
+
+            </div>
+
+            <div class="linhaResumo total">
+
+                <span id="lblTotal"></span>
+
+                <strong id="total"></strong>
+
+            </div>
+
+            <button id="btnFinalizarCompra"></button>
+
+        </aside>
+
+    </div>
+
+</section>
+
+<!--======================================================
+FOOTER
+=======================================================-->
+
+<footer id="footer">
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3 id="footerTitulo1"></h3>
+
+            <p id="footerTexto1"></p>
+
+        </div>
+
+        <div>
+
+            <h3 id="footerTitulo2"></h3>
+
+            <a
+                id="footerLink1"
+                href="#"></a>
+
+            <a
+                id="footerLink2"
+                href="#"></a>
+
+            <a
+                id="footerLink3"
+                href="#"></a>
+
+        </div>
+
+        <div>
+
+            <h3 id="footerTitulo3"></h3>
+
+            <a
+                id="footerContato1"
+                href="#"></a>
+
+            <a
+                id="footerContato2"
+                href="#"></a>
+
+            <a
+                id="footerContato3"
+                href="#"></a>
+
+        </div>
+
+        <div>
+
+            <h3 id="footerTitulo4"></h3>
+
+            <a
+                id="facebook"
+                href="#"></a>
+
+            <a
+                id="instagram"
+                href="#"></a>
+
+            <a
+                id="youtube"
+                href="#"></a>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        <p id="copyright"></p>
+
+    </div>
+
+</footer>
+
+</main>
+
+</div>
+
+</body>
+
+</html>
