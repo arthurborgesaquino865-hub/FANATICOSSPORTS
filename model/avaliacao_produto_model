@@ -1,0 +1,129 @@
+const conexao = require("../conexao/conexao.js");
+
+// =========================
+// Cadastrar Cartão de Pagamento
+// =========================
+
+function cadastrar(avaliacao_produto, callback) {
+
+    const sql = `INSERT INTO Avaliacao_Produto
+        ( data,nota,descricao,Produto_idProduto )
+        VALUES (?, ?, ?, ?)`;
+
+    conexao.query(
+        sql,
+        [
+            avaliacao_produto.data,
+            avaliacao_produto.nota,
+            avaliacao_produto.descricao,
+            avaliacao_produto.Produto_idProduto
+            
+        ],
+        callback
+    );
+
+}
+
+// =========================
+// Listar Avaliações de Produtos
+// =========================
+
+function listar(callback) {
+
+    const sql = `
+        SELECT * FROM Avaliacao_Produto
+    `;
+
+    conexao.query(sql, callback);
+
+}
+
+// =========================
+// Buscar por ID
+// =========================
+
+function buscarPorId(id, callback) {
+
+    const sql = `
+        SELECT *
+        FROM Avaliacao_Produto
+        WHERE idAvaliacao_Produto = ?
+    `;
+    
+    conexao.query(sql, [id], callback);
+
+}
+
+// =========================
+// Buscar por Descrição
+// =========================
+
+function buscarPorDescricao(descricao, callback) {
+
+    const sql = `
+        SELECT * FROM Avaliacao_Produto
+        WHERE descricao = ?
+    `;
+
+    conexao.query(sql, [descricao], callback);
+
+}
+
+// =========================
+// Atualizar Avaliação de Produto
+// =========================
+
+function atualizar(id, avaliacao_produto, callback) {
+
+    const sql = `
+        UPDATE Avaliacao_Produto
+        SET
+
+            data = ?,
+            nota = ?,
+            descricao = ?,
+            Produto_idProduto = ?
+            
+        WHERE idAvaliacao_Produto = ?
+    `;
+
+    conexao.query(
+        sql,
+        [
+            avaliacao_produto.data,
+            avaliacao_produto.nota,
+            avaliacao_produto.descricao,
+            avaliacao_produto.Produto_idProduto,
+            id
+        ],
+        callback
+    );
+
+}
+
+
+// =========================
+// Excluir Avaliação de Produto
+// =========================
+
+function excluir(id, callback) {
+
+    const sql = `
+        DELETE FROM Avaliacao_Produto
+        WHERE idAvaliacao_Produto = ?
+    `;
+
+    conexao.query(sql, [id], callback);
+
+}
+
+module.exports = {
+
+    cadastrar,
+    listar,
+    buscarPorId,
+    buscarPorEmail,
+    atualizar,
+    excluir
+
+};

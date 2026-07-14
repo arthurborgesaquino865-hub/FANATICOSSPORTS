@@ -1,0 +1,146 @@
+const conexao = require("../conexao/conexao.js");
+
+// =========================
+// Cadastrar Cartão de Pagamento
+// =========================
+
+function cadastrar(pedidos, callback) {
+
+    const sql = `INSERT INTO Pedidos
+        ( data,nota_fiscal,data_entrega,Status_entrega,status_pagamentos,codigo,
+         Cliente_idCliente,Loja_idLoja,Endereco_idEndereco,Formas_Pagamento_idFormas_Pagamento )
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+    conexao.query(
+        sql,
+        [
+            pedidos.data,
+            pedidos.nota_fiscal,
+            pedidos.data_entrega,
+            pedidos.Status_entrega,
+            pedidos.status_pagamentos,
+            pedidos.codigo,
+            pedidos.Cliente_idCliente,
+            pedidos.Loja_idLoja,
+            pedidos.Endereco_idEndereco,
+            pedidos.Formas_Pagamento_idFormas_Pagamento,
+        ],
+        callback
+    );
+
+}
+
+// =========================
+// Listar pedidos
+// =========================
+
+function listar(callback) {
+
+    const sql = `
+        SELECT * FROM Pedidos
+    `;
+
+    conexao.query(sql, callback);
+
+}
+
+// =========================
+// Buscar por ID
+// =========================
+
+function buscarPorId(id, callback) {
+
+    const sql = `
+        SELECT *
+        FROM Pedidos
+        WHERE idPedidos = ?
+    `;
+
+    conexao.query(sql, [id], callback);
+
+}
+
+// =========================
+// Buscar por Email
+// =========================
+
+function buscarPorEmail(codigo, callback) {
+
+    const sql = `
+        SELECT * FROM Pedidos
+        WHERE codigo = ?
+    `;
+
+    conexao.query(sql, [codigo], callback);
+
+}
+
+// =========================
+// Atualizar Pedido
+// =========================
+
+function atualizar(id, pedidos, callback) {
+
+    const sql = `
+        UPDATE Pedidos
+        SET
+
+            data = ?,
+            nota_fiscal = ?,
+            data_entrega = ?,
+            Status_entrega = ?,
+            status_pagamentos = ?,
+            codigo = ?,
+            Cliente_idCliente = ?,
+            Loja_idLoja = ?,
+            Endereco_idEndereco = ?,
+            Formas_Pagamento_idFormas_Pagamento = ?
+
+        WHERE idPedidos = ?
+    `;
+
+    conexao.query(
+        sql,
+        [
+            pedidos.data,
+            pedidos.nota_fiscal,
+            pedidos.data_entrega,
+            pedidos.Status_entrega,
+            pedidos.status_pagamentos,
+            pedidos.codigo,
+            pedidos.cliente_idCliente,
+            pedidos.loja_idLoja,
+            pedidos.Endereco_idEndereco,
+            pedidos.Formas_Pagamento_idFormas_Pagamento,
+            id
+        ],
+        callback
+    );
+
+}
+
+// =========================
+// Excluir Pedido
+// =========================
+
+function excluir(id, callback) {
+
+    const sql = `
+        DELETE FROM Pedidos
+        WHERE idPedidos = ?
+    `;
+
+    conexao.query(sql, [id], callback);
+
+}
+
+module.exports = {
+
+    cadastrar,
+    listar,
+    buscarPorId,
+    buscarPorEmail,
+    atualizar,
+    excluir
+
+};

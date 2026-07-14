@@ -1,0 +1,125 @@
+const conexao = require("../conexao/conexao.js");
+
+// =========================
+// Cadastrar Cartão de Pagamento
+// =========================
+
+function cadastrar(carrinho, callback) {
+
+    const sql = `INSERT INTO Carrinho
+        ( idCarrinho,quantidade_produto,preco_total )
+        VALUES (?, ?, ?)`;
+
+    conexao.query(
+        sql,
+        [
+            carrinho.idCarrinho,
+            carrinho.quantidade_produto,
+            carrinho.preco_total,
+        ],
+        callback
+    );
+
+}
+
+// =========================
+// Listar Cartões de Pagamento
+// =========================
+
+function listar(callback) {
+
+    const sql = `
+        SELECT * FROM Carrinho
+    `;
+
+    conexao.query(sql, callback);
+
+}
+
+// =========================
+// Buscar por ID
+// =========================
+
+function buscarPorId(id, callback) {
+
+    const sql = `
+        SELECT *
+        FROM Carrinho
+        WHERE idCarrinho = ?
+    `;
+
+    conexao.query(sql, [id], callback);
+
+}
+
+// =========================
+// Buscar por Email
+// =========================
+
+function buscarPorEmail(nome_identificacao, callback) {
+
+    const sql = `
+        SELECT * FROM Carrinho
+        WHERE  = ?
+    `;
+
+    conexao.query(sql, [], callback);
+
+}
+
+// =========================
+// Atualizar Cartão de Pagamento
+// =========================
+
+function atualizar(id, carrinho, callback) {
+
+    const sql = `
+        UPDATE Carrinho
+        SET
+
+            idCarrinho = ?,
+            quantidade_produto = ?,
+            preco_total = ?,
+
+        WHERE idCarrinho = ?
+    `;
+
+    conexao.query(
+        sql,
+        [
+            carrinho.idCarrinho,
+            carrinho.quantidade_produto,
+            carrinho.preco_total,
+            id
+        ],
+        callback
+    );
+
+}
+
+
+// =========================
+// Excluir Cartão de Pagamento
+// =========================
+
+function excluir(id, callback) {
+
+    const sql = `
+        DELETE FROM Carrinho
+        WHERE idCarrinho = ?
+    `;
+
+    conexao.query(sql, [id], callback);
+
+}
+
+module.exports = {
+
+    cadastrar,
+    listar,
+    buscarPorId,
+    buscarPorEmail,
+    atualizar,
+    excluir
+
+};

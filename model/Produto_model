@@ -1,0 +1,151 @@
+const conexao = require("../conexao/conexao.js");
+
+// =========================
+// Cadastrar Produto
+// =========================
+
+function cadastrar(produto, callback) {
+
+    const sql = `INSERT INTO Produto
+        ( nome,descricao,codigo,preco_antigo,preco_promocional,
+         quantidade_estoque,ativo,loja_idLoja,Loja_Logista_idLojista,Marca_idMarca )
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+    conexao.query(
+        sql,
+        [
+            produto.nome,
+            produto.descricao,
+            produto.codigo,
+            produto.preco_antigo,
+            produto.preco_promocional,
+            produto.quantidade_estoque,
+            produto.ativo,
+            produto.loja_idLoja,
+            produto.Loja_Logista_idLojista,
+            produto.Marca_idMarca,
+        ],
+        callback
+    );
+
+}
+
+// =========================
+// Listar Produtos
+// =========================
+
+function listar(callback) {
+
+    const sql = `
+        SELECT * FROM Produto
+    `;
+
+    conexao.query(sql, callback);
+
+}
+
+// =========================
+// Buscar por ID
+// =========================
+
+function buscarPorId(id, callback) {
+
+    const sql = `
+        SELECT *
+        FROM Produto
+        WHERE idProduto = ?
+    `;
+
+    conexao.query(sql, [id], callback);
+
+}
+
+// =========================
+// Buscar por Email
+// =========================
+
+function buscarPorEmail(nome, callback) {
+
+    const sql = `
+        SELECT * FROM Pedidos
+        WHERE nome = ?
+    `;
+
+    conexao.query(sql, [nome], callback);
+
+}
+
+// =========================
+// Atualizar Produto
+// =========================
+
+function atualizar(id, produto, callback) {
+
+    const sql = `
+        UPDATE Produto
+        SET
+
+            nome = ?,
+            descricao = ?,
+            codigo = ?,
+            preco_antigo = ?,
+            preco_promocional = ?,
+            quantidade_estoque = ?,
+            ativo = ?,
+            loja_idLoja = ?,
+            Loja_Logista_idLojista = ?,
+            Marca_idMarca = ?
+            nome_identificacao = ?,
+            bandeira = ?,
+            tipo = ?,
+            ativo = ?,
+            Cliente_idCliente = ?
+
+        WHERE idProduto = ?
+    `;
+
+    conexao.query(
+        sql,
+        [
+            produto.nome,
+            produto.descricao,
+            produto.codigo,
+            produto.preco_antigo,
+            produto.preco_promocional,
+            produto.quantidade_estoque,
+            produto.ativo,
+            produto.loja_idLoja,
+            produto.Loja_Logista_idLojista,
+            produto.Marca_idMarca,
+            id
+        ],
+        callback
+    );
+
+}
+
+// =========================
+// Excluir Cartão de Pagamento
+// =========================
+
+function excluir(id, callback) {
+
+    const sql = `
+        DELETE FROM Cartao_pagamento
+        WHERE idCartao_pagamento = ?
+    `;
+
+    conexao.query(sql, [id], callback);
+
+}
+
+module.exports = {
+
+    cadastrar,
+    listar,
+    buscarPorId,
+    buscarPorEmail,
+    atualizar,
+    excluir
+
+};
