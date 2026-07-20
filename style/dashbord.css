@@ -1,6 +1,6 @@
 /*=========================================================
     FANÁTICOS SPORTS
-    DASHBOARD.CSS
+    DASHBORD.CSS
 =========================================================*/
 
 /*=========================================================
@@ -8,44 +8,50 @@
 =========================================================*/
 
 *{
-
     margin:0;
-
     padding:0;
-
     box-sizing:border-box;
+}
 
+html{
+    scroll-behavior:smooth;
 }
 
 :root{
 
-    --cor-sidebar:#1F2937;
-    --cor-sidebar-hover:#374151;
-    --cor-topbar:#FFFFFF;
-    --cor-fundo:#F3F4F6;
+    --cor-primaria:#2563EB;
+    --cor-secundaria:#1E40AF;
+
+    --cor-sidebar:#111827;
+    --cor-sidebar-hover:#1F2937;
+
+    --cor-background:#F3F4F6;
     --cor-card:#FFFFFF;
 
-    --cor-primaria:#2563EB;
-    --cor-sucesso:#16A34A;
-    --cor-alerta:#F59E0B;
-    --cor-perigo:#DC2626;
-
     --cor-texto:#111827;
-    --cor-texto-secundario:#6B7280;
+    --cor-texto-claro:#6B7280;
 
     --cor-borda:#E5E7EB;
 
+    --cor-sucesso:#22C55E;
+    --cor-alerta:#F59E0B;
+    --cor-erro:#EF4444;
+
     --sombra:0 10px 25px rgba(0,0,0,.08);
+
+    --transition:.3s;
 
 }
 
 body{
 
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
 
-    background:var(--cor-fundo);
+    background:var(--cor-background);
 
     color:var(--cor-texto);
+
+    overflow-x:hidden;
 
 }
 
@@ -53,7 +59,7 @@ body{
     APP
 =========================================================*/
 
-#app{
+#adminApp{
 
     display:flex;
 
@@ -71,12 +77,6 @@ body{
 
     background:var(--cor-sidebar);
 
-    color:#FFF;
-
-    display:flex;
-
-    flex-direction:column;
-
     position:fixed;
 
     top:0;
@@ -86,6 +86,14 @@ body{
     bottom:0;
 
     overflow-y:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    box-shadow:var(--sombra);
+
+    z-index:1000;
 
 }
 
@@ -107,17 +115,19 @@ body{
 
 }
 
-#logoImagem{
+#logoAdminImagem{
 
-    width:55px;
+    width:60px;
 
-    height:55px;
+    height:60px;
 
     object-fit:contain;
 
 }
 
-#logoTitulo{
+#logoAdminTexto{
+
+    color:#FFF;
 
     font-size:22px;
 
@@ -125,67 +135,65 @@ body{
 
 }
 
-#logoSubtitulo{
-
-    font-size:13px;
-
-    color:#C9CDD4;
-
-}
-
 /*=========================================================
     MENU
 =========================================================*/
 
-#menuAdmin{
-
-    padding:20px 0;
+.menuAdmin{
 
     flex:1;
 
+    padding:20px 0;
+
 }
 
-#menuAdmin ul{
+.menuAdmin ul{
 
     list-style:none;
 
 }
 
-#menuAdmin li{
+.menuAdmin li{
 
     margin:6px 15px;
 
 }
 
-#menuAdmin a{
+.menuAdmin a{
 
     display:flex;
 
     align-items:center;
 
-    gap:14px;
+    gap:15px;
 
-    padding:14px 18px;
+    padding:15px 18px;
 
     text-decoration:none;
 
-    color:#E5E7EB;
+    color:#D1D5DB;
 
-    border-radius:10px;
+    border-radius:12px;
 
-    transition:.3s;
+    transition:var(--transition);
 
     font-size:15px;
 
+    font-weight:500;
+
 }
 
-#menuAdmin a:hover{
+.menuAdmin a:hover{
 
     background:var(--cor-sidebar-hover);
 
+    color:#FFF;
+
+    transform:translateX(5px);
+
 }
 
-#menuAdmin a.ativo{
+.menuAdmin a.ativo{
 
     background:var(--cor-primaria);
 
@@ -193,11 +201,31 @@ body{
 
 }
 
-#menuAdmin i{
+.menuAdmin i{
 
-    width:20px;
+    width:22px;
 
     text-align:center;
+
+    font-size:18px;
+
+}
+
+/*=========================================================
+    SCROLLBAR
+=========================================================*/
+
+#sidebar::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+#sidebar::-webkit-scrollbar-thumb{
+
+    background:#374151;
+
+    border-radius:20px;
 
 }
 
@@ -205,7 +233,7 @@ body{
     CONTEÚDO
 =========================================================*/
 
-#conteudo{
+#conteudoAdmin{
 
     flex:1;
 
@@ -214,6 +242,92 @@ body{
     display:flex;
 
     flex-direction:column;
+
+    min-height:100vh;
+
+}
+
+/*=========================================================
+    MAIN
+=========================================================*/
+
+#dashboardMain{
+
+    flex:1;
+
+    padding:30px;
+
+}
+
+/*=========================================================
+    TÍTULOS PADRÃO
+=========================================================*/
+
+.boxHeader{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.boxHeader h2{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:var(--cor-texto);
+
+}
+
+/*=========================================================
+    BOX PADRÃO
+=========================================================*/
+
+.boxDashboard{
+
+    background:var(--cor-card);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:var(--sombra);
+
+    border:1px solid var(--cor-borda);
+
+    margin-bottom:25px;
+
+}
+
+/*=========================================================
+    UTILIDADES
+=========================================================*/
+
+.oculto{
+
+    display:none !important;
+
+}
+
+.centralizar{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.textCenter{
+
+    text-align:center;
 
 }
 
@@ -225,51 +339,27 @@ body{
 
     height:80px;
 
-    background:var(--cor-topbar);
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:0 30px;
+    background:#FFFFFF;
 
     border-bottom:1px solid var(--cor-borda);
 
-}
-
-.topbarEsquerda{
-
     display:flex;
 
-    flex-direction:column;
+    align-items:center;
 
-    gap:5px;
+    justify-content:space-between;
 
-}
+    padding:0 30px;
 
-#tituloPagina{
+    position:sticky;
 
-    font-size:28px;
+    top:0;
 
-    font-weight:bold;
-
-}
-
-#subtituloPagina{
-
-    color:var(--cor-texto-secundario);
-
-    font-size:14px;
+    z-index:999;
 
 }
 
-/*=========================================================
-    AÇÕES DA TOPBAR
-=========================================================*/
-
-.topbarDireita{
+.topbarLeft{
 
     display:flex;
 
@@ -279,23 +369,127 @@ body{
 
 }
 
-#campoPesquisa{
+#btnMenuMobile{
 
-    width:280px;
+    width:45px;
 
-    height:42px;
+    height:45px;
 
-    padding:0 15px;
+    border:none;
 
-    border:1px solid var(--cor-borda);
+    background:transparent;
 
-    border-radius:8px;
+    cursor:pointer;
 
-    outline:none;
+    display:none;
+
+    font-size:22px;
+
+    color:var(--cor-texto);
 
 }
 
-#btnNotificacao{
+#tituloPagina{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:var(--cor-texto);
+
+}
+
+/*=========================================================
+    PESQUISA
+=========================================================*/
+
+.topbarCenter{
+
+    display:flex;
+
+    align-items:center;
+
+    width:420px;
+
+    position:relative;
+
+}
+
+#txtPesquisarAdmin{
+
+    width:100%;
+
+    height:46px;
+
+    border:1px solid var(--cor-borda);
+
+    border-radius:12px;
+
+    padding:0 55px 0 18px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+
+    background:#FFF;
+
+}
+
+#txtPesquisarAdmin:focus{
+
+    border-color:var(--cor-primaria);
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+#btnPesquisarAdmin{
+
+    position:absolute;
+
+    right:6px;
+
+    width:38px;
+
+    height:38px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    background:var(--cor-primaria);
+
+    color:#FFF;
+
+    transition:.3s;
+
+}
+
+#btnPesquisarAdmin:hover{
+
+    background:var(--cor-secundaria);
+
+}
+
+/*=========================================================
+    PERFIL
+=========================================================*/
+
+.topbarRight{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+#btnNotificacoes{
 
     width:45px;
 
@@ -305,17 +499,23 @@ body{
 
     border-radius:50%;
 
-    background:var(--cor-fundo);
-
     cursor:pointer;
+
+    background:#F3F4F6;
 
     transition:.3s;
 
+    font-size:18px;
+
+    color:var(--cor-texto);
+
 }
 
-#btnNotificacao:hover{
+#btnNotificacoes:hover{
 
-    background:#E5E7EB;
+    background:var(--cor-primaria);
+
+    color:#FFF;
 
 }
 
@@ -325,25 +525,39 @@ body{
 
     align-items:center;
 
-    gap:12px;
+    gap:15px;
 
 }
 
-#fotoPerfil{
+#fotoPerfilAdmin{
 
-    width:45px;
+    width:48px;
 
-    height:45px;
+    height:48px;
 
     border-radius:50%;
 
     object-fit:cover;
 
+    border:2px solid var(--cor-primaria);
+
+}
+
+.perfilInfo{
+
+    display:flex;
+
+    flex-direction:column;
+
 }
 
 #nomeAdmin{
 
+    font-size:15px;
+
     font-weight:bold;
+
+    color:var(--cor-texto);
 
 }
 
@@ -351,29 +565,19 @@ body{
 
     font-size:13px;
 
-    color:var(--cor-texto-secundario);
+    color:var(--cor-texto-claro);
 
 }
 
 /*=========================================================
-    MAIN
-=========================================================*/
-
-main{
-
-    padding:30px;
-
-}
-
-/*=========================================================
-    CARDS DO DASHBOARD
+    CARDS
 =========================================================*/
 
 #cardsDashboard{
 
     display:grid;
 
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 
     gap:25px;
 
@@ -383,31 +587,31 @@ main{
 
 .cardDashboard{
 
-    background:var(--cor-card);
+    background:#FFF;
 
-    border-radius:15px;
+    border-radius:18px;
 
     padding:25px;
 
     display:flex;
 
+    justify-content:space-between;
+
     align-items:center;
 
-    justify-content:space-between;
+    border:1px solid var(--cor-borda);
 
     box-shadow:var(--sombra);
 
     transition:.3s;
 
-    border:1px solid var(--cor-borda);
-
 }
 
 .cardDashboard:hover{
 
-    transform:translateY(-5px);
+    transform:translateY(-6px);
 
-    box-shadow:0 18px 35px rgba(0,0,0,.12);
+    box-shadow:0 20px 35px rgba(0,0,0,.12);
 
 }
 
@@ -417,7 +621,7 @@ main{
 
     height:70px;
 
-    border-radius:15px;
+    border-radius:18px;
 
     display:flex;
 
@@ -431,7 +635,7 @@ main{
 
 .cardIcone i{
 
-    font-size:28px;
+    font-size:30px;
 
     color:var(--cor-primaria);
 
@@ -453,7 +657,7 @@ main{
 
     font-size:16px;
 
-    color:var(--cor-texto-secundario);
+    color:var(--cor-texto-claro);
 
     font-weight:500;
 
@@ -470,70 +674,60 @@ main{
 }
 
 /*=========================================================
-    BOXES
+    GRID
 =========================================================*/
 
-.boxDashboard{
+#informacoesDashboard{
 
-    background:var(--cor-card);
+    display:grid;
 
-    border-radius:15px;
+    grid-template-columns:1fr 1fr;
 
-    padding:25px;
-
-    border:1px solid var(--cor-borda);
-
-    box-shadow:var(--sombra);
+    gap:25px;
 
 }
 
-.boxHeader{
+#graficoVendas{
 
-    display:flex;
+    height:400px;
 
-    justify-content:space-between;
+}
 
-    align-items:center;
+#ultimosPedidos,
+
+#notificacoesDashboard,
+
+#atividadesRecentes{
 
     margin-bottom:25px;
 
 }
 
-.boxHeader h2{
-
-    font-size:22px;
-
-    color:var(--cor-texto);
-
-}
-
-/*=========================================================
-    GRÁFICO
-=========================================================*/
-
-#graficoVendas{
-
-    margin-bottom:30px;
-
-}
-
 #grafico{
+
+    #grafico{
 
     width:100%;
 
-    height:380px;
+    height:300px;
+
+    max-height:300px;
+
+    display:block;
+
+}
+
+}
+
+#graficoVendas .boxDashboard{
+
+    height:100%;
 
 }
 
 /*=========================================================
-    ÚLTIMOS PEDIDOS
+    TABELA DE PEDIDOS
 =========================================================*/
-
-#ultimosPedidos{
-
-    margin-bottom:30px;
-
-}
 
 #tabelaPedidos{
 
@@ -557,6 +751,8 @@ main{
 
     font-size:15px;
 
+    font-weight:600;
+
     color:var(--cor-texto);
 
     border-bottom:2px solid var(--cor-borda);
@@ -567,17 +763,17 @@ main{
 
     padding:18px 16px;
 
-    border-bottom:1px solid var(--cor-borda);
-
-    color:var(--cor-texto-secundario);
-
     font-size:14px;
+
+    color:var(--cor-texto-claro);
+
+    border-bottom:1px solid var(--cor-borda);
 
 }
 
 #tabelaPedidos tbody tr{
 
-    transition:.3s;
+    transition:.25s;
 
 }
 
@@ -588,20 +784,16 @@ main{
 }
 
 /*=========================================================
-    STATUS DOS PEDIDOS
+    STATUS
 =========================================================*/
 
 .status{
 
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
     padding:8px 14px;
 
     border-radius:20px;
+
+    color:#FFF;
 
     font-size:13px;
 
@@ -611,46 +803,30 @@ main{
 
 .status.pago{
 
-    background:#DCFCE7;
-
-    color:#15803D;
+    background:var(--cor-sucesso);
 
 }
 
 .status.pendente{
 
-    background:#FEF3C7;
-
-    color:#B45309;
+    background:var(--cor-alerta);
 
 }
 
 .status.cancelado{
 
-    background:#FEE2E2;
-
-    color:#B91C1C;
+    background:var(--cor-erro);
 
 }
 
 /*=========================================================
-    PRODUTOS E ESTOQUE
+    LISTAS
 =========================================================*/
 
-#informacoesDashboard{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:30px;
-
-    margin-bottom:30px;
-
-}
-
 #listaProdutosMaisVendidos,
-#listaEstoqueBaixo{
+#listaEstoqueBaixo,
+#listaNotificacoes,
+#listaAtividades{
 
     list-style:none;
 
@@ -669,8 +845,6 @@ main{
 
     border-bottom:1px solid var(--cor-borda);
 
-    font-size:15px;
-
 }
 
 #listaProdutosMaisVendidos li:last-child,
@@ -680,43 +854,13 @@ main{
 
 }
 
-.quantidadeProduto{
-
-    font-weight:bold;
-
-    color:var(--cor-primaria);
-
-}
-
-.quantidadeEstoque{
-
-    font-weight:bold;
-
-    color:var(--cor-perigo);
-
-}
-
 /*=========================================================
     NOTIFICAÇÕES
 =========================================================*/
 
-#notificacoesDashboard{
-
-    margin-bottom:30px;
-
-}
-
-#listaNotificacoes{
-
-    list-style:none;
-
-}
-
 #listaNotificacoes li{
 
     display:flex;
-
-    align-items:flex-start;
 
     gap:15px;
 
@@ -734,9 +878,9 @@ main{
 
 .notificacaoIcone{
 
-    width:45px;
+    width:48px;
 
-    height:45px;
+    height:48px;
 
     border-radius:50%;
 
@@ -764,49 +908,37 @@ main{
 
 .notificacaoTitulo{
 
-    font-weight:bold;
+    font-size:15px;
 
-    margin-bottom:6px;
+    font-weight:600;
 
-    color:var(--cor-texto);
+    margin-bottom:5px;
 
 }
 
 .notificacaoTexto{
 
-    color:var(--cor-texto-secundario);
-
-    line-height:24px;
-
     font-size:14px;
+
+    color:var(--cor-texto-claro);
+
+    line-height:22px;
 
 }
 
 /*=========================================================
-    ATIVIDADES RECENTES
+    ATIVIDADES
 =========================================================*/
-
-#atividadesRecentes{
-
-    margin-bottom:30px;
-
-}
-
-#listaAtividades{
-
-    list-style:none;
-
-}
 
 #listaAtividades li{
 
     display:flex;
 
-    align-items:center;
-
     gap:15px;
 
-    padding:15px 0;
+    align-items:center;
+
+    padding:16px 0;
 
     border-bottom:1px solid var(--cor-borda);
 
@@ -820,21 +952,21 @@ main{
 
 .atividadeHora{
 
-    min-width:70px;
+    min-width:65px;
 
-    font-size:13px;
+    color:var(--cor-primaria);
 
     font-weight:bold;
 
-    color:var(--cor-primaria);
+    font-size:13px;
 
 }
 
 .atividadeTexto{
 
-    color:var(--cor-texto-secundario);
+    color:var(--cor-texto-claro);
 
-    line-height:24px;
+    line-height:22px;
 
 }
 
@@ -844,9 +976,7 @@ main{
 
 #footerAdmin{
 
-    margin-top:auto;
-
-    background:#FFFFFF;
+    background:#FFF;
 
     border-top:1px solid var(--cor-borda);
 
@@ -866,7 +996,7 @@ main{
 
 #footerTexto{
 
-    color:var(--cor-texto-secundario);
+    color:var(--cor-texto-claro);
 
     font-size:14px;
 
@@ -876,55 +1006,17 @@ main{
 
     font-size:14px;
 
-    color:var(--cor-texto-secundario);
-
     font-weight:bold;
 
-}
-
-/*=========================================================
-    ANIMAÇÕES
-=========================================================*/
-
-.cardDashboard,
-.boxDashboard{
-
-    transition:.3s ease;
-
-}
-
-.cardDashboard:hover,
-.boxDashboard:hover{
-
-    transform:translateY(-4px);
-
-}
-
-button,
-a,
-input{
-
-    transition:.3s ease;
-
-}
-
-button:active{
-
-    transform:scale(.97);
+    color:var(--cor-texto-claro);
 
 }
 
 /*=========================================================
-    RESPONSIVO - TABLET
+    RESPONSIVIDADE
 =========================================================*/
 
 @media(max-width:1200px){
-
-    #cardsDashboard{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
 
     #informacoesDashboard{
 
@@ -934,54 +1026,71 @@ button:active{
 
 }
 
-/*=========================================================
-    RESPONSIVO - MOBILE
-=========================================================*/
-
-@media(max-width:768px){
+@media(max-width:992px){
 
     #sidebar{
 
-        width:80px;
+        width:90px;
 
     }
 
-    #conteudo{
+    #conteudoAdmin{
 
-        margin-left:80px;
+        margin-left:90px;
 
     }
 
-    #logoTitulo,
-    #logoSubtitulo{
+    .menuAdmin span{
 
         display:none;
 
     }
 
-    #menuAdmin a{
+    .logoAdmin{
 
         justify-content:center;
 
-        padding:16px;
-
     }
 
-    #menuAdmin a span{
+    #logoAdminTexto{
 
         display:none;
 
     }
 
-    .topbarDireita{
+}
 
-        gap:10px;
+@media(max-width:768px){
+
+    #topbar{
+
+        flex-wrap:wrap;
+
+        height:auto;
+
+        padding:20px;
+
+        gap:20px;
 
     }
 
-    #campoPesquisa{
+    .topbarLeft,
+    .topbarCenter,
+    .topbarRight{
 
-        width:180px;
+        width:100%;
+
+    }
+
+    .topbarCenter{
+
+        order:3;
+
+    }
+
+    #txtPesquisarAdmin{
+
+        width:100%;
 
     }
 
@@ -1003,37 +1112,31 @@ button:active{
 
 }
 
-/*=========================================================
-    MOBILE PEQUENO
-=========================================================*/
-
 @media(max-width:576px){
 
-    #topbar{
+    #sidebar{
 
-        flex-direction:column;
+        transform:translateX(-100%);
 
-        align-items:flex-start;
-
-        height:auto;
-
-        gap:20px;
-
-        padding:20px;
+        transition:.3s;
 
     }
 
-    .topbarDireita{
+    #sidebar.menuAberto{
 
-        width:100%;
-
-        flex-wrap:wrap;
+        transform:translateX(0);
 
     }
 
-    #campoPesquisa{
+    #conteudoAdmin{
 
-        width:100%;
+        margin-left:0;
+
+    }
+
+    #btnMenuMobile{
+
+        display:block;
 
     }
 
@@ -1047,34 +1150,26 @@ button:active{
 
     }
 
-    .cardDashboard{
+}
 
-        flex-direction:column;
+/*=========================================================
+    ANIMAÇÕES
+=========================================================*/
 
-        text-align:center;
+.cardDashboard,
+.boxDashboard{
 
-        gap:20px;
+    transition:.3s ease;
 
-    }
+}
 
-    .cardInfo{
+.cardDashboard:hover,
+.boxDashboard:hover{
 
-        align-items:center;
-
-    }
-
-    .boxHeader{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        gap:10px;
-
-    }
+    transform:translateY(-5px);
 
 }
 
 /*=========================================================
-    FIM DO ARQUIVO
+    FIM DO CSS
 =========================================================*/

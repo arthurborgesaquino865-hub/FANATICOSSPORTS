@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title id="tituloDocumento"></title>
+
+
+<link rel="stylesheet" href="../style/produtos-lojista.css">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+<script src="../js/produtos-lojista.js" defer></script>
+
+
+</head>
+
+
+<body>
+
+
+<div id="adminApp">
+
+
+
+<!--======================================================
+SIDEBAR
+=======================================================-->
+
+
+<aside id="sidebar">
+
+
+<div class="logoAdmin">
+
+
+<img id="logoAdminImagem"
+src=""
+alt="">
+
+
+<h2 id="logoAdminTexto"></h2>
+
+
+</div>
+
+
+
+<nav class="menuAdmin">
+
+
+<ul>
+
+
+<li>
+
+<a id="menuDashboard" href="#">
+
+<i class="fas fa-chart-line"></i>
+
+<span id="menuDashboardTexto"></span>
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a id="menuProdutos" href="#">
+
+<i class="fas fa-box"></i>
+
+<span id="menuProdutosTexto"></span>
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a id="menuCadastrarProduto" href="#">
+
+<i class="fas fa-plus-circle"></i>
+
+<span id="menuCadastrarProdutoTexto"></span>
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a id="menuCategorias" href="#">
+
+<i class="fas fa-tags"></i>
+
+<span id="menuCategoriasTexto"></span>
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a id="menuPedidos" href="#">
+
+<i class="fas fa-shopping-cart"></i>
+
+<span id="menuPedidosTexto"></span>
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a id="menuClientes" href="#">
+
+<i class="fas fa-users"></i>
+
+<span id="menuClientesTexto"></span>
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a id="menuEstoque" href="#">
+
+<i class="fas fa-warehouse"></i>
+
+<span id="menuEstoqueTexto"></span>
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a id="menuRelatorios" href="#">
+
+<i class="fas fa-chart-pie"></i>
+
+<span id="menuRelatoriosTexto"></span>
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a id="menuConfiguracoes" href="#">
+
+<i class="fas fa-cog"></i>
+
+<span id="menuConfiguracoesTexto"></span>
+
+</a>
+
+</li>
+
+
+
+<li>
+
+<a id="menuSair" href="#">
+
+<i class="fas fa-sign-out-alt"></i>
+
+<span id="menuSairTexto"></span>
+
+</a>
+
+</li>
+
+
+
+</ul>
+
+
+</nav>
+
+
+</aside>
+
+
+
+
+
+<!--======================================================
+CONTEÚDO
+=======================================================-->
+
+
+<div id="conteudoAdmin">
+
+
+
+
+
+<!--======================================================
+TOPBAR
+=======================================================-->
+
+
+<header id="topbar">
+
+
+<div class="topbarLeft">
+
+
+<button id="btnMenuMobile">
+
+<i class="fas fa-bars"></i>
+
+</button>
+
+
+
+<h1 id="tituloPagina"></h1>
+
+
+</div>
+
+
+
+
+
+<div class="topbarCenter">
+
+
+<input id="txtPesquisarAdmin"
+type="text">
+
+
+
+<button id="btnPesquisarAdmin">
+
+
+<i class="fas fa-search"></i>
+
+
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="topbarRight">
+
+
+
+<button id="btnNotificacoes">
+
+
+<i class="fas fa-bell"></i>
+
+
+</button>
+
+
+
+
+
+<div class="perfilAdmin">
+
+
+<img id="fotoPerfilAdmin"
+src=""
+alt="">
+
+
+
+<div class="perfilInfo">
+
+
+<strong id="nomeAdmin"></strong>
+
+
+<span id="cargoAdmin"></span>
+
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+<!--======================================================
+MAIN
+=======================================================-->
+
+
+<main id="produtosMain">
+
+
+
+
+<section id="cabecalhoProdutos">
+
+
+
+<div class="tituloProdutos">
+
+
+<h2 id="tituloProdutos"></h2>
+
+
+<p id="descricaoProdutos"></p>
+
+
+
+</div>
+
+
+
+
+
+<button id="btnNovoProduto">
+
+
+<i class="fas fa-plus"></i>
+
+
+<span id="textoNovoProduto"></span>
+
+
+</button>
+
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+ÁREA DE FILTROS
+=======================================================-->
+
+
+
+<section id="filtrosProdutos">
+
+
+
+<input id="pesquisaProdutos"
+type="text">
+
+
+
+<select id="filtroCategoria">
+
+
+<option id="opcaoCategoria"></option>
+
+
+</select>
+
+
+
+
+
+<select id="filtroEstoque">
+
+
+<option id="opcaoEstoque"></option>
+
+
+</select>
+
+
+
+</section>
+
+
+<!--======================================================
+LISTAGEM DE PRODUTOS
+=======================================================-->
+
+
+<section id="listaProdutos">
+
+
+<div class="boxDashboard">
+
+
+
+<div class="boxHeader">
+
+
+<h2 id="tituloListaProdutos"></h2>
+
+
+</div>
+
+
+
+
+
+<!--======================================================
+TABELA DESKTOP
+=======================================================-->
+
+
+
+<div class="tabelaProdutosContainer">
+
+
+<table id="tabelaProdutos">
+
+
+
+<thead>
+
+
+<tr>
+
+
+<th id="thImagem"></th>
+
+
+<th id="thNome"></th>
+
+
+<th id="thCategoria"></th>
+
+
+<th id="thPreco"></th>
+
+
+<th id="thEstoque"></th>
+
+
+<th id="thStatus"></th>
+
+
+<th id="thAcoes"></th>
+
+
+
+</tr>
+
+
+</thead>
+
+
+
+
+<tbody id="listaProdutosTabela">
+
+
+
+</tbody>
+
+
+
+</table>
+
+
+
+</div>
+
+
+
+
+
+<!--======================================================
+CARDS MOBILE
+=======================================================-->
+
+
+
+<div id="cardsProdutosMobile">
+
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!--======================================================
+MODAL PRODUTO
+=======================================================-->
+
+
+<section id="modalProduto" class="modal">
+
+
+<div class="modalConteudo">
+
+
+
+<button id="btnFecharModal">
+
+
+<i class="fas fa-times"></i>
+
+
+</button>
+
+
+
+
+
+<h2 id="tituloModalProduto"></h2>
+
+
+
+
+
+<div class="formProduto">
+
+
+
+<div class="campoProduto">
+
+
+<label id="labelNomeProduto"></label>
+
+
+<input id="nomeProduto"
+type="text">
+
+
+</div>
+
+
+
+
+
+<div class="campoProduto">
+
+
+<label id="labelCategoriaProduto"></label>
+
+
+<input id="categoriaProduto"
+type="text">
+
+
+</div>
+
+
+
+
+
+<div class="campoProduto">
+
+
+<label id="labelPrecoProduto"></label>
+
+
+<input id="precoProduto"
+type="number">
+
+
+</div>
+
+
+
+
+
+<div class="campoProduto">
+
+
+<label id="labelEstoqueProduto"></label>
+
+
+<input id="estoqueProduto"
+type="number">
+
+
+</div>
+
+
+
+
+<div class="campoProduto">
+
+
+<label id="labelImagemProduto"></label>
+
+
+<input id="imagemProduto"
+type="text">
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+<div class="acoesModal">
+
+
+
+<button id="btnSalvarProduto">
+
+
+</button>
+
+
+
+
+<button id="btnCancelarProduto">
+
+
+</button>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
