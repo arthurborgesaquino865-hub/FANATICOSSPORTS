@@ -1,0 +1,910 @@
+/*=========================================================
+    RESET
+=========================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:#F4F6F9;
+
+    color:#333;
+
+}
+
+/*=========================================================
+    VARIÁVEIS
+=========================================================*/
+
+:root{
+
+    --cor-primaria:#0F62FE;
+
+    --cor-secundaria:#084298;
+
+    --cor-sidebar:#1E293B;
+
+    --cor-sidebar-hover:#334155;
+
+    --cor-branca:#FFFFFF;
+
+    --cor-fundo:#F4F6F9;
+
+    --cor-card:#FFFFFF;
+
+    --cor-borda:#E5E7EB;
+
+    --cor-texto:#333333;
+
+    --cor-texto-claro:#777777;
+
+    --cor-sucesso:#16A34A;
+
+    --cor-alerta:#F59E0B;
+
+    --cor-erro:#DC2626;
+
+    --sombra:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+/*=========================================================
+    PAINEL
+=========================================================*/
+
+#adminApp{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+/*=========================================================
+    SIDEBAR
+=========================================================*/
+
+#sidebar{
+
+    width:260px;
+
+    background:var(--cor-sidebar);
+
+    color:var(--cor-branca);
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    bottom:0;
+
+    overflow-y:auto;
+
+    box-shadow:var(--sombra);
+
+}
+
+/*=========================================================
+    LOGO
+=========================================================*/
+
+.logoAdmin{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    padding:30px 20px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+#logoAdminImagem{
+
+    width:55px;
+
+    height:55px;
+
+    object-fit:contain;
+
+}
+
+#logoAdminTexto{
+
+    font-size:22px;
+
+    color:var(--cor-branca);
+
+}
+
+/*=========================================================
+    MENU
+=========================================================*/
+
+.menuAdmin{
+
+    margin-top:20px;
+
+}
+
+.menuAdmin ul{
+
+    list-style:none;
+
+}
+
+.menuAdmin li{
+
+    margin:8px 15px;
+
+}
+
+.menuAdmin a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:14px 18px;
+
+    color:var(--cor-branca);
+
+    text-decoration:none;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.menuAdmin a:hover{
+
+    background:var(--cor-sidebar-hover);
+
+}
+
+.menuAdmin i{
+
+    width:22px;
+
+    text-align:center;
+
+    font-size:18px;
+
+}
+
+.menuAdmin span{
+
+    font-size:15px;
+
+    font-weight:500;
+
+}
+
+/*=========================================================
+    CONTEÚDO
+=========================================================*/
+
+#conteudoAdmin{
+
+    flex:1;
+
+    margin-left:260px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:100vh;
+
+}
+
+/*=========================================================
+    MAIN
+=========================================================*/
+
+#dashboardMain{
+
+    flex:1;
+
+    padding:30px;
+
+}
+
+/*=========================================================
+    TOPBAR
+=========================================================*/
+
+#topbar{
+
+    height:80px;
+
+    background:var(--cor-branca);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 30px;
+
+    box-shadow:var(--sombra);
+
+    border-bottom:1px solid var(--cor-borda);
+
+}
+
+.topbarLeft{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+#btnMenuMobile{
+
+    display:none;
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    color:var(--cor-texto);
+
+}
+
+#tituloPagina{
+
+    font-size:28px;
+
+    color:var(--cor-texto);
+
+}
+
+/*=========================================================
+    PESQUISA
+=========================================================*/
+
+.topbarCenter{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+#txtPesquisarAdmin{
+
+    width:340px;
+
+    height:45px;
+
+    border:1px solid var(--cor-borda);
+
+    border-right:none;
+
+    border-radius:10px 0 0 10px;
+
+    padding:0 15px;
+
+    outline:none;
+
+    font-size:15px;
+
+}
+
+#btnPesquisarAdmin{
+
+    width:50px;
+
+    height:45px;
+
+    border:none;
+
+    cursor:pointer;
+
+    color:var(--cor-branca);
+
+    background:var(--cor-primaria);
+
+    border-radius:0 10px 10px 0;
+
+    transition:.3s;
+
+}
+
+#btnPesquisarAdmin:hover{
+
+    background:var(--cor-secundaria);
+
+}
+
+/*=========================================================
+    PERFIL
+=========================================================*/
+
+.topbarRight{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+#btnNotificacoes{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:var(--cor-fundo);
+
+    transition:.3s;
+
+}
+
+#btnNotificacoes:hover{
+
+    background:var(--cor-primaria);
+
+    color:var(--cor-branca);
+
+}
+
+.perfilAdmin{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+#fotoPerfilAdmin{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.perfilInfo{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+#nomeAdmin{
+
+    font-size:16px;
+
+    color:var(--cor-texto);
+
+}
+
+#cargoAdmin{
+
+    font-size:13px;
+
+    color:var(--cor-texto-claro);
+
+}
+
+/*=========================================================
+    CARDS
+=========================================================*/
+
+#cardsDashboard{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    margin-bottom:30px;
+
+}
+
+.cardDashboard{
+
+    background:var(--cor-card);
+
+    border-radius:15px;
+
+    padding:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    box-shadow:var(--sombra);
+
+    transition:.3s;
+
+}
+
+.cardDashboard:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.cardIcone{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:rgba(15,98,254,.10);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.cardIcone i{
+
+    font-size:28px;
+
+    color:var(--cor-primaria);
+
+}
+
+.cardInfo{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.cardInfo h3{
+
+    font-size:16px;
+
+    color:var(--cor-texto-claro);
+
+    margin-bottom:8px;
+
+}
+
+.cardInfo span{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    color:var(--cor-texto);
+
+}
+
+/*=========================================================
+    BOXES
+=========================================================*/
+
+.boxDashboard{
+
+    background:var(--cor-card);
+
+    border-radius:15px;
+
+    box-shadow:var(--sombra);
+
+    padding:25px;
+
+    margin-bottom:30px;
+
+}
+
+.boxHeader{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.boxHeader h2{
+
+    font-size:22px;
+
+    color:var(--cor-texto);
+
+}
+
+/*=========================================================
+    GRÁFICO
+=========================================================*/
+
+#graficoDashboard canvas{
+
+    width:100%;
+
+    height:350px;
+
+    display:block;
+
+}
+
+/*=========================================================
+    TABELA DE PEDIDOS
+=========================================================*/
+
+#tabelaPedidos{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+#tabelaPedidos thead{
+
+    background:var(--cor-fundo);
+
+}
+
+#tabelaPedidos th{
+
+    padding:15px;
+
+    text-align:left;
+
+    font-size:15px;
+
+    color:var(--cor-texto);
+
+    border-bottom:1px solid var(--cor-borda);
+
+}
+
+#tabelaPedidos td{
+
+    padding:15px;
+
+    border-bottom:1px solid var(--cor-borda);
+
+    color:var(--cor-texto-claro);
+
+    font-size:14px;
+
+}
+
+#tabelaPedidos tbody tr{
+
+    transition:.3s;
+
+}
+
+#tabelaPedidos tbody tr:hover{
+
+    background:#F8FAFC;
+
+}
+
+/*=========================================================
+    STATUS DOS PEDIDOS
+=========================================================*/
+
+.status{
+
+    display:inline-block;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    color:#FFF;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+.status.pago{
+
+    background:var(--cor-sucesso);
+
+}
+
+.status.pendente{
+
+    background:var(--cor-alerta);
+
+}
+
+.status.cancelado{
+
+    background:var(--cor-erro);
+
+}
+
+/*=========================================================
+    LISTAS
+=========================================================*/
+
+#listaProdutosMaisVendidos,
+#listaEstoqueBaixo,
+#listaNotificacoes,
+#listaAtividades{
+
+    list-style:none;
+
+}
+
+#listaProdutosMaisVendidos li,
+#listaEstoqueBaixo li,
+#listaNotificacoes li,
+#listaAtividades li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 0;
+
+    border-bottom:1px solid var(--cor-borda);
+
+    font-size:15px;
+
+}
+
+#listaProdutosMaisVendidos li:last-child,
+#listaEstoqueBaixo li:last-child,
+#listaNotificacoes li:last-child,
+#listaAtividades li:last-child{
+
+    border-bottom:none;
+
+}
+
+/*=========================================================
+    INFORMAÇÕES
+=========================================================*/
+
+#informacoesDashboard{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+/*=========================================================
+    FOOTER
+=========================================================*/
+
+#footerAdmin{
+
+    background:var(--cor-branca);
+
+    border-top:1px solid var(--cor-borda);
+
+    margin-top:30px;
+
+    padding:20px 30px;
+
+}
+
+.footerContainer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.footerEsquerda p,
+.footerDireita span{
+
+    font-size:14px;
+
+    color:var(--cor-texto-claro);
+
+}
+
+/*=========================================================
+    RESPONSIVIDADE
+=========================================================*/
+
+@media(max-width:1200px){
+
+    #cardsDashboard{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:992px){
+
+    #sidebar{
+
+        width:80px;
+
+    }
+
+    #conteudoAdmin{
+
+        margin-left:80px;
+
+    }
+
+    .menuAdmin span,
+    #logoAdminTexto{
+
+        display:none;
+
+    }
+
+    .logoAdmin{
+
+        justify-content:center;
+
+    }
+
+    .topbarCenter{
+
+        display:none;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    #sidebar{
+
+        left:-260px;
+
+        width:260px;
+
+        z-index:1000;
+
+        transition:.3s;
+
+    }
+
+    #sidebar.ativo{
+
+        left:0;
+
+    }
+
+    #conteudoAdmin{
+
+        margin-left:0;
+
+    }
+
+    #btnMenuMobile{
+
+        display:block;
+
+    }
+
+    #cardsDashboard{
+
+        grid-template-columns:1fr;
+
+    }
+
+    #informacoesDashboard{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .footerContainer{
+
+        flex-direction:column;
+
+        gap:10px;
+
+        text-align:center;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    #dashboardMain{
+
+        padding:20px;
+
+    }
+
+    #topbar{
+
+        padding:15px;
+
+    }
+
+    #tituloPagina{
+
+        font-size:22px;
+
+    }
+
+    #tabelaPedidos{
+
+        display:block;
+
+        overflow-x:auto;
+
+    }
+
+}

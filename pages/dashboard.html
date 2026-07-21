@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet"
+          href="../style/dashboard.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <script src="../js/dashboard.js"
+            defer></script>
+
+</head>
+
+<body>
+
+<!--======================================================
+PAINEL ADMINISTRATIVO
+=======================================================-->
+
+<div id="adminApp">
+
+<!--======================================================
+SIDEBAR
+=======================================================-->
+
+<aside id="sidebar">
+
+    <div class="logoAdmin">
+
+        <img id="logoAdminImagem"
+             src=""
+             alt="">
+
+        <h2 id="logoAdminTexto"></h2>
+
+    </div>
+
+    <nav class="menuAdmin">
+
+        <ul>
+
+            <li>
+
+                <a id="menuDashboard"
+                   href="#">
+
+                    <i class="fas fa-chart-line"></i>
+
+                    <span id="menuDashboardTexto"></span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a id="menuProdutos"
+                   href="#">
+
+                    <i class="fas fa-box"></i>
+
+                    <span id="menuProdutosTexto"></span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a id="menuCadastrarProduto"
+                   href="#">
+
+                    <i class="fas fa-plus-circle"></i>
+
+                    <span id="menuCadastrarProdutoTexto"></span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a id="menuCategorias"
+                   href="#">
+
+                    <i class="fas fa-tags"></i>
+
+                    <span id="menuCategoriasTexto"></span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a id="menuPedidos"
+                   href="#">
+
+                    <i class="fas fa-shopping-cart"></i>
+
+                    <span id="menuPedidosTexto"></span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a id="menuClientes"
+                   href="#">
+
+                    <i class="fas fa-users"></i>
+
+                    <span id="menuClientesTexto"></span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a id="menuEstoque"
+                   href="#">
+
+                    <i class="fas fa-warehouse"></i>
+
+                    <span id="menuEstoqueTexto"></span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a id="menuRelatorios"
+                   href="#">
+
+                    <i class="fas fa-chart-pie"></i>
+
+                    <span id="menuRelatoriosTexto"></span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a id="menuConfiguracoes"
+                   href="#">
+
+                    <i class="fas fa-cog"></i>
+
+                    <span id="menuConfiguracoesTexto"></span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a id="menuSair"
+                   href="#">
+
+                    <i class="fas fa-sign-out-alt"></i>
+
+                    <span id="menuSairTexto"></span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+</aside>
+
+<!--======================================================
+CONTEÚDO
+=======================================================-->
+
+<div id="conteudoAdmin">
+
+<!--======================================================
+TOPBAR
+=======================================================-->
+
+<header id="topbar">
+
+    <div class="topbarLeft">
+
+        <button id="btnMenuMobile">
+
+            <i class="fas fa-bars"></i>
+
+        </button>
+
+        <h1 id="tituloPagina"></h1>
+
+    </div>
+
+    <div class="topbarCenter">
+
+        <input id="txtPesquisarAdmin"
+               type="text"
+               placeholder="">
+
+        <button id="btnPesquisarAdmin">
+
+            <i class="fas fa-search"></i>
+
+        </button>
+
+    </div>
+
+    <div class="topbarRight">
+
+        <button id="btnNotificacoes">
+
+            <i class="fas fa-bell"></i>
+
+        </button>
+
+        <div class="perfilAdmin">
+
+            <img id="fotoPerfilAdmin"
+                 src=""
+                 alt="">
+
+            <div class="perfilInfo">
+
+                <strong id="nomeAdmin"></strong>
+
+                <span id="cargoAdmin"></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!--======================================================
+MAIN
+=======================================================-->
+
+<main id="dashboardMain">
+
+<!--======================================================
+CARDS
+=======================================================-->
+
+<section id="cardsDashboard">
+
+    <div class="cardDashboard">
+
+        <div class="cardIcone">
+
+            <i class="fas fa-box"></i>
+
+        </div>
+
+        <div class="cardInfo">
+
+            <h3 id="cardTitulo1"></h3>
+
+            <span id="cardValor1"></span>
+
+        </div>
+
+    </div>
+
+    <div class="cardDashboard">
+
+        <div class="cardIcone">
+
+            <i class="fas fa-shopping-cart"></i>
+
+        </div>
+
+        <div class="cardInfo">
+
+            <h3 id="cardTitulo2"></h3>
+
+            <span id="cardValor2"></span>
+
+        </div>
+
+    </div>
+
+    <div class="cardDashboard">
+
+        <div class="cardIcone">
+
+            <i class="fas fa-users"></i>
+
+        </div>
+
+        <div class="cardInfo">
+
+            <h3 id="cardTitulo3"></h3>
+
+            <span id="cardValor3"></span>
+
+        </div>
+
+    </div>
+
+    <div class="cardDashboard">
+
+        <div class="cardIcone">
+
+            <i class="fas fa-dollar-sign"></i>
+
+        </div>
+
+        <div class="cardInfo">
+
+            <h3 id="cardTitulo4"></h3>
+
+            <span id="cardValor4"></span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--======================================================
+GRÁFICO
+=======================================================-->
+
+<section id="graficoDashboard">
+
+    <div class="boxDashboard">
+
+        <div class="boxHeader">
+
+            <h2 id="tituloGrafico"></h2>
+
+        </div>
+
+        <canvas id="graficoVendas">
+
+        </canvas>
+
+    </div>
+
+</section>
+
+<!--======================================================
+ÚLTIMOS PEDIDOS
+=======================================================-->
+
+<section id="pedidosDashboard">
+
+    <div class="boxDashboard">
+
+        <div class="boxHeader">
+
+            <h2 id="tituloPedidos"></h2>
+
+        </div>
+
+        <table id="tabelaPedidos">
+
+            <thead>
+
+                <tr>
+
+                    <th id="thPedido"></th>
+
+                    <th id="thCliente"></th>
+
+                    <th id="thValor"></th>
+
+                    <th id="thStatus"></th>
+
+                    <th id="thData"></th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="listaPedidos">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+<!--======================================================
+INFORMAÇÕES
+=======================================================-->
+
+<section id="informacoesDashboard">
+
+    <!--=============================================
+    PRODUTOS MAIS VENDIDOS
+    ==============================================-->
+
+    <div class="boxDashboard">
+
+        <div class="boxHeader">
+
+            <h2 id="tituloProdutos"></h2>
+
+        </div>
+
+        <ul id="listaProdutosMaisVendidos">
+
+        </ul>
+
+    </div>
+
+    <!--=============================================
+    ESTOQUE BAIXO
+    ==============================================-->
+
+    <div class="boxDashboard">
+
+        <div class="boxHeader">
+
+            <h2 id="tituloEstoque"></h2>
+
+        </div>
+
+        <ul id="listaEstoqueBaixo">
+
+        </ul>
+
+    </div>
+
+</section>
+
+<!--======================================================
+NOTIFICAÇÕES
+=======================================================-->
+
+<section id="notificacoesDashboard">
+
+    <div class="boxDashboard">
+
+        <div class="boxHeader">
+
+            <h2 id="tituloNotificacoes"></h2>
+
+        </div>
+
+        <ul id="listaNotificacoes">
+
+        </ul>
+
+    </div>
+
+</section>
+
+<!--======================================================
+ATIVIDADES RECENTES
+=======================================================-->
+
+<section id="atividadesDashboard">
+
+    <div class="boxDashboard">
+
+        <div class="boxHeader">
+
+            <h2 id="tituloAtividades"></h2>
+
+        </div>
+
+        <ul id="listaAtividades">
+
+        </ul>
+
+    </div>
+
+</section>
+
+</main>
+
+<!--======================================================
+FOOTER
+=======================================================-->
+
+<footer id="footerAdmin">
+
+    <div class="footerContainer">
+
+        <div class="footerEsquerda">
+
+            <p id="footerTexto"></p>
+
+        </div>
+
+        <div class="footerDireita">
+
+            <span id="footerVersao"></span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</div>
+
+</body>
+
+</html>

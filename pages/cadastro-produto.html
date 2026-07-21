@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro de Produtos</title>
+
+    <link rel="stylesheet"
+          href="../style/cadastro-produto.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <script src="../js/cadastro-produto.js"
+            defer></script>
+
+</head>
+
+<body>
+
+<!--======================================================
+PAINEL ADMINISTRATIVO
+=======================================================-->
+
+<div id="adminApp">
+
+<!--======================================================
+SIDEBAR
+=======================================================-->
+
+<aside id="sidebar">
+
+    <div class="logoAdmin">
+
+        <img id="logoAdminImagem"
+             src=""
+             alt="">
+
+        <h2 id="logoAdminTexto"></h2>
+
+    </div>
+
+    <nav class="menuAdmin">
+
+        <ul>
+
+            <li>
+
+                <a id="menuDashboard"
+                   href="dashboard.html">
+
+                    <i class="fas fa-chart-line"></i>
+
+                    <span id="menuDashboardTexto"></span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a id="menuProdutos"
+                   href="produtos-lojista.html">
+
+                    <i class="fas fa-box"></i>
+
+                    <span id="menuProdutosTexto"></span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a id="menuCadastrarProduto"
+                   href="cadastro-produto.html">
+
+                    <i class="fas fa-plus-circle"></i>
+
+                    <span id="menuCadastrarProdutoTexto"></span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a id="menuCategorias"
+                   href="#">
+
+                    <i class="fas fa-tags"></i>
+
+                    <span id="menuCategoriasTexto"></span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a id="menuPedidos"
+                   href="#">
+
+                    <i class="fas fa-shopping-cart"></i>
+
+                    <span id="menuPedidosTexto"></span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a id="menuClientes"
+                   href="#">
+
+                    <i class="fas fa-users"></i>
+
+                    <span id="menuClientesTexto"></span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a id="menuEstoque"
+                   href="#">
+
+                    <i class="fas fa-warehouse"></i>
+
+                    <span id="menuEstoqueTexto"></span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a id="menuRelatorios"
+                   href="#">
+
+                    <i class="fas fa-chart-pie"></i>
+
+                    <span id="menuRelatoriosTexto"></span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a id="menuConfiguracoes"
+                   href="#">
+
+                    <i class="fas fa-cog"></i>
+
+                    <span id="menuConfiguracoesTexto"></span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a id="menuSair"
+                   href="#">
+
+                    <i class="fas fa-sign-out-alt"></i>
+
+                    <span id="menuSairTexto"></span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+</aside>
+
+<!--======================================================
+CONTEÚDO
+=======================================================-->
+
+<div id="conteudoAdmin">
+
+<!--======================================================
+TOPBAR
+=======================================================-->
+
+<header id="topbar">
+
+    <div class="topbarLeft">
+
+        <button id="btnMenuMobile">
+
+            <i class="fas fa-bars"></i>
+
+        </button>
+
+        <h1 id="tituloPagina"></h1>
+
+    </div>
+
+    <div class="topbarCenter">
+
+        <input id="txtPesquisarAdmin"
+               type="text"
+               placeholder="">
+
+        <button id="btnPesquisarAdmin">
+
+            <i class="fas fa-search"></i>
+
+        </button>
+
+    </div>
+
+    <div class="topbarRight">
+
+        <button id="btnNotificacoes">
+
+            <i class="fas fa-bell"></i>
+
+        </button>
+
+        <div class="perfilAdmin">
+
+            <img id="fotoPerfilAdmin"
+                 src=""
+                 alt="">
+
+            <div class="perfilInfo">
+
+                <strong id="nomeAdmin"></strong>
+
+                <span id="cargoAdmin"></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!--======================================================
+MAIN
+=======================================================-->
+
+<main id="cadastroProdutoMain">
+
+<!--======================================================
+FORMULÁRIO
+=======================================================-->
+
+<section id="formularioProduto">
+
+    <div class="boxFormulario">
+
+        <div class="boxHeader">
+
+            <h2 id="tituloFormulario"></h2>
+
+        </div>
+
+
+                <div class="formGrid">
+
+            <!--=========================================
+            NOME DO PRODUTO
+            ==========================================-->
+
+            <div class="grupoFormulario">
+
+                <label id="lblNomeProduto"
+                       for="nomeProduto"></label>
+
+                <input id="nomeProduto"
+                       type="text">
+
+            </div>
+
+            <!--=========================================
+            CATEGORIA
+            ==========================================-->
+
+            <div class="grupoFormulario">
+
+                <label id="lblCategoriaProduto"
+                       for="categoriaProduto"></label>
+
+                <select id="categoriaProduto">
+
+                </select>
+
+            </div>
+
+            <!--=========================================
+            MARCA
+            ==========================================-->
+
+            <div class="grupoFormulario">
+
+                <label id="lblMarcaProduto"
+                       for="marcaProduto"></label>
+
+                <input id="marcaProduto"
+                       type="text">
+
+            </div>
+
+            <!--=========================================
+            SKU
+            ==========================================-->
+
+            <div class="grupoFormulario">
+
+                <label id="lblSkuProduto"
+                       for="skuProduto"></label>
+
+                <input id="skuProduto"
+                       type="text">
+
+            </div>
+
+            <!--=========================================
+            PREÇO
+            ==========================================-->
+
+            <div class="grupoFormulario">
+
+                <label id="lblPrecoProduto"
+                       for="precoProduto"></label>
+
+                <input id="precoProduto"
+                       type="number"
+                       step="0.01">
+
+            </div>
+
+            <!--=========================================
+            PREÇO PROMOCIONAL
+            ==========================================-->
+
+            <div class="grupoFormulario">
+
+                <label id="lblPrecoPromocional"
+                       for="precoPromocional"></label>
+
+                <input id="precoPromocional"
+                       type="number"
+                       step="0.01">
+
+            </div>
+
+            <!--=========================================
+            ESTOQUE
+            ==========================================-->
+
+            <div class="grupoFormulario">
+
+                <label id="lblEstoqueProduto"
+                       for="estoqueProduto"></label>
+
+                <input id="estoqueProduto"
+                       type="number">
+
+            </div>
+
+            <!--=========================================
+            TAMANHO
+            ==========================================-->
+
+            <div class="grupoFormulario">
+
+                <label id="lblTamanhoProduto"
+                       for="tamanhoProduto"></label>
+
+                <select id="tamanhoProduto">
+
+                </select>
+
+            </div>
+
+            <!--=========================================
+            COR
+            ==========================================-->
+
+            <div class="grupoFormulario">
+
+                <label id="lblCorProduto"
+                       for="corProduto"></label>
+
+                <input id="corProduto"
+                       type="text">
+
+            </div>
+
+        </div>
+
+                <!--=========================================
+        IMAGENS DO PRODUTO
+        ==========================================-->
+
+        <section id="imagensProduto">
+
+            <h3 id="tituloImagensProduto"></h3>
+
+
+            <div class="uploadContainer">
+
+
+                <div class="uploadImagem">
+
+                    <label id="lblImagemPrincipal"
+                           for="imagemPrincipal"></label>
+
+                    <input id="imagemPrincipal"
+                           type="file"
+                           accept="image/*">
+
+                    <img id="previewImagemPrincipal"
+                         src=""
+                         alt="">
+
+
+                </div>
+
+
+                <div class="uploadImagem">
+
+                    <label id="lblImagem2"
+                           for="imagem2"></label>
+
+                    <input id="imagem2"
+                           type="file"
+                           accept="image/*">
+
+                    <img id="previewImagem2"
+                         src=""
+                         alt="">
+
+
+                </div>
+
+
+                <div class="uploadImagem">
+
+                    <label id="lblImagem3"
+                           for="imagem3"></label>
+
+                    <input id="imagem3"
+                           type="file"
+                           accept="image/*">
+
+                    <img id="previewImagem3"
+                         src=""
+                         alt="">
+
+
+                </div>
+
+
+                <div class="uploadImagem">
+
+                    <label id="lblImagem4"
+                           for="imagem4"></label>
+
+                    <input id="imagem4"
+                           type="file"
+                           accept="image/*">
+
+                    <img id="previewImagem4"
+                         src=""
+                         alt="">
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!--=========================================
+        DESCRIÇÕES
+        ==========================================-->
+
+
+        <div class="grupoFormulario descricaoProduto">
+
+
+            <label id="lblDescricaoCurta"
+                   for="descricaoCurta"></label>
+
+
+            <textarea id="descricaoCurta"></textarea>
+
+
+        </div>
+
+
+
+        <div class="grupoFormulario descricaoProduto">
+
+
+            <label id="lblDescricaoCompleta"
+                   for="descricaoCompleta"></label>
+
+
+            <textarea id="descricaoCompleta"></textarea>
+
+
+        </div>
+
+
+
+        <!--=========================================
+        BOTÕES
+        ==========================================-->
+
+
+        <div id="acoesProduto">
+
+
+            <button id="btnSalvarProduto"
+                    type="button">
+
+
+            </button>
+
+
+            <button id="btnLimparProduto"
+                    type="button">
+
+
+            </button>
+
+
+            <button id="btnCancelarProduto"
+                    type="button">
+
+
+            </button>
+
+
+        </div>
+
+
+
+    </div>
+
+
+</section>
+
+
+</main>
+
+
+
+<!--======================================================
+FOOTER
+=======================================================-->
+
+<footer id="footerAdmin">
+
+
+    <div class="footerContainer">
+
+
+        <div class="footerEsquerda">
+
+
+            <p id="footerTexto"></p>
+
+
+        </div>
+
+
+
+        <div class="footerDireita">
+
+
+            <span id="footerVersao"></span>
+
+
+        </div>
+
+
+    </div>
+
+
+</footer>
+
+
+
+</div>
+
+
+
+</body>
+
+
+</html>

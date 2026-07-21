@@ -1,0 +1,415 @@
+/*=========================================================
+    RESET
+=========================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+
+body{
+
+    background:#F4F6F9;
+
+    color:#333;
+
+}
+
+
+/*=========================================================
+    VARIÁVEIS
+=========================================================*/
+
+:root{
+
+    --cor-primaria:#0F62FE;
+
+    --cor-secundaria:#084298;
+
+    --cor-sidebar:#1E293B;
+
+    --cor-sidebar-hover:#334155;
+
+    --cor-branca:#FFFFFF;
+
+    --cor-fundo:#F4F6F9;
+
+    --cor-borda:#E5E7EB;
+
+    --cor-texto:#333333;
+
+    --cor-texto-claro:#777777;
+
+    --sombra:
+    0 5px 15px rgba(0,0,0,.08);
+
+}
+
+
+/*=========================================================
+    ESTRUTURA PRINCIPAL
+=========================================================*/
+
+#adminApp{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+
+/*=========================================================
+    SIDEBAR
+=========================================================*/
+
+#sidebar{
+
+    width:260px;
+
+    background:var(--cor-sidebar);
+
+    color:white;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    bottom:0;
+
+    overflow-y:auto;
+
+    box-shadow:var(--sombra);
+
+}
+
+
+/*=========================================================
+    LOGO
+=========================================================*/
+
+.logoAdmin{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    padding:30px 20px;
+
+    border-bottom:1px solid rgba(255,255,255,.1);
+
+}
+
+
+#logoAdminImagem{
+
+    width:55px;
+
+    height:55px;
+
+    object-fit:contain;
+
+}
+
+
+#logoAdminTexto{
+
+    font-size:22px;
+
+    color:white;
+
+}
+
+
+
+/*=========================================================
+    MENU
+=========================================================*/
+
+.menuAdmin{
+
+    margin-top:20px;
+
+}
+
+
+.menuAdmin ul{
+
+    list-style:none;
+
+}
+
+
+.menuAdmin li{
+
+    margin:8px 15px;
+
+}
+
+
+.menuAdmin a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:14px 18px;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+
+.menuAdmin a:hover{
+
+    background:var(--cor-sidebar-hover);
+
+}
+
+
+.menuAdmin i{
+
+    width:22px;
+
+    text-align:center;
+
+}
+
+
+.menuAdmin span{
+
+    font-size:15px;
+
+}
+
+
+
+/*=========================================================
+    CONTEÚDO
+=========================================================*/
+
+#conteudoAdmin{
+
+    flex:1;
+
+    margin-left:260px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:100vh;
+
+}
+
+
+
+/*=========================================================
+    TOPBAR
+=========================================================*/
+
+#topbar{
+
+    height:80px;
+
+    background:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 30px;
+
+    box-shadow:var(--sombra);
+
+}
+
+
+.topbarLeft{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+#btnMenuMobile{
+
+    display:none;
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+}
+
+
+#tituloPagina{
+
+    font-size:28px;
+
+}
+
+
+
+/*=========================================================
+    PESQUISA
+=========================================================*/
+
+.topbarCenter{
+
+    display:flex;
+
+}
+
+
+#txtPesquisarAdmin{
+
+    width:340px;
+
+    height:45px;
+
+    border:1px solid var(--cor-borda);
+
+    padding:0 15px;
+
+    outline:none;
+
+    border-radius:10px 0 0 10px;
+
+}
+
+
+#btnPesquisarAdmin{
+
+    width:50px;
+
+    border:none;
+
+    background:var(--cor-primaria);
+
+    color:white;
+
+    cursor:pointer;
+
+    border-radius:0 10px 10px 0;
+
+}
+
+
+
+/*=========================================================
+    PERFIL
+=========================================================*/
+
+.topbarRight{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+#btnNotificacoes{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+}
+
+
+.perfilAdmin{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+#fotoPerfilAdmin{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+
+.perfilInfo{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+#cargoAdmin{
+
+    font-size:13px;
+
+    color:var(--cor-texto-claro);
+
+}
+
+
+
+/*=========================================================
+    MAIN CADASTRO
+=========================================================*/
+
+#cadastroProdutoMain{
+
+    flex:1;
+
+    padding:30px;
+
+}
