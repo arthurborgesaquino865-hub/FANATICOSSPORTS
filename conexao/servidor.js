@@ -21,10 +21,9 @@ app.use("/avaliacao_produto", avaliacaoProdutoRotas);
 const bannerRotas = require("../routes/banner_rotas.js");
 app.use("/banner", bannerRotas);
 
-const carrinhoRotas = require("../routes/carrinho_rotas.js");
-app.use("/carrinho", carrinhoRotas);
 
-const carrinhoRotas = require("../routes/carrinho_rotas.js");
+
+const carrinhoRotas = require("../routes/carrinho_route.js");
 app.use("/carrinho", carrinhoRotas);
 
 const cartaoPagamentoRotas = require("../routes/cartao_pagamento_rotas.js");
