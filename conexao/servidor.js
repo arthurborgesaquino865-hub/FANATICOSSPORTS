@@ -6,92 +6,113 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-//importar a conexao com o banco de dados
+// Importar conexão com o banco de dados
 const conexao = require("./conexao.js");
 
-//criar uma rota para testar a conexao com o
-//banco de dados
+// ==================== ROTAS ====================
 
-const clientesRotas = require("..routes/cliente_rotas.js");
+// Cliente
+const clientesRotas = require("../routes/cliente_route.js");
 app.use("/clientes", clientesRotas);
 
-const avaliacaoProdutoRotas = require("../routes/avaliacao_produto_rotas.js");
+// Avaliação Produto
+const avaliacaoProdutoRotas = require("../routes/avaliacao_produto_route.js");
 app.use("/avaliacao_produto", avaliacaoProdutoRotas);
 
-const bannerRotas = require("../routes/banner_rotas.js");
+// Banner
+const bannerRotas = require("../routes/banner_route.js");
 app.use("/banner", bannerRotas);
 
-
-
+// Carrinho
 const carrinhoRotas = require("../routes/carrinho_route.js");
 app.use("/carrinho", carrinhoRotas);
 
-const cartaoPagamentoRotas = require("../routes/cartao_pagamento_rotas.js");
+// Cartão de Pagamento
+const cartaoPagamentoRotas = require("../routes/cartao_pagamento_route.js");
 app.use("/cartao_pagamento", cartaoPagamentoRotas);
 
-const categoriaRotas = require("../routes/categoria_rotas.js");
+// Categoria
+const categoriaRotas = require("../routes/categoria_route.js");
 app.use("/categoria", categoriaRotas);
 
-const coresRotas = require("../routes/cores_rotas.js");
+// Cores
+const coresRotas = require("../routes/cores_route.js");
 app.use("/cores", coresRotas);
 
-const cupomRotas = require("../routes/cupom_rotas.js");
+// Cupom
+const cupomRotas = require("../routes/cupom_route.js");
 app.use("/cupom", cupomRotas);
 
-const enderecoRotas = require("../routes/endereco_rotas.js");
+// Endereço
+const enderecoRotas = require("../routes/endereco_route.js");
 app.use("/endereco", enderecoRotas);
 
-const freteRotas = require("../routes/frete_rotas.js");
+// Frete
+const freteRotas = require("../routes/frete_route.js");
 app.use("/frete", freteRotas);
 
-const marcaRotas = require("../routes/marca_rotas.js");
+// Marca
+const marcaRotas = require("../routes/marca_route.js");
 app.use("/marca", marcaRotas);
 
-const pedidosRotas = require("../routes/pedidos_rotas.js");
+// Pedidos
+const pedidosRotas = require("../routes/pedidos_route.js");
 app.use("/pedidos", pedidosRotas);
 
-const promocaoRotas = require("../routes/promocao_rotas.js");
+// Promoção
+const promocaoRotas = require("../routes/promocao_route.js");
 app.use("/promocao", promocaoRotas);
 
-const tamanhoRotas = require("../routes/tamanho_rotas.js");
+// Tamanho
+const tamanhoRotas = require("../routes/tamanho_route.js");
 app.use("/tamanho", tamanhoRotas);
 
-const bannerHasProdutoRotas = require("../routes/banner_has_produto_rotas.js");
+// Banner x Produto
+const bannerHasProdutoRotas = require("../routes/banner_has_produto_route.js");
 app.use("/banner_has_produto", bannerHasProdutoRotas);
 
-const carrinhoHasProdutoRotas = require("../routes/carrinho_has_produto_rotas.js");
+// Carrinho x Produto
+const carrinhoHasProdutoRotas = require("../routes/carrinho_has_produto_route.js");
 app.use("/carrinho_has_produto", carrinhoHasProdutoRotas);
 
-const categoriaHasProdutoRotas = require("../routes/categoria_has_produto_rotas.js");
+// Categoria x Produto
+const categoriaHasProdutoRotas = require("../routes/categoria_has_produto_route.js");
 app.use("/categoria_has_produto", categoriaHasProdutoRotas);
 
-const categoriaHasPromocaoRotas = require("../routes/categoria_has_promocao_rotas.js");
+// Categoria x Promoção
+const categoriaHasPromocaoRotas = require("../routes/categoria_has_promocao_route.js");
 app.use("/categoria_has_promocao", categoriaHasPromocaoRotas);
 
-const coresHasProdutoRotas = require("../routes/cores_has_produto_rotas.js");
+// Cores x Produto
+const coresHasProdutoRotas = require("../routes/cores_has_produto_route.js");
 app.use("/cores_has_produto", coresHasProdutoRotas);
 
-const cupomHasCategoriaHasProdutoRotas = require("../routes/cupom_has_categoria_has_produto_rotas.js");
-app.use("/cupom_has_categoria_has_produto", cupomHasCategoriaHasProdutoRotas);
+// Cupom x Categoria x Produto
+const cupomHasCategoriaHasProdutoRotas = require("../routes/cupom_has_categoria_has_produto_route.js");
+app.use("/cupom_has_categoria_has_produto", cupom_Has_Categoria_Has_Produto_route.js);
 
-const cupomHasCategoriaRotas = require("../routes/cupom_has_categoria_rotas.js");
+// Cupom x Categoria
+const cupomHasCategoriaRotas = require("../routes/cupom_has_categoria_route.js");
 app.use("/cupom_has_categoria", cupomHasCategoriaRotas);
 
-const enderecoHasClienteRotas = require("../routes/endereco_has_cliente_rotas.js");
+// Endereço x Cliente
+const enderecoHasClienteRotas = require("../routes/endereco_has_cliente_route.js");
 app.use("/endereco_has_cliente", enderecoHasClienteRotas);
 
-const pedidosHasProdutoRotas = require("../routes/pedidos_has_produto_rotas.js");
+// Pedidos x Produto
+const pedidosHasProdutoRotas = require("../routes/pedidos_has_produto_route.js");
 app.use("/pedidos_has_produto", pedidosHasProdutoRotas);
 
-const promocaoHasProdutoRotas = require("../routes/promocao_has_produto_rotas.js");
+// Promoção x Produto
+const promocaoHasProdutoRotas = require("../routes/promocao_has_produto_route.js");
 app.use("/promocao_has_produto", promocaoHasProdutoRotas);
 
-const tamanhoHasProdutoRotas = require("../routes/tamanho_has_produto_rotas.js");
+// Tamanho x Produto
+const tamanhoHasProdutoRotas = require("../routes/tamanho_has_produto_route.js");
 app.use("/tamanho_has_produto", tamanhoHasProdutoRotas);
 
-    app.listen(3000, () => {
-        console.log("Servidor rodando na porta 3000");
-    })
+// ==================== SERVIDOR ====================
 
-
-    
+app.listen(3000, () => {
+    console.log("Servidor rodando na porta 3000");
+});

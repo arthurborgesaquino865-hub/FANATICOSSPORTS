@@ -1,4 +1,4 @@
-const tamanhoModel = require("../model/tamanho_model");
+const tamanhoModel = require("../model/tamanho_model.js");
 
 //==========================================
 // CADASTRAR TAMANHO

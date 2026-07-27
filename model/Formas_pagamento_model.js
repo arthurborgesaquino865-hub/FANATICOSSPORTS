@@ -56,16 +56,7 @@ function buscarPorId(id, callback) {
 // Buscar por Email
 // =========================
 
-function buscarPorEmail(nome_identificacao, callback) {
 
-    const sql = `
-        SELECT * FROM formas_pagamento
-        WHERE nome_identificacao = ?
-    `;
-
-    conexao.query(sql, [nome_identificacao], callback);
-
-}
 
 // =========================
 // Atualizar Forma de Pagamento
@@ -117,7 +108,7 @@ module.exports = {
     cadastrar,
     listar,
     buscarPorId,
-    buscarPorEmail,
+    
     atualizar,
     excluir
 

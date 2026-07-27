@@ -1,19 +1,22 @@
 const express = require("express");
-// Importando o módulo express para criar rotas e lidar com requisições HTTP.
 
 const router = express.Router();
-// Criando um objeto router para definir as rotas relacionadas aos carrinhos e produtos.
 
-const CarrinhoHasProdutoController = require("../controller/carrinho_has_produto_controller.js");
+const CarrinhoHasProdutoController = require("../controller/carrinho_has_produto");
 
+// Cadastrar
 router.post("/", CarrinhoHasProdutoController.cadastrar);
 
+// Listar todos
 router.get("/", CarrinhoHasProdutoController.listar);
 
-router.get("/:id", CarrinhoHasProdutoController.buscarPorId);
+// Buscar por chave composta
+router.get("/:carrinhoId/:produtoId", CarrinhoHasProdutoController.buscarPorId);
 
-router.put("/:id", CarrinhoHasProdutoController.atualizar);
+// Atualizar
+router.put("/:carrinhoId/:produtoId", CarrinhoHasProdutoController.atualizar);
 
-router.delete("/:id", CarrinhoHasProdutoController.excluir);
+// Excluir
+router.delete("/:carrinhoId/:produtoId", CarrinhoHasProdutoController.excluir);
 
 module.exports = router;

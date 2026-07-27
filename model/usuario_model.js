@@ -61,16 +61,7 @@ function buscarPorId(id, callback) {
 // Buscar por Email
 // =========================
 
-function buscarPorEmail(email, callback) {
 
-    const sql = `
-        SELECT * FROM Cliente
-        WHERE email = ?
-    `;
-
-    conexao.query(sql, [email], callback);
-
-}
 
 // =========================
 // Atualizar Cliente
@@ -130,7 +121,7 @@ module.exports = {
     cadastrar,
     listar,
     buscarPorId,
-    buscarPorEmail,
+   
     atualizar,
     excluir
 

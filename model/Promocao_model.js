@@ -4,18 +4,21 @@ const conexao = require("../conexao/conexao.js");
 // Cadastrar Cartão de Pagamento
 // =========================
 
-function cadastrar(carrinho, callback) {
+function cadastrar(Promocao, callback) {
 
-    const sql = `INSERT INTO Carrinho
-        ( idCarrinho,quantidade_produto,preco_total )
-        VALUES (?, ?, ?)`;
+    const sql = `INSERT INTO Promocao
+        ( data_inicio,data_final,valor_promocao,nome,banner_idbanner )
+        VALUES (?, ?, ?, ?, ?)`;
 
     conexao.query(
         sql,
         [
-            carrinho.idCarrinho,
-            carrinho.quantidade_produto,
-            carrinho.preco_total,
+            Promocao.data_inicio,
+            Promocao.data_final,
+            Promocao.valor_promocao,
+            Promocao.nome,
+            Promocao.banner_idbanner
+            
         ],
         callback
     );
@@ -23,13 +26,13 @@ function cadastrar(carrinho, callback) {
 }
 
 // =========================
-// Listar Cartões de Pagamento
+// Listar Promocoes
 // =========================
 
 function listar(callback) {
 
     const sql = `
-        SELECT * FROM Carrinho
+        SELECT * FROM Promocao
     `;
 
     conexao.query(sql, callback);
@@ -44,8 +47,8 @@ function buscarPorId(id, callback) {
 
     const sql = `
         SELECT *
-        FROM Carrinho
-        WHERE idCarrinho = ?
+        FROM Promocao
+        WHERE idPromocao = ?
     `;
 
     conexao.query(sql, [id], callback);
@@ -56,40 +59,44 @@ function buscarPorId(id, callback) {
 // Buscar por Email
 // =========================
 
-function buscarPorEmail(nome_identificacao, callback) {
+function buscarPorEmail(nome, callback) {
 
     const sql = `
-        SELECT * FROM Carrinho
-        WHERE  = ?
+        SELECT * FROM Promocao
+        WHERE nome = ?
     `;
 
-    conexao.query(sql, [], callback);
+    conexao.query(sql, [nome], callback);
 
 }
 
 // =========================
-// Atualizar Cartão de Pagamento
+// Atualizar Promocao
 // =========================
 
-function atualizar(id, carrinho, callback) {
+function atualizar(id, Promocao, callback) {
 
     const sql = `
-        UPDATE Carrinho
+        UPDATE Promocao
         SET
 
-            idCarrinho = ?,
-            quantidade_produto = ?,
-            preco_total = ?,
-
-        WHERE idCarrinho = ?
+            data_inicio = ?,
+            data_final = ?,
+            valor_promocao = ?,
+            nome = ?,
+            banner_idbanner = ?
+            
+        WHERE idPromocao = ?
     `;
 
     conexao.query(
         sql,
         [
-            carrinho.idCarrinho,
-            carrinho.quantidade_produto,
-            carrinho.preco_total,
+            Promocao.data_inicio,
+            Promocao.data_final,
+            Promocao.valor_promocao,
+            Promocao.nome,
+            Promocao.banner_idbanner,
             id
         ],
         callback
@@ -99,14 +106,14 @@ function atualizar(id, carrinho, callback) {
 
 
 // =========================
-// Excluir Cartão de Pagamento
+// Excluir Promocao
 // =========================
 
 function excluir(id, callback) {
 
     const sql = `
-        DELETE FROM Carrinho
-        WHERE idCarrinho = ?
+        DELETE FROM Promocao
+        WHERE idPromocao = ?
     `;
 
     conexao.query(sql, [id], callback);
@@ -118,7 +125,7 @@ module.exports = {
     cadastrar,
     listar,
     buscarPorId,
-    buscarPorEmail,
+    
     atualizar,
     excluir
 

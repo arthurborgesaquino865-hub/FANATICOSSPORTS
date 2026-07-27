@@ -4,35 +4,35 @@ const conexao = require("../conexao/conexao.js");
 // Cadastrar Cartão de Pagamento
 // =========================
 
-function cadastrar(Promocao, callback) {
+function cadastrar(cupom, callback) {
 
-    const sql = `INSERT INTO Promocao
-        ( data_inicio,data_final,valor_promocao,nome,banner_idbanner )
+    const sql = `INSERT INTO Cupom
+        ( nome,data_validade,quantidade,desconto,Loja_idLoja )
         VALUES (?, ?, ?, ?, ?)`;
 
     conexao.query(
         sql,
         [
-            Promocao.data_inicio,
-            Promocao.data_final,
-            Promocao.valor_promocao,
-            Promocao.nome,
-            Promocao.banner_idbanner
-            
+            cupom.nome,
+            cupom.data_validade,
+            cupom.quantidade,
+            cupom.desconto,
+            cupom.Loja_idLoja
         ],
         callback
     );
 
 }
 
+
 // =========================
-// Listar Promocoes
+// Listar Cupons
 // =========================
 
 function listar(callback) {
 
     const sql = `
-        SELECT * FROM Promocao
+        SELECT * FROM Cupom
     `;
 
     conexao.query(sql, callback);
@@ -47,8 +47,8 @@ function buscarPorId(id, callback) {
 
     const sql = `
         SELECT *
-        FROM Promocao
-        WHERE idPromocao = ?
+        FROM Cupom
+        WHERE idCupom = ?
     `;
 
     conexao.query(sql, [id], callback);
@@ -59,44 +59,43 @@ function buscarPorId(id, callback) {
 // Buscar por Email
 // =========================
 
-function buscarPorEmail(nome, callback) {
+function buscarPorEmail(nome_identificacao, callback) {
 
     const sql = `
-        SELECT * FROM Promocao
+        SELECT * FROM Cupom
         WHERE nome = ?
     `;
 
-    conexao.query(sql, [nome], callback);
+    conexao.query(sql, [nome_identificacao], callback);
 
 }
 
 // =========================
-// Atualizar Promocao
+// Atualizar Cupom
 // =========================
 
-function atualizar(id, Promocao, callback) {
+function atualizar(id, cupom, callback) {
 
     const sql = `
-        UPDATE Promocao
+        UPDATE Cupom
         SET
 
-            data_inicio = ?,
-            data_final = ?,
-            valor_promocao = ?,
             nome = ?,
-            banner_idbanner = ?
-            
-        WHERE idPromocao = ?
+            data_validade = ?,
+            quantidade = ?,
+            desconto = ?,
+            Loja_idLoja = ?
+        WHERE idCupom = ?
     `;
 
     conexao.query(
         sql,
         [
-            Promocao.data_inicio,
-            Promocao.data_final,
-            Promocao.valor_promocao,
-            Promocao.nome,
-            Promocao.banner_idbanner,
+            cupom.nome,
+            cupom.data_validade,
+            cupom.quantidade,
+            cupom.desconto,
+            cupom.Loja_idLoja,
             id
         ],
         callback
@@ -105,15 +104,16 @@ function atualizar(id, Promocao, callback) {
 }
 
 
+
 // =========================
-// Excluir Promocao
+// Excluir Cartão de Pagamento
 // =========================
 
 function excluir(id, callback) {
 
     const sql = `
-        DELETE FROM Promocao
-        WHERE idPromocao = ?
+        DELETE FROM Cupom
+        WHERE idCupom = ?
     `;
 
     conexao.query(sql, [id], callback);
@@ -125,7 +125,7 @@ module.exports = {
     cadastrar,
     listar,
     buscarPorId,
-    buscarPorEmail,
+   
     atualizar,
     excluir
 

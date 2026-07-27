@@ -1,19 +1,20 @@
+// conectar com o servidor do node.js e o banco de dados MySQL
 const mysql = require("mysql2");
 
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "", // senha do mysql
-  database: "fanaticossports",
+// variável que vai armazenar a conexão com o banco de dados
+const conexao = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "", // senha do MySQL
+    database: "Fanaticossports"
 });
 
-connection.connect((erro) => {
+conexao.connect((erro) => {
     if (erro) {
-        console.error("Erro ao conectar ao banco de dados:", erro);
-    } else {
-        console.log("banco conectado com sucesso.");
+        console.log("Erro ao conectar:", erro);
         return;
     }
+    console.log("Banco conectado com sucesso!");
 });
 
 module.exports = conexao;

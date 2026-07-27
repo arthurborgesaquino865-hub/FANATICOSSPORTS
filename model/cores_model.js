@@ -4,35 +4,31 @@ const conexao = require("../conexao/conexao.js");
 // Cadastrar Cartão de Pagamento
 // =========================
 
-function cadastrar(cupom, callback) {
+function cadastrar(cores, callback) {
 
-    const sql = `INSERT INTO Cupom
-        ( nome,data_validade,quantidade,desconto,Loja_idLoja )
-        VALUES (?, ?, ?, ?, ?)`;
+    const sql = `INSERT INTO Cores
+        ( nome,codigo_cor )
+        VALUES (?, ?)`;
 
     conexao.query(
         sql,
         [
-            cupom.nome,
-            cupom.data_validade,
-            cupom.quantidade,
-            cupom.desconto,
-            cupom.Loja_idLoja
+            cores.nome,
+            cores.codigo_cor,
         ],
         callback
     );
 
 }
 
-
 // =========================
-// Listar Cupons
+// Listar Cartões de Pagamento
 // =========================
 
 function listar(callback) {
 
     const sql = `
-        SELECT * FROM Cupom
+        SELECT * FROM Cartao_pagamento
     `;
 
     conexao.query(sql, callback);
@@ -47,8 +43,8 @@ function buscarPorId(id, callback) {
 
     const sql = `
         SELECT *
-        FROM Cupom
-        WHERE idCupom = ?
+        FROM Cores
+        WHERE idCores = ?
     `;
 
     conexao.query(sql, [id], callback);
@@ -59,52 +55,36 @@ function buscarPorId(id, callback) {
 // Buscar por Email
 // =========================
 
-function buscarPorEmail(nome_identificacao, callback) {
 
-    const sql = `
-        SELECT * FROM Cupom
-        WHERE nome = ?
-    `;
-
-    conexao.query(sql, [nome_identificacao], callback);
-
-}
 
 // =========================
-// Atualizar Cupom
+// Atualizar Cartão de Pagamento
 // =========================
 
-function atualizar(id, cupom, callback) {
+function atualizar(id, cores, callback) {
 
     const sql = `
-        UPDATE Cupom
+        UPDATE Cores
         SET
 
             nome = ?,
-            data_validade = ?,
-            quantidade = ?,
-            desconto = ?,
-            Loja_idLoja = ?
-        WHERE idCupom = ?
+            codigo_cor = ?,
+           
+        WHERE idCores = ?
     `;
 
     conexao.query(
         sql,
         [
-            cupom.nome,
-            cupom.data_validade,
-            cupom.quantidade,
-            cupom.desconto,
-            cupom.Loja_idLoja,
+            cores.nome,
+            cores.codigo_cor,
             id
         ],
         callback
     );
 
 }
-
-
-
+            
 // =========================
 // Excluir Cartão de Pagamento
 // =========================
@@ -112,8 +92,8 @@ function atualizar(id, cupom, callback) {
 function excluir(id, callback) {
 
     const sql = `
-        DELETE FROM Cupom
-        WHERE idCupom = ?
+        DELETE FROM Cores
+        WHERE idCores = ?
     `;
 
     conexao.query(sql, [id], callback);
@@ -125,7 +105,7 @@ module.exports = {
     cadastrar,
     listar,
     buscarPorId,
-    buscarPorEmail,
+  
     atualizar,
     excluir
 

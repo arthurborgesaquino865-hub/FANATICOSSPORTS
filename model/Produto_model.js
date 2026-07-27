@@ -144,7 +144,7 @@ module.exports = {
     cadastrar,
     listar,
     buscarPorId,
-    buscarPorEmail,
+   
     atualizar,
     excluir
 

@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 // Criando um objeto router para definir as rotas relacionadas aos banners e produtos.
 
-const BannerHasProdutoController = require("../controller/banner_has_produto_controller.js");
+const BannerHasProdutoController = require("../controller/banner_has_produto");
 
 router.post("/", BannerHasProdutoController.cadastrar);
 

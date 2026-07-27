@@ -4,17 +4,18 @@ const conexao = require("../conexao/conexao.js");
 // Cadastrar Cartão de Pagamento
 // =========================
 
-function cadastrar(cores, callback) {
+function cadastrar(carrinho, callback) {
 
-    const sql = `INSERT INTO Cores
-        ( nome,codigo_cor )
-        VALUES (?, ?)`;
+    const sql = `INSERT INTO Carrinho
+        ( idCarrinho,quantidade_produto,preco_total )
+        VALUES (?, ?, ?)`;
 
     conexao.query(
         sql,
         [
-            cores.nome,
-            cores.codigo_cor,
+            carrinho.idCarrinho,
+            carrinho.quantidade_produto,
+            carrinho.preco_total,
         ],
         callback
     );
@@ -28,7 +29,7 @@ function cadastrar(cores, callback) {
 function listar(callback) {
 
     const sql = `
-        SELECT * FROM Cartao_pagamento
+        SELECT * FROM Carrinho
     `;
 
     conexao.query(sql, callback);
@@ -43,8 +44,8 @@ function buscarPorId(id, callback) {
 
     const sql = `
         SELECT *
-        FROM Cores
-        WHERE idCores = ?
+        FROM Carrinho
+        WHERE idCarrinho = ?
     `;
 
     conexao.query(sql, [id], callback);
@@ -55,45 +56,39 @@ function buscarPorId(id, callback) {
 // Buscar por Email
 // =========================
 
-function buscarPorEmail(nome_identificacao, callback) {
 
-    const sql = `
-        SELECT * FROM Cores
-        WHERE nome = ?
-    `;
-
-    conexao.query(sql, [nome_identificacao], callback);
-
-}
 
 // =========================
 // Atualizar Cartão de Pagamento
 // =========================
 
-function atualizar(id, cores, callback) {
+function atualizar(id, carrinho, callback) {
 
     const sql = `
-        UPDATE Cores
+        UPDATE Carrinho
         SET
 
-            nome = ?,
-            codigo_cor = ?,
-           
-        WHERE idCores = ?
+            idCarrinho = ?,
+            quantidade_produto = ?,
+            preco_total = ?,
+
+        WHERE idCarrinho = ?
     `;
 
     conexao.query(
         sql,
         [
-            cores.nome,
-            cores.codigo_cor,
+            carrinho.idCarrinho,
+            carrinho.quantidade_produto,
+            carrinho.preco_total,
             id
         ],
         callback
     );
 
 }
-            
+
+
 // =========================
 // Excluir Cartão de Pagamento
 // =========================
@@ -101,8 +96,8 @@ function atualizar(id, cores, callback) {
 function excluir(id, callback) {
 
     const sql = `
-        DELETE FROM Cores
-        WHERE idCores = ?
+        DELETE FROM Carrinho
+        WHERE idCarrinho = ?
     `;
 
     conexao.query(sql, [id], callback);
@@ -114,7 +109,6 @@ module.exports = {
     cadastrar,
     listar,
     buscarPorId,
-    buscarPorEmail,
     atualizar,
     excluir
 

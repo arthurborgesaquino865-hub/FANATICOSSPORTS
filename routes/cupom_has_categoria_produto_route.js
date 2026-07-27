@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 // Criando um objeto router para definir as rotas relacionadas aos cupons, categorias e produtos.
 
-const CupomHasCategoriaHasProdutoController = require("../controller/cupom_has_categoria_has_produto_controller.js");
+const CupomHasCategoriaHasProdutoController = require("../controller/cupom_has_categoria_has_produto_Controller.js");
 
 router.post("/", CupomHasCategoriaHasProdutoController.cadastrar);
 
