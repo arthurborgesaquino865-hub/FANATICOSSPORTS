@@ -2,7 +2,7 @@ const express = require("express");
 
 const router = express.Router();
 
-const CarrinhoHasProdutoController = require("../controller/carrinho_has_produto");
+const CarrinhoHasProdutoController = require("../controller/carrinho_has_produto_controller.js");
 
 // Cadastrar
 router.post("/", CarrinhoHasProdutoController.cadastrar);

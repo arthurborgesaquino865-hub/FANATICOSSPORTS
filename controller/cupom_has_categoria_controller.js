@@ -1,4 +1,4 @@
-const enderecoHasClienteModel = require("../model/endereco_has_cliente_model");
+const cupomHasCategoriaModel = require("../model/cupom_has_categoria_model");
 
 //==========================================
 // LISTAR
@@ -6,7 +6,7 @@ const enderecoHasClienteModel = require("../model/endereco_has_cliente_model");
 
 exports.listar = (req, res) => {
 
-    enderecoHasClienteModel.listar((erro, resultado) => {
+    cupomHasCategoriaModel.listar((erro, resultado) => {
 
         if (erro) {
             return res.status(500).json(erro);
@@ -24,11 +24,11 @@ exports.listar = (req, res) => {
 
 exports.buscarPorId = (req, res) => {
 
-    const { Endereco_idEndereco, Cliente_idCliente } = req.params;
+    const { Cupom_idCupom, Categoria_idCategoria } = req.params;
 
-    enderecoHasClienteModel.buscarPorId(
-        Endereco_idEndereco,
-        Cliente_idCliente,
+    cupomHasCategoriaModel.buscarPorId(
+        Cupom_idCupom,
+        Categoria_idCategoria,
         (erro, resultado) => {
 
             if (erro) {
@@ -55,7 +55,7 @@ exports.cadastrar = (req, res) => {
 
     const dados = req.body;
 
-    enderecoHasClienteModel.cadastrar(dados, (erro, resultado) => {
+    cupomHasCategoriaModel.cadastrar(dados, (erro, resultado) => {
 
         if (erro) {
             return res.status(500).json(erro);
@@ -75,12 +75,13 @@ exports.cadastrar = (req, res) => {
 
 exports.atualizar = (req, res) => {
 
-    const { Endereco_idEndereco, Cliente_idCliente } = req.params;
+    const { Cupom_idCupom, Categoria_idCategoria } = req.params;
+
     const dados = req.body;
 
-    enderecoHasClienteModel.atualizar(
-        Endereco_idEndereco,
-        Cliente_idCliente,
+    cupomHasCategoriaModel.atualizar(
+        Cupom_idCupom,
+        Categoria_idCategoria,
         dados,
         (erro, resultado) => {
 
@@ -102,11 +103,11 @@ exports.atualizar = (req, res) => {
 
 exports.excluir = (req, res) => {
 
-    const { Endereco_idEndereco, Cliente_idCliente } = req.params;
+    const { Cupom_idCupom, Categoria_idCategoria } = req.params;
 
-    enderecoHasClienteModel.excluir(
-        Endereco_idEndereco,
-        Cliente_idCliente,
+    cupomHasCategoriaModel.excluir(
+        Cupom_idCupom,
+        Categoria_idCategoria,
         (erro, resultado) => {
 
             if (erro) {

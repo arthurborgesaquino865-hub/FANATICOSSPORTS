@@ -1,4 +1,4 @@
-const marcaModel = require("../model/marca_model");
+const marcaModel = require("../model/marca_model.js");
 
 //==========================================
 // CADASTRAR MARCA

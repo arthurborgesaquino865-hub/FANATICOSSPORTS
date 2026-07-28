@@ -1,4 +1,4 @@
-const categoriaModel = require("../model/categoria_model");
+const categoriaModel = require("../model/categoria_model.js");
 
 //==========================================
 // CADASTRAR CATEGORIA

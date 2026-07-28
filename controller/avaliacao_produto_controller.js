@@ -1,4 +1,4 @@
-const avaliacaoProdutoModel = require("../model/avaliacao_produto_model");
+const avaliacaoProdutoModel = require("../model/avaliacao_produto_model.js");
 
 //==========================================
 // CADASTRAR AVALIAÇÃO

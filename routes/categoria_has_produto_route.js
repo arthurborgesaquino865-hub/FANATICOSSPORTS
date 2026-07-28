@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 // Criando um objeto router para definir as rotas relacionadas às categorias e produtos.
 
-const CategoriaHasProdutoController = require("../controller/categoria_has_produto_controller.js");
+const CategoriaHasProdutoController = require("../controller/Categoria_has_produto_Controller.js");
 
 router.post("/", CategoriaHasProdutoController.cadastrar);
 

@@ -1,4 +1,4 @@
-const carrinhoModel = require("../model/carrinho_model");
+const carrinhoModel = require("../model/carrinho_model.js");
 
 //==========================================
 // CADASTRAR CARRINHO

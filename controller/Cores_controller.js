@@ -1,4 +1,4 @@
-const coresModel = require("../model/cores_model");
+const coresModel = require("../model/cores_model.js");
 
 //==========================================
 // CADASTRAR COR

@@ -1,4 +1,4 @@
-const coresHasProdutoModel = require("../model/cores_has_produto_model");
+const enderecoHasClienteModel = require("../model/endereco_has_cliente_model.js");
 
 //==========================================
 // LISTAR
@@ -6,7 +6,7 @@ const coresHasProdutoModel = require("../model/cores_has_produto_model");
 
 exports.listar = (req, res) => {
 
-    coresHasProdutoModel.listar((erro, resultado) => {
+    enderecoHasClienteModel.listar((erro, resultado) => {
 
         if (erro) {
             return res.status(500).json(erro);
@@ -24,11 +24,11 @@ exports.listar = (req, res) => {
 
 exports.buscarPorId = (req, res) => {
 
-    const { Cores_idCores, Produto_idProduto } = req.params;
+    const { Endereco_idEndereco, Cliente_idCliente } = req.params;
 
-    coresHasProdutoModel.buscarPorId(
-        Cores_idCores,
-        Produto_idProduto,
+    enderecoHasClienteModel.buscarPorId(
+        Endereco_idEndereco,
+        Cliente_idCliente,
         (erro, resultado) => {
 
             if (erro) {
@@ -55,7 +55,7 @@ exports.cadastrar = (req, res) => {
 
     const dados = req.body;
 
-    coresHasProdutoModel.cadastrar(dados, (erro, resultado) => {
+    enderecoHasClienteModel.cadastrar(dados, (erro, resultado) => {
 
         if (erro) {
             return res.status(500).json(erro);
@@ -75,12 +75,12 @@ exports.cadastrar = (req, res) => {
 
 exports.atualizar = (req, res) => {
 
-    const { Cores_idCores, Produto_idProduto } = req.params;
+    const { Endereco_idEndereco, Cliente_idCliente } = req.params;
     const dados = req.body;
 
-    coresHasProdutoModel.atualizar(
-        Cores_idCores,
-        Produto_idProduto,
+    enderecoHasClienteModel.atualizar(
+        Endereco_idEndereco,
+        Cliente_idCliente,
         dados,
         (erro, resultado) => {
 
@@ -102,11 +102,11 @@ exports.atualizar = (req, res) => {
 
 exports.excluir = (req, res) => {
 
-    const { Cores_idCores, Produto_idProduto } = req.params;
+    const { Endereco_idEndereco, Cliente_idCliente } = req.params;
 
-    coresHasProdutoModel.excluir(
-        Cores_idCores,
-        Produto_idProduto,
+    enderecoHasClienteModel.excluir(
+        Endereco_idEndereco,
+        Cliente_idCliente,
         (erro, resultado) => {
 
             if (erro) {

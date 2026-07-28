@@ -89,7 +89,10 @@ app.use("/cores_has_produto", coresHasProdutoRotas);
 
 // Cupom x Categoria x Produto
 const cupomHasCategoriaHasProdutoRotas = require("../routes/cupom_has_categoria_has_produto_route.js");
-app.use("/cupom_has_categoria_has_produto", cupom_Has_Categoria_Has_Produto_route.js);
+app.use("/cupom_has_categoria_has_produto", cupomHasCategoriaHasProdutoRotas);
+
+const cupomHasProdutoRotas = require("../routes/cupom_has_produto_route.js");
+app.use("/cupom_has_produto", cupomHasProdutoRotas);
 
 // Cupom x Categoria
 const cupomHasCategoriaRotas = require("../routes/cupom_has_categoria_route.js");
@@ -110,8 +113,6 @@ app.use("/promocao_has_produto", promocaoHasProdutoRotas);
 // Tamanho x Produto
 const tamanhoHasProdutoRotas = require("../routes/tamanho_has_produto_route.js");
 app.use("/tamanho_has_produto", tamanhoHasProdutoRotas);
-
-// ==================== SERVIDOR ====================
 
 app.listen(3000, () => {
     console.log("Servidor rodando na porta 3000");

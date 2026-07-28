@@ -1,4 +1,4 @@
-const promocaoModel = require("../model/promocao_model");
+const promocaoModel = require("../model/promocao_model.js");
 
 //==========================================
 // CADASTRAR PROMOÇÃO

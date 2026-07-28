@@ -1,19 +1,22 @@
 const express = require("express");
-// Importando o módulo express para criar rotas e lidar com requisições HTTP.
 
 const router = express.Router();
-// Criando um objeto router para definir as rotas relacionadas às cores e produtos.
 
 const CoresHasProdutoController = require("../controller/cores_has_produto_controller.js");
 
+// Cadastrar
 router.post("/", CoresHasProdutoController.cadastrar);
 
+// Listar
 router.get("/", CoresHasProdutoController.listar);
 
-router.get("/:id", CoresHasProdutoController.buscarPorId);
+// Buscar por ID
+router.get("/:Cores_idCores/:Produto_idProduto", CoresHasProdutoController.buscarPorId);
 
-router.put("/:id", CoresHasProdutoController.atualizar);
+// Atualizar
+router.put("/:Cores_idCores/:Produto_idProduto", CoresHasProdutoController.atualizar);
 
-router.delete("/:id", CoresHasProdutoController.excluir);
+// Excluir
+router.delete("/:Cores_idCores/:Produto_idProduto", CoresHasProdutoController.excluir);
 
 module.exports = router;

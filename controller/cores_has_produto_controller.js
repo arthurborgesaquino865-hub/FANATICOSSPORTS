@@ -1,12 +1,11 @@
-const categoriaHasProdutoModel = require("../model/categoria_has_produto_model.js");
-
+const CoresHasProdutoController = require("../model/cores_has_produto_model.js");
 //==========================================
 // LISTAR
 //==========================================
 
 exports.listar = (req, res) => {
 
-    categoriaHasProdutoModel.listar((erro, resultado) => {
+    coresHasProdutoModel.listar((erro, resultado) => {
 
         if (erro) {
             return res.status(500).json(erro);
@@ -24,10 +23,10 @@ exports.listar = (req, res) => {
 
 exports.buscarPorId = (req, res) => {
 
-    const { Categoria_idCategoria, Produto_idProduto } = req.params;
+    const { Cores_idCores, Produto_idProduto } = req.params;
 
-    categoriaHasProdutoModel.buscarPorId(
-        Categoria_idCategoria,
+    coresHasProdutoModel.buscarPorId(
+        Cores_idCores,
         Produto_idProduto,
         (erro, resultado) => {
 
@@ -43,8 +42,7 @@ exports.buscarPorId = (req, res) => {
 
             res.status(200).json(resultado[0]);
 
-        }
-    );
+        });
 
 };
 
@@ -56,7 +54,7 @@ exports.cadastrar = (req, res) => {
 
     const dados = req.body;
 
-    categoriaHasProdutoModel.cadastrar(dados, (erro, resultado) => {
+    coresHasProdutoModel.cadastrar(dados, (erro, resultado) => {
 
         if (erro) {
             return res.status(500).json(erro);
@@ -76,11 +74,11 @@ exports.cadastrar = (req, res) => {
 
 exports.atualizar = (req, res) => {
 
-    const { Categoria_idCategoria, Produto_idProduto } = req.params;
+    const { Cores_idCores, Produto_idProduto } = req.params;
     const dados = req.body;
 
-    categoriaHasProdutoModel.atualizar(
-        Categoria_idCategoria,
+    coresHasProdutoModel.atualizar(
+        Cores_idCores,
         Produto_idProduto,
         dados,
         (erro, resultado) => {
@@ -93,8 +91,7 @@ exports.atualizar = (req, res) => {
                 mensagem: "Registro atualizado com sucesso!"
             });
 
-        }
-    );
+        });
 
 };
 
@@ -104,10 +101,10 @@ exports.atualizar = (req, res) => {
 
 exports.excluir = (req, res) => {
 
-    const { Categoria_idCategoria, Produto_idProduto } = req.params;
+    const { Cores_idCores, Produto_idProduto } = req.params;
 
-    categoriaHasProdutoModel.excluir(
-        Categoria_idCategoria,
+    coresHasProdutoModel.excluir(
+        Cores_idCores,
         Produto_idProduto,
         (erro, resultado) => {
 
@@ -119,7 +116,6 @@ exports.excluir = (req, res) => {
                 mensagem: "Registro excluído com sucesso!"
             });
 
-        }
-    );
+        });
 
 };

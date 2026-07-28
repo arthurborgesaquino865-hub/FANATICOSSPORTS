@@ -1,4 +1,4 @@
-const pedidosModel = require("../model/pedidos_model");
+const pedidosModel = require("../model/pedidos_model.js");
 
 //==========================================
 // CADASTRAR PEDIDO

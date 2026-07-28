@@ -1,4 +1,4 @@
-const produtoModel = require("../model/produto_model");
+const produtoModel = require("../model/produto_model.js");
 
 //==========================================
 // CADASTRAR PRODUTO

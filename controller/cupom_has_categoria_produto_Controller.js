@@ -1,4 +1,4 @@
-const cupomHasCategoriaHasProdutoModel = require("../model/cupom_has_categoria_has_produto_model");
+const cupomHasCategoriaHasProdutoModel = require("../model/cupom_has_Categoria_has_Produto_model.js");
 
 //==========================================
 // LISTAR
