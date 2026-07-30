@@ -14,15 +14,19 @@
 
 }
 
+html{
 
-body{
-
-    background:#F4F6F9;
-
-    color:#333;
+    scroll-behavior:smooth;
 
 }
 
+body{
+
+    background:#F3F4F6;
+
+    color:#1F2937;
+
+}
 
 /*=========================================================
     VARIÁVEIS
@@ -30,32 +34,38 @@ body{
 
 :root{
 
-    --cor-primaria:#0F62FE;
+    --cor-primaria:#2563EB;
 
-    --cor-secundaria:#084298;
+    --cor-primaria-hover:#1D4ED8;
 
-    --cor-sidebar:#1E293B;
+    --cor-sidebar:#111827;
 
-    --cor-sidebar-hover:#334155;
+    --cor-sidebar-hover:#1F2937;
 
     --cor-branca:#FFFFFF;
 
-    --cor-fundo:#F4F6F9;
+    --cor-fundo:#F3F4F6;
 
     --cor-borda:#E5E7EB;
 
-    --cor-texto:#333333;
+    --cor-texto:#111827;
 
-    --cor-texto-claro:#777777;
+    --cor-texto-claro:#6B7280;
 
-    --sombra:
-    0 5px 15px rgba(0,0,0,.08);
+    --cor-sucesso:#22C55E;
+
+    --cor-alerta:#F59E0B;
+
+    --cor-erro:#EF4444;
+
+    --radius:16px;
+
+    --sombra:0 10px 25px rgba(0,0,0,.08);
 
 }
 
-
 /*=========================================================
-    ESTRUTURA PRINCIPAL
+    ESTRUTURA
 =========================================================*/
 
 #adminApp{
@@ -66,18 +76,13 @@ body{
 
 }
 
-
 /*=========================================================
     SIDEBAR
 =========================================================*/
 
 #sidebar{
 
-    width:260px;
-
-    background:var(--cor-sidebar);
-
-    color:white;
+    width:270px;
 
     position:fixed;
 
@@ -87,16 +92,13 @@ body{
 
     bottom:0;
 
+    background:var(--cor-sidebar);
+
+    color:var(--cor-branca);
+
     overflow-y:auto;
 
-    box-shadow:var(--sombra);
-
 }
-
-
-/*=========================================================
-    LOGO
-=========================================================*/
 
 .logoAdmin{
 
@@ -104,16 +106,13 @@ body{
 
     align-items:center;
 
-    justify-content:center;
+    gap:15px;
 
-    gap:12px;
+    padding:25px;
 
-    padding:30px 20px;
-
-    border-bottom:1px solid rgba(255,255,255,.1);
+    border-bottom:1px solid rgba(255,255,255,.08);
 
 }
-
 
 #logoAdminImagem{
 
@@ -125,20 +124,13 @@ body{
 
 }
 
-
 #logoAdminTexto{
 
     font-size:22px;
 
-    color:white;
+    color:var(--cor-branca);
 
 }
-
-
-
-/*=========================================================
-    MENU
-=========================================================*/
 
 .menuAdmin{
 
@@ -146,20 +138,17 @@ body{
 
 }
 
-
 .menuAdmin ul{
 
     list-style:none;
 
 }
 
-
 .menuAdmin li{
 
     margin:8px 15px;
 
 }
-
 
 .menuAdmin a{
 
@@ -171,9 +160,9 @@ body{
 
     padding:14px 18px;
 
-    color:white;
-
     text-decoration:none;
+
+    color:var(--cor-branca);
 
     border-radius:12px;
 
@@ -181,13 +170,23 @@ body{
 
 }
 
-
 .menuAdmin a:hover{
 
     background:var(--cor-sidebar-hover);
 
 }
 
+.menuAtivo{
+
+    background:var(--cor-primaria);
+
+}
+
+.menuAtivo:hover{
+
+    background:var(--cor-primaria-hover) !important;
+
+}
 
 .menuAdmin i{
 
@@ -197,14 +196,11 @@ body{
 
 }
 
-
 .menuAdmin span{
 
     font-size:15px;
 
 }
-
-
 
 /*=========================================================
     CONTEÚDO
@@ -214,7 +210,7 @@ body{
 
     flex:1;
 
-    margin-left:260px;
+    margin-left:270px;
 
     display:flex;
 
@@ -224,32 +220,29 @@ body{
 
 }
 
-
-
 /*=========================================================
     TOPBAR
 =========================================================*/
 
 #topbar{
 
-    height:80px;
+    height:85px;
 
-    background:white;
+    background:var(--cor-branca);
 
     display:flex;
 
-    align-items:center;
-
     justify-content:space-between;
 
-    padding:0 30px;
+    align-items:center;
+
+    padding:0 35px;
 
     box-shadow:var(--sombra);
 
 }
 
-
-.topbarLeft{
+.topbarEsquerda{
 
     display:flex;
 
@@ -259,14 +252,13 @@ body{
 
 }
 
-
 #btnMenuMobile{
 
     display:none;
 
-    border:none;
-
     background:none;
+
+    border:none;
 
     cursor:pointer;
 
@@ -274,46 +266,45 @@ body{
 
 }
 
-
 #tituloPagina{
 
     font-size:28px;
 
+    font-weight:700;
+
 }
 
-
-
-/*=========================================================
-    PESQUISA
-=========================================================*/
-
-.topbarCenter{
+.topbarCentro{
 
     display:flex;
 
+    align-items:center;
+
 }
 
+#txtPesquisar{
 
-#txtPesquisarAdmin{
-
-    width:340px;
+    width:360px;
 
     height:45px;
 
     border:1px solid var(--cor-borda);
 
+    border-right:none;
+
     padding:0 15px;
+
+    border-radius:12px 0 0 12px;
 
     outline:none;
 
-    border-radius:10px 0 0 10px;
-
 }
 
-
-#btnPesquisarAdmin{
+#btnPesquisar{
 
     width:50px;
+
+    height:45px;
 
     border:none;
 
@@ -321,19 +312,13 @@ body{
 
     color:white;
 
-    cursor:pointer;
+    border-radius:0 12px 12px 0;
 
-    border-radius:0 10px 10px 0;
+    cursor:pointer;
 
 }
 
-
-
-/*=========================================================
-    PERFIL
-=========================================================*/
-
-.topbarRight{
+.topbarDireita{
 
     display:flex;
 
@@ -343,12 +328,11 @@ body{
 
 }
 
-
 #btnNotificacoes{
 
-    width:45px;
+    width:46px;
 
-    height:45px;
+    height:46px;
 
     border:none;
 
@@ -356,8 +340,11 @@ body{
 
     cursor:pointer;
 
-}
+    background:#EEF2FF;
 
+    color:var(--cor-primaria);
+
+}
 
 .perfilAdmin{
 
@@ -365,10 +352,9 @@ body{
 
     align-items:center;
 
-    gap:12px;
+    gap:15px;
 
 }
-
 
 #fotoPerfilAdmin{
 
@@ -382,7 +368,6 @@ body{
 
 }
 
-
 .perfilInfo{
 
     display:flex;
@@ -391,6 +376,13 @@ body{
 
 }
 
+#nomeAdmin{
+
+    font-size:15px;
+
+    font-weight:700;
+
+}
 
 #cargoAdmin{
 
@@ -400,16 +392,788 @@ body{
 
 }
 
-
-
 /*=========================================================
-    MAIN CADASTRO
+    MAIN
 =========================================================*/
 
 #cadastroProdutoMain{
 
-    flex:1;
+    padding:35px;
+
+}
+
+/*=========================================================
+    CABEÇALHO DA PÁGINA
+=========================================================*/
+
+#cabecalhoCadastro{
+
+    margin-bottom:30px;
+
+}
+
+#tituloCadastro{
+
+    font-size:32px;
+
+    color:var(--cor-texto);
+
+    margin-bottom:8px;
+
+    font-weight:700;
+
+}
+
+#subtituloCadastro{
+
+    font-size:15px;
+
+    color:var(--cor-texto-claro);
+
+}
+
+/*=========================================================
+    CARD DO FORMULÁRIO
+=========================================================*/
+
+.cardFormulario{
+
+    background:var(--cor-branca);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--sombra);
 
     padding:30px;
+
+    margin-bottom:30px;
+
+}
+
+.cardTitulo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:30px;
+
+    padding-bottom:20px;
+
+    border-bottom:1px solid var(--cor-borda);
+
+}
+
+.cardTitulo i{
+
+    font-size:22px;
+
+    color:var(--cor-primaria);
+
+}
+
+.cardTitulo h3{
+
+    font-size:22px;
+
+    color:var(--cor-texto);
+
+    font-weight:700;
+
+}
+
+/*=========================================================
+    GRID DO FORMULÁRIO
+=========================================================*/
+
+.gridFormulario{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+/*=========================================================
+    CAMPOS
+=========================================================*/
+
+.grupoFormulario{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.grupoInteiro{
+
+    grid-column:1 / -1;
+
+}
+
+.grupoFormulario label{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:var(--cor-texto);
+
+    margin-bottom:10px;
+
+}
+
+/*=========================================================
+    INPUTS
+=========================================================*/
+
+.grupoFormulario input,
+
+.grupoFormulario select,
+
+.grupoFormulario textarea{
+
+    width:100%;
+
+    border:1px solid var(--cor-borda);
+
+    border-radius:12px;
+
+    padding:14px 16px;
+
+    font-size:15px;
+
+    color:var(--cor-texto);
+
+    background:#FFF;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.grupoFormulario input:focus,
+
+.grupoFormulario select:focus,
+
+.grupoFormulario textarea:focus{
+
+    border-color:var(--cor-primaria);
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+/*=========================================================
+    INPUT DE PREÇO
+=========================================================*/
+
+.inputPreco{
+
+    display:flex;
+
+    align-items:center;
+
+    border:1px solid var(--cor-borda);
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+
+.inputPreco:focus-within{
+
+    border-color:var(--cor-primaria);
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+.inputPreco span{
+
+    padding:14px 18px;
+
+    background:#F9FAFB;
+
+    border-right:1px solid var(--cor-borda);
+
+    color:var(--cor-texto);
+
+    font-weight:600;
+
+}
+
+.inputPreco input{
+
+    border:none !important;
+
+    border-radius:0;
+
+    box-shadow:none !important;
+
+    flex:1;
+
+}
+
+/*=========================================================
+    TAMANHOS
+=========================================================*/
+
+#listaTamanhos{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+}
+
+#listaTamanhos button{
+
+    width:55px;
+
+    height:45px;
+
+    border:1px solid var(--cor-borda);
+
+    background:#FFF;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+#listaTamanhos button:hover{
+
+    background:var(--cor-primaria);
+
+    color:#FFF;
+
+    border-color:var(--cor-primaria);
+
+}
+
+/*=========================================================
+    GALERIA DE IMAGENS
+=========================================================*/
+
+#galeriaProduto{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+.imagemItem{
+
+    background:#F9FAFB;
+
+    border:2px dashed var(--cor-borda);
+
+    border-radius:16px;
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:220px;
+
+    transition:.3s;
+
+}
+
+.imagemItem:hover{
+
+    border-color:var(--cor-primaria);
+
+    background:#EFF6FF;
+
+}
+
+.imagemItem img{
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:12px;
+
+    object-fit:cover;
+
+    background:#E5E7EB;
+
+    margin-bottom:15px;
+
+}
+
+.imagemItem input{
+
+    width:100%;
+
+    cursor:pointer;
+
+}
+
+/*=========================================================
+    DESCRIÇÕES
+=========================================================*/
+
+#descricaoCurta{
+
+    min-height:120px;
+
+    resize:vertical;
+
+}
+
+#descricaoCompleta{
+
+    min-height:220px;
+
+    resize:vertical;
+
+}
+
+.grupoFormulario textarea{
+
+    line-height:1.6;
+
+}
+
+/*=========================================================
+    BOTÕES
+=========================================================*/
+
+#acoesFormulario{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    margin-top:10px;
+
+}
+
+#acoesFormulario button{
+
+    min-width:170px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+#btnCancelarProduto{
+
+    background:#EF4444;
+
+    color:#FFF;
+
+}
+
+#btnCancelarProduto:hover{
+
+    background:#DC2626;
+
+}
+
+#btnLimparProduto{
+
+    background:#6B7280;
+
+    color:#FFF;
+
+}
+
+#btnLimparProduto:hover{
+
+    background:#4B5563;
+
+}
+
+#btnSalvarProduto{
+
+    background:var(--cor-primaria);
+
+    color:#FFF;
+
+}
+
+#btnSalvarProduto:hover{
+
+    background:var(--cor-primaria-hover);
+
+}
+
+/*=========================================================
+    FOOTER
+=========================================================*/
+
+#footerAdmin{
+
+    margin-top:auto;
+
+    background:#FFF;
+
+    border-top:1px solid var(--cor-borda);
+
+    padding:20px 35px;
+
+}
+
+.footerEsquerda,
+.footerDireita{
+
+    display:inline-block;
+
+}
+
+.footerDireita{
+
+    float:right;
+
+}
+
+#footerTexto,
+#footerVersao{
+
+    font-size:14px;
+
+    color:var(--cor-texto-claro);
+
+}
+
+/*=========================================================
+    RESPONSIVIDADE - NOTEBOOK
+=========================================================*/
+
+@media (max-width: 1400px){
+
+    .gridFormulario{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    #galeriaProduto{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/*=========================================================
+    RESPONSIVIDADE - TABLET
+=========================================================*/
+
+@media (max-width:992px){
+
+    #sidebar{
+
+        width:85px;
+
+    }
+
+    #conteudoAdmin{
+
+        margin-left:85px;
+
+    }
+
+    #logoAdminTexto{
+
+        display:none;
+
+    }
+
+    .menuAdmin span{
+
+        display:none;
+
+    }
+
+    .menuAdmin a{
+
+        justify-content:center;
+
+        padding:16px;
+
+    }
+
+    .logoAdmin{
+
+        justify-content:center;
+
+    }
+
+    .topbarCentro{
+
+        display:none;
+
+    }
+
+    .gridFormulario{
+
+        grid-template-columns:1fr;
+
+    }
+
+    #galeriaProduto{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/*=========================================================
+    RESPONSIVIDADE - CELULAR
+=========================================================*/
+
+@media (max-width:768px){
+
+    #sidebar{
+
+        position:fixed;
+
+        left:-270px;
+
+        width:270px;
+
+        z-index:1000;
+
+        transition:.3s;
+
+    }
+
+    #sidebar.ativo{
+
+        left:0;
+
+    }
+
+    #conteudoAdmin{
+
+        margin-left:0;
+
+    }
+
+    #btnMenuMobile{
+
+        display:block;
+
+    }
+
+    #topbar{
+
+        padding:20px;
+
+    }
+
+    #tituloPagina{
+
+        font-size:24px;
+
+    }
+
+    #cadastroProdutoMain{
+
+        padding:20px;
+
+    }
+
+    .cardFormulario{
+
+        padding:20px;
+
+    }
+
+    #galeriaProduto{
+
+        grid-template-columns:1fr;
+
+    }
+
+    #acoesFormulario{
+
+        flex-direction:column;
+
+    }
+
+    #acoesFormulario button{
+
+        width:100%;
+
+    }
+
+}
+
+/*=========================================================
+    CELULARES PEQUENOS
+=========================================================*/
+
+@media (max-width:480px){
+
+    #tituloCadastro{
+
+        font-size:26px;
+
+    }
+
+    .cardTitulo{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:10px;
+
+    }
+
+    .cardTitulo h3{
+
+        font-size:20px;
+
+    }
+
+    #tituloPagina{
+
+        font-size:20px;
+
+    }
+
+    .perfilInfo{
+
+        display:none;
+
+    }
+
+    #fotoPerfilAdmin{
+
+        width:42px;
+
+        height:42px;
+
+    }
+
+    .imagemItem{
+
+        min-height:180px;
+
+    }
+
+    .imagemItem img{
+
+        width:110px;
+
+        height:110px;
+
+    }
+
+}
+
+/*=========================================================
+    ANIMAÇÕES
+=========================================================*/
+
+.cardFormulario{
+
+    animation:fadeUp .4s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*=========================================================
+    SCROLLBAR
+=========================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#E5E7EB;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#9CA3AF;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#6B7280;
 
 }

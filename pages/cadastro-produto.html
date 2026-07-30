@@ -9,7 +9,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Cadastro de Produtos</title>
+    <title>Cadastro de Produto</title>
 
     <link rel="stylesheet"
           href="../style/cadastro-produto.css">
@@ -42,7 +42,11 @@ SIDEBAR
              src=""
              alt="">
 
-        <h2 id="logoAdminTexto"></h2>
+        <div class="logoTexto">
+
+            <h2 id="logoAdminTexto"></h2>
+
+        </div>
 
     </div>
 
@@ -79,9 +83,10 @@ SIDEBAR
             <li>
 
                 <a id="menuCadastrarProduto"
+                   class="menuAtivo"
                    href="cadastro-produto.html">
 
-                    <i class="fas fa-plus-circle"></i>
+                    <i class="fas fa-circle-plus"></i>
 
                     <span id="menuCadastrarProdutoTexto"></span>
 
@@ -107,7 +112,7 @@ SIDEBAR
                 <a id="menuPedidos"
                    href="#">
 
-                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-cart-shopping"></i>
 
                     <span id="menuPedidosTexto"></span>
 
@@ -159,7 +164,7 @@ SIDEBAR
                 <a id="menuConfiguracoes"
                    href="#">
 
-                    <i class="fas fa-cog"></i>
+                    <i class="fas fa-gear"></i>
 
                     <span id="menuConfiguracoesTexto"></span>
 
@@ -172,7 +177,7 @@ SIDEBAR
                 <a id="menuSair"
                    href="#">
 
-                    <i class="fas fa-sign-out-alt"></i>
+                    <i class="fas fa-right-from-bracket"></i>
 
                     <span id="menuSairTexto"></span>
 
@@ -198,7 +203,7 @@ TOPBAR
 
 <header id="topbar">
 
-    <div class="topbarLeft">
+    <div class="topbarEsquerda">
 
         <button id="btnMenuMobile">
 
@@ -210,13 +215,13 @@ TOPBAR
 
     </div>
 
-    <div class="topbarCenter">
+    <div class="topbarCentro">
 
-        <input id="txtPesquisarAdmin"
+        <input id="txtPesquisar"
                type="text"
                placeholder="">
 
-        <button id="btnPesquisarAdmin">
+        <button id="btnPesquisar">
 
             <i class="fas fa-search"></i>
 
@@ -224,7 +229,7 @@ TOPBAR
 
     </div>
 
-    <div class="topbarRight">
+    <div class="topbarDireita">
 
         <button id="btnNotificacoes">
 
@@ -253,31 +258,45 @@ TOPBAR
 </header>
 
 <!--======================================================
-MAIN
+CONTEÚDO PRINCIPAL
 =======================================================-->
 
 <main id="cadastroProdutoMain">
 
-<!--======================================================
-FORMULÁRIO
-=======================================================-->
+    <section id="cabecalhoCadastro">
 
-<section id="formularioProduto">
+        <h2 id="tituloCadastro"></h2>
 
-    <div class="boxFormulario">
+        <p id="subtituloCadastro"></p>
 
-        <div class="boxHeader">
+    </section>
 
-            <h2 id="tituloFormulario"></h2>
+    <section class="cardFormulario">
+
+        <div class="cardTitulo">
+
+            <i class="fas fa-file-circle-plus"></i>
+
+            <h3 id="tituloInformacoesBasicas"></h3>
 
         </div>
 
+        <div class="gridFormulario">
 
-                <div class="formGrid">
-
-            <!--=========================================
-            NOME DO PRODUTO
+                        <!--=========================================
+            LINHA 1
             ==========================================-->
+
+            <div class="grupoFormulario">
+
+                <label id="lblImagemProduto"
+                       for="imagemProduto"></label>
+
+                <input id="imagemProduto"
+                       type="file"
+                       accept="image/*">
+
+            </div>
 
             <div class="grupoFormulario">
 
@@ -289,8 +308,19 @@ FORMULÁRIO
 
             </div>
 
+            <div class="grupoFormulario">
+
+                <label id="lblMarcaProduto"
+                       for="marcaProduto"></label>
+
+                <input id="marcaProduto"
+                       type="text">
+
+            </div>
+
+
             <!--=========================================
-            CATEGORIA
+            LINHA 2
             ==========================================-->
 
             <div class="grupoFormulario">
@@ -304,24 +334,6 @@ FORMULÁRIO
 
             </div>
 
-            <!--=========================================
-            MARCA
-            ==========================================-->
-
-            <div class="grupoFormulario">
-
-                <label id="lblMarcaProduto"
-                       for="marcaProduto"></label>
-
-                <input id="marcaProduto"
-                       type="text">
-
-            </div>
-
-            <!--=========================================
-            SKU
-            ==========================================-->
-
             <div class="grupoFormulario">
 
                 <label id="lblSkuProduto"
@@ -332,8 +344,19 @@ FORMULÁRIO
 
             </div>
 
+            <div class="grupoFormulario">
+
+                <label id="lblQuantidadeProduto"
+                       for="quantidadeProduto"></label>
+
+                <input id="quantidadeProduto"
+                       type="number">
+
+            </div>
+
+
             <!--=========================================
-            PREÇO
+            LINHA 3
             ==========================================-->
 
             <div class="grupoFormulario">
@@ -341,234 +364,238 @@ FORMULÁRIO
                 <label id="lblPrecoProduto"
                        for="precoProduto"></label>
 
-                <input id="precoProduto"
-                       type="number"
-                       step="0.01">
+                <div class="inputPreco">
+
+                    <span>R$</span>
+
+                    <input id="precoProduto"
+                           type="number"
+                           step="0.01">
+
+                </div>
 
             </div>
-
-            <!--=========================================
-            PREÇO PROMOCIONAL
-            ==========================================-->
 
             <div class="grupoFormulario">
 
                 <label id="lblPrecoPromocional"
                        for="precoPromocional"></label>
 
-                <input id="precoPromocional"
-                       type="number"
-                       step="0.01">
+                <div class="inputPreco">
+
+                    <span>R$</span>
+
+                    <input id="precoPromocional"
+                           type="number"
+                           step="0.01">
+
+                </div>
 
             </div>
 
-            <!--=========================================
-            ESTOQUE
-            ==========================================-->
-
             <div class="grupoFormulario">
 
-                <label id="lblEstoqueProduto"
-                       for="estoqueProduto"></label>
+                <label id="lblStatusProduto"
+                       for="statusProduto"></label>
 
-                <input id="estoqueProduto"
-                       type="number">
-
-            </div>
-
-            <!--=========================================
-            TAMANHO
-            ==========================================-->
-
-            <div class="grupoFormulario">
-
-                <label id="lblTamanhoProduto"
-                       for="tamanhoProduto"></label>
-
-                <select id="tamanhoProduto">
+                <select id="statusProduto">
 
                 </select>
 
             </div>
 
+
             <!--=========================================
-            COR
+            LINHA 4
             ==========================================-->
 
-            <div class="grupoFormulario">
+            <div class="grupoFormulario grupoInteiro">
 
-                <label id="lblCorProduto"
-                       for="corProduto"></label>
+                <label id="lblTamanhosProduto"></label>
 
-                <input id="corProduto"
+                <div id="listaTamanhos">
+
+                    <button id="tamP"
+                            type="button">P</button>
+
+                    <button id="tamM"
+                            type="button">M</button>
+
+                    <button id="tamG"
+                            type="button">G</button>
+
+                    <button id="tamGG"
+                            type="button">GG</button>
+
+                    <button id="tamXG"
+                            type="button">XG</button>
+
+                    <button id="tamXXG"
+                            type="button">XXG</button>
+
+                </div>
+
+            </div>
+
+            <div class="grupoFormulario grupoInteiro">
+
+                <label id="lblCoresProduto"
+                       for="coresProduto"></label>
+
+                <input id="coresProduto"
                        type="text">
 
             </div>
 
         </div>
 
-                <!--=========================================
-        IMAGENS DO PRODUTO
-        ==========================================-->
 
-        <section id="imagensProduto">
+    </section>
 
-            <h3 id="tituloImagensProduto"></h3>
+        <!--======================================================
+        GALERIA DE IMAGENS
+        =======================================================-->
 
+        <section class="cardFormulario">
 
-            <div class="uploadContainer">
+            <div class="cardTitulo">
 
+                <i class="fas fa-images"></i>
 
-                <div class="uploadImagem">
+                <h3 id="tituloGaleria"></h3>
 
-                    <label id="lblImagemPrincipal"
-                           for="imagemPrincipal"></label>
+            </div>
 
-                    <input id="imagemPrincipal"
-                           type="file"
-                           accept="image/*">
+            <div id="galeriaProduto">
 
-                    <img id="previewImagemPrincipal"
+                <div class="imagemItem">
+
+                    <img id="previewImagem1"
                          src=""
                          alt="">
 
+                    <input id="imagem1"
+                           type="file"
+                           accept="image/*">
 
                 </div>
 
-
-                <div class="uploadImagem">
-
-                    <label id="lblImagem2"
-                           for="imagem2"></label>
-
-                    <input id="imagem2"
-                           type="file"
-                           accept="image/*">
+                <div class="imagemItem">
 
                     <img id="previewImagem2"
                          src=""
                          alt="">
 
+                    <input id="imagem2"
+                           type="file"
+                           accept="image/*">
 
                 </div>
 
-
-                <div class="uploadImagem">
-
-                    <label id="lblImagem3"
-                           for="imagem3"></label>
-
-                    <input id="imagem3"
-                           type="file"
-                           accept="image/*">
+                <div class="imagemItem">
 
                     <img id="previewImagem3"
                          src=""
                          alt="">
 
+                    <input id="imagem3"
+                           type="file"
+                           accept="image/*">
 
                 </div>
 
-
-                <div class="uploadImagem">
-
-                    <label id="lblImagem4"
-                           for="imagem4"></label>
-
-                    <input id="imagem4"
-                           type="file"
-                           accept="image/*">
+                <div class="imagemItem">
 
                     <img id="previewImagem4"
                          src=""
                          alt="">
 
+                    <input id="imagem4"
+                           type="file"
+                           accept="image/*">
 
                 </div>
 
-
             </div>
-
 
         </section>
 
+        <!--======================================================
+        DESCRIÇÃO DO PRODUTO
+        =======================================================-->
 
+        <section class="cardFormulario">
 
-        <!--=========================================
-        DESCRIÇÕES
-        ==========================================-->
+            <div class="cardTitulo">
 
+                <i class="fas fa-align-left"></i>
 
-        <div class="grupoFormulario descricaoProduto">
+                <h3 id="tituloDescricao"></h3>
 
+            </div>
 
-            <label id="lblDescricaoCurta"
-                   for="descricaoCurta"></label>
+            <div class="grupoFormulario">
 
+                <label id="lblDescricaoCurta"
+                       for="descricaoCurta"></label>
 
-            <textarea id="descricaoCurta"></textarea>
+                <textarea id="descricaoCurta"
+                          rows="4"></textarea>
 
+            </div>
 
-        </div>
+            <div class="grupoFormulario">
 
+                <label id="lblDescricaoCompleta"
+                       for="descricaoCompleta"></label>
 
+                <textarea id="descricaoCompleta"
+                          rows="8"></textarea>
 
-        <div class="grupoFormulario descricaoProduto">
+            </div>
 
+        </section>
 
-            <label id="lblDescricaoCompleta"
-                   for="descricaoCompleta"></label>
+                <!--======================================================
+        AÇÕES
+        =======================================================-->
 
+        <section class="cardFormulario">
 
-            <textarea id="descricaoCompleta"></textarea>
+            <div id="acoesFormulario">
 
+                <button id="btnCancelarProduto"
+                        type="button">
 
-        </div>
+                    <i class="fas fa-times"></i>
 
+                    <span id="txtBtnCancelar"></span>
 
+                </button>
 
-        <!--=========================================
-        BOTÕES
-        ==========================================-->
+                <button id="btnLimparProduto"
+                        type="reset">
 
+                    <i class="fas fa-broom"></i>
 
-        <div id="acoesProduto">
+                    <span id="txtBtnLimpar"></span>
 
+                </button>
 
-            <button id="btnSalvarProduto"
-                    type="button">
+                <button id="btnSalvarProduto"
+                        type="button">
 
+                    <i class="fas fa-floppy-disk"></i>
 
-            </button>
+                    <span id="txtBtnSalvar"></span>
 
+                </button>
 
-            <button id="btnLimparProduto"
-                    type="button">
+            </div>
 
-
-            </button>
-
-
-            <button id="btnCancelarProduto"
-                    type="button">
-
-
-            </button>
-
-
-        </div>
-
-
-
-    </div>
-
-
-</section>
-
+        </section>
 
 </main>
-
-
 
 <!--======================================================
 FOOTER
@@ -576,41 +603,24 @@ FOOTER
 
 <footer id="footerAdmin">
 
+    <div class="footerEsquerda">
 
-    <div class="footerContainer">
-
-
-        <div class="footerEsquerda">
-
-
-            <p id="footerTexto"></p>
-
-
-        </div>
-
-
-
-        <div class="footerDireita">
-
-
-            <span id="footerVersao"></span>
-
-
-        </div>
-
+        <p id="footerTexto"></p>
 
     </div>
 
+    <div class="footerDireita">
+
+        <span id="footerVersao"></span>
+
+    </div>
 
 </footer>
 
-
+</div>
 
 </div>
 
-
-
 </body>
-
 
 </html>
