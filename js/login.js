@@ -156,9 +156,6 @@ document.getElementById("lblNascimento").textContent =
 "Data de Nascimento";
 
 
-document.getElementById("lblLoja").textContent =
-
-"Loja";
 
 
 
@@ -222,66 +219,6 @@ document.getElementById("textoBtnIrLogin").textContent =
 
 "Voltar para login";
 
-
-
-/*=========================================================
-    CARREGAR LOJAS
-=========================================================*/
-
-
-const lojas = [
-
-    {
-        id:1,
-        nome:"Fanáticos Sports - Centro"
-    },
-
-    {
-        id:2,
-        nome:"Fanáticos Sports - Shopping"
-    },
-
-    {
-        id:3,
-        nome:"Fanáticos Sports - Online"
-    }
-
-];
-
-
-const selectLoja = document.getElementById("lojaCadastro");
-
-
-
-const opcaoInicial = document.createElement("option");
-
-opcaoInicial.value = "";
-
-opcaoInicial.textContent =
-
-"Selecione uma loja";
-
-
-selectLoja.appendChild(opcaoInicial);
-
-
-
-lojas.forEach(function(loja){
-
-
-    const option = document.createElement("option");
-
-
-    option.value = loja.id;
-
-
-    option.textContent = loja.nome;
-
-
-    selectLoja.appendChild(option);
-
-
-});
 
 
 
@@ -590,144 +527,182 @@ document.getElementById("formCadastro");
 
 
 
-formCadastro.addEventListener("submit", function(event){
+//======================================================
+// BOTÃO CADASTRAR
+//======================================================
+
+document.getElementById("btn-criar-conta").addEventListener("click", () => {
+
+    const nome = document.getElementById("nome").value.trim();
+    const cpf = document.getElementById("cpf").value.trim();
+    const telefone = document.getElementById("telefone").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const senha = document.getElementById("senha").value;
+    const dataNascimento =
+        document.getElementById("dataNascimento").value;
+    const mensagem =
+        document.getElementById("mensagem");
+
+    //verificar se todos os campos foram preenchidos
+    if (
+        nome == "" ||
+        cpf == "" ||
+        telefone == "" ||
+        email == "" ||
+        senha == "" ||
+        dataNascimento == ""
+    ) {
+
+        mensagem.style.color = "red";
+        mensagem.innerHTML = "Preencha todos os campos.";
 
 
-    event.preventDefault();
-
-
-
-    const nome =
-
-    document.getElementById("nomeCadastro").value;
-
-
-
-    const email =
-
-    document.getElementById("emailCadastro").value;
-
-
-
-    const senha =
-
-    document.getElementById("senhaCadastro").value;
-
-
-
-    const confirmar =
-
-    document.getElementById("confirmarSenha").value;
-
-
-
-    const termos =
-
-    document.getElementById("aceitarTermos").checked;
-
-
-
-    const loja =
-
-    document.getElementById("lojaCadastro").value;
-
-
-
-    if(nome.trim() === ""){
-
-
-        alert("Digite seu nome completo.");
 
         return;
 
+    }
 
+    if (senha.length < 8 || senha.length > 13) {
+
+        mensagem.style.color = "red";
+        mensagem.innerHTML =
+            "A senha deve possuir entre 8 e 13 caracteres.";
+        return;
+
+    }
+    // verificar se a senha possui letras maiusculas
+    if (!/[A-Z]/.test(senha)) {
+        mensagem.style.color = "red";
+        mensagem.innerHTML =
+            "A senha deve conter pelo menos uma letra maiúscula.";
+        return;
+    }
+    if (!/[a-z]/.test(senha)) {
+        mensagem.style.color = "red";
+        mensagem.innerHTML =
+            "A senha deve conter pelo menos uma letra minúscula.";
+        return;
+    }
+
+    if (!/[!@#$%^&*(),.?":{}|<>_\-+=/\[\]\\;'`~]/.test(senha)) {
+        mensagem.style.color = "red";
+        mensagem.innerHTML =
+            "A senha deve conter pelo menos um caracter especial.";
+        return;
+    }
+    if (!/[0-9]/.test(senha)) {
+        mensagem.style.color = "red";
+        mensagem.innerHTML =
+            "A senha deve conter pelo menos um número.";
+        return;
+    }
+    //verificar se a senha possui nome da pessoa
+    if (senha.includes(nome)) {
+        mensagem.style.color = "red";
+        mensagem.innerHTML =
+            "A senha não pode conter o nome do usuário.";
+        return;
+    }
+
+    //verificar se o cliente é maior de idade
+    const idade = new Date().getFullYear() -
+        new Date(dataNascimento).getFullYear();
+
+    if (idade < 18) {
+        mensagem.style.color = "red";
+        mensagem.innerHTML =
+            "Você deve ser maior de idade para se cadastrar.";
+        return;
     }
 
 
+    if (!email.includes("@gmail.com") &&
+        !email.includes("@hotmail.com") &&
+        !email.includes("@yahoo.com") &&
+        !email.includes("@outlook.com") && !email.includes("@") &&
+        !email.includes("@icloud.com")) {
 
-    if(email.trim() === ""){
-
-
-        alert("Digite seu email.");
+        mensagem.style.color = "red";
+        mensagem.innerHTML = "Digite um e-mail válido.";
 
         return;
 
-
     }
 
+    mensagem.style.color = "green";
+
+    mensagem.innerHTML =
+        "Cadastro realizado com sucesso!";
+
+    // Objeto pronto para enviar ao Node.js
+    const cliente = {
+        nome: nome,
+        cpf: cpf.replace(/\D/g, ""),
+        telefone: telefone.replace(/\D/g, ""),
+        email: email,
+        senha: senha,
+        data_nascimento: dataNascimento,
+    };
+
+    console.log(cliente);
 
 
-    if(senha.length < 6){
+    fetch("http://localhost:3000/clientes", {
+
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(cliente)
+
+    })
+        .then(res => res.json())
+
+        .then(resposta => {
+
+            if (resposta.sucesso) {
+
+                mensagem.style.color = "green";
+                mensagem.innerHTML = resposta.mensagem;
+
+                // Limpa os campos
+                document.getElementById("nome").value = "";
+                document.getElementById("cpf").value = "";
+                document.getElementById("telefone").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("senha").value = "";
+                document.getElementById("dataNascimento").value = "";
 
 
-        alert("A senha precisa ter pelo menos 6 caracteres.");
+                setTimeout(() => {
 
-        return;
-
-
-    }
+                    window.location.href = "../pages/login.html";
 
 
+                }, 1000);
 
-    if(senha !== confirmar){
+            } else {
 
+                mensagem.style.color = "red";
+                mensagem.innerHTML = resposta.mensagem;
 
-        alert("As senhas não são iguais.");
+            }
 
-        return;
+        })
 
+        .catch(() => {
 
-    }
+            mensagem.style.color = "red";
+            mensagem.innerHTML = "Erro ao conectar com o servidor.";
 
-
-
-    if(loja === ""){
-
-
-        alert("Selecione uma loja.");
-
-        return;
-
-
-    }
-
-
-
-    if(!termos){
-
-
-        alert("Aceite os termos de uso.");
-
-        return;
-
-
-    }
-
-
-
-
-    /*
-        Futuramente envia para o banco:
-
-        INSERT INTO Cliente
-
-        nome
-        cpf
-        telefone
-        email
-        senha
-        data_nascimento
-        Loja_idLoja
-
-    */
-
-
-
-    alert("Conta criada com sucesso!");
-
+        });
 
 
 });
+
+
 
 
 
@@ -779,4 +754,71 @@ document
 
 
 
+});
+
+
+
+
+
+const btnEntrar = document.getElementById("btnEntrar");
+
+btnEntrar.addEventListener("click", () => {
+
+    const email = document.getElementById("email").value.trim();
+    const senha = document.getElementById("senha").value;
+
+    const mensagem = document.getElementById("mensagem");
+
+    if (email === "" || senha === "") {
+
+        mensagem.innerHTML = "Preencha todos os campos.";
+        mensagem.style.color = "red";
+        return;
+
+    }
+
+    if (senha.length < 8) {
+
+        mensagem.innerHTML = "A senha deve possuir no mínimo 8 caracteres.";
+        mensagem.style.color = "red";
+        return;
+
+    }
+
+    fetch("http://localhost:3000/cliente/login", {
+
+    method: "POST",
+
+    headers: {
+        "Content-Type": "application/json"
+    },
+
+    body: JSON.stringify({
+        email,
+        senha
+    })
+
+})
+
+.then(res => res.json())
+
+.then(resposta => {
+
+    if (resposta.sucesso) {
+
+        localStorage.setItem(
+            "cliente",
+            JSON.stringify(resposta.cliente)
+        );
+
+        window.location.href = "../index.html";
+
+    } else {
+
+        mensagem.innerHTML = resposta.mensagem;
+        mensagem.style.color = "red";
+
+    }
+
+});
 });

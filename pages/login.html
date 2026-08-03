@@ -30,325 +30,333 @@ TELA LOGIN
 
 <div id="loginContainer">
 
-<!--======================================================
-LADO ESQUERDO
-=======================================================-->
+    <!--======================================================
+    PAINEL LOGIN
+    =======================================================-->
 
-<section id="painelLogin">
+    <section id="painelLogin">
 
-    <div id="overlayLogin">
+        <div id="overlayLogin">
 
-        <div id="logoArea">
+            <!--==============================
+            LOGO
+            ==============================-->
 
-            <img id="logoImagem"
-                 src=""
-                 alt="">
+            <div id="logoArea">
 
-            <h1 id="logoTexto"></h1>
+                <img id="logoImagem"
+                     src=""
+                     alt="">
 
-        </div>
-
-        <div id="boasVindas">
-
-            <h2 id="tituloLogin"></h2>
-
-            <p id="subtituloLogin"></p>
-
-        </div>
-
-        <form id="formLogin">
-
-            <div class="grupoCampo">
-
-                <label id="lblEmailLogin"
-                       for="emailLogin"></label>
-
-                <div class="inputIcone">
-
-                    <i class="fas fa-envelope"></i>
-
-                    <input id="emailLogin"
-                           type="email">
-
-                </div>
+                <h1 id="logoTexto"></h1>
 
             </div>
 
-            <div class="grupoCampo">
+            <!--==============================
+            BOAS VINDAS
+            ==============================-->
 
-                <label id="lblSenhaLogin"
-                       for="senhaLogin"></label>
+            <div id="boasVindas">
 
-                <div class="inputIcone">
+                <h2 id="tituloLogin"></h2>
 
-                    <i class="fas fa-lock"></i>
-
-                    <input id="senhaLogin"
-                           type="password">
-
-                    <button id="btnMostrarSenha"
-                            type="button">
-
-                        <i class="fas fa-eye"></i>
-
-                    </button>
-
-                </div>
+                <p id="subtituloLogin"></p>
 
             </div>
 
-            <div id="opcoesLogin">
+            <!--==============================
+            FORMULÁRIO LOGIN
+            ==============================-->
 
-                <label id="lembrarConta">
-
-                    <input id="checkLembrar"
-                           type="checkbox">
-
-                    <span id="textoLembrar"></span>
-
-                </label>
-
-                <a id="linkEsqueciSenha"
-                   href="#"></a>
-
-            </div>
-
-            <button id="btnEntrar"
-                    type="submit">
-
-                <i class="fas fa-right-to-bracket"></i>
-
-                <span id="textoEntrar"></span>
-
-            </button>
-
-        </form>
-
-        <!--======================================================
-LADO DIREITO
-=======================================================-->
-
-</section>
-
-<section id="painelCadastro">
-
-    <div id="cadastroContainer">
-
-        <h2 id="tituloCadastro"></h2>
-
-        <p id="subtituloCadastro"></p>
-
-        <form id="formCadastro">
-
-            <div class="gridCadastro">
-
-                <!--==============================
-                NOME
-                ==============================-->
+            <form id="formLogin">
 
                 <div class="grupoCampo">
 
-                    <label id="lblNome"
-                           for="nomeCadastro"></label>
-
-                    <div class="inputIcone">
-
-                        <i class="fas fa-user"></i>
-
-                        <input id="nomeCadastro"
-                               type="text">
-
-                    </div>
-
-                </div>
-
-                <!--==============================
-                CPF
-                ==============================-->
-
-                <div class="grupoCampo">
-
-                    <label id="lblCpf"
-                           for="cpfCadastro"></label>
-
-                    <div class="inputIcone">
-
-                        <i class="fas fa-id-card"></i>
-
-                        <input id="cpfCadastro"
-                               type="text">
-
-                    </div>
-
-                </div>
-
-                <!--==============================
-                TELEFONE
-                ==============================-->
-
-                <div class="grupoCampo">
-
-                    <label id="lblTelefone"
-                           for="telefoneCadastro"></label>
-
-                    <div class="inputIcone">
-
-                        <i class="fas fa-phone"></i>
-
-                        <input id="telefoneCadastro"
-                               type="tel">
-
-                    </div>
-
-                </div>
-
-                <!--==============================
-                EMAIL
-                ==============================-->
-
-                <div class="grupoCampo">
-
-                    <label id="lblEmailCadastro"
-                           for="emailCadastro"></label>
+                    <label id="lblEmailLogin"
+                           for="emailLogin"></label>
 
                     <div class="inputIcone">
 
                         <i class="fas fa-envelope"></i>
 
-                        <input id="emailCadastro"
+                        <input id="emailLogin"
                                type="email">
 
                     </div>
 
                 </div>
 
-                <!--==============================
-                SENHA
-                ==============================-->
-
                 <div class="grupoCampo">
 
-                    <label id="lblSenhaCadastro"
-                           for="senhaCadastro"></label>
+                    <label id="lblSenhaLogin"
+                           for="senhaLogin"></label>
 
                     <div class="inputIcone">
 
                         <i class="fas fa-lock"></i>
 
-                        <input id="senhaCadastro"
+                        <input id="senhaLogin"
                                type="password">
 
-                    </div>
+                        <button id="btnMostrarSenha"
+                                type="button">
 
-                </div>
+                            <i class="fas fa-eye"></i>
 
-                <!--==============================
-                CONFIRMAR SENHA
-                ==============================-->
-
-                <div class="grupoCampo">
-
-                    <label id="lblConfirmarSenha"
-                           for="confirmarSenha"></label>
-
-                    <div class="inputIcone">
-
-                        <i class="fas fa-lock"></i>
-
-                        <input id="confirmarSenha"
-                               type="password">
+                        </button>
 
                     </div>
 
                 </div>
 
-                <!--==============================
-                DATA NASCIMENTO
-                ==============================-->
+                <div id="opcoesLogin">
 
-                <div class="grupoCampo">
+                    <label id="lembrarConta">
 
-                    <label id="lblNascimento"
-                           for="dataNascimento"></label>
+                        <input id="checkLembrar"
+                               type="checkbox">
 
-                    <div class="inputIcone">
+                        <span id="textoLembrar"></span>
 
-                        <i class="fas fa-calendar"></i>
+                    </label>
 
-                        <input id="dataNascimento"
-                               type="date">
-
-                    </div>
+                    <a id="linkEsqueciSenha"
+                       href="#"></a>
 
                 </div>
 
-                <!--==============================
-                LOJA
-                ==============================-->
+                <button id="btnEntrar"
+                        type="submit">
 
-                <div class="grupoCampo">
+                    <i class="fas fa-right-to-bracket"></i>
 
-                    <label id="lblLoja"
-                           for="lojaCadastro"></label>
-
-                    <div class="inputIcone">
-
-                        <i class="fas fa-store"></i>
-
-                        <select id="lojaCadastro">
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div id="termosCadastro">
-
-                <label>
-
-                    <input id="aceitarTermos"
-                           type="checkbox">
-
-                    <span id="textoTermos"></span>
-
-                </label>
-
-            </div>
-
-            <button id="btnCriarConta"
-                    type="submit">
-
-                <i class="fas fa-user-plus"></i>
-
-                <span id="textoCriarConta"></span>
-
-            </button>
-
-        </form>
-
-                    <div id="rodapeCadastro">
-
-                <p id="textoJaPossuiConta"></p>
-
-                <button id="btnIrLogin"
-                        type="button">
-
-                    <i class="fas fa-arrow-left"></i>
-
-                    <span id="textoBtnIrLogin"></span>
+                    <span id="textoEntrar"></span>
 
                 </button>
 
-            </div>
+            </form>
 
-        </form>
+        </div>
 
-    </div>
+    </section>
 
-</section>
+        <!--======================================================
+    PAINEL CADASTRO
+    =======================================================-->
+
+    <section id="painelCadastro">
+
+        <div id="cadastroContainer">
+
+            <h2 id="tituloCadastro"></h2>
+
+            <p id="subtituloCadastro"></p>
+
+            <!--==============================
+            FORMULÁRIO CADASTRO
+            ==============================-->
+
+            <form id="formCadastro">
+
+                <div class="gridCadastro">
+
+                    <!--==============================
+                    NOME
+                    ==============================-->
+
+                    <div class="grupoCampo">
+
+                        <label id="lblNome"
+                               for="nomeCadastro"></label>
+
+                        <div class="inputIcone">
+
+                            <i class="fas fa-user"></i>
+
+                            <input id="nomeCadastro"
+                                   type="text">
+
+                        </div>
+
+                    </div>
+
+                    <!--==============================
+                    CPF
+                    ==============================-->
+
+                    <div class="grupoCampo">
+
+                        <label id="lblCpf"
+                               for="cpfCadastro"></label>
+
+                        <div class="inputIcone">
+
+                            <i class="fas fa-id-card"></i>
+
+                            <input id="cpfCadastro"
+                                   type="text">
+
+                        </div>
+
+                    </div>
+
+                    <!--==============================
+                    TELEFONE
+                    ==============================-->
+
+                    <div class="grupoCampo">
+
+                        <label id="lblTelefone"
+                               for="telefoneCadastro"></label>
+
+                        <div class="inputIcone">
+
+                            <i class="fas fa-phone"></i>
+
+                            <input id="telefoneCadastro"
+                                   type="tel">
+
+                        </div>
+
+                    </div>
+
+                    <!--==============================
+                    EMAIL
+                    ==============================-->
+
+                    <div class="grupoCampo">
+
+                        <label id="lblEmailCadastro"
+                               for="emailCadastro"></label>
+
+                        <div class="inputIcone">
+
+                            <i class="fas fa-envelope"></i>
+
+                            <input id="emailCadastro"
+                                   type="email">
+
+                        </div>
+
+                    </div>
+
+                    <!--==============================
+                    SENHA
+                    ==============================-->
+
+                    <div class="grupoCampo">
+
+                        <label id="lblSenhaCadastro"
+                               for="senhaCadastro"></label>
+
+                        <div class="inputIcone">
+
+                            <i class="fas fa-lock"></i>
+
+                            <input id="senhaCadastro"
+                                   type="password">
+
+                        </div>
+
+                    </div>
+
+                    <!--==============================
+                    CONFIRMAR SENHA
+                    ==============================-->
+
+                    <div class="grupoCampo">
+
+                        <label id="lblConfirmarSenha"
+                               for="confirmarSenha"></label>
+
+                        <div class="inputIcone">
+
+                            <i class="fas fa-lock"></i>
+
+                            <input id="confirmarSenha"
+                                   type="password">
+
+                        </div>
+
+                    </div>
+
+                    <!--==============================
+                    DATA DE NASCIMENTO
+                    ==============================-->
+
+                    <div class="grupoCampo">
+
+                        <label id="lblNascimento"
+                               for="dataNascimento"></label>
+
+                        <div class="inputIcone">
+
+                            <i class="fas fa-calendar"></i>
+
+                            <input id="dataNascimento"
+                                   type="date">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                                <!--======================================================
+                TERMOS DE USO
+                =======================================================-->
+
+                <div id="termosCadastro">
+
+                    <label for="aceitarTermos">
+
+                        <input id="aceitarTermos"
+                               type="checkbox">
+
+                        <span id="textoTermos"></span>
+
+                    </label>
+
+                </div>
+
+                <!--======================================================
+                BOTÃO CRIAR CONTA
+                =======================================================-->
+
+                <button id="btnCriarConta"
+                        type="submit">
+
+                    <i class="fas fa-user-plus"></i>
+
+                    <span id="textoCriarConta"></span>
+
+                </button>
+
+                <!--======================================================
+                RODAPÉ DO CADASTRO
+                =======================================================-->
+
+                <div id="rodapeCadastro">
+
+                    <p id="textoJaPossuiConta"></p>
+
+                    <button id="btnIrLogin"
+                            type="button">
+
+                        <i class="fas fa-arrow-left"></i>
+
+                        <span id="textoBtnIrLogin"></span>
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
 
 </div>
 
