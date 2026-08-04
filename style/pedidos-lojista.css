@@ -36,9 +36,11 @@ RESET
 
     --cor-sucesso:#22C55E;
 
+    --cor-aviso:#F59E0B;
+
     --cor-erro:#EF4444;
 
-    --cor-aviso:#F59E0B;
+    --cor-info:#3B82F6;
 
     --sombra:0 10px 25px rgba(0,0,0,.08);
 
@@ -112,11 +114,11 @@ SIDEBAR
 
 #logoTexto{
 
-    font-size:32px;
+    font-size:28px;
 
     font-weight:700;
 
-    line-height:1.1;
+    line-height:1.2;
 
 }
 
@@ -186,6 +188,7 @@ CONTEÚDO PRINCIPAL
 
 }
 
+
 /*=========================================================
 TOPBAR
 =========================================================*/
@@ -202,15 +205,15 @@ TOPBAR
 
 }
 
+
 #tituloPrincipal{
 
     font-size:30px;
 
     font-weight:700;
 
-    color:var(--cor-texto);
-
 }
+
 
 /*=========================================================
 PESQUISA TOPO
@@ -234,21 +237,21 @@ PESQUISA TOPO
 
 }
 
+
 #campoPesquisaTopo{
+
+    width:320px;
+
+    padding:14px 18px;
 
     border:none;
 
     outline:none;
 
-    padding:14px 18px;
-
-    width:320px;
-
     font-size:15px;
 
-    background:transparent;
-
 }
+
 
 #btnPesquisar{
 
@@ -258,15 +261,16 @@ PESQUISA TOPO
 
     border:none;
 
-    cursor:pointer;
-
     background:var(--cor-primaria);
 
     color:#FFF;
 
+    cursor:pointer;
+
     transition:var(--transition);
 
 }
+
 
 #btnPesquisar:hover{
 
@@ -274,8 +278,9 @@ PESQUISA TOPO
 
 }
 
+
 /*=========================================================
-USUÁRIO
+USUÁRIO TOPO
 =========================================================*/
 
 #usuarioTopo{
@@ -284,15 +289,16 @@ USUÁRIO
 
     align-items:center;
 
-    gap:18px;
+    gap:15px;
 
 }
 
+
 #btnNotificacao{
 
-    width:48px;
+    width:45px;
 
-    height:48px;
+    height:45px;
 
     border:none;
 
@@ -304,29 +310,21 @@ USUÁRIO
 
     box-shadow:var(--sombra);
 
-    transition:var(--transition);
-
 }
 
-#btnNotificacao:hover{
-
-    background:var(--cor-primaria);
-
-    color:#FFF;
-
-}
 
 #fotoUsuario{
 
-    width:52px;
+    width:55px;
 
-    height:52px;
+    height:55px;
 
     border-radius:50%;
 
     object-fit:cover;
 
 }
+
 
 #dadosUsuario{
 
@@ -336,6 +334,7 @@ USUÁRIO
 
 }
 
+
 #nomeUsuario{
 
     font-size:16px;
@@ -344,19 +343,21 @@ USUÁRIO
 
 }
 
-#cargoUsuario{
 
-    color:var(--cor-texto-secundario);
+#cargoUsuario{
 
     font-size:14px;
 
+    color:var(--cor-texto-secundario);
+
 }
 
+
 /*=========================================================
-CABEÇALHO
+CABEÇALHO PEDIDOS
 =========================================================*/
 
-#cabecalhoProdutos{
+#cabecalhoPedidos{
 
     display:flex;
 
@@ -374,7 +375,8 @@ CABEÇALHO
 
 }
 
-#tituloProdutos{
+
+#tituloPedidos{
 
     font-size:28px;
 
@@ -382,23 +384,27 @@ CABEÇALHO
 
 }
 
-#descricaoProdutos{
+
+#descricaoPedidos{
 
     color:var(--cor-texto-secundario);
 
-    font-size:15px;
-
 }
 
-#btnNovoProduto{
+
+/*=========================================================
+BOTÃO ATUALIZAR
+=========================================================*/
+
+#btnAtualizarPedidos{
 
     display:flex;
 
     align-items:center;
 
-    gap:12px;
+    gap:10px;
 
-    padding:14px 24px;
+    padding:14px 22px;
 
     border:none;
 
@@ -408,8 +414,6 @@ CABEÇALHO
 
     color:#FFF;
 
-    font-size:15px;
-
     font-weight:600;
 
     cursor:pointer;
@@ -418,11 +422,13 @@ CABEÇALHO
 
 }
 
-#btnNovoProduto:hover{
+
+#btnAtualizarPedidos:hover{
 
     background:var(--cor-secundaria);
 
 }
+
 
 /*=========================================================
 CARDS RESUMO
@@ -432,25 +438,27 @@ CARDS RESUMO
 
     display:grid;
 
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(5,1fr);
 
     gap:20px;
 
 }
 
+
 .cardResumo{
 
     background:var(--cor-card);
 
-    border-radius:18px;
-
     padding:25px;
+
+    border-radius:18px;
 
     box-shadow:var(--sombra);
 
-    transition:.3s;
+    transition:var(--transition);
 
 }
+
 
 .cardResumo:hover{
 
@@ -458,9 +466,10 @@ CARDS RESUMO
 
 }
 
+
 .cardResumo h3{
 
-    font-size:15px;
+    font-size:14px;
 
     color:var(--cor-texto-secundario);
 
@@ -468,25 +477,25 @@ CARDS RESUMO
 
 }
 
+
 .cardResumo h2{
 
-    font-size:34px;
+    font-size:32px;
 
     font-weight:700;
 
-    color:var(--cor-texto);
-
 }
+
 
 .cardResumo span{
 
     display:block;
 
-    margin-top:12px;
-
-    font-size:14px;
+    margin-top:10px;
 
     color:var(--cor-sucesso);
+
+    font-size:14px;
 
 }
 
@@ -512,6 +521,7 @@ CARDS RESUMO
 
 }
 
+
 .filtro{
 
     display:flex;
@@ -521,6 +531,7 @@ CARDS RESUMO
     gap:8px;
 
 }
+
 
 .filtro label{
 
@@ -532,10 +543,9 @@ CARDS RESUMO
 
 }
 
+
 .filtro input,
 .filtro select{
-
-    width:100%;
 
     padding:13px 15px;
 
@@ -543,15 +553,16 @@ CARDS RESUMO
 
     border-radius:10px;
 
+    outline:none;
+
     background:#FFF;
 
     font-size:14px;
 
-    outline:none;
-
     transition:var(--transition);
 
 }
+
 
 .filtro input:focus,
 .filtro select:focus{
@@ -562,11 +573,12 @@ CARDS RESUMO
 
 }
 
+
 /*=========================================================
-TABELA
+TABELA DE PEDIDOS
 =========================================================*/
 
-#tabelaProdutos{
+#tabelaPedidos{
 
     background:var(--cor-card);
 
@@ -578,7 +590,8 @@ TABELA
 
 }
 
-#produtosTabela{
+
+#pedidosTabela{
 
     width:100%;
 
@@ -586,7 +599,8 @@ TABELA
 
 }
 
-#produtosTabela thead{
+
+#pedidosTabela thead{
 
     background:var(--cor-primaria);
 
@@ -594,7 +608,8 @@ TABELA
 
 }
 
-#produtosTabela th{
+
+#pedidosTabela th{
 
     padding:18px;
 
@@ -602,54 +617,49 @@ TABELA
 
     font-size:14px;
 
-    font-weight:600;
-
 }
 
-#produtosTabela td{
+
+#pedidosTabela td{
 
     padding:18px;
 
     border-bottom:1px solid var(--cor-borda);
 
-    vertical-align:middle;
-
     font-size:14px;
 
 }
 
-#produtosTabela tbody tr{
+
+#pedidosTabela tbody tr{
 
     transition:var(--transition);
 
 }
 
-#produtosTabela tbody tr:hover{
+
+#pedidosTabela tbody tr:hover{
 
     background:#F8FAFC;
 
 }
 
+
 /*=========================================================
-IMAGEM PRODUTO
+CÓDIGO DO PEDIDO
 =========================================================*/
 
-.imagemProduto{
+.codigoPedido{
 
-    width:70px;
+    font-weight:700;
 
-    height:70px;
-
-    border-radius:12px;
-
-    object-fit:cover;
-
-    border:1px solid var(--cor-borda);
+    color:var(--cor-primaria);
 
 }
 
+
 /*=========================================================
-STATUS
+STATUS DOS PEDIDOS
 =========================================================*/
 
 .status{
@@ -660,7 +670,7 @@ STATUS
 
     justify-content:center;
 
-    padding:8px 14px;
+    padding:8px 15px;
 
     border-radius:30px;
 
@@ -670,23 +680,10 @@ STATUS
 
 }
 
-.status.ativo{
 
-    background:#DCFCE7;
+/* Aguardando */
 
-    color:#15803D;
-
-}
-
-.status.inativo{
-
-    background:#FEE2E2;
-
-    color:#B91C1C;
-
-}
-
-.status.baixo{
+.status.aguardando{
 
     background:#FEF3C7;
 
@@ -694,17 +691,74 @@ STATUS
 
 }
 
+
+/* Pago */
+
+.status.pago{
+
+    background:#DCFCE7;
+
+    color:#15803D;
+
+}
+
+
+/* Preparando */
+
+.status.preparando{
+
+    background:#DBEAFE;
+
+    color:#1D4ED8;
+
+}
+
+
+/* Enviado */
+
+.status.enviado{
+
+    background:#EDE9FE;
+
+    color:#6D28D9;
+
+}
+
+
+/* Entregue */
+
+.status.entregue{
+
+    background:#D1FAE5;
+
+    color:#047857;
+
+}
+
+
+/* Cancelado */
+
+.status.cancelado{
+
+    background:#FEE2E2;
+
+    color:#B91C1C;
+
+}
+
+
 /*=========================================================
 BOTÕES DE AÇÃO
 =========================================================*/
 
-.acoesProduto{
+.acoesPedido{
 
     display:flex;
 
     gap:10px;
 
 }
+
 
 .btnAcao{
 
@@ -724,23 +778,20 @@ BOTÕES DE AÇÃO
 
 }
 
+
 .btnVisualizar{
 
     background:#3B82F6;
 
 }
 
-.btnEditar{
 
-    background:#F59E0B;
+.btnStatus{
 
-}
-
-.btnExcluir{
-
-    background:#EF4444;
+    background:#22C55E;
 
 }
+
 
 .btnAcao:hover{
 
@@ -754,7 +805,7 @@ BOTÕES DE AÇÃO
 PAGINAÇÃO
 =========================================================*/
 
-#paginacaoProdutos{
+#paginacaoPedidos{
 
     display:flex;
 
@@ -764,11 +815,12 @@ PAGINAÇÃO
 
     gap:15px;
 
-    margin-top:30px;
+    margin-top:20px;
 
 }
 
-#paginacaoProdutos button{
+
+#paginacaoPedidos button{
 
     width:45px;
 
@@ -778,25 +830,25 @@ PAGINAÇÃO
 
     border-radius:10px;
 
-    cursor:pointer;
-
     background:var(--cor-card);
 
-    color:var(--cor-texto);
-
     box-shadow:var(--sombra);
+
+    cursor:pointer;
 
     transition:var(--transition);
 
 }
 
-#paginacaoProdutos button:hover{
+
+#paginacaoPedidos button:hover{
 
     background:var(--cor-primaria);
 
     color:#FFF;
 
 }
+
 
 #numeracaoPaginas{
 
@@ -806,34 +858,6 @@ PAGINAÇÃO
 
 }
 
-#numeracaoPaginas button{
-
-    width:42px;
-
-    height:42px;
-
-    border:none;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    background:var(--cor-card);
-
-    box-shadow:var(--sombra);
-
-    transition:var(--transition);
-
-}
-
-#numeracaoPaginas button:hover,
-#numeracaoPaginas button.ativo{
-
-    background:var(--cor-primaria);
-
-    color:#FFF;
-
-}
 
 /*=========================================================
 MODAIS
@@ -843,25 +867,20 @@ MODAIS
 
     position:fixed;
 
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    height:100%;
+    inset:0;
 
     background:rgba(0,0,0,.55);
 
     display:none;
 
-    justify-content:center;
-
     align-items:center;
+
+    justify-content:center;
 
     z-index:999;
 
 }
+
 
 .modal.ativo{
 
@@ -869,39 +888,40 @@ MODAIS
 
 }
 
+
 .modalConteudo{
-
-    background:#FFF;
-
-    border-radius:18px;
-
-    padding:30px;
 
     width:90%;
 
-    max-width:850px;
+    max-width:900px;
+
+    background:#FFF;
+
+    border-radius:20px;
+
+    padding:30px;
 
     box-shadow:var(--sombra);
 
-    animation:fade .3s;
+    animation:abrirModal .3s;
 
 }
+
 
 .modalPequeno{
 
     max-width:450px;
 
-    text-align:center;
-
 }
 
-@keyframes fade{
+
+@keyframes abrirModal{
 
     from{
 
         opacity:0;
 
-        transform:translateY(-25px);
+        transform:translateY(-30px);
 
     }
 
@@ -915,25 +935,29 @@ MODAIS
 
 }
 
+
+/*=========================================================
+FECHAR MODAL
+=========================================================*/
+
 #btnFecharVisualizar{
 
     float:right;
 
-    width:42px;
+    width:40px;
 
-    height:42px;
+    height:40px;
 
     border:none;
 
     border-radius:50%;
 
-    background:#F3F4F6;
-
     cursor:pointer;
 
-    transition:.3s;
+    background:#F1F5F9;
 
 }
+
 
 #btnFecharVisualizar:hover{
 
@@ -943,122 +967,147 @@ MODAIS
 
 }
 
-#produtoVisualizacao{
+
+/*=========================================================
+DETALHES DO PEDIDO
+=========================================================*/
+
+#cabecalhoDetalhes{
 
     display:flex;
 
-    gap:35px;
+    justify-content:space-between;
 
-    align-items:flex-start;
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+
+#tituloDetalhesPedido{
+
+    font-size:25px;
+
+}
+
+
+#informacoesPedido{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+
+.grupoInformacoes{
+
+    background:#F8FAFC;
+
+    padding:20px;
+
+    border-radius:15px;
+
+}
+
+
+.grupoInformacoes h3{
+
+    margin-bottom:12px;
+
+    font-size:17px;
+
+}
+
+
+.grupoInformacoes p{
+
+    color:var(--cor-texto-secundario);
+
+    margin-bottom:8px;
+
+}
+
+
+/*=========================================================
+TABELA PRODUTOS DO PEDIDO
+=========================================================*/
+
+#produtosPedido{
 
     margin-top:25px;
 
 }
 
-#produtoImagemVisualizacao{
 
-    width:260px;
+#tabelaProdutosPedido{
 
-    height:260px;
+    width:100%;
 
-    object-fit:cover;
+    border-collapse:collapse;
 
-    border-radius:16px;
-
-    border:1px solid var(--cor-borda);
+    margin-top:15px;
 
 }
 
-#produtoInformacoes{
+
+#tabelaProdutosPedido th{
+
+    background:var(--cor-primaria);
+
+    color:#FFF;
+
+    padding:14px;
+
+}
+
+
+#tabelaProdutosPedido td{
+
+    padding:14px;
+
+    border-bottom:1px solid var(--cor-borda);
+
+}
+
+
+/*=========================================================
+ALTERAR STATUS
+=========================================================*/
+
+#novoStatusPedido{
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    border:1px solid var(--cor-borda);
+
+    margin:20px 0;
+
+}
+
+
+#acoesStatus{
 
     display:flex;
 
-    flex-direction:column;
+    justify-content:center;
 
     gap:15px;
 
 }
 
-#produtoInformacoes h2{
 
-    font-size:28px;
+#btnCancelarStatus,
+#btnSalvarStatus{
 
-}
-
-#produtoInformacoes span{
-
-    color:var(--cor-texto-secundario);
-
-    font-size:15px;
-
-}
-
-#produtoDescricaoVisualizacao{
-
-    margin-top:15px;
-
-    line-height:1.7;
-
-}
-
-/*=========================================================
-MODAL EXCLUIR
-=========================================================*/
-
-#iconeExcluir{
-
-    width:90px;
-
-    height:90px;
-
-    margin:0 auto 20px;
-
-    border-radius:50%;
-
-    background:#FEE2E2;
-
-    color:var(--cor-erro);
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:34px;
-
-}
-
-#tituloExcluir{
-
-    margin-bottom:15px;
-
-}
-
-#textoExcluir{
-
-    color:var(--cor-texto-secundario);
-
-    line-height:1.6;
-
-}
-
-#acoesExcluir{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:18px;
-
-    margin-top:30px;
-
-}
-
-#btnCancelarExcluir,
-#btnConfirmarExcluir{
-
-    padding:13px 28px;
+    padding:13px 25px;
 
     border:none;
 
@@ -1066,39 +1115,26 @@ MODAL EXCLUIR
 
     cursor:pointer;
 
-    font-size:15px;
-
     font-weight:600;
-
-    transition:.3s;
 
 }
 
-#btnCancelarExcluir{
+
+#btnCancelarStatus{
 
     background:#E5E7EB;
 
 }
 
-#btnCancelarExcluir:hover{
 
-    background:#CBD5E1;
+#btnSalvarStatus{
 
-}
-
-#btnConfirmarExcluir{
-
-    background:var(--cor-erro);
+    background:var(--cor-sucesso);
 
     color:#FFF;
 
 }
 
-#btnConfirmarExcluir:hover{
-
-    background:#DC2626;
-
-}
 
 /*=========================================================
 RODAPÉ
@@ -1106,17 +1142,16 @@ RODAPÉ
 
 #rodapeSistema{
 
-    margin-top:40px;
-
     text-align:center;
+
+    padding:25px 0;
 
     color:var(--cor-texto-secundario);
 
     font-size:14px;
 
-    padding:25px 0;
-
 }
+
 
 /*=========================================================
 RESPONSIVIDADE
@@ -1126,9 +1161,10 @@ RESPONSIVIDADE
 
     #cardsResumo{
 
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:repeat(3,1fr);
 
     }
+
 
     #areaFiltros{
 
@@ -1138,6 +1174,7 @@ RESPONSIVIDADE
 
 }
 
+
 @media(max-width:900px){
 
     #sidebar{
@@ -1146,29 +1183,29 @@ RESPONSIVIDADE
 
     }
 
+
     #logoTexto{
 
         display:none;
 
     }
 
-    #menuLateral a span{
+
+    #menuLateral span{
 
         display:none;
 
     }
 
-    #produtoVisualizacao{
 
-        flex-direction:column;
+    #informacoesPedido{
 
-        align-items:center;
-
-        text-align:center;
+        grid-template-columns:1fr;
 
     }
 
 }
+
 
 @media(max-width:768px){
 
@@ -1180,7 +1217,8 @@ RESPONSIVIDADE
 
     }
 
-    #cabecalhoProdutos{
+
+    #cabecalhoPedidos{
 
         flex-direction:column;
 
@@ -1190,11 +1228,13 @@ RESPONSIVIDADE
 
     }
 
+
     #cardsResumo{
 
         grid-template-columns:1fr;
 
     }
+
 
     #areaFiltros{
 
@@ -1202,13 +1242,15 @@ RESPONSIVIDADE
 
     }
 
-    #tabelaProdutos{
+
+    #tabelaPedidos{
 
         overflow-x:auto;
 
     }
 
 }
+
 
 @media(max-width:500px){
 
@@ -1218,9 +1260,10 @@ RESPONSIVIDADE
 
     }
 
-    #campoPesquisaTopo{
 
-        width:100%;
+    .modalConteudo{
+
+        padding:20px;
 
     }
 

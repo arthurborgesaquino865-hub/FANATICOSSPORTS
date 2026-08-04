@@ -1,0 +1,1648 @@
+/*=========================================================
+    FANÁTICOS SPORTS
+    PAINEL ADMINISTRATIVO
+    TELA DE CLIENTES
+=========================================================*/
+
+
+/*=========================================================
+    VARIÁVEIS
+=========================================================*/
+
+
+:root{
+
+
+    --cor-primaria:#2563EB;
+
+    --cor-secundaria:#1E40AF;
+
+    --cor-sidebar:#111827;
+
+    --cor-sidebar-hover:#1F2937;
+
+
+    --cor-background:#F3F4F6;
+
+    --cor-card:#FFFFFF;
+
+
+    --cor-texto:#111827;
+
+    --cor-texto-claro:#6B7280;
+
+
+    --cor-borda:#E5E7EB;
+
+
+    --cor-sucesso:#22C55E;
+
+    --cor-alerta:#F59E0B;
+
+    --cor-erro:#EF4444;
+
+
+    --sombra:
+
+    0 10px 25px rgba(0,0,0,.08);
+
+
+    --transition:.3s;
+
+
+}
+
+
+
+
+
+/*=========================================================
+    RESET
+=========================================================*/
+
+
+*{
+
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:
+
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+
+}
+
+
+
+body{
+
+
+    background:
+
+    var(--cor-background);
+
+    color:
+
+    var(--cor-texto);
+
+
+}
+
+
+
+
+
+/*=========================================================
+    ESTRUTURA PRINCIPAL
+=========================================================*/
+
+
+#painelAdmin{
+
+
+    display:flex;
+
+    min-height:100vh;
+
+
+}
+
+
+
+
+
+
+/*=========================================================
+    SIDEBAR
+=========================================================*/
+
+
+#sidebar{
+
+
+    width:260px;
+
+    background:
+
+    var(--cor-sidebar);
+
+    color:#FFF;
+
+    padding:25px 15px;
+
+    position:fixed;
+
+    height:100vh;
+
+
+}
+
+
+
+
+/* LOGO */
+
+
+#logoAdmin{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:35px;
+
+
+}
+
+
+
+#logoImagem{
+
+
+    width:45px;
+
+    height:45px;
+
+    object-fit:contain;
+
+    border-radius:10px;
+
+
+}
+
+
+
+#logoTexto{
+
+
+    font-size:22px;
+
+    font-weight:700;
+
+
+}
+
+
+
+
+
+
+/*=========================================================
+    MENU LATERAL
+=========================================================*/
+
+
+#menuLateral{
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+
+}
+
+
+
+#menuLateral a{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+
+    padding:14px 15px;
+
+
+    color:#D1D5DB;
+
+
+    text-decoration:none;
+
+
+    border-radius:10px;
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+#menuLateral a i{
+
+
+    width:20px;
+
+    text-align:center;
+
+
+}
+
+
+
+#menuLateral a:hover{
+
+
+    background:
+
+    var(--cor-sidebar-hover);
+
+    color:#FFF;
+
+
+}
+
+
+
+#menuLateral a.ativo{
+
+
+    background:
+
+    var(--cor-primaria);
+
+    color:#FFF;
+
+
+}
+
+
+
+
+
+
+/*=========================================================
+    CONTEÚDO PRINCIPAL
+=========================================================*/
+
+
+#conteudoPrincipal{
+
+
+    margin-left:260px;
+
+    width:calc(100% - 260px);
+
+    padding:25px;
+
+
+}
+
+
+
+
+
+/*=========================================================
+    TOPBAR
+=========================================================*/
+
+
+#topbar{
+
+
+    background:
+
+    var(--cor-card);
+
+
+    padding:18px 25px;
+
+
+    border-radius:15px;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+    box-shadow:
+
+    var(--sombra);
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+#tituloPrincipal{
+
+
+    font-size:25px;
+
+
+}
+
+
+
+
+
+
+/* PESQUISA */
+
+
+#areaPesquisa{
+
+
+    display:flex;
+
+    align-items:center;
+
+
+}
+
+
+
+#campoPesquisaTopo{
+
+
+    width:260px;
+
+
+    padding:12px 15px;
+
+
+    border:
+
+    1px solid var(--cor-borda);
+
+
+    border-radius:10px 0 0 10px;
+
+
+    outline:none;
+
+
+}
+
+
+
+#btnPesquisaTopo{
+
+
+    height:42px;
+
+    width:45px;
+
+
+    border:none;
+
+
+    background:
+
+    var(--cor-primaria);
+
+
+    color:#FFF;
+
+
+    border-radius:0 10px 10px 0;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+
+/*=========================================================
+    USUÁRIO
+=========================================================*/
+
+
+#areaUsuario{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:12px;
+
+
+}
+
+
+
+#btnNotificacao{
+
+
+    border:none;
+
+
+    background:none;
+
+
+    font-size:20px;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+#fotoUsuario{
+
+
+    width:45px;
+
+
+    height:45px;
+
+
+    border-radius:50%;
+
+
+    object-fit:cover;
+
+
+}
+
+
+
+#dadosUsuario{
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+}
+
+
+
+#dadosUsuario span{
+
+
+    font-size:13px;
+
+
+    color:
+
+    var(--cor-texto-claro);
+
+
+}
+
+/*=========================================================
+    ÁREA CLIENTES
+=========================================================*/
+
+
+#areaClientes{
+
+
+    width:100%;
+
+
+}
+
+
+
+
+
+/*=========================================================
+    CABEÇALHO DA PÁGINA
+=========================================================*/
+
+
+#cabecalhoPagina{
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+#cabecalhoPagina h2{
+
+
+    font-size:28px;
+
+
+    margin-bottom:8px;
+
+
+}
+
+
+
+#cabecalhoPagina p{
+
+
+    color:
+
+    var(--cor-texto-claro);
+
+
+    font-size:15px;
+
+
+}
+
+
+
+
+
+/*=========================================================
+    BOTÃO ADICIONAR CLIENTE
+=========================================================*/
+
+
+#btnAdicionarCliente{
+
+
+    background:
+
+    var(--cor-primaria);
+
+
+    color:#FFF;
+
+
+    border:none;
+
+
+    padding:14px 22px;
+
+
+    border-radius:12px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:10px;
+
+
+    font-size:15px;
+
+
+    font-weight:600;
+
+
+    cursor:pointer;
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+#btnAdicionarCliente:hover{
+
+
+    background:
+
+    var(--cor-secundaria);
+
+
+    transform:translateY(-2px);
+
+
+}
+
+
+
+
+
+/*=========================================================
+    CARDS DE RESUMO
+=========================================================*/
+
+
+#cardsClientes{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(4,1fr);
+
+
+    gap:20px;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+.cardCliente{
+
+
+    background:
+
+    var(--cor-card);
+
+
+    padding:25px;
+
+
+    border-radius:18px;
+
+
+    box-shadow:
+
+    var(--sombra);
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+.cardCliente:hover{
+
+
+    transform:translateY(-5px);
+
+
+}
+
+
+
+.cardCliente h3{
+
+
+    color:
+
+    var(--cor-texto-claro);
+
+
+    font-size:15px;
+
+
+    font-weight:500;
+
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+.cardCliente h2{
+
+
+    font-size:30px;
+
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+.cardCliente span{
+
+
+    font-size:14px;
+
+
+    color:
+
+    var(--cor-texto-claro);
+
+
+}
+
+
+
+
+
+
+/*=========================================================
+    FILTROS
+=========================================================*/
+
+
+#filtrosClientes{
+
+
+    background:
+
+    var(--cor-card);
+
+
+    padding:25px;
+
+
+    border-radius:18px;
+
+
+    box-shadow:
+
+    var(--sombra);
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    2fr 1fr 1fr;
+
+
+    gap:20px;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+.campoFiltro{
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:8px;
+
+
+}
+
+
+
+.campoFiltro label{
+
+
+    font-size:14px;
+
+
+    font-weight:600;
+
+
+    color:
+
+    var(--cor-texto);
+
+
+}
+
+
+
+.campoFiltro input,
+
+
+.campoFiltro select{
+
+
+    height:45px;
+
+
+    padding:0 15px;
+
+
+    border:
+
+
+    1px solid var(--cor-borda);
+
+
+    border-radius:10px;
+
+
+    outline:none;
+
+
+    background:#FFF;
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+.campoFiltro input:focus,
+
+
+.campoFiltro select:focus{
+
+
+    border-color:
+
+    var(--cor-primaria);
+
+
+    box-shadow:
+
+    0 0 0 3px rgba(37,99,235,.15);
+
+
+}
+
+/*=========================================================
+    TABELA DE CLIENTES
+=========================================================*/
+
+
+#containerTabelaClientes{
+
+
+    background:
+
+    var(--cor-card);
+
+
+    padding:25px;
+
+
+    border-radius:18px;
+
+
+    box-shadow:
+
+    var(--sombra);
+
+
+    overflow-x:auto;
+
+
+}
+
+
+
+
+
+#tabelaClientes{
+
+
+    width:100%;
+
+
+    border-collapse:collapse;
+
+
+}
+
+
+
+#tabelaClientes thead{
+
+
+    background:#F9FAFB;
+
+
+}
+
+
+
+#tabelaClientes th{
+
+
+    padding:16px;
+
+
+    text-align:left;
+
+
+    font-size:14px;
+
+
+    color:
+
+    var(--cor-texto-claro);
+
+
+    border-bottom:
+
+    1px solid var(--cor-borda);
+
+
+}
+
+
+
+
+
+#tabelaClientes td{
+
+
+    padding:16px;
+
+
+    border-bottom:
+
+    1px solid var(--cor-borda);
+
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+#tabelaClientes tbody tr{
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+#tabelaClientes tbody tr:hover{
+
+
+    background:#F9FAFB;
+
+
+}
+
+
+
+
+
+/*=========================================================
+    STATUS CLIENTE
+=========================================================*/
+
+
+.statusCliente{
+
+
+    padding:6px 12px;
+
+
+    border-radius:20px;
+
+
+    font-size:13px;
+
+
+    font-weight:600;
+
+
+}
+
+
+
+.statusCliente.ativo{
+
+
+    background:
+
+    rgba(34,197,94,.15);
+
+
+    color:
+
+    var(--cor-sucesso);
+
+
+}
+
+
+
+.statusCliente.bloqueado{
+
+
+    background:
+
+    rgba(239,68,68,.15);
+
+
+    color:
+
+    var(--cor-erro);
+
+
+}
+
+
+
+
+
+
+/*=========================================================
+    BOTÕES DE AÇÃO
+=========================================================*/
+
+
+.acoesCliente{
+
+
+    display:flex;
+
+
+    gap:8px;
+
+
+}
+
+
+
+.btnAcaoCliente{
+
+
+    width:38px;
+
+
+    height:38px;
+
+
+    border:none;
+
+
+    border-radius:10px;
+
+
+    cursor:pointer;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+.btnVisualizarCliente{
+
+
+    background:#DBEAFE;
+
+
+    color:#2563EB;
+
+
+}
+
+
+
+.btnEditarCliente{
+
+
+    background:#FEF3C7;
+
+
+    color:#D97706;
+
+
+}
+
+
+
+.btnBloquearCliente{
+
+
+    background:#FEE2E2;
+
+
+    color:#DC2626;
+
+
+}
+
+
+
+.btnAcaoCliente:hover{
+
+
+    transform:translateY(-2px);
+
+
+}
+
+
+
+
+
+
+
+/*=========================================================
+    MODAL CLIENTE
+=========================================================*/
+
+
+#modalCliente{
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    background:
+
+    rgba(0,0,0,.5);
+
+
+    display:none;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    z-index:999;
+
+
+}
+
+
+
+#modalCliente.ativo{
+
+
+    display:flex;
+
+
+}
+
+
+
+
+#conteudoModalCliente{
+
+
+    background:#FFF;
+
+
+    width:700px;
+
+
+    max-width:90%;
+
+
+    max-height:90vh;
+
+
+    overflow-y:auto;
+
+
+    border-radius:20px;
+
+
+    padding:30px;
+
+
+    position:relative;
+
+
+}
+
+
+
+
+
+#btnFecharModalCliente{
+
+
+    position:absolute;
+
+
+    right:20px;
+
+
+    top:20px;
+
+
+    border:none;
+
+
+    background:none;
+
+
+    font-size:22px;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+
+/*=========================================================
+    CABEÇALHO MODAL
+=========================================================*/
+
+
+#cabecalhoClienteModal{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:20px;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+#fotoClienteModal{
+
+
+    width:80px;
+
+
+    height:80px;
+
+
+    border-radius:50%;
+
+
+    object-fit:cover;
+
+
+}
+
+
+
+#nomeClienteModal{
+
+
+    font-size:24px;
+
+
+}
+
+
+
+
+
+/*=========================================================
+    INFORMAÇÕES CLIENTE
+=========================================================*/
+
+
+#informacoesCliente{
+
+
+    background:#F9FAFB;
+
+
+    padding:20px;
+
+
+    border-radius:15px;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+#informacoesCliente p{
+
+
+    margin-top:10px;
+
+
+    color:
+
+    var(--cor-texto-claro);
+
+
+}
+
+
+
+
+
+/*=========================================================
+    HISTÓRICO DE PEDIDOS
+=========================================================*/
+
+
+#historicoPedidosCliente{
+
+
+    margin-top:20px;
+
+
+}
+
+
+
+#historicoPedidosCliente table{
+
+
+    width:100%;
+
+
+    border-collapse:collapse;
+
+
+    margin-top:15px;
+
+
+}
+
+
+
+#historicoPedidosCliente th,
+
+
+#historicoPedidosCliente td{
+
+
+    padding:12px;
+
+
+    border-bottom:
+
+    1px solid var(--cor-borda);
+
+
+    text-align:left;
+
+
+}
+
+
+
+
+
+
+
+/*=========================================================
+    AÇÕES MODAL
+=========================================================*/
+
+
+#acoesClienteModal{
+
+
+    display:flex;
+
+
+    justify-content:flex-end;
+
+
+    gap:15px;
+
+
+    margin-top:25px;
+
+
+}
+
+
+
+#acoesClienteModal button{
+
+
+    border:none;
+
+
+    padding:12px 20px;
+
+
+    border-radius:10px;
+
+
+    cursor:pointer;
+
+
+    font-weight:600;
+
+
+}
+
+
+
+
+
+
+/*=========================================================
+    FOOTER
+=========================================================*/
+
+
+#footerAdmin{
+
+
+    margin-top:30px;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    color:
+
+    var(--cor-texto-claro);
+
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+/*=========================================================
+    RESPONSIVIDADE
+=========================================================*/
+
+
+@media(max-width:1100px){
+
+
+    #cardsClientes{
+
+
+        grid-template-columns:
+
+        repeat(2,1fr);
+
+
+    }
+
+
+}
+
+
+
+@media(max-width:800px){
+
+
+
+    #sidebar{
+
+
+        position:relative;
+
+
+        width:100%;
+
+
+        height:auto;
+
+
+    }
+
+
+
+    #painelAdmin{
+
+
+        flex-direction:column;
+
+
+    }
+
+
+
+    #conteudoPrincipal{
+
+
+        margin-left:0;
+
+
+        width:100%;
+
+
+    }
+
+
+
+    #topbar,
+
+
+    #cabecalhoPagina{
+
+
+        flex-direction:column;
+
+
+        gap:20px;
+
+
+        align-items:flex-start;
+
+
+    }
+
+
+
+    #cardsClientes,
+
+
+    #filtrosClientes{
+
+
+        grid-template-columns:1fr;
+
+
+    }
+
+
+}

@@ -9,15 +9,15 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Produtos - Fanáticos Sports</title>
+    <title>Pedidos - Fanáticos Sports</title>
 
     <link rel="stylesheet"
-          href="../style/produtos-lojista.css">
+          href="../style/pedidos-lojista.css">
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-    <script src="../js/produtos-lojista.js"
+    <script src="../js/pedidos-lojista.js"
             defer></script>
 
 </head>
@@ -48,20 +48,20 @@ MENU LATERAL
 
     <nav id="menuLateral">
 
-        <!-- JS -->
+        <!-- Carregado pelo JS -->
 
     </nav>
 
 </aside>
 
 <!--======================================================
-CONTEÚDO
+CONTEÚDO PRINCIPAL
 =======================================================-->
 
 <main id="conteudoPrincipal">
 
 <!--======================================================
-TOPO
+TOPBAR
 =======================================================-->
 
 <header id="topbar">
@@ -110,24 +110,24 @@ TOPO
 </header>
 
 <!--======================================================
-TÍTULO DA PÁGINA
+CABEÇALHO DA PÁGINA
 =======================================================-->
 
-<section id="cabecalhoProdutos">
+<section id="cabecalhoPedidos">
 
-    <div>
+    <div id="textoCabecalho">
 
-        <h2 id="tituloProdutos"></h2>
+        <h2 id="tituloPedidos"></h2>
 
-        <p id="descricaoProdutos"></p>
+        <p id="descricaoPedidos"></p>
 
     </div>
 
-    <button id="btnNovoProduto">
+    <button id="btnAtualizarPedidos">
 
-        <i class="fas fa-plus"></i>
+        <i class="fas fa-rotate-right"></i>
 
-        <span id="textoNovoProduto"></span>
+        <span id="textoAtualizarPedidos"></span>
 
     </button>
 
@@ -139,7 +139,7 @@ CARDS RESUMO
 
 <section id="cardsResumo">
 
-    <!-- JS -->
+    <!-- Carregado pelo JS -->
 
 </section>
 
@@ -151,31 +151,20 @@ FILTROS
 
     <div class="filtro">
 
-        <label id="lblPesquisarProduto"
-               for="pesquisaProduto"></label>
+        <label id="lblPesquisarPedido"
+               for="pesquisaPedido"></label>
 
-        <input id="pesquisaProduto"
+        <input id="pesquisaPedido"
                type="text">
 
     </div>
 
     <div class="filtro">
 
-        <label id="lblCategoria"
-               for="filtroCategoria"></label>
+        <label id="lblCliente"
+               for="filtroCliente"></label>
 
-        <select id="filtroCategoria">
-
-        </select>
-
-    </div>
-
-    <div class="filtro">
-
-        <label id="lblMarca"
-               for="filtroMarca"></label>
-
-        <select id="filtroMarca">
+        <select id="filtroCliente">
 
         </select>
 
@@ -194,40 +183,48 @@ FILTROS
 
     <div class="filtro">
 
-        <label id="lblOrdenacao"
-               for="filtroOrdenacao"></label>
+        <label id="lblPagamento"
+               for="filtroPagamento"></label>
 
-        <select id="filtroOrdenacao">
+        <select id="filtroPagamento">
 
         </select>
+
+    </div>
+
+    <div class="filtro">
+
+        <label id="lblData"
+               for="filtroData"></label>
+
+        <input id="filtroData"
+               type="date">
 
     </div>
 
 </section>
 
 <!--======================================================
-TABELA PRODUTOS
+TABELA PEDIDOS
 =======================================================-->
 
-<section id="tabelaProdutos">
+<section id="tabelaPedidos">
 
-    <table id="produtosTabela">
+    <table id="pedidosTabela">
 
         <thead>
 
             <tr>
 
-                <th id="thImagem"></th>
+                <th id="thPedido"></th>
 
-                <th id="thProduto"></th>
+                <th id="thCliente"></th>
 
-                <th id="thCategoria"></th>
+                <th id="thData"></th>
 
-                <th id="thMarca"></th>
+                <th id="thPagamento"></th>
 
-                <th id="thPreco"></th>
-
-                <th id="thEstoque"></th>
+                <th id="thTotal"></th>
 
                 <th id="thStatus"></th>
 
@@ -237,9 +234,9 @@ TABELA PRODUTOS
 
         </thead>
 
-        <tbody id="listaProdutos">
+        <tbody id="listaPedidos">
 
-            <!-- Produtos carregados pelo JavaScript -->
+            <!-- Pedidos carregados pelo JavaScript -->
 
         </tbody>
 
@@ -251,7 +248,7 @@ TABELA PRODUTOS
 PAGINAÇÃO
 =======================================================-->
 
-<section id="paginacaoProdutos">
+<section id="paginacaoPedidos">
 
     <button id="btnPaginaAnterior">
 
@@ -274,10 +271,10 @@ PAGINAÇÃO
 </section>
 
 <!--======================================================
-MODAL VISUALIZAR PRODUTO
+MODAL VISUALIZAR PEDIDO
 =======================================================-->
 
-<div id="modalVisualizarProduto"
+<div id="modalVisualizarPedido"
      class="modal">
 
     <div class="modalConteudo">
@@ -288,27 +285,89 @@ MODAL VISUALIZAR PRODUTO
 
         </button>
 
-        <div id="produtoVisualizacao">
+        <div id="detalhesPedido">
 
-            <img id="produtoImagemVisualizacao"
-                 src=""
-                 alt="">
+            <div id="cabecalhoDetalhes">
 
-            <div id="produtoInformacoes">
+                <h2 id="tituloDetalhesPedido"></h2>
 
-                <h2 id="produtoNomeVisualizacao"></h2>
+                <span id="statusDetalhesPedido"></span>
 
-                <span id="produtoCategoriaVisualizacao"></span>
+            </div>
 
-                <span id="produtoMarcaVisualizacao"></span>
+            <div id="informacoesPedido">
 
-                <span id="produtoPrecoVisualizacao"></span>
+                <div class="grupoInformacoes">
 
-                <span id="produtoEstoqueVisualizacao"></span>
+                    <h3 id="tituloCliente"></h3>
 
-                <span id="produtoStatusVisualizacao"></span>
+                    <p id="nomeCliente"></p>
 
-                <p id="produtoDescricaoVisualizacao"></p>
+                    <p id="cpfCliente"></p>
+
+                    <p id="telefoneCliente"></p>
+
+                </div>
+
+                <div class="grupoInformacoes">
+
+                    <h3 id="tituloEntrega"></h3>
+
+                    <p id="enderecoEntrega"></p>
+
+                    <p id="cidadeEntrega"></p>
+
+                    <p id="cepEntrega"></p>
+
+                </div>
+
+                <div class="grupoInformacoes">
+
+                    <h3 id="tituloPagamento"></h3>
+
+                    <p id="formaPagamento"></p>
+
+                    <p id="valorPedido"></p>
+
+                    <p id="fretePedido"></p>
+
+                    <p id="descontoPedido"></p>
+
+                    <p id="totalPedido"></p>
+
+                </div>
+
+            </div>
+
+            <div id="produtosPedido">
+
+                <h3 id="tituloProdutosPedido"></h3>
+
+                <table id="tabelaProdutosPedido">
+
+                    <thead>
+
+                        <tr>
+
+                            <th id="thProdutoPedido"></th>
+
+                            <th id="thQuantidadePedido"></th>
+
+                            <th id="thValorUnitarioPedido"></th>
+
+                            <th id="thSubtotalPedido"></th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="listaProdutosPedido">
+
+                        <!-- JS -->
+
+                    </tbody>
+
+                </table>
 
             </div>
 
@@ -319,37 +378,35 @@ MODAL VISUALIZAR PRODUTO
 </div>
 
 <!--======================================================
-MODAL EXCLUIR PRODUTO
+MODAL ALTERAR STATUS
 =======================================================-->
 
-<div id="modalExcluirProduto"
+<div id="modalStatusPedido"
      class="modal">
 
     <div class="modalConteudo modalPequeno">
 
-        <div id="iconeExcluir">
+        <h3 id="tituloAlterarStatus"></h3>
 
-            <i class="fas fa-trash-alt"></i>
+        <p id="descricaoAlterarStatus"></p>
 
-        </div>
+        <select id="novoStatusPedido">
 
-        <h3 id="tituloExcluir"></h3>
+        </select>
 
-        <p id="textoExcluir"></p>
+        <div id="acoesStatus">
 
-        <div id="acoesExcluir">
+            <button id="btnCancelarStatus">
 
-            <button id="btnCancelarExcluir">
-
-                <span id="textoCancelarExcluir"></span>
+                <span id="textoCancelarStatus"></span>
 
             </button>
 
-            <button id="btnConfirmarExcluir">
+            <button id="btnSalvarStatus">
 
-                <i class="fas fa-trash"></i>
+                <i class="fas fa-check"></i>
 
-                <span id="textoConfirmarExcluir"></span>
+                <span id="textoSalvarStatus"></span>
 
             </button>
 

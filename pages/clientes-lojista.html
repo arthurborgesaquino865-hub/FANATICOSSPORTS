@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+
+    <title>Clientes - Fanáticos Sports</title>
+
+
+    <link rel="stylesheet"
+          href="../style/clientes-lojista.css">
+
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+    <script src="../js/clientes-lojista.js"
+            defer></script>
+
+
+</head>
+
+
+<body>
+
+
+<!--=====================================================
+    ESTRUTURA PRINCIPAL
+======================================================-->
+
+
+<div id="painelAdmin">
+
+
+
+<!--=====================================================
+    MENU LATERAL
+======================================================-->
+
+
+<aside id="sidebar">
+
+
+    <div id="logoAdmin">
+
+
+        <img id="logoImagem"
+             src=""
+             alt="">
+
+
+        <h2 id="logoTexto"></h2>
+
+
+    </div>
+
+
+
+    <nav id="menuLateral">
+
+
+    </nav>
+
+
+
+</aside>
+
+
+
+
+
+<!--=====================================================
+    CONTEÚDO PRINCIPAL
+======================================================-->
+
+
+<main id="conteudoPrincipal">
+
+
+
+<!--=====================================================
+    TOPBAR
+======================================================-->
+
+
+<header id="topbar">
+
+
+
+    <div id="areaTitulo">
+
+
+        <h1 id="tituloPrincipal"></h1>
+
+
+    </div>
+
+
+
+
+    <div id="areaPesquisa">
+
+
+        <input id="campoPesquisaTopo"
+               type="text">
+
+
+        <button id="btnPesquisaTopo">
+
+
+            <i class="fas fa-search"></i>
+
+
+        </button>
+
+
+    </div>
+
+
+
+
+    <div id="areaUsuario">
+
+
+
+        <button id="btnNotificacao">
+
+
+            <i class="fas fa-bell"></i>
+
+
+        </button>
+
+
+
+
+        <img id="fotoUsuario"
+             src=""
+             alt="">
+
+
+
+        <div id="dadosUsuario">
+
+
+            <strong id="nomeUsuario"></strong>
+
+
+            <span id="cargoUsuario"></span>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+</header>
+
+<!--=====================================================
+    ÁREA DE CONTEÚDO
+======================================================-->
+
+
+<section id="areaClientes">
+
+
+
+<!--=====================================================
+    CABEÇALHO DA PÁGINA
+======================================================-->
+
+
+<div id="cabecalhoPagina">
+
+
+    <div>
+
+
+        <h2 id="tituloClientes"></h2>
+
+
+        <p id="descricaoClientes"></p>
+
+
+    </div>
+
+
+
+    <button id="btnAdicionarCliente">
+
+
+        <i class="fas fa-user-plus"></i>
+
+
+        <span id="textoAdicionarCliente"></span>
+
+
+    </button>
+
+
+
+</div>
+
+
+
+
+
+<!--=====================================================
+    CARDS DE RESUMO
+======================================================-->
+
+
+<div id="cardsClientes">
+
+
+
+</div>
+
+
+
+
+
+<!--=====================================================
+    FILTROS
+======================================================-->
+
+
+<div id="filtrosClientes">
+
+
+
+    <div class="campoFiltro">
+
+
+        <label id="lblPesquisaCliente"></label>
+
+
+        <input id="pesquisaCliente"
+               type="text">
+
+
+
+    </div>
+
+
+
+
+    <div class="campoFiltro">
+
+
+        <label id="lblFiltroStatusCliente"></label>
+
+
+        <select id="filtroStatusCliente">
+
+
+        </select>
+
+
+
+    </div>
+
+
+
+
+    <div class="campoFiltro">
+
+
+        <label id="lblFiltroDataCliente"></label>
+
+
+        <input id="filtroDataCliente"
+               type="date">
+
+
+
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+<!--=====================================================
+    TABELA DE CLIENTES
+======================================================-->
+
+
+<div id="containerTabelaClientes">
+
+
+
+<table id="tabelaClientes">
+
+
+
+<thead>
+
+
+<tr>
+
+
+    <th id="thNomeCliente"></th>
+
+
+    <th id="thEmailCliente"></th>
+
+
+    <th id="thTelefoneCliente"></th>
+
+
+    <th id="thPedidosCliente"></th>
+
+
+    <th id="thValorCliente"></th>
+
+
+    <th id="thStatusCliente"></th>
+
+
+    <th id="thAcoesCliente"></th>
+
+
+</tr>
+
+
+</thead>
+
+
+
+
+<tbody id="listaClientes">
+
+
+
+</tbody>
+
+
+
+</table>
+
+
+
+</div>
+
+
+
+
+
+</section>
+
+<!--=====================================================
+    MODAL DETALHES DO CLIENTE
+======================================================-->
+
+
+<div id="modalCliente"
+     class="modal">
+
+
+
+<div id="conteudoModalCliente">
+
+
+
+<button id="btnFecharModalCliente">
+
+
+    <i class="fas fa-xmark"></i>
+
+
+</button>
+
+
+
+
+<div id="cabecalhoClienteModal">
+
+
+
+    <img id="fotoClienteModal"
+         src=""
+         alt="">
+
+
+
+    <div>
+
+
+        <h2 id="nomeClienteModal"></h2>
+
+
+        <span id="statusClienteModal"></span>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+<!--=====================================================
+    INFORMAÇÕES DO CLIENTE
+======================================================-->
+
+
+
+<div id="informacoesCliente">
+
+
+
+    <h3 id="tituloInformacoesCliente"></h3>
+
+
+
+    <p id="emailClienteModal"></p>
+
+
+    <p id="telefoneClienteModal"></p>
+
+
+    <p id="cpfClienteModal"></p>
+
+
+    <p id="dataCadastroClienteModal"></p>
+
+
+
+</div>
+
+
+
+
+
+
+<!--=====================================================
+    HISTÓRICO DE PEDIDOS
+======================================================-->
+
+
+
+<div id="historicoPedidosCliente">
+
+
+
+<h3 id="tituloHistoricoCliente"></h3>
+
+
+
+
+<table>
+
+
+<thead>
+
+
+<tr>
+
+
+<th id="thPedidoHistorico"></th>
+
+
+<th id="thDataHistorico"></th>
+
+
+<th id="thValorHistorico"></th>
+
+
+<th id="thStatusHistorico"></th>
+
+
+</tr>
+
+
+</thead>
+
+
+
+
+<tbody id="listaHistoricoPedidos">
+
+
+</tbody>
+
+
+
+</table>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!--=====================================================
+    AÇÕES CLIENTE
+======================================================-->
+
+
+
+<div id="acoesClienteModal">
+
+
+
+<button id="btnEditarCliente">
+
+
+    <i class="fas fa-pen"></i>
+
+
+    <span id="textoEditarCliente"></span>
+
+
+</button>
+
+
+
+
+
+<button id="btnBloquearCliente">
+
+
+    <i class="fas fa-ban"></i>
+
+
+    <span id="textoBloquearCliente"></span>
+
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!--=====================================================
+    FOOTER
+======================================================-->
+
+
+<footer id="footerAdmin">
+
+
+
+<div>
+
+
+<p id="footerTexto"></p>
+
+
+</div>
+
+
+
+
+<div>
+
+
+<span id="footerVersao"></span>
+
+
+</div>
+
+
+
+</footer>
+
+
+
+
+
+</main>
+
+
+
+</div>
+
+
+
+</body>
+
+
+</html>

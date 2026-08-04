@@ -3,7 +3,7 @@
 // passe aqui o caminho correto do seu arquivo model
 //==========================================
 
-const clienteModel = require("../model/cliente_model.js");
+const clienteModel = require("../model/cliente_model");
 
 //==========================================
 // CADASTRAR CLIENTE
@@ -12,7 +12,12 @@ const clienteModel = require("../model/cliente_model.js");
 function cadastrar(req, res) {
 
     const cliente = req.body;
+    // Caso não seja enviado o código da loja
+    if (!cliente.Loja_idLoja) {
 
+        cliente.Loja_idLoja = 1;
+
+    }
     // Validação dos campos obrigatórios
 
     if (
@@ -21,8 +26,7 @@ function cadastrar(req, res) {
         !cliente.telefone ||
         !cliente.email ||
         !cliente.senha ||
-        !cliente.data_nascimento ||
-        !cliente.Loja_idLoja
+        !cliente.data_nascimento
     ) {
 
         return res.status(400).json({
@@ -32,12 +36,7 @@ function cadastrar(req, res) {
 
     }
 
-    // Caso não seja enviado o código da loja
-    if (!cliente.Loja_idLoja) {
 
-        cliente.Loja_idLoja = 1;
-
-    }
 
     // Verifica se já existe um usuário com o mesmo e-mail
 

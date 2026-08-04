@@ -9,18 +9,20 @@ function cadastrar(req, res) {
     const produto = req.body;
 
     // Validação dos campos obrigatórios
-    if (
-        !produto.nome ||
-        !produto.descricao ||
-        !produto.codigo ||
-        !produto.preco_antigo ||
-        !produto.preco_promocional ||
-        !produto.quantidade_estoque ||
-        produto.ativo === undefined ||
-        !produto.Loja_idLoja ||
-        !produto.Loja_Logista_idLogista ||
-        !produto.Marca_idMarca
-    ) {
+        if (
+
+    !produto.nome ||
+
+    !produto.preco ||
+
+    !produto.estoque ||
+
+    !produto.Marca_idMarca ||
+
+    !produto.Categoria_idCategoria
+
+)
+     {
 
         return res.status(400).json({
             sucesso: false,

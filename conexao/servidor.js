@@ -114,6 +114,12 @@ app.use("/promocao_has_produto", promocaoHasProdutoRotas);
 const tamanhoHasProdutoRotas = require("../routes/tamanho_has_produto_route.js");
 app.use("/tamanho_has_produto", tamanhoHasProdutoRotas);
 
+const produtoRoute = require("../routes/produto_route.js");
+app.use(
+    "/produtos",
+    produtoRoute
+);
+
 app.listen(3000, () => {
     console.log("Servidor rodando na porta 3000");
 });
