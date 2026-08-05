@@ -77,49 +77,39 @@ function cadastrar(produto, callback){
 //=========================================================
 
 
-function listar(callback){
-
-
+function listar(callback) {
 
     const sql = `
 
-
         SELECT
 
-        Produto.*,
+            p.idProduto,
 
-        Marca.nome AS nomeMarca,
+            p.nome,
 
-        Categoria.nome AS nomeCategoria
+            p.descricao,
 
+            p.preco,
 
-        FROM Produto
+            p.estoque,
 
+            m.nome AS nomeMarca,
 
+            c.nome AS nomeCategoria
 
-        LEFT JOIN Marca
+        FROM Produto p
 
-        ON Produto.Marca_idMarca = Marca.idMarca
+        LEFT JOIN Marca m
+            ON p.Marca_idMarca = m.idMarca
 
+        LEFT JOIN Categoria c
+            ON p.Categoria_idCategoria = c.idCategoria
 
-
-        LEFT JOIN Categoria
-
-        ON Produto.Categoria_idCategoria = Categoria.idCategoria
-
-
+        ORDER BY p.idProduto DESC
 
     `;
 
-
-
-    conexao.query(
-
-        sql,
-
-        callback
-
-    );
+    conexao.query(sql, callback);
 
 }
 
@@ -130,43 +120,43 @@ function listar(callback){
 
 
 
-//=========================================================
-// BUSCAR PRODUTO POR ID
-//=========================================================
+// =========================
+// Buscar Produto por ID
+// =========================
 
-
-function buscarPorId(id, callback){
-
-
+function buscarPorId(id, callback) {
 
     const sql = `
 
+        SELECT
 
-        SELECT *
+            p.idProduto,
 
-        FROM Produto
+            p.nome,
 
-        WHERE idProduto = ?
+            p.descricao,
 
+            p.preco,
 
+            p.estoque,
+
+            m.nome AS nomeMarca,
+
+            c.nome AS nomeCategoria
+
+        FROM Produto p
+
+        LEFT JOIN Marca m
+            ON p.Marca_idMarca = m.idMarca
+
+        LEFT JOIN Categoria c
+            ON p.Categoria_idCategoria = c.idCategoria
+
+        WHERE p.idProduto = ?
 
     `;
 
-
-
-    conexao.query(
-
-        sql,
-
-        [
-
-            id
-
-        ],
-
-        callback
-
-    );
+    conexao.query(sql, [id], callback);
 
 }
 

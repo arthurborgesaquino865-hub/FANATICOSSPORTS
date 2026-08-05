@@ -60,20 +60,22 @@ function cadastrar(req, res) {
 
 function listar(req, res) {
 
-    produtoModel.listar((erro, resultado) => {
+produtoModel.listar((erro, resultado) => {
 
-        if (erro) {
+    if (erro) {
 
-            return res.status(500).json({
-                sucesso: false,
-                mensagem: "Erro ao listar produtos."
-            });
+        console.log(erro); // <-- ADICIONE ESTA LINHA
 
-        }
+        return res.status(500).json({
+            sucesso: false,
+            mensagem: "Erro ao listar produtos."
+        });
 
-        res.json(resultado);
+    }
 
-    });
+    res.json(resultado);
+
+});
 
 }
 

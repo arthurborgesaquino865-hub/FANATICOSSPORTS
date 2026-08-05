@@ -410,3 +410,214 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+/*=========================================================
+    SISTEMA DE CADASTRO DE CATEGORIA,
+    MARCA E COR
+=========================================================*/
+
+
+const dadosExtrasProduto = {
+
+
+    categorias:[
+
+        "Camisas de Clubes",
+        "Camisas de Seleções",
+        "Chuteiras",
+        "Bolas",
+        "Calções"
+
+    ],
+
+
+    marcas:[
+
+        "Nike",
+        "Adidas",
+        "Puma",
+        "Umbro"
+
+    ],
+
+
+    cores:[
+
+        "Preto",
+        "Branco",
+        "Azul",
+        "Vermelho"
+
+    ]
+
+
+};
+
+
+
+/*=========================================================
+    ADICIONAR NOVA CATEGORIA
+=========================================================*/
+
+
+function adicionarCategoria(){
+
+
+    const novaCategoria = prompt(
+        "Digite o nome da nova categoria:"
+    );
+
+
+    if(!novaCategoria){
+
+        return;
+
+    }
+
+
+
+    dadosExtrasProduto.categorias.push(
+        novaCategoria
+    );
+
+
+
+    atualizarCategorias();
+
+
+
+    alert(
+        "Categoria adicionada com sucesso!"
+    );
+
+
+}
+
+
+
+/*=========================================================
+    ATUALIZAR SELECT CATEGORIA
+=========================================================*/
+
+
+function atualizarCategorias(){
+
+
+    const select =
+    document.getElementById(
+        "categoriaProduto"
+    );
+
+
+
+    if(!select){
+
+        return;
+
+    }
+
+
+
+    select.innerHTML = "";
+
+
+
+    dadosExtrasProduto.categorias.forEach(
+        categoria=>{
+
+
+            const option =
+            document.createElement(
+                "option"
+            );
+
+
+            option.value =
+            categoria;
+
+
+            option.textContent =
+            categoria;
+
+
+
+            select.appendChild(
+                option
+            );
+
+
+        }
+    );
+
+
+}
+
+
+
+
+/*=========================================================
+    ADICIONAR NOVA MARCA
+=========================================================*/
+
+
+function adicionarMarca(){
+
+
+    const novaMarca = prompt(
+        "Digite a nova marca:"
+    );
+
+
+    if(!novaMarca){
+
+        return;
+
+    }
+
+
+
+    dadosExtrasProduto.marcas.push(
+        novaMarca
+    );
+
+
+    alert(
+        "Marca adicionada com sucesso!"
+    );
+
+
+}
+
+
+
+/*=========================================================
+    ADICIONAR NOVA COR
+=========================================================*/
+
+
+function adicionarCor(){
+
+
+    const novaCor = prompt(
+        "Digite a nova cor:"
+    );
+
+
+    if(!novaCor){
+
+        return;
+
+    }
+
+
+
+    dadosExtrasProduto.cores.push(
+        novaCor
+    );
+
+
+    alert(
+        "Cor adicionada com sucesso!"
+    );
+
+
+}
