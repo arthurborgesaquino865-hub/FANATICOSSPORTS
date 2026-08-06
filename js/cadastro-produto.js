@@ -1,623 +1,574 @@
 /*=========================================================
+    FANÁTICOS SPORTS
     CADASTRO DE PRODUTO
 =========================================================*/
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", iniciarSistema);
 
-    /*=========================================================
-        LOGO
-    =========================================================*/
-
-    document.getElementById("logoAdminImagem").src =
-        "../assets/logo.png";
-
-    document.getElementById("logoAdminTexto").textContent =
-        "Fanáticos Sports";
-
-    /*=========================================================
-        TOPBAR
-    =========================================================*/
-
-    document.getElementById("tituloPagina").textContent =
-        "Cadastro de Produto";
-
-    document.getElementById("txtPesquisar").placeholder =
-        "Pesquisar...";
-
-    document.getElementById("fotoPerfilAdmin").src =
-        "../assets/admin.png";
-
-    document.getElementById("nomeAdmin").textContent =
-        "Arthur";
-
-    document.getElementById("cargoAdmin").textContent =
-        "Administrador";
-
-    /*=========================================================
-        MENU
-    =========================================================*/
-
-    document.getElementById("menuDashboardTexto").textContent =
-        "Dashboard";
-
-    document.getElementById("menuProdutosTexto").textContent =
-        "Produtos";
-
-    document.getElementById("menuCadastrarProdutoTexto").textContent =
-        "Cadastrar Produto";
-
-    document.getElementById("menuCategoriasTexto").textContent =
-        "Categorias";
-
-    document.getElementById("menuPedidosTexto").textContent =
-        "Pedidos";
-
-    document.getElementById("menuClientesTexto").textContent =
-        "Clientes";
-
-    document.getElementById("menuEstoqueTexto").textContent =
-        "Estoque";
-
-    document.getElementById("menuRelatoriosTexto").textContent =
-        "Relatórios";
-
-    document.getElementById("menuConfiguracoesTexto").textContent =
-        "Configurações";
-
-    document.getElementById("menuSairTexto").textContent =
-        "Sair";
-
-    /*=========================================================
-        CABEÇALHO
-    =========================================================*/
-
-    document.getElementById("tituloCadastro").textContent =
-        "Cadastrar Novo Produto";
-
-    document.getElementById("subtituloCadastro").textContent =
-        "Preencha todas as informações para adicionar um novo produto ao catálogo.";
-
-    document.getElementById("tituloInformacoesBasicas").textContent =
-        "Informações Básicas";
-
-    /*=========================================================
-        LABELS
-    =========================================================*/
-
-    document.getElementById("lblImagemProduto").textContent =
-        "Imagem Principal";
-
-    document.getElementById("lblNomeProduto").textContent =
-        "Nome do Produto";
-
-    document.getElementById("lblMarcaProduto").textContent =
-        "Marca";
-
-    document.getElementById("lblCategoriaProduto").textContent =
-        "Categoria";
-
-    document.getElementById("lblSkuProduto").textContent =
-        "SKU";
-
-    document.getElementById("lblQuantidadeProduto").textContent =
-        "Quantidade";
-
-    document.getElementById("lblPrecoProduto").textContent =
-        "Preço";
-
-    document.getElementById("lblPrecoPromocional").textContent =
-        "Preço Promocional";
-
-    document.getElementById("lblStatusProduto").textContent =
-        "Status";
-
-    document.getElementById("lblTamanhosProduto").textContent =
-        "Tamanhos";
-
-    document.getElementById("lblCoresProduto").textContent =
-        "Cores";
-
-    /*=========================================================
-        PLACEHOLDERS
-    =========================================================*/
-
-    document.getElementById("nomeProduto").placeholder =
-        "Digite o nome do produto";
-
-    document.getElementById("marcaProduto").placeholder =
-        "Digite a marca";
-
-    document.getElementById("skuProduto").placeholder =
-        "Ex.: CAM-001";
-
-    document.getElementById("quantidadeProduto").placeholder =
-        "0";
-
-    document.getElementById("precoProduto").placeholder =
-        "0,00";
-
-    document.getElementById("precoPromocional").placeholder =
-        "0,00";
-
-    document.getElementById("coresProduto").placeholder =
-        "Ex.: Azul, Branco e Preto";
-
-            /*=========================================================
-        SELECT - CATEGORIAS
-    =========================================================*/
-
-    const categorias = [
-
-        "Selecione uma categoria",
-
-        "Camisas de Clubes",
-
-        "Camisas de Seleções",
-
-        "Chuteiras",
-
-        "Bolas",
-
-        "Calções",
-
-        "Meiões",
-
-        "Agasalhos",
-
-        "Acessórios"
-
-    ];
-
-    categorias.forEach(function(item, indice){
-
-        const option = document.createElement("option");
-
-        option.textContent = item;
-
-        option.value = indice === 0 ? "" : item;
-
-        document
-            .getElementById("categoriaProduto")
-            .appendChild(option);
-
-    });
-
-    /*=========================================================
-        SELECT - STATUS
-    =========================================================*/
-
-    const statusProduto = [
-
-        "Ativo",
-
-        "Inativo"
-
-    ];
-
-    statusProduto.forEach(function(item){
-
-        const option = document.createElement("option");
-
-        option.textContent = item;
-
-        option.value = item;
-
-        document
-            .getElementById("statusProduto")
-            .appendChild(option);
-
-    });
-
-    /*=========================================================
-        GALERIA
-    =========================================================*/
-
-    document.getElementById("tituloGaleria").textContent =
-        "Galeria de Imagens";
-
-    document.getElementById("previewImagem1").alt =
-        "Imagem Principal";
-
-    document.getElementById("previewImagem2").alt =
-        "Imagem 2";
-
-    document.getElementById("previewImagem3").alt =
-        "Imagem 3";
-
-    document.getElementById("previewImagem4").alt =
-        "Imagem 4";
-
-    /*=========================================================
-        DESCRIÇÃO
-    =========================================================*/
-
-    document.getElementById("tituloDescricao").textContent =
-        "Descrição do Produto";
-
-    document.getElementById("lblDescricaoCurta").textContent =
-        "Descrição Curta";
-
-    document.getElementById("lblDescricaoCompleta").textContent =
-        "Descrição Completa";
-
-    document.getElementById("descricaoCurta").placeholder =
-        "Digite uma descrição resumida do produto.";
-
-    document.getElementById("descricaoCompleta").placeholder =
-        "Digite uma descrição completa com todas as informações do produto.";
-
-    /*=========================================================
-        BOTÕES
-    =========================================================*/
-
-    document.getElementById("txtBtnCancelar").textContent =
-        "Cancelar";
-
-    document.getElementById("txtBtnLimpar").textContent =
-        "Limpar";
-
-    document.getElementById("txtBtnSalvar").textContent =
-        "Salvar Produto";
-
-    /*=========================================================
-        FOOTER
-    =========================================================*/
-
-    document.getElementById("footerTexto").textContent =
-        "© 2026 Fanáticos Sports - Todos os direitos reservados.";
-
-    document.getElementById("footerVersao").textContent =
-        "Versão 1.0.0";
-
-            /*=========================================================
-        PREVIEW DAS IMAGENS
-    =========================================================*/
-
-    function carregarPreview(inputId, imagemId){
-
-        const input = document.getElementById(inputId);
-
-        const imagem = document.getElementById(imagemId);
-
-        input.addEventListener("change", function(){
-
-            const arquivo = this.files[0];
-
-            if(!arquivo){
-
-                imagem.removeAttribute("src");
-
-                return;
-
-            }
-
-            const leitor = new FileReader();
-
-            leitor.onload = function(evento){
-
-                imagem.src = evento.target.result;
-
-            };
-
-            leitor.readAsDataURL(arquivo);
-
-        });
-
-    }
-
-    carregarPreview("imagem1", "previewImagem1");
-
-    carregarPreview("imagem2", "previewImagem2");
-
-    carregarPreview("imagem3", "previewImagem3");
-
-    carregarPreview("imagem4", "previewImagem4");
-
-    carregarPreview("imagemProduto", "previewImagem1");
-
-
-
-    /*=========================================================
-        MENU MOBILE
-    =========================================================*/
-
-    const btnMenu = document.getElementById("btnMenuMobile");
-
-    const sidebar = document.getElementById("sidebar");
-
-    if(btnMenu){
-
-        btnMenu.addEventListener("click", function(){
-
-            sidebar.classList.toggle("ativo");
-
-        });
-
-    }
-
-
-
-    /*=========================================================
-        BOTÃO LIMPAR
-    =========================================================*/
-
-    document.getElementById("btnLimparProduto")
-    .addEventListener("click", function(){
-
-        document.getElementById("nomeProduto").value = "";
-
-        document.getElementById("marcaProduto").value = "";
-
-        document.getElementById("categoriaProduto").selectedIndex = 0;
-
-        document.getElementById("skuProduto").value = "";
-
-        document.getElementById("quantidadeProduto").value = "";
-
-        document.getElementById("precoProduto").value = "";
-
-        document.getElementById("precoPromocional").value = "";
-
-        document.getElementById("statusProduto").selectedIndex = 0;
-
-        document.getElementById("coresProduto").value = "";
-
-        document.getElementById("descricaoCurta").value = "";
-
-        document.getElementById("descricaoCompleta").value = "";
-
-    });
-
-
-
-    /*=========================================================
-        BOTÃO CANCELAR
-    =========================================================*/
-
-    document.getElementById("btnCancelarProduto")
-    .addEventListener("click", function(){
-
-        if(confirm("Deseja cancelar o cadastro do produto?")){
-
-            window.location.href = "produtos-lojista.html";
-
-        }
-
-    });
-
-
-
-    /*=========================================================
-        BOTÃO SALVAR
-    =========================================================*/
-
-    document.getElementById("btnSalvarProduto")
-    .addEventListener("click", function(){
-
-        if(document.getElementById("nomeProduto").value.trim() === ""){
-
-            alert("Informe o nome do produto.");
-
-            document.getElementById("nomeProduto").focus();
-
-            return;
-
-        }
-
-        alert("Produto salvo com sucesso!");
-
-    });
-
-});
 
 /*=========================================================
-    SISTEMA DE CADASTRO DE CATEGORIA,
-    MARCA E COR
+    CONFIGURAÇÕES DO SISTEMA
 =========================================================*/
 
+const sistema = {
 
-const dadosExtrasProduto = {
+    nome: "Fanáticos Sports",
 
+    logo: "../assets/logo.png",
 
-    categorias:[
+    fotoUsuario: "../assets/admin.png",
 
-        "Camisas de Clubes",
-        "Camisas de Seleções",
-        "Chuteiras",
-        "Bolas",
-        "Calções"
+    nomeUsuario: "Arthur",
 
-    ],
-
-
-    marcas:[
-
-        "Nike",
-        "Adidas",
-        "Puma",
-        "Umbro"
-
-    ],
-
-
-    cores:[
-
-        "Preto",
-        "Branco",
-        "Azul",
-        "Vermelho"
-
-    ]
-
+    cargoUsuario: "Administrador"
 
 };
 
 
-
 /*=========================================================
-    ADICIONAR NOVA CATEGORIA
+    MENU LATERAL
 =========================================================*/
 
+const menuLateral = [
 
-function adicionarCategoria(){
+    {
+        texto: "Dashboard",
+        icone: "fas fa-chart-line",
+        link: "dashboard.html",
+        ativo: false
+    },
 
+    {
+        texto: "Produtos",
+        icone: "fas fa-box",
+        link: "produtos-lojista.html",
+        ativo: false
+    },
 
-    const novaCategoria = prompt(
-        "Digite o nome da nova categoria:"
-    );
+    {
+        texto: "Cadastrar Produto",
+        icone: "fas fa-circle-plus",
+        link: "cadastro-produto.html",
+        ativo: true
+    },
 
+    {
+        texto: "Categorias",
+        icone: "fas fa-tags",
+        link: "#",
+        ativo: false
+    },
 
-    if(!novaCategoria){
+    {
+        texto: "Pedidos",
+        icone: "fas fa-cart-shopping",
+        link: "#",
+        ativo: false
+    },
 
-        return;
+    {
+        texto: "Clientes",
+        icone: "fas fa-users",
+        link: "#",
+        ativo: false
+    },
 
+    {
+        texto: "Estoque",
+        icone: "fas fa-warehouse",
+        link: "#",
+        ativo: false
+    },
+
+    {
+        texto: "Relatórios",
+        icone: "fas fa-chart-pie",
+        link: "#",
+        ativo: false
+    },
+
+    {
+        texto: "Configurações",
+        icone: "fas fa-gear",
+        link: "#",
+        ativo: false
+    },
+
+    {
+        texto: "Sair",
+        icone: "fas fa-right-from-bracket",
+        link: "#",
+        ativo: false
     }
 
+];
 
 
-    dadosExtrasProduto.categorias.push(
-        novaCategoria
-    );
+/*=========================================================
+    FUNÇÕES AUXILIARES
+=========================================================*/
+
+function get(id){
+
+    return document.getElementById(id);
+
+}
 
 
+/*=========================================================
+    INICIAR SISTEMA
+=========================================================*/
 
-    atualizarCategorias();
+function iniciarSistema(){
+
+    carregarLogo();
+
+    carregarTopbar();
+
+    carregarMenu();
+
+    carregarCabecalho();
+
+    carregarSelects();
+
+    carregarLabels();
+
+    carregarPlaceholders();
+
+    carregarPreviewImagens();
+
+    configurarBotoes();
+
+    configurarMenuMobile();
+
+    carregarFooter();
+
+}
+
+/*=========================================================
+    LOGO
+=========================================================*/
+
+function carregarLogo(){
+
+    get("logoAdminImagem").src = sistema.logo;
+
+    get("logoAdminTexto").textContent = sistema.nome;
+
+}
 
 
+/*=========================================================
+    TOPBAR
+=========================================================*/
 
-    alert(
-        "Categoria adicionada com sucesso!"
-    );
+function carregarTopbar(){
 
+    get("tituloPagina").textContent = "Cadastro de Produto";
+
+    get("txtPesquisar").placeholder = "Pesquisar...";
+
+    get("fotoPerfilAdmin").src = sistema.fotoUsuario;
+
+    get("nomeAdmin").textContent = sistema.nomeUsuario;
+
+    get("cargoAdmin").textContent = sistema.cargoUsuario;
+
+}
+
+
+/*=========================================================
+    CABEÇALHO
+=========================================================*/
+
+function carregarCabecalho(){
+
+    get("tituloCadastro").textContent =
+        "Cadastrar Novo Produto";
+
+    get("subtituloCadastro").textContent =
+        "Preencha todas as informações para adicionar um novo produto ao catálogo.";
+
+    get("tituloInformacoesBasicas").textContent =
+        "Informações Básicas";
+
+}
+
+
+/*=========================================================
+    MENU
+=========================================================*/
+
+function carregarMenu(){
+
+    get("menuDashboardTexto").textContent = "Dashboard";
+
+    get("menuProdutosTexto").textContent = "Produtos";
+
+    get("menuCadastrarProdutoTexto").textContent =
+        "Cadastrar Produto";
+
+    get("menuCategoriasTexto").textContent =
+        "Categorias";
+
+    get("menuPedidosTexto").textContent =
+        "Pedidos";
+
+    get("menuClientesTexto").textContent =
+        "Clientes";
+
+    get("menuEstoqueTexto").textContent =
+        "Estoque";
+
+    get("menuRelatoriosTexto").textContent =
+        "Relatórios";
+
+    get("menuConfiguracoesTexto").textContent =
+        "Configurações";
+
+    get("menuSairTexto").textContent =
+        "Sair";
 
 }
 
 
 
-/*=========================================================
-    ATUALIZAR SELECT CATEGORIA
-=========================================================*/
-
-
-function atualizarCategorias(){
-
-
-    const select =
-    document.getElementById(
-        "categoriaProduto"
-    );
 
 
 
-    if(!select){
 
-        return;
 
+
+
+
+
+
+
+
+
+// ======================================
+// ELEMENTOS
+// ======================================
+
+
+const produtoNome = document.getElementById("produtoNome");
+const produtoDescricao = document.getElementById("produtoDescricao");
+const produtoCodigo = document.getElementById("produtoCodigo");
+
+const produtoPrecoAntigo =
+    document.getElementById("produtoPrecoAntigo");
+
+
+const produtoPrecoPromo =
+    document.getElementById("produtoPrecoPromo");
+
+
+const produtoEstoque =
+    document.getElementById("produtoEstoque");
+
+
+const produtoMarca =
+    document.getElementById("produtoMarca");
+
+
+const produtoCategoria =
+    document.getElementById("produtoCategoria");
+
+
+const produtoStatus =
+    document.getElementById("produtoStatus");
+
+
+
+// ======================================
+// LISTAS VINDAS DO BANCO
+// FUTURAMENTE API MYSQL
+// ======================================
+
+
+const marcas = [
+
+    {
+        id: 1,
+        nome: "Nike"
+    },
+
+    {
+        id: 2,
+        nome: "Adidas"
     }
 
-
-
-    select.innerHTML = "";
-
-
-
-    dadosExtrasProduto.categorias.forEach(
-        categoria=>{
-
-
-            const option =
-            document.createElement(
-                "option"
-            );
-
-
-            option.value =
-            categoria;
-
-
-            option.textContent =
-            categoria;
+];
 
 
 
-            select.appendChild(
-                option
-            );
+const categorias = [
+
+    {
+        id: 1,
+        nome: "Legging"
+    },
+
+    {
+        id: 2,
+        nome: "Top Fitness"
+    }
+
+];
 
 
+
+
+
+// ======================================
+// ALIMENTA SELECTS
+// ======================================
+
+
+marcas.forEach(marca => {
+
+
+    let option = document.createElement("option");
+
+
+    option.value = marca.id;
+
+    option.textContent = marca.nome;
+
+
+    produtoMarca.appendChild(option);
+
+
+
+});
+
+
+
+
+
+
+categorias.forEach(cat => {
+
+
+    let option = document.createElement("option");
+
+
+    option.value = cat.id;
+
+
+    option.textContent = cat.nome;
+
+
+
+    produtoCategoria.appendChild(option);
+
+
+});
+
+
+
+//======================================================
+// CADASTRO CATEGORIA
+//======================================================
+
+document.getElementById("btnCategoria").
+    addEventListener("click", function () {
+        //capturar os dados do input
+        const categoriaNome
+            = document.getElementById("categoriaNome").value;
+
+        // criar um if para validar se o campo está vazio    
+        if (categoriaNome === "") {
+            alert("Por favor, preencha o nome da categoria.");
+            return;
         }
-    );
+
+        // criar um objeto com os dados da categoria
+        const categoria = {
+            nome: categoriaNome
+
+        };
+
+        // enviar os dados para o servidor
+        fetch("http://localhost:3000/categoria", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(categoria)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Categoria cadastrada:", data);
+                alert("Categoria cadastrada com sucesso!");
+            })
+            .catch(error => {
+                console.error("Erro ao cadastrar categoria:", error);
+                alert("Erro ao cadastrar categoria.");
+            });
+    });
 
 
-}
+//======================================================
+// CADASTRO MARCAS
+//======================================================
 
+document.getElementById("btnMarca").
+    addEventListener("click", function () {
+        //capturar os dados do input
+        const marcaNome
+            = document.getElementById("marcaNome").value;
 
+        // criar um if para validar se o campo está vazio    
+        if (marcaNome === "") {
+            alert("Por favor, preencha o nome da marca.");
+            return;
+        }
 
+        // criar um objeto com os dados da marca
+        const marca = {
+            nome: marcaNome
 
-/*=========================================================
-    ADICIONAR NOVA MARCA
-=========================================================*/
+        };
 
+        // enviar os dados para o servidor
+        fetch("http://localhost:3000/marca", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(marca)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Marca cadastrada:", data);
+                alert("Marca cadastrada com sucesso!");
+            })
+            .catch(error => {
+                console.error("Erro ao cadastrar marca:", error);
+                alert("Erro ao cadastrar marca.");
+            });
+    });
 
-function adicionarMarca(){
+//======================================================
+// CADASTRO COR
+//======================================================
 
+document.getElementById("btnCor").
+    addEventListener("click", function () {
+        //capturar os dados do input
+        const corNome
+            = document.getElementById("corNome").value;
 
-    const novaMarca = prompt(
-        "Digite a nova marca:"
-    );
+        // criar um if para validar se o campo está vazio    
+        if (corNome === "") {
+            alert("Por favor, preencha o nome da cor.");
+            return;
+        }
 
+        // criar um objeto com os dados da cor
+        const cor = {
+            nome: corNome
 
-    if(!novaMarca){
+        };
 
-        return;
+        // enviar os dados para o servidor
+        fetch("http://localhost:3000/cores", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(cor)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Cor cadastrada:", data);
+                alert("Cor cadastrada com sucesso!");
+            })
+            .catch(error => {
+                console.error("Erro ao cadastrar cor:", error);
+                alert("Erro ao cadastrar cor.");
+            });
+    });
 
-    }
+//======================================================
+// CADASTRO IMAGEM
+//======================================================
 
+document.getElementById("btnImagem").
+    addEventListener("click", function () {
+        //capturar os dados do input
+        const imagemNome
+            = document.getElementById("imagemNome").value;
 
+        // criar um if para validar se o campo está vazio    
+        if (imagemNome === "") {
+            alert("Por favor, preencha o nome da imagem.");
+            return;
+        }
 
-    dadosExtrasProduto.marcas.push(
-        novaMarca
-    );
+        // criar um objeto com os dados da imagem
+        const imagem = {
+            nome: imagemNome
 
+        };
 
-    alert(
-        "Marca adicionada com sucesso!"
-    );
+        // enviar os dados para o servidor
+        fetch("http://localhost:3000/imagens", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(imagem)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Imagem cadastrada:", data);
+                alert("Imagem cadastrada com sucesso!");
+            })
+            .catch(error => {
+                console.error("Erro ao cadastrar imagem:", error);
+                alert("Erro ao cadastrar imagem.");
+            });
+    });
 
+    //======================================================
+// CADASTRO TAMANHO
+//======================================================
 
-}
+document.getElementById("btnTamanho").
+    addEventListener("click", function () {
+        //capturar os dados do input
+        const tamanhoNome
+            = document.getElementById("tamanhoNome").value;
 
+        // criar um if para validar se o campo está vazio    
+        if (tamanhoNome === "") {
+            alert("Por favor, preencha o nome do tamanho.");
+            return;
+        }
 
+        // criar um objeto com os dados do tamanho
+        const tamanho = {
+            nome: tamanhoNome
 
-/*=========================================================
-    ADICIONAR NOVA COR
-=========================================================*/
+        };
 
-
-function adicionarCor(){
-
-
-    const novaCor = prompt(
-        "Digite a nova cor:"
-    );
-
-
-    if(!novaCor){
-
-        return;
-
-    }
-
-
-
-    dadosExtrasProduto.cores.push(
-        novaCor
-    );
-
-
-    alert(
-        "Cor adicionada com sucesso!"
-    );
-
-
-}
+        // enviar os dados para o servidor
+        fetch("http://localhost:3000/tamanho", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(tamanho)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Tamanho cadastrado:", data);
+                alert("Tamanho cadastrado com sucesso!");
+            })
+            .catch(error => {
+                console.error("Erro ao cadastrar tamanho:", error);
+                alert("Erro ao cadastrar tamanho.");
+            });
+    });

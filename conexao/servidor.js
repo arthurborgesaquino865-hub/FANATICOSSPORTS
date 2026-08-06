@@ -120,6 +120,13 @@ app.use(
     produtoRoute
 );
 
+const imagem_has_produto_route =
+require("./routes/imagem_has_produto_route.js");
+app.use(
+    "/imagem_has_produto",
+    imagem_has_produto_route
+);
+
 app.listen(3000, () => {
     console.log("Servidor rodando na porta 3000");
 });
