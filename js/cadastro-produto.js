@@ -427,7 +427,11 @@ document.getElementById("btnMarca").
 
         // criar um objeto com os dados da marca
         const marca = {
-            nome: marcaNome
+            nome: marcaNome,
+
+            logo: null,
+
+            ativo: true
 
         };
 
@@ -550,7 +554,7 @@ document.getElementById("btnTamanho").
 
         // criar um objeto com os dados do tamanho
         const tamanho = {
-            nome: tamanhoNome
+            tamanho: tamanhoNome
 
         };
 

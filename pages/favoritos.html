@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Favoritos - Fanáticos Sports</title>
+
+    <link
+        rel="stylesheet"
+        href="../style/favoritos.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <script
+        src="../js/favoritos.js"
+        defer>
+    </script>
+
+</head>
+
+<body>
+
+<!--====================================================
+HEADER
+=====================================================-->
+
+<header id="cabecalhoSite">
+
+    <div class="topo">
+
+        <div class="logo">
+
+            <img
+                id="logoImagem"
+                src=""
+                alt="">
+
+            <h1 id="logoTexto"></h1>
+
+        </div>
+
+        <div class="pesquisa">
+
+            <input
+                id="campoPesquisa"
+                type="text"
+                placeholder="">
+
+            <button
+                id="btnPesquisar">
+
+                <i class="fas fa-search"></i>
+
+            </button>
+
+        </div>
+
+        <div class="acoesTopo">
+
+            <a
+                id="btnFavoritos"
+                href="favoritos.html">
+
+                <i class="far fa-heart"></i>
+
+            </a>
+
+            <a
+                id="btnCarrinho"
+                href="carrinho.html">
+
+                <i class="fas fa-shopping-cart"></i>
+
+            </a>
+
+            <a
+                id="btnPerfil"
+                href="login.html">
+
+                <i class="far fa-user"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <nav id="menuCategorias">
+
+        <a id="menuClubes" href="#"></a>
+
+        <a id="menuSelecoes" href="#"></a>
+
+        <a id="menuChuteiras" href="#"></a>
+
+        <a id="menuMasculino" href="#"></a>
+
+        <a id="menuFeminino" href="#"></a>
+
+        <a id="menuInfantil" href="#"></a>
+
+        <a id="menuPromocoes" href="#"></a>
+
+    </nav>
+
+</header>
+
+<!--====================================================
+CONTEÚDO
+=====================================================-->
+
+<main id="paginaFavoritos">
+
+    <section id="cabecalhoFavoritos">
+
+        <h2 id="tituloFavoritos"></h2>
+
+        <p id="descricaoFavoritos"></p>
+
+    </section>
+
+    <section id="acoesFavoritos">
+
+        <button id="btnLimparFavoritos">
+
+            <i class="fas fa-trash"></i>
+
+            <span id="textoLimparFavoritos"></span>
+
+        </button>
+
+    </section>
+
+    <section id="listaFavoritos">
+
+        <!-- JS -->
+
+    </section>
+
+</main>
+
+    <!--====================================================
+    LISTA DE FAVORITOS
+    =====================================================-->
+
+    <section id="favoritosContainer">
+
+        <!--
+        Os cards serão carregados pelo JavaScript.
+        -->
+
+    </section>
+
+</main>
+
+<!--====================================================
+FOOTER
+=====================================================-->
+
+<footer id="footer">
+
+    <div class="footerConteudo">
+
+        <div class="footerColuna">
+
+            <h3 id="footerTituloLoja"></h3>
+
+            <p id="footerDescricaoLoja"></p>
+
+        </div>
+
+        <div class="footerColuna">
+
+            <h3 id="footerTituloInstitucional"></h3>
+
+            <a
+                id="footerQuemSomos"
+                href="#"></a>
+
+            <a
+                id="footerNossaHistoria"
+                href="#"></a>
+
+            <a
+                id="footerTrabalheConosco"
+                href="#"></a>
+
+        </div>
+
+        <div class="footerColuna">
+
+            <h3 id="footerTituloAtendimento"></h3>
+
+            <a
+                id="footerCentralAjuda"
+                href="#"></a>
+
+            <a
+                id="footerTrocas"
+                href="#"></a>
+
+            <a
+                id="footerContato"
+                href="#"></a>
+
+        </div>
+
+        <div class="footerColuna">
+
+            <h3 id="footerTituloRedes"></h3>
+
+            <a
+                id="footerFacebook"
+                href="#"></a>
+
+            <a
+                id="footerInstagram"
+                href="#"></a>
+
+            <a
+                id="footerYoutube"
+                href="#"></a>
+
+        </div>
+
+    </div>
+
+    <div class="footerCopyright">
+
+        <span id="footerCopyrightTexto"></span>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>
+
+    <!--====================================================
+    TEMPLATE DOS FAVORITOS
+    =====================================================-->
+
+    <template id="templateFavorito">
+
+        <article class="cardFavorito">
+
+            <div class="favoritoImagem">
+
+                <img
+                    class="imagemProduto"
+                    src=""
+                    alt="">
+
+            </div>
+
+            <div class="favoritoInformacoes">
+
+                <span class="categoriaProduto"></span>
+
+                <h3 class="nomeProduto"></h3>
+
+                <div class="precosProduto">
+
+                    <span class="precoAntigo"></span>
+
+                    <strong class="precoAtual"></strong>
+
+                </div>
+
+            </div>
+
+            <div class="favoritoAcoes">
+
+                <button
+                    class="btnVerProduto">
+
+                    <i class="fas fa-eye"></i>
+
+                    <span>Ver Produto</span>
+
+                </button>
+
+                <button
+                    class="btnAdicionarCarrinho">
+
+                    <i class="fas fa-cart-plus"></i>
+
+                    <span>Adicionar ao Carrinho</span>
+
+                </button>
+
+                <button
+                    class="btnRemoverFavorito">
+
+                    <i class="fas fa-trash"></i>
+
+                    <span>Remover</span>
+
+                </button>
+
+            </div>
+
+        </article>
+
+    </template>
+
+    <!--====================================================
+    MENSAGEM QUANDO NÃO EXISTIREM FAVORITOS
+    =====================================================-->
+
+    <section id="favoritosVazio">
+
+        <i class="far fa-heart"></i>
+
+        <h2 id="tituloSemFavoritos"></h2>
+
+        <p id="descricaoSemFavoritos"></p>
+
+        <a
+            id="btnContinuarComprando"
+            href="home.html">
+
+            <span id="textoContinuarComprando"></span>
+
+        </a>
+
+    </section>
+
+        <!--====================================================
+    MODAL REMOVER FAVORITO
+    =====================================================-->
+
+    <div id="modalRemoverFavorito"
+         class="modalOculto">
+
+        <div class="modalConteudo">
+
+            <div class="modalIcone">
+
+                <i class="fas fa-heart-broken"></i>
+
+            </div>
+
+            <h2 id="tituloModalRemover"></h2>
+
+            <p id="descricaoModalRemover"></p>
+
+            <div class="modalBotoes">
+
+                <button
+                    id="btnCancelarRemocao">
+
+                    <span id="textoCancelarRemocao"></span>
+
+                </button>
+
+                <button
+                    id="btnConfirmarRemocao">
+
+                    <span id="textoConfirmarRemocao"></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--====================================================
+    LOADING
+    =====================================================-->
+
+    <div id="loadingFavoritos">
+
+        <div class="spinner"></div>
+
+        <span id="textoLoading"></span>
+
+    </div>
+
+    <!--====================================================
+    TOAST
+    =====================================================-->
+
+    <div id="toastMensagem">
+
+        <i id="toastIcone"
+           class="fas fa-check-circle"></i>
+
+        <span id="toastTexto"></span>
+
+    </div>
+
+</body>
+
+</html>

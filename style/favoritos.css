@@ -1,0 +1,1256 @@
+/*=========================================================
+    FANÁTICOS SPORTS
+    FAVORITOS
+=========================================================*/
+
+:root{
+
+    --verde:#16A34A;
+
+    --verdeEscuro:#15803D;
+
+    --verdeClaro:#DCFCE7;
+
+    --branco:#FFFFFF;
+
+    --cinzaClaro:#F5F5F5;
+
+    --cinza:#E5E7EB;
+
+    --cinzaEscuro:#6B7280;
+
+    --preto:#111827;
+
+    --vermelho:#DC2626;
+
+    --amarelo:#FACC15;
+
+    --sombra:0 8px 20px rgba(0,0,0,.08);
+
+    --borda:16px;
+
+    --transicao:.30s;
+
+}
+
+/*=========================================================
+    RESET
+=========================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:"Poppins",sans-serif;
+
+}
+
+body{
+
+    background:var(--cinzaClaro);
+
+    color:var(--preto);
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:var(--transicao);
+
+}
+
+img{
+
+    display:block;
+
+    width:100%;
+
+}
+
+/*=========================================================
+    HEADER
+=========================================================*/
+
+#cabecalhoSite{
+
+    background:var(--branco);
+
+    box-shadow:var(--sombra);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+}
+
+.topo{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:18px 40px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:30px;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.logo img{
+
+    width:58px;
+
+    height:58px;
+
+    object-fit:contain;
+
+}
+
+.logo h1{
+
+    font-size:28px;
+
+    color:var(--verdeEscuro);
+
+    font-weight:700;
+
+}
+
+/*=========================================================
+    PESQUISA
+=========================================================*/
+
+.pesquisa{
+
+    flex:1;
+
+    display:flex;
+
+    align-items:center;
+
+    max-width:650px;
+
+}
+
+.pesquisa input{
+
+    flex:1;
+
+    height:48px;
+
+    padding:0 18px;
+
+    border:2px solid var(--cinza);
+
+    border-right:none;
+
+    border-radius:10px 0 0 10px;
+
+    outline:none;
+
+    font-size:15px;
+
+}
+
+.pesquisa input:focus{
+
+    border-color:var(--verde);
+
+}
+
+#btnPesquisar{
+
+    width:60px;
+
+    height:48px;
+
+    background:var(--verde);
+
+    color:var(--branco);
+
+    border-radius:0 10px 10px 0;
+
+    font-size:18px;
+
+}
+
+#btnPesquisar:hover{
+
+    background:var(--verdeEscuro);
+
+}
+
+/*=========================================================
+    AÇÕES HEADER
+=========================================================*/
+
+.acoesTopo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.acoesTopo a{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--cinzaClaro);
+
+    color:var(--verdeEscuro);
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+.acoesTopo a:hover{
+
+    background:var(--verde);
+
+    color:var(--branco);
+
+}
+
+/*=========================================================
+    MENU DE CATEGORIAS
+=========================================================*/
+
+#menuCategorias{
+
+    background:var(--verde);
+
+}
+
+#menuCategorias ul{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    list-style:none;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:35px;
+
+    padding:15px 25px;
+
+    flex-wrap:wrap;
+
+}
+
+#menuCategorias li a{
+
+    color:var(--branco);
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:var(--transicao);
+
+}
+
+#menuCategorias li a:hover{
+
+    opacity:.8;
+
+}
+
+/*=========================================================
+    CONTEÚDO PRINCIPAL
+=========================================================*/
+
+#conteudoFavoritos{
+
+    max-width:1400px;
+
+    margin:35px auto;
+
+    padding:0 30px;
+
+}
+
+/*=========================================================
+    CABEÇALHO
+=========================================================*/
+
+#cabecalhoFavoritos{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:35px;
+
+    flex-wrap:wrap;
+
+}
+
+#cabecalhoFavoritos h2{
+
+    font-size:34px;
+
+    color:var(--verdeEscuro);
+
+}
+
+#cabecalhoFavoritos p{
+
+    color:var(--cinzaEscuro);
+
+    margin-top:8px;
+
+}
+
+#btnLimparFavoritos{
+
+    background:var(--vermelho);
+
+    color:var(--branco);
+
+    padding:14px 24px;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+#btnLimparFavoritos:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--sombra);
+
+}
+
+/*=========================================================
+    GRID FAVORITOS
+=========================================================*/
+
+#favoritosContainer{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+
+    gap:28px;
+
+    margin-bottom:40px;
+
+}
+
+/*=========================================================
+    CARD FAVORITO
+=========================================================*/
+
+.cardFavorito{
+
+    background:var(--branco);
+
+    border-radius:var(--borda);
+
+    overflow:hidden;
+
+    box-shadow:var(--sombra);
+
+    transition:var(--transicao);
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.cardFavorito:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.favoritoImagem{
+
+    width:100%;
+
+    height:260px;
+
+    background:#fafafa;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+}
+
+.favoritoImagem img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    transition:.35s;
+
+}
+
+.cardFavorito:hover .favoritoImagem img{
+
+    transform:scale(1.05);
+
+}
+
+/*=========================================================
+    INFORMAÇÕES
+=========================================================*/
+
+.favoritoInformacoes{
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.categoriaProduto{
+
+    font-size:13px;
+
+    color:var(--verde);
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+}
+
+.nomeProduto{
+
+    font-size:20px;
+
+    color:var(--preto);
+
+    font-weight:700;
+
+    line-height:1.4;
+
+    min-height:56px;
+
+}
+
+.precosProduto{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.precoAntigo{
+
+    color:#9CA3AF;
+
+    text-decoration:line-through;
+
+    font-size:15px;
+
+}
+
+.precoAtual{
+
+    color:var(--verdeEscuro);
+
+    font-size:24px;
+
+    font-weight:700;
+
+}
+
+/*=========================================================
+    BADGES
+=========================================================*/
+
+.badgesProduto{
+
+    position:absolute;
+
+    top:15px;
+
+    left:15px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    z-index:10;
+
+}
+
+.badgeDesconto{
+
+    background:var(--vermelho);
+
+    color:var(--branco);
+
+    padding:6px 12px;
+
+    border-radius:25px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+.badgeNovo{
+
+    background:var(--verde);
+
+    color:var(--branco);
+
+    padding:6px 12px;
+
+    border-radius:25px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+/*=========================================================
+    BOTÃO FAVORITO
+=========================================================*/
+
+.btnFavorito{
+
+    position:absolute;
+
+    top:15px;
+
+    right:15px;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:var(--branco);
+
+    color:var(--vermelho);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:18px;
+
+    box-shadow:var(--sombra);
+
+    transition:.3s;
+
+}
+
+.btnFavorito:hover{
+
+    background:var(--vermelho);
+
+    color:var(--branco);
+
+    transform:scale(1.08);
+
+}
+
+/*=========================================================
+    AVALIAÇÃO
+=========================================================*/
+
+.avaliacaoProduto{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+}
+
+.avaliacaoProduto i{
+
+    color:var(--amarelo);
+
+    font-size:14px;
+
+}
+
+.avaliacaoProduto span{
+
+    color:var(--cinzaEscuro);
+
+    font-size:14px;
+
+}
+
+/*=========================================================
+    ESTOQUE
+=========================================================*/
+
+.estoqueProduto{
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.estoqueDisponivel{
+
+    color:var(--verde);
+
+}
+
+.estoqueBaixo{
+
+    color:#F59E0B;
+
+}
+
+.semEstoque{
+
+    color:var(--vermelho);
+
+}
+
+/*=========================================================
+    BOTÕES
+=========================================================*/
+
+.acoesProduto{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:18px;
+
+}
+
+.btnCarrinho{
+
+    width:100%;
+
+    height:48px;
+
+    background:var(--verde);
+
+    color:var(--branco);
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+.btnCarrinho:hover{
+
+    background:var(--verdeEscuro);
+
+}
+
+.btnVisualizar{
+
+    width:100%;
+
+    height:48px;
+
+    background:var(--branco);
+
+    border:2px solid var(--verde);
+
+    color:var(--verdeEscuro);
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+.btnVisualizar:hover{
+
+    background:var(--verde);
+
+    color:var(--branco);
+
+}
+
+.btnRemoverFavorito{
+
+    width:100%;
+
+    height:46px;
+
+    background:#FEE2E2;
+
+    color:var(--vermelho);
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.btnRemoverFavorito:hover{
+
+    background:var(--vermelho);
+
+    color:var(--branco);
+
+}
+
+/*=========================================================
+    CARD SEM FAVORITOS
+=========================================================*/
+
+#semFavoritos{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:80px 20px;
+
+    background:var(--branco);
+
+    border-radius:20px;
+
+    box-shadow:var(--sombra);
+
+}
+
+#semFavoritos i{
+
+    font-size:70px;
+
+    color:#D1D5DB;
+
+    margin-bottom:20px;
+
+}
+
+#semFavoritos h2{
+
+    color:var(--preto);
+
+    margin-bottom:10px;
+
+}
+
+#semFavoritos p{
+
+    color:var(--cinzaEscuro);
+
+    margin-bottom:25px;
+
+}
+
+#btnContinuarComprando{
+
+    background:var(--verde);
+
+    color:var(--branco);
+
+    padding:14px 30px;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+}
+
+#btnContinuarComprando:hover{
+
+    background:var(--verdeEscuro);
+
+}
+
+/*=========================================================
+    FOOTER
+=========================================================*/
+
+#footer{
+
+    background:#0F172A;
+
+    margin-top:60px;
+
+    color:#FFF;
+
+}
+
+.footerConteudo{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:60px 40px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:40px;
+
+}
+
+.footerColuna{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.footerColuna h3{
+
+    color:#22C55E;
+
+    font-size:20px;
+
+}
+
+.footerColuna a{
+
+    color:#CBD5E1;
+
+    transition:.3s;
+
+}
+
+.footerColuna a:hover{
+
+    color:#22C55E;
+
+    padding-left:6px;
+
+}
+
+.footerCopyright{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+    padding:20px;
+
+    color:#94A3B8;
+
+}
+
+/*=========================================================
+    MODAL
+=========================================================*/
+
+.modalOculto{
+
+    display:none;
+
+}
+
+#modalRemoverFavorito{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.modalConteudo{
+
+    width:430px;
+
+    max-width:95%;
+
+    background:#FFF;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+
+}
+
+.modalIcone{
+
+    width:90px;
+
+    height:90px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#FEE2E2;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:20px;
+
+}
+
+.modalIcone i{
+
+    font-size:38px;
+
+    color:#DC2626;
+
+}
+
+.modalConteudo h2{
+
+    margin-bottom:15px;
+
+}
+
+.modalConteudo p{
+
+    color:#6B7280;
+
+    margin-bottom:30px;
+
+}
+
+.modalBotoes{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.modalBotoes button{
+
+    flex:1;
+
+    height:48px;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+}
+
+#btnCancelarRemocao{
+
+    background:#E5E7EB;
+
+}
+
+#btnCancelarRemocao:hover{
+
+    background:#D1D5DB;
+
+}
+
+#btnConfirmarRemocao{
+
+    background:#DC2626;
+
+    color:#FFF;
+
+}
+
+#btnConfirmarRemocao:hover{
+
+    background:#B91C1C;
+
+}
+
+/*=========================================================
+    LOADING
+=========================================================*/
+
+#loadingFavoritos{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(255,255,255,.92);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    z-index:99999;
+
+}
+
+.spinner{
+
+    width:65px;
+
+    height:65px;
+
+    border:6px solid #DCFCE7;
+
+    border-top:6px solid #16A34A;
+
+    border-radius:50%;
+
+    animation:girar 1s linear infinite;
+
+}
+
+@keyframes girar{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/*=========================================================
+    TOAST
+=========================================================*/
+
+#toastMensagem{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    background:#16A34A;
+
+    color:#FFF;
+
+    padding:18px 22px;
+
+    border-radius:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    box-shadow:var(--sombra);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.35s;
+
+    z-index:99999;
+
+}
+
+#toastMensagem.ativo{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+#toastMensagem i{
+
+    font-size:22px;
+
+}
+
+/*=========================================================
+    RESPONSIVIDADE
+=========================================================*/
+
+@media(max-width:991px){
+
+    .topo{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    .pesquisa{
+
+        width:100%;
+
+        max-width:none;
+
+    }
+
+    #cabecalhoFavoritos{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    #favoritosContainer{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .footerConteudo{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    .topo{
+
+        padding:20px;
+
+    }
+
+    .logo h1{
+
+        font-size:22px;
+
+    }
+
+    #cabecalhoFavoritos h2{
+
+        font-size:28px;
+
+    }
+
+    .modalConteudo{
+
+        padding:25px;
+
+    }
+
+}

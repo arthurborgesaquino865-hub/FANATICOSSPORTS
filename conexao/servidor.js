@@ -121,7 +121,7 @@ app.use(
 );
 
 const imagem_has_produto_route =
-require("./routes/imagem_has_produto_route.js");
+require("../routes/imagem_has_produto_route.js");
 app.use(
     "/imagem_has_produto",
     imagem_has_produto_route
