@@ -1,132 +1,483 @@
+//=====================================================
+// IMPORTAÇÕES
+//=====================================================
+
 const express = require("express");
+
 const cors = require("cors");
+
+
+//=====================================================
+// CRIAR SERVIDOR
+//=====================================================
 
 const app = express();
 
+
+//=====================================================
+// MIDDLEWARES
+//=====================================================
+
 app.use(cors());
-app.use(express.json());
 
-// Importar conexão com o banco de dados
-const conexao = require("./conexao.js");
 
-// ==================== ROTAS ====================
+// O limite foi aumentado porque as imagens
+// serão enviadas em Base64 pelo JavaScript
+app.use(
+    express.json({
+        limit: "10mb"
+    })
+);
 
-// Cliente
-const clientesRotas = require("../routes/cliente_route.js");
-app.use("/clientes", clientesRotas);
 
-// Avaliação Produto
-const avaliacaoProdutoRotas = require("../routes/avaliacao_produto_route.js");
-app.use("/avaliacao_produto", avaliacaoProdutoRotas);
+//=====================================================
+// CONEXÃO COM BANCO DE DADOS
+//=====================================================
 
-// Banner
-const bannerRotas = require("../routes/banner_route.js");
-app.use("/banner", bannerRotas);
+const conexao =
+    require("./conexao.js");
 
-// Carrinho
-const carrinhoRotas = require("../routes/carrinho_route.js");
-app.use("/carrinho", carrinhoRotas);
 
-// Cartão de Pagamento
-const cartaoPagamentoRotas = require("../routes/cartao_pagamento_route.js");
-app.use("/cartao_pagamento", cartaoPagamentoRotas);
+//=====================================================
+// ROTAS
+//=====================================================
 
-// Categoria
-const categoriaRotas = require("../routes/categoria_route.js");
-app.use("/categoria", categoriaRotas);
 
-// Cores
-const coresRotas = require("../routes/cores_route.js");
-app.use("/cores", coresRotas);
+//=====================================================
+// CLIENTE
+//=====================================================
 
-// Cupom
-const cupomRotas = require("../routes/cupom_route.js");
-app.use("/cupom", cupomRotas);
+const clientesRotas =
+    require(
+        "../routes/cliente_route.js"
+    );
 
-// Endereço
-const enderecoRotas = require("../routes/endereco_route.js");
-app.use("/endereco", enderecoRotas);
+app.use(
+    "/clientes",
+    clientesRotas
+);
 
-// Frete
-const freteRotas = require("../routes/frete_route.js");
-app.use("/frete", freteRotas);
 
-// Marca
-const marcaRotas = require("../routes/marca_route.js");
-app.use("/marca", marcaRotas);
+//=====================================================
+// AVALIAÇÃO PRODUTO
+//=====================================================
 
-// Pedidos
-const pedidosRotas = require("../routes/pedidos_route.js");
-app.use("/pedidos", pedidosRotas);
+const avaliacaoProdutoRotas =
+    require(
+        "../routes/avaliacao_produto_route.js"
+    );
 
-// Promoção
-const promocaoRotas = require("../routes/promocao_route.js");
-app.use("/promocao", promocaoRotas);
+app.use(
+    "/avaliacao_produto",
+    avaliacaoProdutoRotas
+);
 
-// Tamanho
-const tamanhoRotas = require("../routes/tamanho_route.js");
-app.use("/tamanho", tamanhoRotas);
 
-// Banner x Produto
-const bannerHasProdutoRotas = require("../routes/banner_has_produto_route.js");
-app.use("/banner_has_produto", bannerHasProdutoRotas);
+//=====================================================
+// BANNER
+//=====================================================
 
-// Carrinho x Produto
-const carrinhoHasProdutoRotas = require("../routes/carrinho_has_produto_route.js");
-app.use("/carrinho_has_produto", carrinhoHasProdutoRotas);
+const bannerRotas =
+    require(
+        "../routes/banner_route.js"
+    );
 
-// Categoria x Produto
-const categoriaHasProdutoRotas = require("../routes/categoria_has_produto_route.js");
-app.use("/categoria_has_produto", categoriaHasProdutoRotas);
+app.use(
+    "/banner",
+    bannerRotas
+);
 
-// Categoria x Promoção
-const categoriaHasPromocaoRotas = require("../routes/categoria_has_promocao_route.js");
-app.use("/categoria_has_promocao", categoriaHasPromocaoRotas);
 
-// Cores x Produto
-const coresHasProdutoRotas = require("../routes/cores_has_produto_route.js");
-app.use("/cores_has_produto", coresHasProdutoRotas);
+//=====================================================
+// CARRINHO
+//=====================================================
 
-// Cupom x Categoria x Produto
-const cupomHasCategoriaHasProdutoRotas = require("../routes/cupom_has_categoria_has_produto_route.js");
-app.use("/cupom_has_categoria_has_produto", cupomHasCategoriaHasProdutoRotas);
+const carrinhoRotas =
+    require(
+        "../routes/carrinho_route.js"
+    );
 
-const cupomHasProdutoRotas = require("../routes/cupom_has_produto_route.js");
-app.use("/cupom_has_produto", cupomHasProdutoRotas);
+app.use(
+    "/carrinho",
+    carrinhoRotas
+);
 
-// Cupom x Categoria
-const cupomHasCategoriaRotas = require("../routes/cupom_has_categoria_route.js");
-app.use("/cupom_has_categoria", cupomHasCategoriaRotas);
 
-// Endereço x Cliente
-const enderecoHasClienteRotas = require("../routes/endereco_has_cliente_route.js");
-app.use("/endereco_has_cliente", enderecoHasClienteRotas);
+//=====================================================
+// CARTÃO DE PAGAMENTO
+//=====================================================
 
-// Pedidos x Produto
-const pedidosHasProdutoRotas = require("../routes/pedidos_has_produto_route.js");
-app.use("/pedidos_has_produto", pedidosHasProdutoRotas);
+const cartaoPagamentoRotas =
+    require(
+        "../routes/cartao_pagamento_route.js"
+    );
 
-// Promoção x Produto
-const promocaoHasProdutoRotas = require("../routes/promocao_has_produto_route.js");
-app.use("/promocao_has_produto", promocaoHasProdutoRotas);
+app.use(
+    "/cartao_pagamento",
+    cartaoPagamentoRotas
+);
 
-// Tamanho x Produto
-const tamanhoHasProdutoRotas = require("../routes/tamanho_has_produto_route.js");
-app.use("/tamanho_has_produto", tamanhoHasProdutoRotas);
 
-const produtoRoute = require("../routes/produto_route.js");
+//=====================================================
+// CATEGORIA
+//=====================================================
+
+const categoriaRotas =
+    require(
+        "../routes/categoria_route.js"
+    );
+
+app.use(
+    "/categoria",
+    categoriaRotas
+);
+
+
+//=====================================================
+// CORES
+//=====================================================
+
+const coresRotas =
+    require(
+        "../routes/cores_route.js"
+    );
+
+app.use(
+    "/cores",
+    coresRotas
+);
+
+
+//=====================================================
+// CUPOM
+//=====================================================
+
+const cupomRotas =
+    require(
+        "../routes/cupom_route.js"
+    );
+
+app.use(
+    "/cupom",
+    cupomRotas
+);
+
+
+//=====================================================
+// ENDEREÇO
+//=====================================================
+
+const enderecoRotas =
+    require(
+        "../routes/endereco_route.js"
+    );
+
+app.use(
+    "/endereco",
+    enderecoRotas
+);
+
+
+//=====================================================
+// FRETE
+//=====================================================
+
+const freteRotas =
+    require(
+        "../routes/frete_route.js"
+    );
+
+app.use(
+    "/frete",
+    freteRotas
+);
+
+
+//=====================================================
+// MARCA
+//=====================================================
+
+const marcaRotas =
+    require(
+        "../routes/marca_route.js"
+    );
+
+app.use(
+    "/marca",
+    marcaRotas
+);
+
+
+//=====================================================
+// PEDIDOS
+//=====================================================
+
+const pedidosRotas =
+    require(
+        "../routes/pedidos_route.js"
+    );
+
+app.use(
+    "/pedidos",
+    pedidosRotas
+);
+
+
+//=====================================================
+// PROMOÇÃO
+//=====================================================
+
+const promocaoRotas =
+    require(
+        "../routes/promocao_route.js"
+    );
+
+app.use(
+    "/promocao",
+    promocaoRotas
+);
+
+
+//=====================================================
+// TAMANHO
+//=====================================================
+
+const tamanhoRotas =
+    require(
+        "../routes/tamanho_route.js"
+    );
+
+app.use(
+    "/tamanho",
+    tamanhoRotas
+);
+
+
+//=====================================================
+// BANNER X PRODUTO
+//=====================================================
+
+const bannerHasProdutoRotas =
+    require(
+        "../routes/banner_has_produto_route.js"
+    );
+
+app.use(
+    "/banner_has_produto",
+    bannerHasProdutoRotas
+);
+
+
+//=====================================================
+// CARRINHO X PRODUTO
+//=====================================================
+
+const carrinhoHasProdutoRotas =
+    require(
+        "../routes/carrinho_has_produto_route.js"
+    );
+
+app.use(
+    "/carrinho_has_produto",
+    carrinhoHasProdutoRotas
+);
+
+
+//=====================================================
+// CATEGORIA X PRODUTO
+//=====================================================
+
+const categoriaHasProdutoRotas =
+    require(
+        "../routes/categoria_has_produto_route.js"
+    );
+
+app.use(
+    "/categoria_has_produto",
+    categoriaHasProdutoRotas
+);
+
+
+//=====================================================
+// CATEGORIA X PROMOÇÃO
+//=====================================================
+
+const categoriaHasPromocaoRotas =
+    require(
+        "../routes/categoria_has_promocao_route.js"
+    );
+
+app.use(
+    "/categoria_has_promocao",
+    categoriaHasPromocaoRotas
+);
+
+
+//=====================================================
+// CORES X PRODUTO
+//=====================================================
+
+const coresHasProdutoRotas =
+    require(
+        "../routes/cores_has_produto_route.js"
+    );
+
+app.use(
+    "/cores_has_produto",
+    coresHasProdutoRotas
+);
+
+
+//=====================================================
+// CUPOM X CATEGORIA X PRODUTO
+//=====================================================
+
+const cupomHasCategoriaHasProdutoRotas =
+    require(
+        "../routes/cupom_has_categoria_has_produto_route.js"
+    );
+
+app.use(
+    "/cupom_has_categoria_has_produto",
+    cupomHasCategoriaHasProdutoRotas
+);
+
+
+//=====================================================
+// CUPOM X PRODUTO
+//=====================================================
+
+const cupomHasProdutoRotas =
+    require(
+        "../routes/cupom_has_produto_route.js"
+    );
+
+app.use(
+    "/cupom_has_produto",
+    cupomHasProdutoRotas
+);
+
+
+//=====================================================
+// CUPOM X CATEGORIA
+//=====================================================
+
+const cupomHasCategoriaRotas =
+    require(
+        "../routes/cupom_has_categoria_route.js"
+    );
+
+app.use(
+    "/cupom_has_categoria",
+    cupomHasCategoriaRotas
+);
+
+
+//=====================================================
+// ENDEREÇO X CLIENTE
+//=====================================================
+
+const enderecoHasClienteRotas =
+    require(
+        "../routes/endereco_has_cliente_route.js"
+    );
+
+app.use(
+    "/endereco_has_cliente",
+    enderecoHasClienteRotas
+);
+
+
+//=====================================================
+// PEDIDOS X PRODUTO
+//=====================================================
+
+const pedidosHasProdutoRotas =
+    require(
+        "../routes/pedidos_has_produto_route.js"
+    );
+
+app.use(
+    "/pedidos_has_produto",
+    pedidosHasProdutoRotas
+);
+
+
+//=====================================================
+// PROMOÇÃO X PRODUTO
+//=====================================================
+
+const promocaoHasProdutoRotas =
+    require(
+        "../routes/promocao_has_produto_route.js"
+    );
+
+app.use(
+    "/promocao_has_produto",
+    promocaoHasProdutoRotas
+);
+
+
+//=====================================================
+// TAMANHO X PRODUTO
+//=====================================================
+
+const tamanhoHasProdutoRotas =
+    require(
+        "../routes/tamanho_has_produto_route.js"
+    );
+
+app.use(
+    "/tamanho_has_produto",
+    tamanhoHasProdutoRotas
+);
+
+
+//=====================================================
+// PRODUTO
+//=====================================================
+
+const produtoRoute =
+    require(
+        "../routes/produto_route.js"
+    );
+
 app.use(
     "/produtos",
     produtoRoute
 );
 
-const imagem_has_produto_route =
-require("../routes/imagem_has_produto_route.js");
+
+//=====================================================
+// IMAGEM DO PRODUTO
+//=====================================================
+
+const imagemProdutoRoute =
+    require(
+        "../routes/imagem_produto_route.js"
+    );
+
 app.use(
-    "/imagem_has_produto",
-    imagem_has_produto_route
+    "/imagens-produto",
+    imagemProdutoRoute
 );
 
-app.listen(3000, () => {
-    console.log("Servidor rodando na porta 3000");
-});
+
+//=====================================================
+// INICIAR SERVIDOR
+//=====================================================
+
+app.listen(
+    3000,
+    () => {
+
+        console.log(
+            "Servidor rodando na porta 3000"
+        );
+
+        console.log(
+            "http://localhost:3000"
+        );
+
+    }
+);

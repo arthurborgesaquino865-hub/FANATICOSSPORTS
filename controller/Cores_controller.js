@@ -1,3 +1,4 @@
+
 const coresModel = require("../model/cores_model.js");
 
 //==========================================
@@ -11,12 +12,12 @@ function cadastrar(req, res) {
     // Validação dos campos obrigatórios
     if (
         !cor.nome ||
-        !cor.hexadecimal
+        !cor.codigo_cor
     ) {
 
         return res.status(400).json({
             sucesso: false,
-            mensagem: "Preencha todos os campos."
+            mensagem: "Preencha o nome e o código da cor."
         });
 
     }
@@ -24,6 +25,8 @@ function cadastrar(req, res) {
     coresModel.cadastrar(cor, (erro, resultado) => {
 
         if (erro) {
+
+            console.error("Erro ao cadastrar cor:", erro);
 
             return res.status(500).json({
                 sucesso: false,
@@ -44,6 +47,7 @@ function cadastrar(req, res) {
 
 }
 
+
 //==========================================
 // LISTAR CORES
 //==========================================
@@ -53,6 +57,8 @@ function listar(req, res) {
     coresModel.listar((erro, resultado) => {
 
         if (erro) {
+
+            console.error("Erro ao listar cores:", erro);
 
             return res.status(500).json({
                 sucesso: false,
@@ -67,6 +73,7 @@ function listar(req, res) {
 
 }
 
+
 //==========================================
 // BUSCAR COR POR ID
 //==========================================
@@ -78,6 +85,8 @@ function buscarPorId(req, res) {
     coresModel.buscarPorId(id, (erro, resultado) => {
 
         if (erro) {
+
+            console.error("Erro ao buscar cor:", erro);
 
             return res.status(500).json({
                 sucesso: false,
@@ -101,6 +110,7 @@ function buscarPorId(req, res) {
 
 }
 
+
 //==========================================
 // ATUALIZAR COR
 //==========================================
@@ -108,11 +118,26 @@ function buscarPorId(req, res) {
 function atualizar(req, res) {
 
     const id = req.params.id;
+
     const cor = req.body;
+
+    if (
+        !cor.nome ||
+        !cor.codigo_cor
+    ) {
+
+        return res.status(400).json({
+            sucesso: false,
+            mensagem: "Preencha o nome e o código da cor."
+        });
+
+    }
 
     coresModel.atualizar(id, cor, (erro, resultado) => {
 
         if (erro) {
+
+            console.error("Erro ao atualizar cor:", erro);
 
             return res.status(500).json({
                 sucesso: false,
@@ -130,6 +155,7 @@ function atualizar(req, res) {
 
 }
 
+
 //==========================================
 // EXCLUIR COR
 //==========================================
@@ -141,6 +167,8 @@ function excluir(req, res) {
     coresModel.excluir(id, (erro, resultado) => {
 
         if (erro) {
+
+            console.error("Erro ao excluir cor:", erro);
 
             return res.status(500).json({
                 sucesso: false,
@@ -158,6 +186,7 @@ function excluir(req, res) {
 
 }
 
+
 //==========================================
 // EXPORTAÇÃO
 //==========================================
@@ -171,3 +200,4 @@ module.exports = {
     excluir
 
 };
+

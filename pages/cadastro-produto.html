@@ -6,600 +6,818 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Cadastro de Produto</title>
 
-    <link rel="stylesheet"
-          href="../style/cadastro-produto.css">
+    <link rel="stylesheet" href="../style/cadastro-produto.css">
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-    <script src="../js/cadastro-produto.js"
-            defer></script>
+    <script src="../js/cadastro-produto.js" defer></script>
 
 </head>
 
 <body>
 
-<div id="adminApp">
+    <div id="adminApp">
 
-    <!--==================== SIDEBAR ====================-->
+        <!--==================== SIDEBAR ====================-->
 
-    <aside id="sidebar">
+        <aside id="sidebar">
 
-        <div class="logoAdmin">
+            <div class="logoAdmin">
 
-            <img id="logoAdminImagem"
-                 src=""
-                 alt="Logo">
+                <img id="logoAdminImagem" src="" alt="Logo">
 
-            <div class="logoTexto">
+                <div class="logoTexto">
 
-                <h2 id="logoAdminTexto"></h2>
+                    <h2 id="logoAdminTexto"></h2>
+
+                </div>
 
             </div>
+
+            <nav class="menuAdmin">
+
+                <ul>
+
+                    <li>
+
+                        <a id="menuDashboard" href="dashboard.html">
+
+                            <i class="fas fa-chart-line"></i>
+
+                            <span id="menuDashboardTexto"></span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a id="menuProdutos" href="produtos-lojista.html">
+
+                            <i class="fas fa-box"></i>
+
+                            <span id="menuProdutosTexto"></span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a id="menuCadastrarProduto" class="menuAtivo" href="cadastro-produto.html">
+
+                            <i class="fas fa-circle-plus"></i>
+
+                            <span id="menuCadastrarProdutoTexto"></span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a id="menuCategorias" href="#">
+
+                            <i class="fas fa-tags"></i>
+
+                            <span id="menuCategoriasTexto"></span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a id="menuPedidos" href="#">
+
+                            <i class="fas fa-cart-shopping"></i>
+
+                            <span id="menuPedidosTexto"></span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a id="menuClientes" href="#">
+
+                            <i class="fas fa-users"></i>
+
+                            <span id="menuClientesTexto"></span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a id="menuEstoque" href="#">
+
+                            <i class="fas fa-warehouse"></i>
+
+                            <span id="menuEstoqueTexto"></span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a id="menuRelatorios" href="#">
+
+                            <i class="fas fa-chart-pie"></i>
+
+                            <span id="menuRelatoriosTexto"></span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a id="menuConfiguracoes" href="#">
+
+                            <i class="fas fa-gear"></i>
+
+                            <span id="menuConfiguracoesTexto"></span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a id="menuSair" href="#">
+
+                            <i class="fas fa-right-from-bracket"></i>
+
+                            <span id="menuSairTexto"></span>
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </aside>
+
+
+        <!--==================== CONTEÚDO ====================-->
+
+        <div id="conteudoAdmin">
+
+
+            <!--==================== TOPBAR ====================-->
+
+            <header id="topbar">
+
+                <div class="topbarEsquerda">
+
+                    <button id="btnMenuMobile">
+
+                        <i class="fas fa-bars"></i>
+
+                    </button>
+
+                    <h1 id="tituloPagina"></h1>
+
+                </div>
+
+
+                <div class="topbarCentro">
+
+                    <input id="txtPesquisar" type="text" placeholder="">
+
+                    <button id="btnPesquisar">
+
+                        <i class="fas fa-search"></i>
+
+                    </button>
+
+                </div>
+
+
+                <div class="topbarDireita">
+
+                    <button id="btnNotificacoes">
+
+                        <i class="fas fa-bell"></i>
+
+                    </button>
+
+
+                    <div class="perfilAdmin">
+
+                        <img id="fotoPerfilAdmin" src="" alt="Administrador">
+
+                        <div class="perfilInfo">
+
+                            <strong id="nomeAdmin"></strong>
+
+                            <span id="cargoAdmin"></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!--==================== CONTEÚDO PRINCIPAL ====================-->
+
+            <main id="cadastroProdutoMain">
+
+
+                <!-- ======================================
+                     ÁREA DOS CARDS
+                ======================================= -->
+
+                <section class="cards">
+
+
+                    <!-- ==================================
+                         CADASTRO DE PRODUTO
+                    =================================== -->
+
+                    <div class="card grande">
+
+
+                        <h2>
+
+                            Cadastro Produto
+
+                        </h2>
+
+
+                        <!-- NOME -->
+
+                        <label for="produtoNome">
+
+                            Nome do Produto
+
+                        </label>
+
+
+                        <input id="produtoNome" type="text" placeholder="Ex: Legging KL Power">
+
+
+
+                        <!-- DESCRIÇÃO -->
+
+                        <label for="produtoDescricao">
+
+                            Descrição
+
+                        </label>
+
+
+                        <textarea id="produtoDescricao" rows="5" placeholder="Digite a descrição do produto"></textarea>
+
+
+
+                        <!-- PRIMEIRA LINHA -->
+
+                        <div class="linha">
+
+
+                            <!-- PREÇO NORMAL -->
+
+                            <div>
+
+                                <label for="produtoPrecoAntigo">
+
+                                    Preço
+
+                                </label>
+
+
+                                <input id="produtoPrecoAntigo" type="number" min="0" step="0.01" placeholder="0,00">
+
+                            </div>
+
+
+
+                            <!-- PREÇO PROMOCIONAL -->
+
+                            <div>
+
+                                <label for="produtoPrecoPromo">
+
+                                    Preço Promoção
+
+                                </label>
+
+
+                                <input id="produtoPrecoPromo" type="number" min="0" step="0.01" placeholder="0,00">
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- SEGUNDA LINHA -->
+
+                        <div class="linha">
+
+
+                            <!-- ESTOQUE -->
+
+                            <div>
+
+                                <label for="produtoEstoque">
+
+                                    Estoque
+
+                                </label>
+
+
+                                <input id="produtoEstoque" type="number" min="0" placeholder="0">
+
+                            </div>
+
+
+
+                            <!-- MARCA -->
+
+                            <div>
+
+                                <label for="produtoMarca">
+
+                                    Marca
+
+                                </label>
+
+
+                                <select id="produtoMarca">
+
+                                    <option value="">
+
+                                        Carregando marcas...
+
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+
+                            <!-- CATEGORIA -->
+
+                            <div>
+
+                                <label for="produtoCategoria">
+
+                                    Categoria
+
+                                </label>
+
+
+                                <select id="produtoCategoria">
+
+                                    <option value="">
+
+                                        Carregando categorias...
+
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+
+                            <!-- STATUS -->
+
+                            <div>
+
+                                <label for="produtoStatus">
+
+                                    Status
+
+                                </label>
+
+
+                                <select id="produtoStatus">
+
+                                    <option value="true">
+
+                                        Ativo
+
+                                    </option>
+
+
+                                    <option value="false">
+
+                                        Inativo
+
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- ==================================
+                             CORES
+                        =================================== -->
+
+                        <div class="grupo-opcoes">
+
+
+                            <label>
+
+                                Cores disponíveis
+
+                            </label>
+
+
+                            <p class="descricao-campo">
+
+                                Clique nas cores disponíveis
+                                para este produto.
+
+                            </p>
+
+
+                            <div id="produtoCores" class="lista-cores">
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- ==================================
+                             TAMANHOS
+                        =================================== -->
+
+                        <div class="grupo-opcoes">
+
+
+                            <label>
+
+                                Tamanhos disponíveis
+
+                            </label>
+
+
+                            <p class="descricao-campo">
+
+                                Clique nos tamanhos disponíveis
+                                para este produto.
+
+                            </p>
+
+
+                            <div id="produtoTamanhos" class="lista-tamanhos">
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- MENSAGEM -->
+
+                        <p id="mensagemProduto" class="mensagem">
+
+                        </p>
+
+
+
+                        <button id="btnProduto" type="button">
+
+                            Cadastrar Produto
+
+                        </button>
+
+
+                    </div>
+
+
+
+                    <!-- ==================================
+                         CADASTRO DE MARCA
+                    =================================== -->
+
+                    <div class="card">
+
+
+                        <h2>
+
+                            Marca
+
+                        </h2>
+
+
+                        <label for="marcaNome">
+
+                            Nome da Marca
+
+                        </label>
+
+
+                        <input id="marcaNome" type="text" placeholder="Ex: Adidas">
+
+
+
+                        <label for="marcaLogo">
+
+                            Logo
+
+                        </label>
+
+
+                        <input id="marcaLogo" type="file" accept="image/*">
+
+
+
+                        <div id="previewMarca" class="preview-imagem">
+
+                        </div>
+
+
+
+                        <p id="mensagemMarca" class="mensagem">
+
+                        </p>
+
+
+
+                        <button id="btnMarca" type="button">
+
+                            Salvar Marca
+
+                        </button>
+
+
+                    </div>
+
+
+
+                    <!-- ==================================
+                         CADASTRO DE CATEGORIA
+                    =================================== -->
+
+                    <div class="card">
+
+
+                        <h2>
+
+                            Categoria
+
+                        </h2>
+
+
+                        <label for="categoriaNome">
+
+                            Nome da Categoria
+
+                        </label>
+
+
+                        <input id="categoriaNome" type="text" placeholder="Ex: Legging">
+
+
+
+                        <p id="mensagemCategoria" class="mensagem">
+
+                        </p>
+
+
+
+                        <button id="btnCategoria" type="button">
+
+                            Salvar Categoria
+
+                        </button>
+
+
+                    </div>
+
+
+
+                    <!-- ==================================
+                         CADASTRO DE COR
+                    =================================== -->
+
+                    <div class="card">
+
+
+                        <h2>
+
+                            Cores
+
+                        </h2>
+
+
+                        <label for="corNome">
+
+                            Nome da Cor
+
+                        </label>
+
+
+                        <input id="corNome" type="text" placeholder="Ex: Preto">
+
+
+
+                        <label for="corCodigo">
+
+                            Código da Cor
+
+                        </label>
+
+
+                        <div class="campo-cor">
+
+
+                            <input id="corCodigo" type="text" placeholder="#000000" maxlength="7">
+
+
+                            <input id="seletorCor" type="color" value="#000000">
+
+
+                        </div>
+
+
+
+                        <p id="mensagemCor" class="mensagem">
+
+                        </p>
+
+
+
+                        <button id="btnCor" type="button">
+
+                            Salvar Cor
+
+                        </button>
+
+
+                    </div>
+
+
+
+                    <!-- ==================================
+                         CADASTRO DE TAMANHO
+                    =================================== -->
+
+                    <div class="card">
+
+
+                        <h2>
+
+                            Tamanho
+
+                        </h2>
+
+
+                        <label for="tamanhoNome">
+
+                            Tamanho
+
+                        </label>
+
+
+                        <input id="tamanhoNome" type="text" placeholder="Ex: P, M, G ou GG">
+
+
+
+                        <p id="mensagemTamanho" class="mensagem">
+
+                        </p>
+
+
+
+                        <button id="btnTamanho" type="button">
+
+                            Salvar Tamanho
+
+                        </button>
+
+
+                    </div>
+
+
+
+                    <!-- ==================================
+                         IMAGEM DO PRODUTO
+                    =================================== -->
+
+                    <div class="card">
+
+
+                        <h2>
+
+                            Imagem do Produto
+
+                        </h2>
+
+
+
+                        <label for="imagemProduto">
+
+                            Produto
+
+                        </label>
+
+
+                        <select id="imagemProduto">
+
+
+                            <option value="">
+
+                                Selecione um produto
+
+                            </option>
+
+
+                        </select>
+
+
+
+                        <label for="imagemArquivo">
+
+                            Arquivo
+
+                        </label>
+
+
+                        <input id="imagemArquivo" type="file" accept="image/*">
+
+
+
+                        <div id="previewImagem" class="preview-imagem">
+
+                        </div>
+
+
+
+                        <p id="mensagemImagem" class="mensagem">
+
+                        </p>
+
+
+
+                        <button id="btnImagem" type="button">
+
+                            Salvar Imagem
+
+                        </button>
+
+
+                    </div>
+
+
+                </section>
+
+
+            </main>
+
+
+            <!--======================================================
+                FOOTER
+            =======================================================-->
+
+            <footer id="footerAdmin">
+
+                <div class="footerEsquerda">
+
+                    <p id="footerTexto"></p>
+
+                </div>
+
+                <div class="footerDireita">
+
+                    <span id="footerVersao"></span>
+
+                </div>
+
+            </footer>
+
 
         </div>
 
-        <nav class="menuAdmin">
-
-            <ul>
-
-                <li>
-
-                    <a id="menuDashboard"
-                       href="dashboard.html">
-
-                        <i class="fas fa-chart-line"></i>
-
-                        <span id="menuDashboardTexto"></span>
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a id="menuProdutos"
-                       href="produtos-lojista.html">
-
-                        <i class="fas fa-box"></i>
-
-                        <span id="menuProdutosTexto"></span>
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a id="menuCadastrarProduto"
-                       class="menuAtivo"
-                       href="cadastro-produto.html">
-
-                        <i class="fas fa-circle-plus"></i>
-
-                        <span id="menuCadastrarProdutoTexto"></span>
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a id="menuCategorias"
-                       href="#">
-
-                        <i class="fas fa-tags"></i>
-
-                        <span id="menuCategoriasTexto"></span>
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a id="menuPedidos"
-                       href="#">
-
-                        <i class="fas fa-cart-shopping"></i>
-
-                        <span id="menuPedidosTexto"></span>
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a id="menuClientes"
-                       href="#">
-
-                        <i class="fas fa-users"></i>
-
-                        <span id="menuClientesTexto"></span>
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a id="menuEstoque"
-                       href="#">
-
-                        <i class="fas fa-warehouse"></i>
-
-                        <span id="menuEstoqueTexto"></span>
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a id="menuRelatorios"
-                       href="#">
-
-                        <i class="fas fa-chart-pie"></i>
-
-                        <span id="menuRelatoriosTexto"></span>
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a id="menuConfiguracoes"
-                       href="#">
-
-                        <i class="fas fa-gear"></i>
-
-                        <span id="menuConfiguracoesTexto"></span>
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a id="menuSair"
-                       href="#">
-
-                        <i class="fas fa-right-from-bracket"></i>
-
-                        <span id="menuSairTexto"></span>
-
-                    </a>
-
-                </li>
-
-            </ul>
-
-        </nav>
-
-    </aside>
-
-    <!--==================== CONTEÚDO ====================-->
-
-    <div id="conteudoAdmin">
-
-        <!--==================== TOPBAR ====================-->
-
-        <header id="topbar">
-
-            <div class="topbarEsquerda">
-
-                <button id="btnMenuMobile">
-
-                    <i class="fas fa-bars"></i>
-
-                </button>
-
-                <h1 id="tituloPagina"></h1>
-
-            </div>
-
-            <div class="topbarCentro">
-
-                <input id="txtPesquisar"
-                       type="text"
-                       placeholder="">
-
-                <button id="btnPesquisar">
-
-                    <i class="fas fa-search"></i>
-
-                </button>
-
-            </div>
-
-            <div class="topbarDireita">
-
-                <button id="btnNotificacoes">
-
-                    <i class="fas fa-bell"></i>
-
-                </button>
-
-                <div class="perfilAdmin">
-
-                    <img id="fotoPerfilAdmin"
-                         src=""
-                         alt="Administrador">
-
-                    <div class="perfilInfo">
-
-                        <strong id="nomeAdmin"></strong>
-
-                        <span id="cargoAdmin"></span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </header>
-
-        <!--==================== CONTEÚDO PRINCIPAL ====================-->
-
-        <main id="cadastroProdutoMain">
-
-             <section class="cards">
-
-
-
-                <!-- PRODUTO -->
-
-
-                <div class="card grande">
-
-                    <h2>Cadastro Produto</h2>
-
-
-                    <label>Nome do Produto</label>
-
-                    <input id="produtoNome">
-
-
-
-                    <label>Descrição</label>
-
-                    <textarea id="produtoDescricao"></textarea>
-
-
-
-                    <div class="linha">
-
-
-                        <div>
-
-                            <label>Código</label>
-                            <input id="produtoCodigo">
-
-                        </div>
-
-
-
-                        <div>
-
-                            <label>Preço Antigo</label>
-
-                            <input id="produtoPrecoAntigo" type="number">
-
-
-                        </div>
-
-
-
-                        <div>
-
-                            <label>Preço Promoção</label>
-
-                            <input id="produtoPrecoPromo" type="number">
-
-
-                        </div>
-
-
-                    </div>
-
-
-
-
-                    <div class="linha">
-
-
-                        <div>
-
-                            <label>Estoque</label>
-
-                            <input id="produtoEstoque" type="number">
-
-                        </div>
-
-
-
-                        <div>
-
-                            <label>Marca</label>
-
-
-                            <select id="produtoMarca">
-
-                            </select>
-
-
-                        </div>
-
-
-
-
-                        <div>
-
-                            <label>Categoria</label>
-
-
-                            <select id="produtoCategoria">
-
-                            </select>
-
-
-                        </div>
-
-
-
-                    </div>
-
-
-
-                    <label>Status</label>
-
-
-                    <select id="produtoStatus">
-
-                        <option value="true">
-                            Ativo
-                        </option>
-
-
-                        <option value="false">
-                            Inativo
-                        </option>
-
-
-                    </select>
-
-
-
-                    <button id="btnProduto">
-                        Cadastrar Produto
-                    </button>
-
-
-
-                </div>
-
-
-
-
-
-
-
-                <!-- MARCA -->
-
-
-                <div class="card">
-
-
-                    <h2>Marca</h2>
-
-
-                    <label>Nome</label>
-
-
-                    <input id="marcaNome">
-
-
-
-                    <label>Logo</label>
-
-
-                    <input id="marcaLogo" type="file">
-
-
-
-                    <button id="btnMarca">
-                        Salvar Marca
-                    </button>
-
-
-                </div>
-
-
-
-
-
-
-
-                <!-- CATEGORIA -->
-
-
-                <div class="card">
-
-
-                    <h2>Categoria</h2>
-
-
-                    <label>Nome Categoria</label>
-
-
-                    <input id="categoriaNome">
-
-
-
-                    <button id="btnCategoria">
-
-                        Salvar Categoria
-
-                    </button>
-
-
-                </div>
-
-
-
-
-
-
-
-
-                <!-- COR -->
-
-
-                <div class="card">
-
-
-                    <h2>Cores</h2>
-
-
-                    <label>Nome</label>
-
-
-                    <input id="corNome">
-
-
-
-                    <label>Código Cor</label>
-
-
-                    <input id="corCodigo" placeholder="#FFFFFF">
-
-
-
-                    <button id="btnCor">
-
-                        Salvar Cor
-
-                    </button>
-
-
-                </div>
-
-
-
-
-
-
-
-
-                <!-- TAMANHO -->
-
-
-                <div class="card">
-
-
-                    <h2>Tamanho</h2>
-
-
-                    <label>Tamanho</label>
-
-
-                    <input id="tamanhoNome" placeholder="P,M,G,GG">
-
-
-                    <button id="btnTamanho">
-
-                        Salvar Tamanho
-
-                    </button>
-
-
-                </div>
-
-
-
-
-
-
-
-                <!-- IMAGEM -->
-
-                <div class="card">
-
-
-                    <h2>Imagem Produto</h2>
-
-
-
-                    <label>Produto</label>
-
-
-                    <select id="imagemProduto">
-
-                    </select>
-
-
-
-
-                    <label>Arquivo</label>
-
-
-                    <input id="imagemArquivo" type="file">
-
-
-
-                    <button id="btnImagem">
-
-                        Salvar Imagem
-
-                    </button>
-
-
-
-                </div>
-
-
-
-
-
-            </section>
-
-
-        
-           
-
-        </main>
-
-                <!--======================================================
-        FOOTER
-        =======================================================-->
-
-        <footer id="footerAdmin">
-
-            <div class="footerEsquerda">
-
-                <p id="footerTexto"></p>
-
-            </div>
-
-            <div class="footerDireita">
-
-                <span id="footerVersao"></span>
-
-            </div>
-
-        </footer>
-
     </div>
-
-</div>
 
 </body>
 

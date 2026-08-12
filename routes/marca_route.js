@@ -1,19 +1,95 @@
-const express = require("express");
-// Importando o módulo express para criar rotas e lidar com requisições HTTP.
+//==========================================
+// IMPORTA O EXPRESS
+//==========================================
 
-const router = express.Router();
-// Criando um objeto router para definir as rotas relacionadas às marcas.
+const express =
+    require("express");
 
-const MarcaController = require("../controller/marca_controller.js");
 
-router.post("/", MarcaController.cadastrar);
+const router =
+    express.Router();
 
-router.get("/", MarcaController.listar);
 
-router.get("/:id", MarcaController.buscarPorId);
+//==========================================
+// MULTER
+//==========================================
 
-router.put("/:id", MarcaController.atualizar);
+const multer =
+    require("multer");
 
-router.delete("/:id", MarcaController.excluir);
 
-module.exports = router;
+const upload =
+    multer({
+
+        storage:
+            multer.memoryStorage()
+
+    });
+
+
+//==========================================
+// CONTROLLER
+//==========================================
+
+const marcaController =
+    require("../controller/marca_controller");
+
+
+//==========================================
+// CADASTRAR MARCA
+//==========================================
+
+router.post(
+    "/",
+    upload.single("logo"),
+    marcaController.cadastrar
+);
+
+
+//==========================================
+// LISTAR MARCAS
+//==========================================
+
+router.get(
+    "/",
+    marcaController.listar
+);
+
+
+//==========================================
+// BUSCAR MARCA
+//==========================================
+
+router.get(
+    "/:id",
+    marcaController.buscarPorId
+);
+
+
+//==========================================
+// ATUALIZAR MARCA
+//==========================================
+
+router.put(
+    "/:id",
+    upload.single("logo"),
+    marcaController.atualizar
+);
+
+
+//==========================================
+// EXCLUIR MARCA
+//==========================================
+
+router.delete(
+    "/:id",
+    marcaController.excluir
+);
+
+
+//==========================================
+// EXPORTAÇÃO
+//==========================================
+
+module.exports =
+    router;

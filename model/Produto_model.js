@@ -1,61 +1,192 @@
-/*
-=========================================================
-    MODEL PRODUTO
-    FANÁTICOS SPORTS
-=========================================================
-*/
+//=====================================================
+// IMPORTAR CONEXÃO
+//=====================================================
+
+const db =
+    require("../conexao/conexao.js");
 
 
-const conexao = require("../conexao/conexao.js");
+//=====================================================
+// LISTAR TODOS OS PRODUTOS
+//=====================================================
+
+exports.listar = (callback) => {
+
+    const sql = `
+
+        SELECT
+
+            p.idProduto,
+
+            p.nome,
+
+            p.descricao,
+
+           
+
+            p.preco_antigo,
+
+            p.preco_promocional,
+
+            p.quantidade_estoque,
+
+            p.status_produto,
+
+            p.Loja_idLoja,
+
+            p.Marca_idMarca,
+
+            m.nome AS marca,
+
+            p.Categoria_idCategoria,
+
+            c.nome AS categoria,
+
+            (
+                SELECT ip.arquivo
+
+                FROM Imagem_produto ip
+
+                WHERE
+                    ip.Produto_idProduto =
+                    p.idProduto
+
+                ORDER BY
+                    ip.idImagem_produto ASC
+
+                LIMIT 1
+
+            ) AS imagem
+
+        FROM Produto p
 
 
+        LEFT JOIN Marca m
+
+            ON p.Marca_idMarca =
+               m.idMarca
 
 
+        LEFT JOIN Categoria c
 
-//=========================================================
+            ON p.Categoria_idCategoria =
+               c.idCategoria
+
+
+        WHERE
+            p.status_produto = 1
+
+
+        ORDER BY
+            p.idProduto DESC
+
+    `;
+
+
+    db.query(
+        sql,
+        callback
+    );
+
+};
+
+
+//=====================================================
+// BUSCAR PRODUTO POR ID
+//=====================================================
+
+exports.buscarPorId = (
+    id,
+    callback
+) => {
+
+    const sql = `
+
+        SELECT *
+
+        FROM Produto
+
+        WHERE idProduto = ?
+
+    `;
+
+
+    db.query(
+        sql,
+        [id],
+        callback
+    );
+
+};
+
+
+//=====================================================
 // CADASTRAR PRODUTO
-//=========================================================
+//=====================================================
 
-
-function cadastrar(produto, callback){
-
-
+exports.cadastrar = (
+    dados,
+    callback
+) => {
 
     const sql = `
 
         INSERT INTO Produto
         (
             nome,
+
             descricao,
-            preco,
-            estoque,
+
+           
+
+            preco_antigo,
+
+            preco_promocional,
+
+            quantidade_estoque,
+
+            status_produto,
+
+            Loja_idLoja,
+
             Marca_idMarca,
+
             Categoria_idCategoria
         )
 
-        VALUES (?, ?, ?, ?, ?, ?)
+        VALUES
+        (
+            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+        )
 
     `;
 
 
-
-    conexao.query(
+    db.query(
 
         sql,
 
         [
 
-            produto.nome,
+            dados.nome,
 
-            produto.descricao,
+            dados.descricao,
 
-            produto.preco,
+            
 
-            produto.estoque,
+            dados.preco_antigo,
 
-            produto.Marca_idMarca,
+            dados.preco_promocional,
 
-            produto.Categoria_idCategoria
+            dados.quantidade_estoque,
+
+            dados.status_produto,
+
+            dados.Loja_idLoja,
+
+            dados.Marca_idMarca,
+
+            dados.Categoria_idCategoria
 
         ],
 
@@ -63,174 +194,76 @@ function cadastrar(produto, callback){
 
     );
 
-}
+};
 
 
-
-
-
-
-
-
-//=========================================================
-// LISTAR PRODUTOS
-//=========================================================
-
-
-function listar(callback) {
-
-    const sql = `
-
-        SELECT
-
-            p.idProduto,
-
-            p.nome,
-
-            p.descricao,
-
-            p.preco,
-
-            p.estoque,
-
-            m.nome AS nomeMarca,
-
-            c.nome AS nomeCategoria
-
-        FROM Produto p
-
-        LEFT JOIN Marca m
-            ON p.Marca_idMarca = m.idMarca
-
-        LEFT JOIN Categoria c
-            ON p.Categoria_idCategoria = c.idCategoria
-
-        ORDER BY p.idProduto DESC
-
-    `;
-
-    conexao.query(sql, callback);
-
-}
-
-
-
-
-
-
-
-
-// =========================
-// Buscar Produto por ID
-// =========================
-
-function buscarPorId(id, callback) {
-
-    const sql = `
-
-        SELECT
-
-            p.idProduto,
-
-            p.nome,
-
-            p.descricao,
-
-            p.preco,
-
-            p.estoque,
-
-            m.nome AS nomeMarca,
-
-            c.nome AS nomeCategoria
-
-        FROM Produto p
-
-        LEFT JOIN Marca m
-            ON p.Marca_idMarca = m.idMarca
-
-        LEFT JOIN Categoria c
-            ON p.Categoria_idCategoria = c.idCategoria
-
-        WHERE p.idProduto = ?
-
-    `;
-
-    conexao.query(sql, [id], callback);
-
-}
-
-
-
-
-
-
-
-
-//=========================================================
+//=====================================================
 // ATUALIZAR PRODUTO
-//=========================================================
+//=====================================================
 
-
-function atualizar(id, produto, callback){
-
-
+exports.atualizar = (
+    id,
+    dados,
+    callback
+) => {
 
     const sql = `
-
 
         UPDATE Produto
 
         SET
 
-
             nome = ?,
-
 
             descricao = ?,
 
+             
 
-            preco = ?,
+            preco_antigo = ?,
 
+            preco_promocional = ?,
 
-            estoque = ?,
+            quantidade_estoque = ?,
 
+            status_produto = ?,
+
+            Loja_idLoja = ?,
 
             Marca_idMarca = ?,
 
-
             Categoria_idCategoria = ?
 
-
-
         WHERE idProduto = ?
-
-
 
     `;
 
 
-
-    conexao.query(
+    db.query(
 
         sql,
 
         [
 
-            produto.nome,
+            dados.nome,
 
-            produto.descricao,
+            dados.descricao,
 
-            produto.preco,
+            
+            dados.preco_antigo,
 
-            produto.estoque,
+            dados.preco_promocional,
 
-            produto.Marca_idMarca,
+            dados.quantidade_estoque,
 
-            produto.Categoria_idCategoria,
+            dados.status_produto,
+
+            dados.Loja_idLoja,
+
+            dados.Marca_idMarca,
+
+            dados.Categoria_idCategoria,
 
             id
-
 
         ],
 
@@ -238,74 +271,31 @@ function atualizar(id, produto, callback){
 
     );
 
-
-}
-
+};
 
 
-
-
-
-
-
-//=========================================================
+//=====================================================
 // EXCLUIR PRODUTO
-//=========================================================
+//=====================================================
 
-
-function excluir(id, callback){
-
-
+exports.excluir = (
+    id,
+    callback
+) => {
 
     const sql = `
-
 
         DELETE FROM Produto
 
         WHERE idProduto = ?
 
-
-
     `;
 
 
-
-    conexao.query(
-
+    db.query(
         sql,
-
-        [
-
-            id
-
-        ],
-
+        [id],
         callback
-
     );
-
-
-}
-
-
-
-
-
-
-
-
-module.exports = {
-
-
-    cadastrar,
-
-    listar,
-
-    buscarPorId,
-
-    atualizar,
-
-    excluir
-
 
 };

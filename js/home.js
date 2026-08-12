@@ -1,39 +1,57 @@
 /*=========================================================
     FANÁTICOS SPORTS
-    SCRIPT.JS
+    HOME
 =========================================================*/
 
-/*=========================================================
-    CONFIGURAÇÕES DO SISTEMA
-=========================================================*/
+
+//=========================================================
+// API
+//=========================================================
+
+const API =
+    "http://localhost:3000";
+
+
+//=========================================================
+// CONFIGURAÇÕES DO SISTEMA
+//=========================================================
 
 const sistema = {
 
-    nome: "Fanáticos Sports",
+    nome:
+        "Fanáticos Sports",
 
-    logo: "assets/images/logo.png",
+    logo:
+        "assets/images/logo.png",
 
-    placeholderPesquisa: "Pesquisar produtos...",
+    placeholderPesquisa:
+        "Pesquisar produtos...",
 
-    banner:{
+    banner: {
 
-        tag:"LANÇAMENTO",
+        tag:
+            "LANÇAMENTO",
 
-        titulo:"Nova Coleção 2026",
+        titulo:
+            "Nova Coleção 2026",
 
-        descricao:"As melhores camisas oficiais, chuteiras e acessórios esportivos com os melhores preços.",
+        descricao:
+            "As melhores camisas oficiais, chuteiras e acessórios esportivos com os melhores preços.",
 
-        botao:"COMPRAR AGORA",
+        botao:
+            "COMPRAR AGORA",
 
-        imagem:"assets/images/banner.png"
+        imagem:
+            "assets/images/banner.png"
 
     }
 
 };
 
-/*=========================================================
-    MENU
-=========================================================*/
+
+//=========================================================
+// MENU
+//=========================================================
 
 const menu = [
 
@@ -53,411 +71,1539 @@ const menu = [
 
 ];
 
-/*=========================================================
-    INICIALIZAÇÃO
-=========================================================*/
 
-window.onload=function(){
+//=========================================================
+// PRODUTOS RECEBIDOS DO BANCO
+//=========================================================
 
-    carregarHeader();
+let produtos = [];
 
-    carregarMenu();
 
-    carregarBanner();
+//=========================================================
+// INICIALIZAR SISTEMA
+//=========================================================
 
-}
+document.addEventListener(
 
-/*=========================================================
-    HEADER
-=========================================================*/
+    "DOMContentLoaded",
 
-function carregarHeader(){
+    async function () {
 
-    /* Logo */
 
-    document.getElementById("logoImagem").src=sistema.logo;
+        console.log(
+            "Home Fanáticos Sports carregada."
+        );
 
-    document.getElementById("logoImagem").alt=sistema.nome;
 
-    document.getElementById("logoTexto").textContent=sistema.nome;
+        //=========================================
+        // INTERFACE
+        //=========================================
 
-    /* Pesquisa */
+        carregarHeader();
 
-    document.getElementById("txtPesquisar").placeholder=sistema.placeholderPesquisa;
+        carregarMenu();
 
-    /* Links */
+        carregarBanner();
 
-    document.getElementById("btnLogin").href="pages/login.html";
+        carregarFooter();
 
-    document.getElementById("btnCarrinho").href="pages/carrinho.html";
 
-    document.getElementById("btnFavoritos").href="pages/favoritos.html";
+        //=========================================
+        // PRODUTOS DO BANCO
+        //=========================================
 
-}
+        await carregarProdutos();
 
-/*=========================================================
-    MENU
-=========================================================*/
 
-function carregarMenu(){
+        //=========================================
+        // PESQUISA
+        //=========================================
 
-    document.getElementById("menu1").textContent=menu[0];
+        configurarPesquisa();
 
-    document.getElementById("menu2").textContent=menu[1];
 
-    document.getElementById("menu3").textContent=menu[2];
+        //=========================================
+        // BANNER
+        //=========================================
 
-    document.getElementById("menu4").textContent=menu[3];
-
-    document.getElementById("menu5").textContent=menu[4];
-
-    document.getElementById("menu6").textContent=menu[5];
-
-    document.getElementById("menu7").textContent=menu[6];
-
-    document.getElementById("menu1").href="#";
-
-    document.getElementById("menu2").href="#";
-
-    document.getElementById("menu3").href="#";
-
-    document.getElementById("menu4").href="#";
-
-    document.getElementById("menu5").href="#";
-
-    document.getElementById("menu6").href="#";
-
-    document.getElementById("menu7").href="#";
-
-}
-
-/*=========================================================
-    BANNER
-=========================================================*/
-
-function carregarBanner(){
-
-    document.getElementById("bannerTag").textContent=sistema.banner.tag;
-
-    document.getElementById("bannerTitulo").textContent=sistema.banner.titulo;
-
-    document.getElementById("bannerDescricao").textContent=sistema.banner.descricao;
-
-    document.getElementById("bannerBotao").textContent=sistema.banner.botao;
-
-    document.getElementById("bannerImagem").src=sistema.banner.imagem;
-
-    document.getElementById("bannerImagem").alt=sistema.banner.titulo;
-
-}
-
-/*=========================================================
-    PRODUTOS
-=========================================================*/
-
-const produtos = [
-
-    {
-
-        categoria: "Seleções",
-
-        nome: "Camisa Brasil 2026",
-
-        precoAntigo: "R$ 349,90",
-
-        preco: "R$ 249,90",
-
-        imagem: "assets/images/brasil.png",
-
-        promocao: "-30%"
-
-    },
-
-    {
-
-        categoria: "Clubes",
-
-        nome: "Camisa Flamengo I",
-
-        precoAntigo: "R$ 329,90",
-
-        preco: "R$ 229,90",
-
-        imagem: "assets/images/flamengo.png",
-
-        promocao: "OFERTA"
-
-    },
-
-    {
-
-        categoria: "Clubes",
-
-        nome: "Camisa Corinthians I",
-
-        precoAntigo: "R$ 329,90",
-
-        preco: "R$ 229,90",
-
-        imagem: "assets/images/corinthians.png",
-
-        promocao: "NOVO"
-
-    },
-
-    {
-
-        categoria: "Chuteiras",
-
-        nome: "Nike Mercurial Vapor",
-
-        precoAntigo: "R$ 999,90",
-
-        preco: "R$ 799,90",
-
-        imagem: "assets/images/chuteira.png",
-
-        promocao: "-20%"
+        configurarBanner();
 
     }
 
-];
+);
 
-/*=========================================================
-    CARREGAR PRODUTOS
-=========================================================*/
 
-window.addEventListener("load",carregarProdutos);
+//=========================================================
+// HEADER
+//=========================================================
 
-function carregarProdutos(){
+function carregarHeader() {
 
-    document.getElementById("tituloMaisVendidos").textContent="Mais Vendidos";
 
-    preencherProduto(1,produtos[0]);
+    //=====================================================
+    // LOGO
+    //=====================================================
 
-    preencherProduto(2,produtos[1]);
+    document
+        .getElementById(
+            "logoImagem"
+        )
+        .src =
+        sistema.logo;
 
-    preencherProduto(3,produtos[2]);
 
-    preencherProduto(4,produtos[3]);
+    document
+        .getElementById(
+            "logoImagem"
+        )
+        .alt =
+        sistema.nome;
+
+
+    document
+        .getElementById(
+            "logoTexto"
+        )
+        .textContent =
+        sistema.nome;
+
+
+    //=====================================================
+    // PESQUISA
+    //=====================================================
+
+    document
+        .getElementById(
+            "txtPesquisar"
+        )
+        .placeholder =
+        sistema.placeholderPesquisa;
+
+
+    //=====================================================
+    // LINKS
+    //=====================================================
+
+    document
+        .getElementById(
+            "btnLogin"
+        )
+        .href =
+        "pages/login.html";
+
+
+    document
+        .getElementById(
+            "btnCarrinho"
+        )
+        .href =
+        "pages/carrinho.html";
+
+
+    document
+        .getElementById(
+            "btnFavoritos"
+        )
+        .href =
+        "pages/favoritos.html";
 
 }
 
-/*=========================================================
-    PREENCHER PRODUTO
-=========================================================*/
 
-function preencherProduto(numero,produto){
+//=========================================================
+// CARREGAR MENU
+//=========================================================
 
-    document.getElementById("tagProduto"+numero).textContent=produto.promocao;
+function carregarMenu() {
 
-    document.getElementById("produtoImagem"+numero).src=produto.imagem;
 
-    document.getElementById("produtoImagem"+numero).alt=produto.nome;
+    for (
+        let i = 0;
+        i < menu.length;
+        i++
+    ) {
 
-    document.getElementById("categoria"+numero).textContent=produto.categoria;
 
-    document.getElementById("produtoNome"+numero).textContent=produto.nome;
+        const item =
+            document.getElementById(
+                "menu" + (i + 1)
+            );
 
-    document.getElementById("precoAntigo"+numero).textContent=produto.precoAntigo;
 
-    document.getElementById("preco"+numero).textContent=produto.preco;
+        if (item) {
 
-    document.getElementById("comprar"+numero).textContent="Comprar";
 
-    document.getElementById("estrelas"+numero).innerHTML=`
+            item.textContent =
+                menu[i];
 
-        <i class="fas fa-star"></i>
 
-        <i class="fas fa-star"></i>
+            item.href =
+                "#";
 
-        <i class="fas fa-star"></i>
+        }
 
-        <i class="fas fa-star"></i>
+    }
 
-        <i class="fas fa-star-half-alt"></i>
+}
+
+
+//=========================================================
+// BANNER
+//=========================================================
+
+function carregarBanner() {
+
+
+    document
+        .getElementById(
+            "bannerTag"
+        )
+        .textContent =
+        sistema.banner.tag;
+
+
+    document
+        .getElementById(
+            "bannerTitulo"
+        )
+        .textContent =
+        sistema.banner.titulo;
+
+
+    document
+        .getElementById(
+            "bannerDescricao"
+        )
+        .textContent =
+        sistema.banner.descricao;
+
+
+    document
+        .getElementById(
+            "bannerBotao"
+        )
+        .textContent =
+        sistema.banner.botao;
+
+
+    document
+        .getElementById(
+            "bannerImagem"
+        )
+        .src =
+        sistema.banner.imagem;
+
+
+    document
+        .getElementById(
+            "bannerImagem"
+        )
+        .alt =
+        sistema.banner.titulo;
+
+}
+
+
+//=========================================================
+// TRATAR RESPOSTA DA API
+//=========================================================
+
+async function tratarResposta(
+    resposta
+) {
+
+
+    const texto =
+        await resposta.text();
+
+
+    let dados;
+
+
+    try {
+
+
+        dados =
+            JSON.parse(
+                texto
+            );
+
+
+    }
+    catch (erro) {
+
+
+        console.error(
+            "Resposta recebida:",
+            texto
+        );
+
+
+        throw new Error(
+            "O servidor não retornou JSON válido."
+        );
+
+    }
+
+
+    if (
+        !resposta.ok
+    ) {
+
+
+        throw new Error(
+
+            dados.mensagem ||
+
+            "Erro ao consultar o servidor."
+
+        );
+
+    }
+
+
+    return dados;
+
+}
+
+
+//=========================================================
+// CARREGAR PRODUTOS DO BANCO
+//=========================================================
+
+async function carregarProdutos() {
+
+
+    const lista =
+        document.getElementById(
+            "listaProdutos"
+        );
+
+
+    //=====================================================
+    // CARREGANDO
+    //=====================================================
+
+    lista.innerHTML = `
+
+        <p class="carregando-produtos">
+
+            Carregando produtos...
+
+        </p>
 
     `;
 
+
+    try {
+
+
+        //=================================================
+        // GET /PRODUTOS
+        //=================================================
+
+        const resposta =
+            await fetch(
+                `${API}/produtos`
+            );
+
+
+        produtos =
+            await tratarResposta(
+                resposta
+            );
+
+
+        console.log(
+            "Produtos recebidos:",
+            produtos
+        );
+
+
+        //=================================================
+        // LIMPAR ÁREA
+        //=================================================
+
+        lista.innerHTML =
+            "";
+
+
+        //=================================================
+        // NENHUM PRODUTO
+        //=================================================
+
+        if (
+            !Array.isArray(produtos) ||
+            produtos.length === 0
+        ) {
+
+
+            lista.innerHTML = `
+
+                <p class="nenhum-produto">
+
+                    Nenhum produto cadastrado.
+
+                </p>
+
+            `;
+
+
+            return;
+
+        }
+
+
+        //=================================================
+        // CRIAR CARDS
+        //=================================================
+
+        produtos.forEach(
+
+            function (produto) {
+
+
+                criarCardProduto(
+                    produto
+                );
+
+            }
+
+        );
+
+
+    }
+    catch (erro) {
+
+
+        console.error(
+            "Erro ao carregar produtos:",
+            erro
+        );
+
+
+        lista.innerHTML = `
+
+            <p class="erro-produtos">
+
+                Não foi possível carregar os produtos.
+
+            </p>
+
+        `;
+
+    }
+
 }
 
-/*=========================================================
-    BOTÕES COMPRAR
-=========================================================*/
 
-document.getElementById("comprar1").onclick=()=>comprar(1);
+//=========================================================
+// CRIAR CARD DO PRODUTO
+//=========================================================
 
-document.getElementById("comprar2").onclick=()=>comprar(2);
+function criarCardProduto(
+    produto
+) {
 
-document.getElementById("comprar3").onclick=()=>comprar(3);
 
-document.getElementById("comprar4").onclick=()=>comprar(4);
+    const lista =
+        document.getElementById(
+            "listaProdutos"
+        );
 
-/*=========================================================
-    COMPRAR
-=========================================================*/
 
-function comprar(indice){
+    //=====================================================
+    // CARD
+    //=====================================================
 
-    const produto=produtos[indice-1];
+    const card =
+        document.createElement(
+            "div"
+        );
 
-    alert(
 
-        "Produto adicionado ao carrinho!\n\n"+
+    card.classList.add(
+        "cardProduto"
+    );
 
-        produto.nome+"\n"+
 
-        produto.preco
+    card.dataset.id =
+        produto.idProduto;
+
+
+    //=====================================================
+    // TAG
+    //=====================================================
+
+    const tag =
+        document.createElement(
+            "span"
+        );
+
+
+    tag.id =
+        "tagProduto" +
+        produto.idProduto;
+
+
+    if (
+        temPromocao(
+            produto
+        )
+    ) {
+
+
+        tag.textContent =
+            "OFERTA";
+
+
+    }
+    else {
+
+
+        tag.textContent =
+            "NOVO";
+
+    }
+
+
+    //=====================================================
+    // FAVORITO
+    //=====================================================
+
+    const favorito =
+        document.createElement(
+            "button"
+        );
+
+
+    favorito.type =
+        "button";
+
+
+    favorito.id =
+        "favorito" +
+        produto.idProduto;
+
+
+    favorito.setAttribute(
+        "aria-label",
+        "Adicionar aos favoritos"
+    );
+
+
+    const iconeFavorito =
+        document.createElement(
+            "i"
+        );
+
+
+    iconeFavorito.classList.add(
+        "far",
+        "fa-heart"
+    );
+
+
+    favorito.appendChild(
+        iconeFavorito
+    );
+
+
+    favorito.addEventListener(
+
+        "click",
+
+        function () {
+
+
+            favoritar(
+                favorito
+            );
+
+        }
+
+    );
+
+
+    //=====================================================
+    // IMAGEM
+    //=====================================================
+
+    const imagem =
+        document.createElement(
+            "img"
+        );
+
+
+    imagem.id =
+        "produtoImagem" +
+        produto.idProduto;
+
+
+    imagem.alt =
+        produto.nome;
+
+
+    if (
+        produto.imagem
+    ) {
+
+
+        const mime =
+            produto.mime_imagem ||
+            "image/jpeg";
+
+
+        imagem.src =
+            `data:${mime};base64,${produto.imagem}`;
+
+
+    }
+    else {
+
+
+        imagem.src =
+            "assets/images/sem-imagem.png";
+
+    }
+
+
+    //=====================================================
+    // CASO A IMAGEM NÃO EXISTA
+    //=====================================================
+
+    imagem.onerror =
+        function () {
+
+
+            this.onerror =
+                null;
+
+
+            this.src =
+                "assets/images/sem-imagem.png";
+
+        };
+
+
+    //=====================================================
+    // CATEGORIA
+    //=====================================================
+
+    const categoria =
+        document.createElement(
+            "span"
+        );
+
+
+    categoria.id =
+        "categoria" +
+        produto.idProduto;
+
+
+    categoria.textContent =
+        produto.categoria ||
+        "Sem categoria";
+
+
+    //=====================================================
+    // NOME
+    //=====================================================
+
+    const nome =
+        document.createElement(
+            "h3"
+        );
+
+
+    nome.id =
+        "produtoNome" +
+        produto.idProduto;
+
+
+    nome.textContent =
+        produto.nome;
+
+
+    //=====================================================
+    // ESTRELAS
+    //=====================================================
+
+    const estrelas =
+        document.createElement(
+            "div"
+        );
+
+
+    estrelas.id =
+        "estrelas" +
+        produto.idProduto;
+
+
+    estrelas.innerHTML = `
+
+        <i class="fas fa-star"></i>
+
+        <i class="fas fa-star"></i>
+
+        <i class="fas fa-star"></i>
+
+        <i class="fas fa-star"></i>
+
+        <i class="far fa-star"></i>
+
+    `;
+
+
+    //=====================================================
+    // PREÇO ANTIGO
+    //=====================================================
+
+    const precoAntigo =
+        document.createElement(
+            "span"
+        );
+
+
+    precoAntigo.id =
+        "precoAntigo" +
+        produto.idProduto;
+
+
+    //=====================================================
+    // PREÇO ATUAL
+    //=====================================================
+
+    const preco =
+        document.createElement(
+            "h2"
+        );
+
+
+    preco.id =
+        "preco" +
+        produto.idProduto;
+
+
+    //=====================================================
+    // DEFINIR PREÇOS
+    //=====================================================
+
+    if (
+        temPromocao(
+            produto
+        )
+    ) {
+
+
+        precoAntigo.textContent =
+            formatarPreco(
+                produto.preco_antigo
+            );
+
+
+        preco.textContent =
+            formatarPreco(
+                produto.preco_promocional
+            );
+
+
+    }
+    else {
+
+
+        precoAntigo.textContent =
+            "";
+
+
+        preco.textContent =
+            formatarPreco(
+                produto.preco_antigo
+            );
+
+    }
+
+
+    //=====================================================
+    // ESTOQUE
+    //=====================================================
+
+    const estoque =
+        document.createElement(
+            "small"
+        );
+
+
+    estoque.classList.add(
+        "estoque-produto"
+    );
+
+
+    if (
+        Number(
+            produto.quantidade_estoque
+        ) > 0
+    ) {
+
+
+        estoque.textContent =
+            `${produto.quantidade_estoque} em estoque`;
+
+
+    }
+    else {
+
+
+        estoque.textContent =
+            "Produto indisponível";
+
+
+        estoque.classList.add(
+            "sem-estoque"
+        );
+
+    }
+
+
+    //=====================================================
+    // BOTÃO COMPRAR
+    //=====================================================
+
+    const comprar =
+        document.createElement(
+            "button"
+        );
+
+
+    comprar.type =
+        "button";
+
+
+    comprar.id =
+        "comprar" +
+        produto.idProduto;
+
+
+    if (
+        Number(
+            produto.quantidade_estoque
+        ) > 0
+    ) {
+
+
+        comprar.textContent =
+            "Comprar";
+
+
+    }
+    else {
+
+
+        comprar.textContent =
+            "Indisponível";
+
+
+        comprar.disabled =
+            true;
+
+    }
+
+
+    comprar.addEventListener(
+
+        "click",
+
+        function () {
+
+
+            comprarProduto(
+                produto
+            );
+
+        }
+
+    );
+
+
+    //=====================================================
+    // MONTAR CARD
+    //=====================================================
+
+    card.appendChild(
+        tag
+    );
+
+
+    card.appendChild(
+        favorito
+    );
+
+
+    card.appendChild(
+        imagem
+    );
+
+
+    card.appendChild(
+        categoria
+    );
+
+
+    card.appendChild(
+        nome
+    );
+
+
+    card.appendChild(
+        estrelas
+    );
+
+
+    card.appendChild(
+        precoAntigo
+    );
+
+
+    card.appendChild(
+        preco
+    );
+
+
+    card.appendChild(
+        estoque
+    );
+
+
+    card.appendChild(
+        comprar
+    );
+
+
+    //=====================================================
+    // ADICIONAR NA HOME
+    //=====================================================
+
+    lista.appendChild(
+        card
+    );
+
+}
+
+
+//=========================================================
+// VERIFICAR PROMOÇÃO
+//=========================================================
+
+function temPromocao(
+    produto
+) {
+
+
+    return (
+
+        produto.preco_promocional !== null &&
+
+        produto.preco_promocional !== undefined &&
+
+        Number(
+            produto.preco_promocional
+        ) > 0
 
     );
 
 }
 
-/*=========================================================
-    RODAPÉ
-=========================================================*/
 
-function carregarFooter(){
+//=========================================================
+// FORMATAR PREÇO
+//=========================================================
 
-    document.getElementById("footerTitulo1").textContent="Fanáticos Sports";
+function formatarPreco(
+    valor
+) {
 
-    document.getElementById("footerTexto1").textContent=
-    "A sua loja especializada em artigos esportivos.";
 
-    document.getElementById("footerTitulo2").textContent="Institucional";
+    if (
+        valor === null ||
+        valor === undefined ||
+        valor === ""
+    ) {
 
-    document.getElementById("footerLink1").textContent="Quem Somos";
-    document.getElementById("footerLink2").textContent="Nossa História";
-    document.getElementById("footerLink3").textContent="Trabalhe Conosco";
 
-    document.getElementById("footerLink1").href="#";
-    document.getElementById("footerLink2").href="#";
-    document.getElementById("footerLink3").href="#";
-
-    document.getElementById("footerTitulo3").textContent="Atendimento";
-
-    document.getElementById("footerContato1").textContent="Central de Ajuda";
-    document.getElementById("footerContato2").textContent="Trocas e Devoluções";
-    document.getElementById("footerContato3").textContent="Contato";
-
-    document.getElementById("footerContato1").href="#";
-    document.getElementById("footerContato2").href="#";
-    document.getElementById("footerContato3").href="#";
-
-    document.getElementById("footerTitulo4").textContent="Redes Sociais";
-
-    document.getElementById("facebook").textContent="Facebook";
-    document.getElementById("instagram").textContent="Instagram";
-    document.getElementById("youtube").textContent="YouTube";
-
-    document.getElementById("facebook").href="#";
-    document.getElementById("instagram").href="#";
-    document.getElementById("youtube").href="#";
-
-    document.getElementById("copyright").textContent=
-    "© 2026 Fanáticos Sports - Todos os direitos reservados.";
-
-}
-
-/*=========================================================
-    PESQUISA
-=========================================================*/
-
-document.getElementById("btnPesquisar").addEventListener("click",pesquisar);
-
-document.getElementById("txtPesquisar").addEventListener("keyup",function(e){
-
-    if(e.key==="Enter"){
-
-        pesquisar();
+        return "R$ 0,00";
 
     }
 
-});
 
-function pesquisar(){
+    return Number(
+        valor
+    ).toLocaleString(
 
-    const texto=document
-        .getElementById("txtPesquisar")
-        .value
-        .trim();
+        "pt-BR",
 
-    if(texto===""){
+        {
 
-        alert("Digite um produto para pesquisar.");
+            style:
+                "currency",
+
+            currency:
+                "BRL"
+
+        }
+
+    );
+
+}
+
+
+//=========================================================
+// FAVORITAR
+//=========================================================
+
+function favoritar(
+    botao
+) {
+
+
+    const icone =
+        botao.querySelector(
+            "i"
+        );
+
+
+    if (
+        icone.classList.contains(
+            "fas"
+        )
+    ) {
+
+
+        icone.classList.remove(
+            "fas"
+        );
+
+
+        icone.classList.add(
+            "far"
+        );
+
+
+        icone.style.color =
+            "#999";
+
+
+    }
+    else {
+
+
+        icone.classList.remove(
+            "far"
+        );
+
+
+        icone.classList.add(
+            "fas"
+        );
+
+
+        icone.style.color =
+            "#ff3b30";
+
+    }
+
+}
+
+
+//=========================================================
+// COMPRAR PRODUTO
+//=========================================================
+
+function comprarProduto(
+    produto
+) {
+
+
+    if (
+        Number(
+            produto.quantidade_estoque
+        ) <= 0
+    ) {
+
+
+        alert(
+            "Produto indisponível."
+        );
+
 
         return;
 
     }
 
-    alert("Pesquisar: "+texto);
 
-}
+    let valor;
 
-/*=========================================================
-    FAVORITOS
-=========================================================*/
 
-document.getElementById("favorito1").onclick=()=>favoritar(1);
+    if (
+        temPromocao(
+            produto
+        )
+    ) {
 
-document.getElementById("favorito2").onclick=()=>favoritar(2);
 
-document.getElementById("favorito3").onclick=()=>favoritar(3);
+        valor =
+            produto.preco_promocional;
 
-document.getElementById("favorito4").onclick=()=>favoritar(4);
 
-function favoritar(numero){
+    }
+    else {
 
-    const botao=document
-        .getElementById("favorito"+numero)
-        .querySelector("i");
 
-    if(botao.classList.contains("fas")){
-
-        botao.classList.remove("fas");
-
-        botao.classList.add("far");
-
-        botao.style.color="#999";
+        valor =
+            produto.preco_antigo;
 
     }
 
-    else{
 
-        botao.classList.remove("far");
+    alert(
 
-        botao.classList.add("fas");
+        "Produto selecionado!\n\n" +
 
-        botao.style.color="#ff3b30";
+        produto.nome +
 
-    }
+        "\n" +
+
+        formatarPreco(
+            valor
+        )
+
+    );
+
+
+    //=====================================================
+    // FUTURA PÁGINA DO PRODUTO
+    //=====================================================
+
+    /*
+    window.location.href =
+        "pages/produto.html?id=" +
+        produto.idProduto;
+    */
 
 }
 
-/*=========================================================
-    BOTÃO DO BANNER
-=========================================================*/
 
-document.getElementById("bannerBotao").addEventListener("click",function(){
+//=========================================================
+// CONFIGURAR PESQUISA
+//=========================================================
 
-    document.getElementById("maisVendidos").scrollIntoView({
+function configurarPesquisa() {
 
-        behavior:"smooth"
 
-    });
+    const botao =
+        document.getElementById(
+            "btnPesquisar"
+        );
 
-});
 
-/*=========================================================
-    INICIALIZAÇÃO FINAL
-=========================================================*/
+    const campo =
+        document.getElementById(
+            "txtPesquisar"
+        );
 
-window.addEventListener("load",function(){
 
-    carregarFooter();
+    botao.addEventListener(
 
-});
+        "click",
 
-/*=========================================================
-    FIM DO SCRIPT
-=========================================================*/
+        pesquisar
+
+    );
+
+
+    campo.addEventListener(
+
+        "keyup",
+
+        function (
+            evento
+        ) {
+
+
+            if (
+                evento.key ===
+                "Enter"
+            ) {
+
+
+                pesquisar();
+
+            }
+
+        }
+
+    );
+
+
+    //=====================================================
+    // PESQUISA ENQUANTO DIGITA
+    //=====================================================
+
+    campo.addEventListener(
+
+        "input",
+
+        function () {
+
+
+            if (
+                campo.value.trim() ===
+                ""
+            ) {
+
+
+                exibirProdutos(
+                    produtos
+                );
+
+            }
+
+        }
+
+    );
+
+}
+
+
+//=========================================================
+// PESQUISAR
+//=========================================================
+
+function pesquisar() {
+
+
+    const texto =
+        document
+            .getElementById(
+                "txtPesquisar"
+            )
+            .value
+            .trim()
+            .toLowerCase();
+
+
+    //=====================================================
+    // CAMPO VAZIO
+    //=====================================================
+
+    if (
+        texto === ""
+    ) {
+
+
+        exibirProdutos(
+            produtos
+        );
+
+
+        return;
+
+    }
+
+
+    //=====================================================
+    // FILTRAR
+    //=====================================================
+
+    const encontrados =
+        produtos.filter(
+
+            function (
+                produto
+            ) {
+
+
+                const nome =
+                    (
+                        produto.nome ||
+                        ""
+                    )
+                        .toLowerCase();
+
+
+                const categoria =
+                    (
+                        produto.categoria ||
+                        ""
+                    )
+                        .toLowerCase();
+
+
+                const marca =
+                    (
+                        produto.marca ||
+                        ""
+                    )
+                        .toLowerCase();
+
+
+                const codigo =
+                    (
+                        produto.codigo ||
+                        ""
+                    )
+                        .toLowerCase();
+
+
+                return (
+
+                    nome.includes(
+                        texto
+                    ) ||
+
+                    categoria.includes(
+                        texto
+                    ) ||
+
+                    marca.includes(
+                        texto
+                    ) ||
+
+                    codigo.includes(
+                        texto
+                    )
+
+                );
+
+            }
+
+        );
+
+
+    exibirProdutos(
+        encontrados
+    );
+
+}
+
+
+//=========================================================
+// EXIBIR PRODUTOS FILTRADOS
+//=========================================================
+
+function exibirProdutos(
+    listaProdutos
+) {
+
+
+    const lista =
+        document.getElementById(
+            "listaProdutos"
+        );
+
+
+    lista.innerHTML =
+        "";
+
+
+    if (
+        listaProdutos.length === 0
+    ) {
+
+
+        lista.innerHTML = `
+
+            <p class="nenhum-produto">
+
+                Nenhum produto encontrado.
+
+            </p>
+
+        `;
+
+
+        return;
+
+    }
+
+
+    listaProdutos.forEach(
+
+        function (
+            produto
+        ) {
+
+
+            criarCardProduto(
+                produto
+            );
+
+        }
+
+    );
+
+}
+
+
+//=========================================================
+// BOTÃO DO BANNER
+//=========================================================
+
+function configurarBanner() {
+
+
+    document
+        .getElementById(
+            "bannerBotao"
+        )
+        .addEventListener(
+
+            "click",
+
+            function () {
+
+
+                document
+                    .getElementById(
+                        "maisVendidos"
+                    )
+                    .scrollIntoView({
+
+                        behavior:
+                            "smooth"
+
+                    });
+
+            }
+
+        );
+
+}
+
+
+//=========================================================
+// FOOTER
+//=========================================================
+
+function carregarFooter() {
+
+
+    document
+        .getElementById(
+            "footerTitulo1"
+        )
+        .textContent =
+        "Fanáticos Sports";
+
+
+    document
+        .getElementById(
+            "footerTexto1"
+        )
+        .textContent =
+        "A sua loja especializada em artigos esportivos.";
+
+
+    document
+        .getElementById(
+            "footerTitulo2"
+        )
+        .textContent =
+        "Institucional";
+
+
+    document
+        .getElementById(
+            "footerLink1"
+        )
+        .textContent =
+        "Quem Somos";
+
+
+    document
+        .getElementById(
+            "footerLink2"
+        )
+        .textContent =
+        "Nossa História";
+
+
+    document
+        .getElementById(
+            "footerLink3"
+        )
+        .textContent =
+        "Trabalhe Conosco";
+
+
+    document
+        .getElementById(
+            "footerTitulo3"
+        )
+        .textContent =
+        "Atendimento";
+
+
+    document
+        .getElementById(
+            "footerContato1"
+        )
+        .textContent =
+        "Central de Ajuda";
+
+
+    document
+        .getElementById(
+            "footerContato2"
+        )
+        .textContent =
+        "Trocas e Devoluções";
+
+
+    document
+        .getElementById(
+            "footerContato3"
+        )
+        .textContent =
+        "Contato";
+
+
+    document
+        .getElementById(
+            "footerTitulo4"
+        )
+        .textContent =
+        "Redes Sociais";
+
+
+    document
+        .getElementById(
+            "facebook"
+        )
+        .textContent =
+        "Facebook";
+
+
+    document
+        .getElementById(
+            "instagram"
+        )
+        .textContent =
+        "Instagram";
+
+
+    document
+        .getElementById(
+            "youtube"
+        )
+        .textContent =
+        "YouTube";
+
+
+    document
+        .getElementById(
+            "copyright"
+        )
+        .textContent =
+        "© 2026 Fanáticos Sports - Todos os direitos reservados.";
+
+}

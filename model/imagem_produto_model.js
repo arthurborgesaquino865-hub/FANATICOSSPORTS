@@ -1,107 +1,178 @@
-const conexao = require("../conexao/conexao.js");
+const conexao =
+    require("../conexao/conexao.js");
 
-// =========================
-// Cadastrar Imagem
-// =========================
+
+//==========================================
+// CADASTRAR IMAGEM
+//==========================================
 
 function cadastrar(imagem, callback) {
 
-    const sql = `INSERT INTO Imagem_Produto
+    const sql = `
+
+        INSERT INTO Imagem_produto
         (
             arquivo,
             Produto_idProduto
         )
-        VALUES (?, ?)`;
+
+        VALUES (?, ?)
+
+    `;
+
 
     conexao.query(
+
         sql,
+
         [
+
             imagem.arquivo,
+
             imagem.Produto_idProduto
+
         ],
+
         callback
+
     );
 
 }
 
-// =========================
-// Listar Imagens
-// =========================
+
+//==========================================
+// LISTAR IMAGENS
+//==========================================
 
 function listar(callback) {
 
     const sql = `
-        SELECT *
-        FROM Imagem_Produto
+
+        SELECT
+            idImagem_produto,
+            Produto_idProduto
+
+        FROM Imagem_produto
+
+        ORDER BY idImagem_produto DESC
+
     `;
 
-    conexao.query(sql, callback);
-
-}
-
-// =========================
-// Buscar por ID
-// =========================
-
-function buscarPorId(id, callback) {
-
-    const sql = `
-        SELECT *
-        FROM Imagem_Produto
-        WHERE idImagem_Produto = ?
-    `;
-
-    conexao.query(sql, [id], callback);
-
-}
-
-// =========================
-// Atualizar Imagem
-// =========================
-
-function atualizar(id, imagem, callback) {
-
-    const sql = `
-        UPDATE Imagem_Produto
-        SET
-            arquivo = ?,
-            Produto_idProduto = ?
-        WHERE idImagem_Produto = ?
-    `;
 
     conexao.query(
         sql,
-        [
-            imagem.arquivo,
-            imagem.Produto_idProduto,
-            id
-        ],
         callback
     );
 
 }
 
-// =========================
-// Excluir Imagem
-// =========================
+
+//==========================================
+// BUSCAR IMAGEM
+//==========================================
+
+function buscarPorId(id, callback) {
+
+    const sql = `
+
+        SELECT *
+
+        FROM Imagem_produto
+
+        WHERE idImagem_produto = ?
+
+    `;
+
+
+    conexao.query(
+        sql,
+        [id],
+        callback
+    );
+
+}
+
+
+//==========================================
+// ATUALIZAR IMAGEM
+//==========================================
+
+function atualizar(id, imagem, callback) {
+
+    const sql = `
+
+        UPDATE Imagem_produto
+
+        SET
+
+            arquivo = ?,
+
+            Produto_idProduto = ?
+
+        WHERE idImagem_produto = ?
+
+    `;
+
+
+    conexao.query(
+
+        sql,
+
+        [
+
+            imagem.arquivo,
+
+            imagem.Produto_idProduto,
+
+            id
+
+        ],
+
+        callback
+
+    );
+
+}
+
+
+//==========================================
+// EXCLUIR IMAGEM
+//==========================================
 
 function excluir(id, callback) {
 
     const sql = `
-        DELETE FROM Imagem_Produto
-        WHERE idImagem_Produto = ?
+
+        DELETE FROM Imagem_produto
+
+        WHERE idImagem_produto = ?
+
     `;
 
-    conexao.query(sql, [id], callback);
+
+    conexao.query(
+        sql,
+        [id],
+        callback
+    );
 
 }
+
+
+//==========================================
+// EXPORTAÇÃO
+//==========================================
 
 module.exports = {
 
     cadastrar,
+
     listar,
+
     buscarPorId,
+
     atualizar,
+
     excluir
 
 };

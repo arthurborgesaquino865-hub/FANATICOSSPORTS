@@ -1,14 +1,24 @@
+//==========================================
+// CONEXÃO COM O BANCO DE DADOS
+//==========================================
+
 const conexao = require("../conexao/conexao.js");
 
-// =========================
-// Cadastrar Marca
-// =========================
+
+//==========================================
+// CADASTRAR MARCA
+//==========================================
 
 function cadastrar(marca, callback) {
 
-    const sql = `INSERT INTO Marca
-        (nome, logo)
-        VALUES (?, ?)`;
+    const sql = `
+        INSERT INTO Marca
+        (
+            nome,
+            logo
+        )
+        VALUES (?, ?)
+    `;
 
     conexao.query(
         sql,
@@ -21,9 +31,10 @@ function cadastrar(marca, callback) {
 
 }
 
-// =========================
-// Listar Marcas
-// =========================
+
+//==========================================
+// LISTAR MARCAS
+//==========================================
 
 function listar(callback) {
 
@@ -36,9 +47,10 @@ function listar(callback) {
 
 }
 
-// =========================
-// Buscar por ID
-// =========================
+
+//==========================================
+// BUSCAR MARCA POR ID
+//==========================================
 
 function buscarPorId(id, callback) {
 
@@ -52,9 +64,10 @@ function buscarPorId(id, callback) {
 
 }
 
-// =========================
-// Atualizar Marca
-// =========================
+
+//==========================================
+// ATUALIZAR MARCA
+//==========================================
 
 function atualizar(id, marca, callback) {
 
@@ -78,9 +91,10 @@ function atualizar(id, marca, callback) {
 
 }
 
-// =========================
-// Excluir Marca
-// =========================
+
+//==========================================
+// EXCLUIR MARCA
+//==========================================
 
 function excluir(id, callback) {
 
@@ -89,9 +103,18 @@ function excluir(id, callback) {
         WHERE idMarca = ?
     `;
 
-    conexao.query(sql, [id], callback);
+    conexao.query(
+        sql,
+        [id],
+        callback
+    );
 
 }
+
+
+//==========================================
+// EXPORTAÇÃO
+//==========================================
 
 module.exports = {
 

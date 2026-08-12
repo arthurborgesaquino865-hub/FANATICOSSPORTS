@@ -1,39 +1,45 @@
+
 const conexao = require("../conexao/conexao.js");
 
 // =========================
-// Cadastrar Cartão de Pagamento
+// Cadastrar Cor
 // =========================
 
-function cadastrar(cores, callback) {
+function cadastrar(cor, callback) {
 
-    const sql = `INSERT INTO Cores
-        ( nome,codigo_cor )
-        VALUES (?, ?)`;
+    const sql = `
+        INSERT INTO Cores
+        (nome, codigo_cor)
+        VALUES (?, ?)
+    `;
 
     conexao.query(
         sql,
         [
-            cores.nome,
-            cores.codigo_cor,
+            cor.nome,
+            cor.codigo_cor
         ],
         callback
     );
 
 }
 
+
 // =========================
-// Listar Cartões de Pagamento
+// Listar Cores
 // =========================
 
 function listar(callback) {
 
     const sql = `
-        SELECT * FROM Cartao_pagamento
+        SELECT *
+        FROM Cores
     `;
 
     conexao.query(sql, callback);
 
 }
+
 
 // =========================
 // Buscar por ID
@@ -47,46 +53,44 @@ function buscarPorId(id, callback) {
         WHERE idCores = ?
     `;
 
-    conexao.query(sql, [id], callback);
+    conexao.query(
+        sql,
+        [id],
+        callback
+    );
 
 }
 
-// =========================
-// Buscar por Email
-// =========================
-
-
 
 // =========================
-// Atualizar Cartão de Pagamento
+// Atualizar Cor
 // =========================
 
-function atualizar(id, cores, callback) {
+function atualizar(id, cor, callback) {
 
     const sql = `
         UPDATE Cores
         SET
-
             nome = ?,
-            codigo_cor = ?,
-           
+            codigo_cor = ?
         WHERE idCores = ?
     `;
 
     conexao.query(
         sql,
         [
-            cores.nome,
-            cores.codigo_cor,
+            cor.nome,
+            cor.codigo_cor,
             id
         ],
         callback
     );
 
 }
-            
+
+
 // =========================
-// Excluir Cartão de Pagamento
+// Excluir Cor
 // =========================
 
 function excluir(id, callback) {
@@ -96,17 +100,26 @@ function excluir(id, callback) {
         WHERE idCores = ?
     `;
 
-    conexao.query(sql, [id], callback);
+    conexao.query(
+        sql,
+        [id],
+        callback
+    );
 
 }
+
+
+// =========================
+// EXPORTAÇÃO
+// =========================
 
 module.exports = {
 
     cadastrar,
     listar,
     buscarPorId,
-  
     atualizar,
     excluir
 
 };
+

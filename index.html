@@ -1,341 +1,423 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+
+<html lang="pt-BR">
+
 
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fanaticos sports</title>
-  <link rel="stylesheet" href="style/index.css">
 
 
-  <!--imagem da logo p/ navegador-->
-  <link rel="icon" type="image/png" href="assets/Logo.png">
+  <title>
+    Fanáticos Sports
+  </title>
 
-  
+
+  <!--====================================================
+        CSS
+    =====================================================-->
+
+  <link rel="stylesheet" href="/style/home.css">
+
+
+  <!--====================================================
+        FONT AWESOME
+    =====================================================-->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+  <!--====================================================
+        JAVASCRIPT
+    =====================================================-->
+
+  <script src="/js/home.js" defer>
+  </script>
+
 </head>
+
 
 <body>
 
-  <header>
+
+  <div id="app">
 
 
-    <DIV class="TOPO">
-      <div class="logo">
-        <img src="assets/Logo.png" alt="Logo da Fanaticos sports">
+    <!--====================================================
+            HEADER
+        =====================================================-->
+
+    <header id="header">
+
+
+      <div class="top-header">
+
+
+        <!--================================================
+                    LOGO
+                =================================================-->
+
+        <div class="logo">
+
+
+          <a href="/index.html">
+
+
+            <img id="logoImagem" src="" alt="Logo">
+
+
+            <h1 id="logoTexto">
+            </h1>
+
+
+          </a>
+
+
+        </div>
+
+
+        <!--================================================
+                    PESQUISA
+                =================================================-->
+
+        <div class="search">
+
+
+          <input id="txtPesquisar" type="text" placeholder="">
+
+
+          <button id="btnPesquisar" type="button">
+
+            <i class="fas fa-search">
+            </i>
+
+          </button>
+
+
+        </div>
+
+
+        <!--================================================
+                    ÍCONES
+                =================================================-->
+
+        <div class="icons">
+
+
+          <a id="btnFavoritos" href="#">
+
+            <i class="far fa-heart">
+            </i>
+
+          </a>
+
+
+          <a id="btnCarrinho" href="#">
+
+            <i class="fas fa-shopping-cart">
+            </i>
+
+          </a>
+
+
+          <a id="btnLogin" href="#">
+
+            <i class="far fa-user">
+            </i>
+
+          </a>
+
+
+        </div>
+
 
       </div>
-      <!-- caixa de pesquisa -->
-      <div class="caixa-de-pesquisa">
-        <input type="text" placeholder="o que voce esta procurando?">
-        <img src="assets/Lupa.png">
-      </div>
-      <!--ICONES-->
-      <div class="icones">
-        <a href="">
-          <img src="assets/ususario.png" alt="login">
-          <small> Ola visitante</small>
-          <p>ENTRAR</p>
-        </a>
-        <a href="">
-          <IMG src="assets/carrinho.png" alt="carrinho">
-          <small>meu</small>
-          <p>carrinho</p>
-        </a>
-      </div>
-    </DIV>
+
+
+    </header>
 
 
 
-    <!-- menu de navegaçao -->
+    <!--====================================================
+            MENU
+        =====================================================-->
 
-    <nav class="menu">
-      <a href="#">LOGIN</a>
-      <a href="#">CARRINHO</a>
-      <a id="idbone" href="">BONE DO BOSTON</a>
-      <a href="#">CAMISA JACQUARD DO VASCO</a>
-      <a href="#">CHUTEIRA ADIDAS</a>
-      <a href="#">CAMISA DO CRUZEIRO</a>
+    <nav id="menuPrincipal">
+
+
+      <ul>
+
+
+        <li>
+
+          <a id="menu1" href="#">
+          </a>
+
+        </li>
+
+
+        <li>
+
+          <a id="menu2" href="#">
+          </a>
+
+        </li>
+
+
+        <li>
+
+          <a id="menu3" href="#">
+          </a>
+
+        </li>
+
+
+        <li>
+
+          <a id="menu4" href="#">
+          </a>
+
+        </li>
+
+
+        <li>
+
+          <a id="menu5" href="#">
+          </a>
+
+        </li>
+
+
+        <li>
+
+          <a id="menu6" href="#">
+          </a>
+
+        </li>
+
+
+        <li>
+
+          <a id="menu7" href="#">
+          </a>
+
+        </li>
+
+
+      </ul>
+
+
     </nav>
 
-  </header>
 
-  <!-- BANNER -->
-  <div class="banner">
-    <div class="imagens-banner">
-      <img src="assets/banner.png" alt="banner 1">
-      <div>
-        <div class="botoes banner">
+
+    <!--====================================================
+            MAIN
+        =====================================================-->
+
+    <main>
+
+
+      <!--================================================
+                BANNER
+            =================================================-->
+
+      <section id="banner">
+
+
+        <div class="banner-texto">
+
+
+          <small id="bannerTag">
+          </small>
+
+
+          <h2 id="bannerTitulo">
+          </h2>
+
+
+          <p id="bannerDescricao">
+          </p>
+
+
+          <button id="bannerBotao" type="button">
+          </button>
+
 
         </div>
+
+
+        <div class="banner-imagem">
+
+
+          <img id="bannerImagem" src="" alt="Banner">
+
+
+        </div>
+
+
+      </section>
+
+
+
+      <!--================================================
+                PRODUTOS
+            =================================================-->
+
+      <section id="maisVendidos">
+
+
+        <h2 id="tituloMaisVendidos">
+
+          Produtos
+
+        </h2>
+
+
+        <!--================================================
+                    O JAVASCRIPT VAI COLOCAR OS PRODUTOS AQUI
+                =================================================-->
+
+        <div id="listaProdutos" class="produtos">
+
+
+          <p class="carregando-produtos">
+
+            Carregando produtos...
+
+          </p>
+
+
+        </div>
+
+
+      </section>
+
+
+    </main>
+
+
+
+    <!--====================================================
+            FOOTER
+        =====================================================-->
+
+    <footer id="footer">
+
+
+      <div class="footer-grid">
+
+
+        <!-- COLUNA 1 -->
+
+        <div>
+
+
+          <h3 id="footerTitulo1">
+          </h3>
+
+
+          <p id="footerTexto1">
+          </p>
+
+
+        </div>
+
+
+        <!-- COLUNA 2 -->
+
+        <div>
+
+
+          <h3 id="footerTitulo2">
+          </h3>
+
+
+          <a id="footerLink1" href="#">
+          </a>
+
+
+          <a id="footerLink2" href="#">
+          </a>
+
+
+          <a id="footerLink3" href="#">
+          </a>
+
+
+        </div>
+
+
+        <!-- COLUNA 3 -->
+
+        <div>
+
+
+          <h3 id="footerTitulo3">
+          </h3>
+
+
+          <a id="footerContato1" href="#">
+          </a>
+
+
+          <a id="footerContato2" href="#">
+          </a>
+
+
+          <a id="footerContato3" href="#">
+          </a>
+
+
+        </div>
+
+
+        <!-- COLUNA 4 -->
+
+        <div>
+
+
+          <h3 id="footerTitulo4">
+          </h3>
+
+
+          <a id="facebook" href="#">
+          </a>
+
+
+          <a id="instagram" href="#">
+          </a>
+
+
+          <a id="youtube" href="#">
+          </a>
+
+
+        </div>
+
 
       </div>
-      <!--FINALIZACAO DA AREA DO BANNER DA LOJA-->
 
 
-      <!-- AREA DE OFERTAS -->
-      <section class="ofertas">
-
-        <div class="titulo-ofertas">
-          <div class="texto-promocoes">
-            <h2>OFERTAS IMPERDIVEIS</h2>
-            <p>Confira as melhores ofertas!</p>
-          </div>
-          <a href="#" class="ver-tudo">Ver tudo</a>
-        </div>
-
-        <div class="lista-produtos">
-          <div class="card-produtos">
-
-            <div class="imagem-botao">
-              <img src="assets/Camisa retro do barcelona 14 15.png" alt="produto">
-              <button class=favorito>
-                <img src="assets/favorito.png" alt="icone de favorito">
-
-              </button>
-            </div>
-            <h3>Camisa do Barcelona 14/15</h3>
-
-            <div class="precos">
-              <p class="p-antigo">R$ 199,99</p>
-              <p class="p-promocional">R$ 99,99</p>
-            </div>
-
-            <div class="btn-card">
-              <img src="" alt="avaliaçao" 
-              <h5>4.5</h5>
-            <button class="btn adicionar">
-              <img src="assets/add-carrinho.png" alt="Icone de carrinho">
-            </button>
-          </div>
-
-        </div>
-
-      </section>
-
- <!-- AREA DE SELEÇOES -->
-      <section class="ofertas">
-
-        <div class="titulo-ofertas">
-          <div class="texto-promocoes">
-            <h2>OFERTAS IMPERDIVEIS</h2>
-            <p>Confira as melhores ofertas!</p>
-          </div>
-          <a href="#" class="ver-tudo">Ver tudo</a>
-        </div>
-
-        <div class="lista-produtos">
-          <div class="card-produtos">
-
-            <div class="imagem-botao">
-              <img src="assets/camisaecuador.png" alt="produto">
-              <button class=favorito>
-                <img src="assets/favorito.png" alt="icone de favorito">
-
-              </button>
-            </div>
-            <h3>Camisa do Equador</h3>
-
-            <div class="precos">
-              <p class="p-antigo">R$ 150,90</p>
-              <p class="p-promocional">R$ 74,90</p>
-            </div>
-
-            <div class="btn-card">
-              <img src="" alt="avaliaçao" 
-              <h5>4.5</h5>
-            <button class="btn adicionar">
-              <img src="assets/add-carrinho.png" alt="Icone de carrinho">
-            </button>
-          </div>
-
-        </div>
-
-      </section>
-
-       <!-- AREA DE CHUTEIRAS -->
-      <section class="ofertas">
-
-        <div class="titulo-ofertas">
-          <div class="texto-promocoes">
-            <h2>OFERTAS IMPERDIVEIS</h2>
-            <p>Confira as melhores ofertas!</p>
-          </div>
-          <a href="#" class="ver-tudo">Ver tudo</a>
-        </div>
-
-        <div class="lista-produtos">
-          <div class="card-produtos">
-
-            <div class="imagem-botao">
-              <img src="assets/Chuteira adidas campo.png" alt="produto">
-              <button class=favorito>
-                <img src="assets/favorito.png" alt="icone de favorito">
-
-              </button>
-            </div>
-            <h3>Chuteira Adidas Campo</h3>
-
-            <div class="precos">
-              <p class="p-antigo">R$ 350,99</p>
-              <p class="p-promocional">R$ 249,99</p>
-            </div>
-
-            <div class="btn-card">
-              <img src="" alt="avaliaçao" 
-              <h5>4.5</h5>
-            <button class="btn adicionar">
-              <img src="assets/add-carrinho.png" alt="Icone de carrinho">
-            </button>
-          </div>
-
-        </div>
-
-      </section>
-
- <!-- AREA DE ESPORTES -->
-      <section class="ofertas">
-
-        <div class="titulo-ofertas">
-          <div class="texto-promocoes">
-            <h2>OFERTAS IMPERDIVEIS</h2>
-            <p>Confira as melhores ofertas!</p>
-          </div>
-          <a href="#" class="ver-tudo">Ver tudo</a>
-        </div>
-
-        <div class="lista-produtos">
-          <div class="card-produtos">
-
-            <div class="imagem-botao">
-              <img src="assets/camisa san antonio.png" alt="produto">
-              <button class=favorito>
-                <img src="assets/favorito.png" alt="icone de favorito">
-
-              </button>
-            </div>
-            <h3>Camisa do san antonio 24/25</h3>
-
-            <div class="precos">
-              <p class="p-antigo">R$ 150,00</p>
-              <p class="p-promocional">R$ 89,90</p>
-            </div>
-
-            <div class="btn-card">
-              <img src="" alt="avaliaçao" 
-              <h5>4.5</h5>
-            <button class="btn adicionar">
-              <img src="assets/add-carrinho.png" alt="Icone de carrinho">
-            </button>
-          </div>
-
-        </div>
-
-      </section>
-
-<!-- AREA DE FUTEBOL -->
-      <section class="ofertas">
-
-        <div class="titulo-ofertas">
-          <div class="texto-promocoes">
-            <h2>OFERTAS IMPERDIVEIS</h2>
-            <p>Confira as melhores ofertas!</p>
-          </div>
-          <a href="#" class="ver-tudo">Ver tudo</a>
-        </div>
-
-        <div class="lista-produtos">
-          <div class="card-produtos">
-
-            <div class="imagem-botao">
-              <img src="assets/bola.png" alt="produto">
-              <button class=favorito>
-                <img src="assets/favorito.png" alt="icone de favorito">
-
-              </button>
-            </div>
-            <h3>Bola da Copa do Mundo 2026</h3>
-
-            <div class="precos">
-              <p class="p-antigo">R$ 120,00</p>
-              <p class="p-promocional">R$ 69,90</p>
-            </div>
-
-            <div class="btn-card">
-              <img src="" alt="avaliaçao" 
-              <h5>4.5</h5>
-            <button class="btn adicionar">
-              <img src="assets/add-carrinho.png" alt="Icone de carrinho">
-            </button>
-          </div>
-
-        </div>
-
-      </section>
+      <div class="copyright">
 
 
-      <!--INICIO DO RODAPE-->
-      <footer>
-        <!--parte superior do rodape-->
-        <div class="superior">
-            <div class="coluna1">
-              <h2>INSTITUCIONAL</h2>
-              <li><a href="">Sobre a ABA</a> </li>
-              <li><a href="">Nossa Lojas</a> </li>
-              <li><a href="">Trabalhe Conosco</a> </li>
-              <li><a href="">Privacidade</a> </li>
-            </div>
-            <div class="coluna2">
-              <h2>AJUDA</h2>
-              <!--criando uma lista-->
-              <ul>
-                <li><a href="">meus pedidos</a> </li>
-                <li><a href="">trocas e devoluçoes</a> </li>
-                <li><a href="">Termos de uso</a> </li>
-                <li><a href="">Fale Conosco</a> </li>
-              </ul>
-            </div>
-            <div class="coluna3">
-              <h2>PAGAMENTOS</h2>
-              <div class="pagamentos">
-                <a href="">
-                  <img src="assets/pix.png">
-                  </a>
-                  <a href="">
-                    <img src="assets/boleto.png">
-                  </a>
-                  <a href="">
-                    <img src="assets/card (2).png">
-                  </a>
-                  <a href="">
-                    <img src="assets/visa.png">
-                  </a>
+        <p id="copyright">
+        </p>
 
-              </div>
-            </div>
-            <div class="coluna4">
-              <h2>REDES SOCIAIS</h2>
-                <div class="rede sociais">
-                  <a href="">
-                    <img src="assets/insta.png">
-                  </a>
-                  <a href="">
-                    <img src="assets/zap.png">
-                  </a>
-                  <a href="">
-                    <img src="assets/tube.png">
-                  </a>
-                  <a href="">
-                    <img src="assets/face.png">
-                  </a>
-                </div>
-            </div>
-        
 
-        <!--parte inferior-->
-        <div class="inferior">
+      </div>
 
-        </div>
-      </footer>
+
+    </footer>
+
+
+  </div>
+
+
 </body>
+
 
 </html>

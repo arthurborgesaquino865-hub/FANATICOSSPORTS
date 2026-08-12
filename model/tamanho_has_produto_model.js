@@ -1,139 +1,217 @@
-const conexao = require("../conexao/conexao.js");
+//=====================================================
+// IMPORTAR CONEXÃO
+//=====================================================
 
-// =========================
-// Cadastrar Relacionamento
-// =========================
+const conexao =
+    require("../conexao/conexao.js");
 
-function cadastrar(relacionamento, callback) {
 
-    const sql = `INSERT INTO Tamanho_has_Produto
+//=====================================================
+// CADASTRAR RELACIONAMENTO
+// PRODUTO X TAMANHO
+//=====================================================
+
+function cadastrar(dados, callback) {
+
+    const sql = `
+
+        INSERT INTO Produto_has_Tamanho
         (
-            Tamanho_idTamanho,
-            Produto_idProduto
+            Produto_idProduto,
+            Tamanho_idTamanho
         )
-        VALUES (?, ?)`;
+
+        VALUES (?, ?)
+
+    `;
+
 
     conexao.query(
+
         sql,
+
         [
-            relacionamento.Tamanho_idTamanho,
-            relacionamento.Produto_idProduto
+
+            dados.Produto_idProduto,
+
+            dados.Tamanho_idTamanho
+
         ],
+
         callback
+
     );
 
 }
 
-// =========================
-// Listar Relacionamentos
-// =========================
+
+//=====================================================
+// LISTAR RELACIONAMENTOS
+//=====================================================
 
 function listar(callback) {
 
     const sql = `
-        SELECT *
-        FROM Tamanho_has_Produto
+
+        SELECT
+
+            Produto_has_Tamanho.Produto_idProduto,
+
+            Produto.nome AS produto,
+
+            Produto_has_Tamanho.Tamanho_idTamanho,
+
+            Tamanho.tamanho
+
+        FROM Produto_has_Tamanho
+
+        INNER JOIN Produto
+            ON Produto_has_Tamanho.Produto_idProduto =
+               Produto.idProduto
+
+        INNER JOIN Tamanho
+            ON Produto_has_Tamanho.Tamanho_idTamanho =
+               Tamanho.idTamanho
+
     `;
 
-    conexao.query(sql, callback);
-
-}
-
-// =========================
-// Buscar por IDs
-// =========================
-
-function buscarPorId(
-    tamanhoId,
-    produtoId,
-    callback
-) {
-
-    const sql = `
-        SELECT *
-        FROM Tamanho_has_Produto
-        WHERE Tamanho_idTamanho = ?
-        AND Produto_idProduto = ?
-    `;
 
     conexao.query(
         sql,
-        [
-            tamanhoId,
-            produtoId
-        ],
         callback
     );
 
 }
 
-// =========================
-// Atualizar Relacionamento
-// =========================
 
-function atualizar(
-    tamanhoId,
-    produtoId,
-    relacionamento,
+//=====================================================
+// BUSCAR POR PRODUTO
+//=====================================================
+
+function buscarPorProduto(
+    idProduto,
     callback
 ) {
 
     const sql = `
-        UPDATE Tamanho_has_Produto
-        SET
-            Tamanho_idTamanho = ?,
-            Produto_idProduto = ?
-        WHERE Tamanho_idTamanho = ?
-        AND Produto_idProduto = ?
+
+        SELECT
+
+            Produto_has_Tamanho.Produto_idProduto,
+
+            Produto_has_Tamanho.Tamanho_idTamanho,
+
+            Tamanho.tamanho
+
+        FROM Produto_has_Tamanho
+
+        INNER JOIN Tamanho
+            ON Produto_has_Tamanho.Tamanho_idTamanho =
+               Tamanho.idTamanho
+
+        WHERE
+            Produto_has_Tamanho.Produto_idProduto = ?
+
     `;
 
-    conexao.query(
-        sql,
-        [
-            relacionamento.Tamanho_idTamanho,
-            relacionamento.Produto_idProduto,
 
-            tamanhoId,
-            produtoId
-        ],
+    conexao.query(
+
+        sql,
+
+        [idProduto],
+
         callback
+
     );
 
 }
 
-// =========================
-// Excluir Relacionamento
-// =========================
+
+//=====================================================
+// EXCLUIR RELACIONAMENTO
+//=====================================================
 
 function excluir(
-    tamanhoId,
-    produtoId,
+    idProduto,
+    idTamanho,
     callback
 ) {
 
     const sql = `
-        DELETE FROM Tamanho_has_Produto
-        WHERE Tamanho_idTamanho = ?
-        AND Produto_idProduto = ?
+
+        DELETE FROM Produto_has_Tamanho
+
+        WHERE
+            Produto_idProduto = ?
+
+        AND
+            Tamanho_idTamanho = ?
+
     `;
 
+
     conexao.query(
+
         sql,
+
         [
-            tamanhoId,
-            produtoId
+            idProduto,
+            idTamanho
         ],
+
         callback
+
     );
 
 }
+
+
+//=====================================================
+// EXCLUIR TODOS OS TAMANHOS DO PRODUTO
+//=====================================================
+
+function excluirPorProduto(
+    idProduto,
+    callback
+) {
+
+    const sql = `
+
+        DELETE FROM Produto_has_Tamanho
+
+        WHERE Produto_idProduto = ?
+
+    `;
+
+
+    conexao.query(
+
+        sql,
+
+        [idProduto],
+
+        callback
+
+    );
+
+}
+
+
+//=====================================================
+// EXPORTAÇÃO
+//=====================================================
 
 module.exports = {
 
     cadastrar,
+
     listar,
-    buscarPorId,
-    atualizar,
-    excluir
+
+    buscarPorProduto,
+
+    excluir,
+
+    excluirPorProduto
 
 };
